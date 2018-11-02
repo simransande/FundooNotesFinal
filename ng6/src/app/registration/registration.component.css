@@ -1,0 +1,20 @@
+
+.reg{
+    max-width: 400px;
+     margin: auto;
+   }
+  
+  .reg-full-width {
+    width: 100%;
+  }
+
+  .reg1-full-width {
+    width: 100%;
+    padding-left: 25px;
+  }
+  .UserError{
+    /* margin-top:10px; */
+    color:red;
+    font-size: small;
+  }
+  

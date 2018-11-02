@@ -1,0 +1,30 @@
+.login{
+    max-width: 380px;  
+     /* margin: auto;   */
+   margin-top: 100px;
+   margin-left:400px;
+    }
+
+.login-full-width {
+    width: 100%;
+  }
+
+  .pwd{
+    float: right;
+  }
+  .login1-full-width{
+    width: 100%;
+    margin-top:10px;
+    border-radius: 12px;
+  }
+  .signUp{
+    /* float: right; */
+    padding-left: 320px;
+    margin-top:10px;
+    margin-bottom: 10px;
+  }
+.UserError{
+  /* margin-top:10px; */
+  color:red;
+  font-size: small;
+}

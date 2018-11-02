@@ -1,0 +1,52 @@
+<p>
+    <mat-card class='reg'>
+    <mat-card-title align="center">
+      <h2>Registration</h2>
+    </mat-card-title>
+    <mat-card-content>
+      
+        <form >
+          <div>
+
+            <mat-form-field class="reg-full-width">
+              <input matInput placeholder="User-Name:" id="fname_user" [formControl]="UsernameFormControl" [(ngModel)]="model.uname"> 
+              <mat-error *ngIf="UsernameFormControl.hasError('required')">
+                FirstName is required
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="reg-full-width">
+                <input matInput placeholder="Email-id:" id="mail_user" [formControl]="emailFormControl" [(ngModel)]="model.email">
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                  Mail id is required
+                </mat-error>     
+              </mat-form-field>
+
+              <mat-form-field class="reg-full-width">
+                  <input matInput placeholder="Password:" type="password" id="pass_user" [formControl]="PasswordFormControl" [(ngModel)]="model.pass">
+                  <mat-error *ngIf="PasswordFormControl.hasError('required')">
+                    Password is required
+                  </mat-error>    
+              </mat-form-field>
+
+              <mat-form-field class="reg-full-width">
+                  <input matInput placeholder="Phone-No:" id="phone_user" [formControl]="PhoneFormControl" [(ngModel)]="model.phone">
+                  <mat-error *ngIf="PhoneFormControl.hasError('required')">
+                    Phone-No is required
+                  </mat-error>    
+              </mat-form-field>
+            </div>
+
+            <div> 
+          
+              <button class="reg1-full-width" mat-button color type="submit" (click)="s_register()">REGESTRATION</button> 
+              <div *ngIf="Error" class="UserError">
+                User entered wrong data
+              </div>
+            </div>
+        </form>
+      </mat-card-content>
+      
+  
+  </mat-card>
+</p>

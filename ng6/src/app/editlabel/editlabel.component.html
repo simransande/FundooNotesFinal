@@ -1,0 +1,44 @@
+<h3>Edit labels</h3>
+  
+<div>
+    <button mat-icon-button class="btncss" matTooltip="Cancel" (click)="Clear()">
+        <img style="width:20px;" src="../../assets/baseline-clear-24px.svg" />
+    </button>
+    <input class="noteinput" placeholder="Create a new label" [(ngModel)]="data.labelInput"/>
+
+    <button mat-icon-button class="btncss" matTooltip="Create Label"  [mat-dialog-close]="data.labelInput">
+        <img style="width:20px;" src="../../assets/outline-done-24px.svg"/>
+    </button>
+    </div>
+  
+    <mat-divider></mat-divider>
+     <div class="labelDisplay" *ngFor="let lbel of data.label"> 
+        
+        <button mat-icon-button class="btncss"  *ngIf="!editInput || LabelData.id!=lbel.id">
+            <img style="width:20px;" src="../../assets/round-label-24px.svg" />
+        </button>
+        <!-- delete label -->
+          <button mat-icon-button class="btncss" *ngIf="editInput && LabelData.id==lbel.id" matTooltip="Delete Label" (click)="DeleteLabel(lbel)">
+            <img style="width:20px;" src="../../assets/delete.svg" />
+        </button>  
+    
+        <input class="noteinput" [(ngModel)]="lbel.label" (click)="EditLabel(lbel)"  placeholder=""/>
+    
+        <!-- edit label -->
+        <button mat-icon-button class="btncss" matTooltip="Rename Label" *ngIf="!editInput || LabelData.id!=lbel.id" (click)="EditLabel(lbel)">
+            <img style="width:20px;" src="../../assets/round-edit-24px.svg" />
+        </button>
+
+        <!-- update label -->
+        <button mat-icon-button class="btncss" matTooltip="Rename Label" *ngIf="editInput && LabelData.id==lbel.id" (click)="UpdateLabel(lbel)">
+            <img style="width:20px;" src="../../assets/outline-done-24px.svg" />
+        </button>
+    
+  </div> 
+        <div>
+            <button mat-button class="Done" [mat-dialog-close]="data.labelInput">
+                Done
+                </button>
+        </div>
+
+          

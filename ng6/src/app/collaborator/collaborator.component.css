@@ -1,0 +1,104 @@
+.collaborators{
+    margin-top: -31px;
+    /* height:500px; */
+    width: 500px;
+    /* color: #000; */
+    
+  }
+.devider{
+    margin-top: 16px; 
+    margin-bottom: 10px;
+
+  }
+  .collab{
+    padding-top: 19px;
+
+  }
+  .profile{
+    box-shadow: 0 1px 1px 1px rgba(0,0,0,.1);
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  .profile1{
+    box-shadow: 0 1px 1px 1px rgba(0,0,0,.1);
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+ 
+  .Initial1{
+    margin-top: -11px;
+    font-size: 20px;
+  }
+  .name{
+    margin-left: 60px;
+    margin-top: -52px; 
+    /* margin-left: 10px;  */
+    margin-right: 12px;
+    font-weight: bold;
+
+  }
+  .name1{
+    margin-left: 60px;
+    margin-top: 3px; 
+    margin-right: 12px;
+  }
+  .addUser{
+    margin-bottom: auto;
+    margin-top: 18px;
+    height: 42px;
+    width: 42px;
+    /* border:black; */
+    border: 1px solid black;
+
+  }
+  .inputCollab{
+    border: none;
+    outline: none;
+    width: 173px;
+    margin-left: 19px;
+    margin-top: -38px; 
+    margin-right: 12px;
+  }
+
+  .test{
+       margin-top: -34px;
+    /* margin-right: -6px; */
+    padding-left: 41px;
+  }
+ 
+  .cancel{
+    margin-top: 20px;  
+    margin-left: 356px;
+  }
+
+  .save{
+    margin-top: 20px;  
+    margin-left: 10px;
+  }
+
+  .saveBar{
+
+    height: 20px;
+  }
+  .greyArea {
+    margin: 33px -24px -24px -24px;
+    height: 57px;
+    background-color: rgb(237, 237, 237);
+  }
+ 
+  .addPerson{
+    margin-left: -236px;
+    opacity: 0.5;
+  }
+  .collmail{
+    margin-top: 12px;
+  }
+  

@@ -1,0 +1,151 @@
+Looking for git in: git
+Using git 2.7.4 from git
+> git rev-parse --show-toplevel
+> git config --get commit.template
+Open repository: /var/www/html/code1/codeigniter
+> git status -z -u
+> git show :application/controllers/Accountcontroller.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git status -z -u
+> git status -z -u
+> git check-ignore -z --stdin
+> git status -z -u
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git status -z -u
+> git status -z -u
+> git check-ignore -z --stdin
+> git status -z -u
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/tests/ci-phpunit-test-0.12.2/application/tests/Bootstrap.php
+> git ls-files --stage -- application/tests/ci-phpunit-test-0.12.2/application/tests/
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/tests/_ci_phpunit_test/functions.php
+> git ls-files --stage -- application/tests/_ci_phpunit_test/
+> git show :application/tests/_ci_phpunit_test/TestSuiteProvider.php
+> git ls-files --stage -- application/tests/_ci_phpunit_test/
+> git show :application/tests/_ci_phpunit_test/autoloader.php
+> git ls-files --stage -- application/tests/_ci_phpunit_test/
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/tests/TestCase.php
+> git ls-files --stage -- application/tests/
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/controllers/Accountcontroller.php
+> git show :application/tests/_ci_phpunit_test/tmp/cache/autoload.php
+> git ls-files --stage -- application/tests/_ci_phpunit_test/tmp/cache/
+> git check-ignore -z --stdin
+> git show :application/tests/models/.gitkeep
+> git ls-files --stage -- application/tests/models/
+> git check-ignore -z --stdin
+> git show :application/tests/UnitTestCase.php
+> git ls-files --stage -- application/tests/
+> git show :application/tests/TestCase.php
+> git ls-files --stage -- application/tests/
+> git check-ignore -z --stdin
+> git show :application/views/test.php
+> git show :application/views/tests.php
+> git ls-files --stage -- application/views/
+> git check-ignore -z --stdin
+> git show :application/controllers/testingcontroller.php
+> git ls-files --stage -- application/controllers/
+> git check-ignore -z --stdin
+> git show :application/views/tests.php
+> git ls-files --stage -- application/views/
+> git show :application/controllers/test.php
+> git ls-files --stage -- application/controllers/
+> git show :application/controllers/testingcontroller.php
+> git ls-files --stage -- application/controllers/
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/testingcontroller.php
+> git ls-files --stage -- application/controllers/
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/testingcontroller.php
+> git ls-files --stage -- application/controllers/
+> git show :application/controllers/Accountcontroller.php
+> git check-ignore -z --stdin
+> git show :application/config/routes.php
+> git show :application/controllers/testingcontroller.php
+> git ls-files --stage -- application/controllers/
+> git show :application/config/routes.php
+> git show :application/controllers/testingcontroller.php
+> git ls-files --stage -- application/controllers/
+> git show :application/config/routes.php
+> git show :application/controllers/testingcontroller.php
+> git ls-files --stage -- application/controllers/
+> git show :application/config/routes.php
+> git show :application/controllers/testingcontroller.php
+> git ls-files --stage -- application/controllers/
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/libraries/index.html
+> git show :application/views/tests.php
+> git ls-files --stage -- application/views/
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/testingcontroller.php
+> git ls-files --stage -- application/controllers/
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/testingcontroller.php
+> git ls-files --stage -- application/controllers/
+> git show :application/controllers/mail_configuration.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/controllers/testingcontroller.php
+> git ls-files --stage -- application/controllers/
+> git check-ignore -z --stdin
+> git show :application/models/Data_model.php
+> git show :application/libraries/index.html
+> git show :application/libraries/unit_test.php
+> git ls-files --stage -- application/libraries/
+> git check-ignore -z --stdin
+> git show :application/controllers/testingcontroller.php
+> git ls-files --stage -- application/controllers/
+> git show :application/models/Data_model.php
+> git show :application/views/tests.php
+> git ls-files --stage -- application/views/
+> git show :application/controllers/testingcontroller.php
+> git ls-files --stage -- application/controllers/
+> git show :application/libraries/unit_test.php
+> git ls-files --stage -- application/libraries/
+> git show :application/controllers/Accountcontroller.php
+> git show :application/libraries/unit_test.php
+> git ls-files --stage -- application/libraries/
+> git show :application/views/tests.php
+> git ls-files --stage -- application/views/
+> git show :application/libraries/unit_test.php
+> git ls-files --stage -- application/libraries/
+> git show :application/controllers/testingcontroller.php
+> git ls-files --stage -- application/controllers/
+> git show :application/libraries/unit_test.php
+> git ls-files --stage -- application/libraries/
+> git show :application/controllers/testingcontroller.php
+> git ls-files --stage -- application/controllers/
+> git show :application/libraries/index.html
+> git show :application/controllers/testingcontroller.php
+> git ls-files --stage -- application/controllers/
+> git show :application/libraries/index.html
+> git show :application/controllers/testingcontroller.php
+> git ls-files --stage -- application/controllers/
+> git show :application/libraries/index.html
+> git show :application/controllers/testingcontroller.php
+> git ls-files --stage -- application/controllers/

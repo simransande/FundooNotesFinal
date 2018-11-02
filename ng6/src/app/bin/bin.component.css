@@ -1,0 +1,139 @@
+.example-sidenav-container {
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .example {
+    background-color: #e8e8e8;
+  }
+  .notesDisplay {
+    display: flex;
+    margin: 10px;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 111px;
+  }
+  .cardDisplay {
+    width: 200px;
+    flex-flow: row wrap;
+    flex-grow: 1;
+    margin: 14px;
+    position:relative;
+  }
+  .title-pin {
+    display: inline-block;
+    width: 236px;
+    margin-left: 2px;
+    }
+  .label-Div{
+    background-color: #e6e6e6;
+    height: 25px;
+    margin-top: 6px;
+    width: 95px;
+    display:flex;
+    margin-left: 12px;
+  }
+  .cardDisplay {
+    width: 240px;
+    flex-flow: row wrap;
+    flex-grow: 1;
+    margin: 12px;
+    position:relative;
+    padding: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word
+  }
+  .cross{
+    width: 0%;
+    padding-bottom: -23px;
+    margin-top: -8px;
+    opacity: 0.5;
+  }
+  .cardDisplayrow {
+   
+    flex-flow: row wrap;
+    flex-grow: 1;
+    margin: 24px;
+    position: relative;
+    width: 700px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    padding: 0
+  }
+  .pin1 {
+    opacity: 0.5;
+  right: 0;
+  top: 0;
+  position: absolute;
+  }
+  .button-display {
+    display: flex;
+    margin-left: -15px;
+    margin-right: 10px;
+  }
+
+.notes {
+    margin-left: 10px;
+    opacity: 0.5;
+  }
+  .imageNote {
+    max-width: 19px;
+    margin-left: 10px;
+
+  }
+
+.colorCard {
+    left: 331px;
+    margin-top: -692px;
+    width: 144px;
+    padding: 3px;
+  }
+  .colorDiv{
+    margin-bottom:5px;
+    display:flex;
+  }
+  .colorPalette {
+    border-radius: 100%;
+    outline: none;
+    border: none;
+    width: 0px;
+    height: 30px;
+  }
+  .imgcss{
+    width: 100%;
+    height: 100%;
+    /* margin-left: -24px;
+    margin-top: -24px; */
+    }
+    .remainder-Div {
+      background-color: #e6e6e6;
+      height: 25px;
+      margin-top: -13px;
+      width: 180px;
+      display:flex;
+      margin-left: 12px;
+
+    }
+    
+    .remainder-Div-image {
+      width: 15px;
+      margin-top: 5px;
+      margin-left: 7px
+    }
+    
+    .remainderTime{
+      font-size:11px;
+      margin-top:6px;
+      padding-left: 6px;
+
+    }
+    .mat-card-content {
+      font-size: 14px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      padding-left: 14px;
+
+    }

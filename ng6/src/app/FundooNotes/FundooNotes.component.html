@@ -1,0 +1,166 @@
+<mat-toolbar class='toolbar'>
+  <button mat-icon-button (click)="sidenav.toggle()">
+      <img src="../../assets/menu1.svg" />
+  </button>
+    <span class="fundoo"> Fundoo</span> Notes
+    <!-- <span class="notes"> Notes</span> -->
+     <div class="search-bar">    
+        <button mat-icon-button class="search-button">
+           <img class="button" src="../../assets/search.svg" /> 
+        </button>
+           <input type="search" class="search" matInput placeholder="Search" />    
+     </div>
+
+    
+        <button mat-icon-button class="refresh-button"  matTooltip="Refresh">
+          <img class="refresh" src="../../assets/refresh.svg">
+          
+        </button>
+  
+      <!-- <button mat-icon-button class="view-button" matTooltip="List View" (click)="listview()">
+          <img class="view" src="../../assets/viewList.svg">
+      </button>
+     -->
+     <button mat-icon-button mat-button *ngIf="list" (click)="changeView()" fxShow="true" fxHide.lt-sm="true">
+            <!-- <mat-icon class="toolitems">view_list</mat-icon> -->
+            <img *ngIf="!grid" class="view" src="../../assets/baseline-view_quilt-24px.svg" />
+        </button>
+    
+        <!-- fxShow (without a value) means use the origin display style value -->
+        <button mat-icon-button mat-button *ngIf="grid" (click)="changeView()" fxShow="true" fxHide.lt-sm="true">
+            <!-- <mat-icon class="toolitems">apps</mat-icon> -->
+            <img style="width:33px" class="view" *ngIf="grid" src="../../assets/viewList.svg" />
+        </button>
+
+      <button mat-icon-button class="app-button" matTooltip="Google apps">
+          <img class="app" src="../../assets/app.svg" style="user-select:none">
+      </button>
+      
+      
+      <button mat-icon-button class="bell-button" matTooltip="Notifications">
+          <img class="bell" src="../../assets/bell.svg">
+      </button>
+
+
+      <button mat-fab color="accent" class="signout" [matMenuTriggerFor]="logoutrmenu" >
+            <div class="Initial1">
+                    {{Initial}}
+            </div>
+      </button>
+      <mat-menu #logoutrmenu="matMenu" class="signoutmenu">
+  
+        <button mat-fab color="accent" class="profile">
+            <div class="Initial">
+                    {{Initial}}
+            </div>
+        </button>
+        <div class="name">{{email}}</div>
+        <div class="name1">{{username}}</div>
+
+        <mat-divider class="devider"></mat-divider>
+        <div>
+            <button mat-stroked-button class="AddAccount">Add acount</button>
+            <button mat-stroked-button class="logout" (click)="logout()">Logout</button>
+        </div>
+        
+
+
+        
+    </mat-menu>
+
+
+<!--       
+      <button mat-icon-button class="bell-button" matTooltip="Notifications">
+        <img class="bell" src="../../assets/bell.svg">
+    </button> -->
+
+ </mat-toolbar>
+      
+        <mat-sidenav-container class="sidenave-container">  <!--structural container for our content  -->
+          <mat-sidenav #sidenav  mode="side" opened class="sidenav">    <!--added side content.-->
+            
+              <button mat-button class="note-button">
+                    <!-- <a [routerLink]="['/FundooNotes/notes']">
+               <img src="../../assets/notes.svg" class="image-notes">
+               <span class="note"> Notes</span>
+            </a> -->
+            <a  style="text-decoration: none;"
+                    [routerLink]="['/FundooNotes/notes']">
+                    <img src="../../assets/notes.svg" class="image-archive">
+                    <span class="note"> Notes</span>
+                </a>
+             </button>
+              
+            <div>
+            <button mat-button class="reminder-button">
+                    <a  style="text-decoration: none;"
+                    [routerLink]="['/FundooNotes/reminder']">
+                <img src="../../assets/reminder.svg" class="image-reminder">
+                <span class="reminder"> Reminder</span>
+                </a>
+            </button>
+            </div>
+
+              <div>
+                  <mat-divider class="divider"></mat-divider>
+              </div>
+
+              <div class="label">
+               <span class="label1">Labels</span>
+            
+              <button mat-button class="edit-button" (click)="openDialog()">EDIT</button>
+              </div>
+
+              <div *ngFor="let lbel of notelabel">
+                <button mat-button class="labelbutton">
+                        <a  style="text-decoration: none;"
+                        [routerLink]="['/FundooNotes/label']">
+                  <div class="labelimage">
+                    <img src="../../assets/round-label-24px.svg" />
+                  </div>
+                  <div class="labelData">{{lbel.label}}</div>
+                </a>
+
+                </button>
+              </div>
+              <button mat-button class="add-button" (click)="openDialog()">
+                   
+                  <img src="../../assets/add.svg" class="image-add">
+                  <span class="add"> Create new label</span>
+                 
+              </button>
+
+
+                 <div>
+                    <mat-divider class="divider"></mat-divider>
+                 </div>
+
+                <button mat-button class="archive-button">
+                    <a  style="text-decoration: none;"
+                    [routerLink]="['/FundooNotes/archive']">
+                    <img src="../../assets/archive.svg" class="image-archive">
+                    <span class="archive"> Archive</span>
+                </a>
+                </button>
+                    
+            <div>
+               <button mat-button class="bin-button">
+                    <a  style="text-decoration: none;"
+                    [routerLink]="['/FundooNotes/bin']">
+                <img src="../../assets/delete.svg" class="image-bin">
+               <span class="bin"> Trash</span>
+            </a>
+               </button>
+            </div>
+
+     </mat-sidenav>   
+          <!-- <mat-sidenav-content #snav  mode="side" opened class="sidenav">    
+          </mat-sidenav-content>   -->
+
+        
+  <router-outlet></router-outlet>    <!-- Routed views go here -->
+                   
+</mat-sidenav-container>
+   
+
+     

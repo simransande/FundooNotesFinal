@@ -1,0 +1,51 @@
+
+  <mat-card class='login'>
+      <mat-card-title align="center">
+          <h2>Sign in</h2>
+        </mat-card-title>
+        <mat-card-content>
+<form>
+  <div>
+    <mat-form-field  class="login-full-width">
+        <input matInput placeholder="Email-id:"  [formControl]="MailIdFormControl" [(ngModel)]="model.email">
+        <mat-error *ngIf="MailIdFormControl.hasError('required')">
+          Mail-id is required
+        </mat-error>
+    </mat-form-field >
+
+    <mat-form-field  class="login-full-width">
+        <input matInput placeholder="Password:" type="password" [formControl]="PasswordFormControl" [(ngModel)]="model.pass">
+        <mat-error *ngIf="PasswordFormControl.hasError('required')">
+          Password is required
+        </mat-error>
+          </mat-form-field>          
+  </div>
+  <div class="pwd">
+
+       <a href="/ForgotPassword" >Forgot Password?</a>  <!--to link the other site -->
+  </div>
+  
+     <button  class="login1-full-width" mat-button color type="submit" (click)="s_login()">SIGN IN </button> 
+     <div *ngIf="Error" class="UserError">
+      User entered wrong email or password
+    </div>
+    <div align="center">
+ <h4>or Sign in with:</h4>
+ <img src="../../assets/icons8-facebook.svg">
+ <img src="../../assets/icons8-google.svg">
+
+    </div>
+    <hr>  <!--instead of mat divider-->
+<!-- 
+<mat-divider></mat-divider> -->
+<div class="signUp">
+
+ <a href="/registration">Sign Up?</a>  <!--to link the other site -->
+</div>
+
+
+</form>
+
+        </mat-card-content>
+  </mat-card> 
+

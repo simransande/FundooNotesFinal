@@ -1,0 +1,17 @@
+.btncss {
+    margin-left: 0px;
+    opacity: 0.5;
+  }
+.noteinput{
+    border: none;
+    outline: none;
+    width: 173px;
+    font-size: initial;
+}
+.Done{
+    margin-left:169px;
+}
+.labelDisplay {
+    display: flex;
+    flex-wrap: wrap;
+  }

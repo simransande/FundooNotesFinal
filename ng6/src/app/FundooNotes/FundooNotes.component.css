@@ -1,0 +1,307 @@
+
+.toolbar{
+    background-color: #ffbf00;
+}
+.fundoo{
+    font-size: 28px;
+    position: relative;
+    padding-left: 20px;
+    margin-right: 10px;
+    /* display: inline-block; */
+
+}
+.notes{
+    padding-left: 10px;
+    font-size: 22px;
+    position: relative;
+   
+
+}
+
+.search-button {
+    margin-left: 5px;
+     opacity: 0.5;
+
+
+     /* font-size: 17px; */
+
+     /*
+    filter: alpha(opacity=50);
+  } */
+
+}
+.button{
+width: 24px;
+
+}
+/* .search-bar{
+    padding-left: 40px;
+    background-color: #f5b400;
+    height: 30px;
+    width: 50px;
+
+    }
+.search{
+    border: none;
+    outline:none;
+       width: 500px;
+       background-color: #f5b400;
+
+  background-color: #ffbf00;
+} */
+.search-bar {
+    margin-left: 40px;
+    width: 700px;
+    font-size: 2px;
+    display: flex;
+    background-color: #f5b400;
+  }
+
+  .search {
+    margin-left:10px;
+    width: 250%;
+    font-size: 16px;
+    background-color: #f5b400;
+    padding: 7px 20px 10px 5px;
+    border: none;
+  }
+  .refresh-button{
+     
+        margin-left: 75px;
+    
+    }
+    .refresh{
+        opacity: 0.5;
+        height: 24px;
+        width: 24px;
+    }
+    .view-button{
+        margin-left: 5px;
+    }
+  .view{
+
+    height: 24px;
+    width: 24px;
+    opacity: 0.5;
+
+  }
+  .app-button{
+    margin-left: 30px;
+
+  }
+  .app{
+    height: 24px;
+    width: 24px;
+    opacity: 0.5;
+
+  }
+  .bell-button{
+    margin-left: 10px;
+
+  }
+  .bell{
+    height: 24px;
+    width: 24px;
+    opacity: 0.5;
+  }
+  .signout{
+    margin-left: 5px;
+    height: 34px;
+    width: 34px;
+
+  }
+  .primary{
+      padding-left: 20px
+  }
+  .devider{
+    margin-top: 47px; 
+
+  }
+  .profile{
+    height: 60px;
+    width: 60px;
+    margin-left: 10px;
+  }
+  .Initial{
+    height: 50px;
+    width: 50px;
+    font-size: 60px;
+    /* color: #e8e8e8; */
+  }
+  .Initial1{
+    margin-top: -11px;
+    font-size: 20px;
+  }
+  .name{
+    margin-left: 80px;
+    margin-top: -36px; 
+    /* margin-left: 10px;  */
+    margin-right: 12px;
+  }
+  .name1{
+    margin-left: 80px;
+    margin-top: -36px; 
+    margin-right: 12px;
+    font-weight: bold;
+  }
+  .AddAccount{
+    
+    margin-top: 20px;  
+    margin-left: 10px;
+
+    
+}
+  .logout{
+    margin-top: 10px;     
+    margin-left: 42px;
+
+
+   }
+  .signoutmenu{
+    position: absolute;
+    z-index: 1000;
+    display: flex; 
+     /* margin-right: 100px; */
+     margin-left: 20px;
+ }
+  .sidenave-container
+   {
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+   }
+
+.sidenav {
+    background-color: #e8e8e8;
+    padding: 20px;
+    width:260px;
+  }
+  .note-button{
+    width: 260px;
+    height: 52px;
+    margin-left: -21px;
+    padding-right: 88px;
+
+      }
+ .image-notes{
+    opacity: 0.5;
+     margin-left: -232px;
+     padding-left: 100px;
+ }
+ .note{
+    padding-left: 25px;
+ }
+
+ .reminder-button{
+
+     width: 260px;
+    height: 52px;
+    margin-left: -21px;
+    
+
+ }
+ .image-reminder{
+    opacity: 0.5;
+    margin-left: -232px;
+    padding-left: 120px;
+ }
+ .reminder{
+    padding-left: 28px;
+
+ }
+ .divider{
+    margin-top: 8px;
+}
+.label{
+    margin-top: 15px;
+}
+.label1{
+    font-size: small;
+    color: black;
+}
+.edit-button{
+    margin-left:90px;
+    font-size: 15px;
+   
+}
+.add-button{
+    width: 260px;
+    height: 52px;
+    margin-left: -21px;
+
+      }
+ .image-add{
+    /* opacity: 0.5; */
+     margin-left: -232px;
+     padding-left: 170px;
+     width: 20px;
+    height: 20px;
+ }
+ .add{
+    padding-left: 25px;
+ }
+
+ .archive-button{
+    width: 260px;
+    height: 52px;
+   padding-right: 80px;
+   margin-left: -21px;
+   
+
+      }
+ .image-archive{
+     opacity: 0.5; 
+     margin-left: -232px;
+     padding-left: 170px;
+     width: 22px;
+    height: 22px;
+ }
+ .archive{
+    padding-left: 25px;
+ }
+ .bin-button{
+    width: 260px;
+    height: 52px;
+   /* padding-right: 90px; */
+   margin-left: -21px;
+   padding-right: 104px;
+
+      }
+ .image-bin{
+     opacity: 0.5; 
+     margin-left: -232px;
+     padding-left: 184px;
+     width: 22px;
+    height: 22px;
+ }
+ .bin{
+    padding-left: 25px;
+ }
+ .modal{
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+ }
+ .labelbutton{
+    width: 260px;
+    height: 52px;
+    margin-left: -21px;
+ }
+ .labelimage{
+    opacity: 0.5;
+    margin-left: -21px;
+    padding-right: 166px;
+ }
+ .labelData{
+    
+    /* width: 260px; */
+    /* height: 52px; */
+    /* margin-left: -21px; */
+    padding-right: 56px;
+    margin-top: -44px;
+ }
+ 

@@ -1,0 +1,99 @@
+.titleinput{
+    border: none;
+    outline: none;
+    font-weight: bold;
+    font-size: large;
+    margin-bottom: 16px;
+    padding-left: 14px;
+
+}
+.outer-div{
+    margin: -24px;
+    padding:0px;
+    width: 591px;
+    /* height: 216px; */
+}
+.notesImage{
+    height: 100%;
+    width: 100%;
+}
+.noteinput{
+    border: none;
+    outline: none;
+    /* font-weight: bold; */
+    font-size: large;
+    margin-bottom: 16px;
+    padding-left: 14px;
+
+}
+.pin{
+right: 0;
+top: 0;
+position: absolute;
+opacity: 0.5;
+}
+.outer-div{
+    position: relative;
+}
+.remainder-Div{
+    background-color: #e6e6e6;
+  height: 25px;
+  margin-top: -13px;
+  width: 160px;
+  display:flex;
+  margin-left: 10px;
+}
+.remainder-Div-image{
+    width: 15px;
+    margin-top: 5px;
+    margin-left: 7px
+}
+.remainderTime{
+    font-size:11px;
+    margin-top:6px;
+    background-color: #e6e6e6;
+    border: none;
+
+  }
+  .button-display {
+    display: flex;
+    margin-left: -15px;
+    margin-right: 110px;
+    padding-left: 16px;
+  
+}
+.editnotes {
+    margin-left: 0px;
+    opacity: 0.5;
+  }  
+  .imageNote {
+    max-width: 19px;
+  }
+  .closebtn{
+    margin-left: 160px;
+
+  }
+  .colorPalette {
+    border-radius: 100%;
+    outline: none;
+    border: none;
+    width: 0px;
+    height: 30px;
+  }
+  .colorDiv{
+    margin-bottom:5px;
+    display:flex;
+  }
+  
+  .colorCard {
+    left: 331px;
+    margin-top: -692px;
+    width: 144px;
+    padding: 3px;
+  }
+  .cross{
+    width: 0%;
+    padding-bottom: -23px;
+    margin-top: -8px;
+    opacity: 0.5;
+  }
