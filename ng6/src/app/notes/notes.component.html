@@ -370,7 +370,7 @@
                     
                         <div *ngFor="let label of notes2">
                             <div class="label-Div" *ngIf="label.noteid==note.id" matTooltip="Remove Label">
-                                <div *ngFor="let lbel of labell">
+                               <div *ngFor="let lbel of labell">
                                     <div *ngIf="label.labelid==lbel.id" style="display:flex">
                                     <div class="remainderTime">{{lbel.label}}</div>
                                         <div (click)="deletLabel(label)">

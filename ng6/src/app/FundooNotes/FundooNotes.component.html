@@ -3,7 +3,6 @@
       <img src="../../assets/menu1.svg" />
   </button>
     <span class="fundoo"> Fundoo</span> Notes
-    <!-- <span class="notes"> Notes</span> -->
      <div class="search-bar">    
         <button mat-icon-button class="search-button">
            <img class="button" src="../../assets/search.svg" /> 
@@ -16,19 +15,13 @@
           <img class="refresh" src="../../assets/refresh.svg">
           
         </button>
-  
-      <!-- <button mat-icon-button class="view-button" matTooltip="List View" (click)="listview()">
-          <img class="view" src="../../assets/viewList.svg">
-      </button>
-     -->
-     <button mat-icon-button mat-button *ngIf="list" (click)="changeView()" fxShow="true" fxHide.lt-sm="true">
-            <!-- <mat-icon class="toolitems">view_list</mat-icon> -->
+
+        <button mat-icon-button mat-button *ngIf="list" (click)="changeView()" fxShow="true" fxHide.lt-sm="true">
             <img *ngIf="!grid" class="view" src="../../assets/baseline-view_quilt-24px.svg" />
         </button>
     
         <!-- fxShow (without a value) means use the origin display style value -->
         <button mat-icon-button mat-button *ngIf="grid" (click)="changeView()" fxShow="true" fxHide.lt-sm="true">
-            <!-- <mat-icon class="toolitems">apps</mat-icon> -->
             <img style="width:33px" class="view" *ngIf="grid" src="../../assets/viewList.svg" />
         </button>
 
@@ -62,28 +55,18 @@
             <button mat-stroked-button class="AddAccount">Add acount</button>
             <button mat-stroked-button class="logout" (click)="logout()">Logout</button>
         </div>
-        
-
-
-        
     </mat-menu>
 
-
-<!--       
-      <button mat-icon-button class="bell-button" matTooltip="Notifications">
-        <img class="bell" src="../../assets/bell.svg">
-    </button> -->
-
  </mat-toolbar>
-      
-        <mat-sidenav-container class="sidenave-container">  <!--structural container for our content  -->
-          <mat-sidenav #sidenav  mode="side" opened class="sidenav">    <!--added side content.-->
+                   
+       <!--structural container for our content  -->
+        <mat-sidenav-container class="sidenave-container"> 
+
+            <!--added side content.-->
+            <mat-sidenav #sidenav  mode="side" opened class="sidenav">   
             
               <button mat-button class="note-button">
-                    <!-- <a [routerLink]="['/FundooNotes/notes']">
-               <img src="../../assets/notes.svg" class="image-notes">
-               <span class="note"> Notes</span>
-            </a> -->
+                 
             <a  style="text-decoration: none;"
                     [routerLink]="['/FundooNotes/notes']">
                     <img src="../../assets/notes.svg" class="image-archive">
@@ -153,11 +136,7 @@
                </button>
             </div>
 
-     </mat-sidenav>   
-          <!-- <mat-sidenav-content #snav  mode="side" opened class="sidenav">    
-          </mat-sidenav-content>   -->
-
-        
+     </mat-sidenav>           
   <router-outlet></router-outlet>    <!-- Routed views go here -->
                    
 </mat-sidenav-container>

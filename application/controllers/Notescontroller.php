@@ -536,9 +536,10 @@ class Notescontroller extends CI_Controller
 
         while( $row = $stmt->fetchAll(PDO::FETCH_ASSOC)) 
         {
-            $myArray[] = $row;
+            //$myArray[] = $row;
+            $notes= json_encode($row);
         }
-        $notes= json_encode($myArray);
+       
         print $notes;
 
     }

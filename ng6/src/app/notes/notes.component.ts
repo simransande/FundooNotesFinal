@@ -149,7 +149,7 @@ export class NotesComponent implements OnInit
 
               this.labelService.getLabel().subscribe(responseLabel => 
               {
-                debugger;
+            
               this.labell = responseLabel;
               console.log(this.labell);
               });
@@ -158,12 +158,12 @@ export class NotesComponent implements OnInit
               {
                 debugger;
               this.notes2 = data;
-              console.log(this.notes2);         
+              console.log("fdfgd",this.notes2);         
               });
 
               this.service.getCollaborator().subscribe(data=>
               {
-                debugger;
+              
               this.collaborator=data;
               this.m=this.collaborator["0"];
               // this.m=this.collaborator.sharedEmail;
