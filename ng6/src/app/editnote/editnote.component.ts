@@ -98,11 +98,7 @@ export class EditnoteComponent implements OnInit {
   }
   setcolor(color: any, note: any) {
     
-    // if(note=='')
-    // {
-    //   console.log('got it'); 
-    //   this.colored=color;
-    // }
+   
     this.getColor = color;
    
     var data = { 'colorcode': this.getColor };
@@ -131,43 +127,6 @@ export class EditnoteComponent implements OnInit {
       });
     this.mainCard = false;
   }
-  //full note box on click
-  // closeNote() 
-  // {
-  //   debugger;
-  //   this.model;
-  //   let data = [
-  //     { 'title': this.model.title, 'description': this.model.note,'reminder':this.remainderData,
-  //     'color':this.colored,'image':this.imgUrl}
-  //   ];
-  //  console.log(data);
-   
-  //   if ((this.model.title != "" || this.model.note != "") && (this.model.title != undefined || this.model.note != undefined)) {
 
-  //     this.service.Notes({ data }).subscribe((data: any) => {
-  //       this.service.getNote().subscribe(data => {
-  //       this.notes = data;
-  //       });
-
-  //     });
-  //     this.model.title = "";
-  //     this.model.note = "";
-  //     this.remainderData="";
-  //     this.remainderDisplay=true;
-  //     this.getColor=true;
-  //     this.imageDisplay=true;
-  //     this.archive = 0;
-  //     this.pin = 0;
-  //     this.trash= 0;
-  //     this.reminder='';
-  //     this.mainCard = true;
-  //     this.createCard = false;
-  //     this.imgUrl='';
-  //   }
-  //   else {
-  //     this.mainCard = true;
-  //     this.createCard = false;
-  //   }
-  // }
 }
 }

@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+// include_once 'JWT.php';
 
 class Notescontroller extends CI_Controller
 {
@@ -69,6 +70,7 @@ class Notescontroller extends CI_Controller
     public function getnotes()
     { 
         $mail=$_POST['email'];  
+        // $jwt1=new JWT();
 
         $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
         $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -83,6 +85,8 @@ class Notescontroller extends CI_Controller
         }
         $notes= json_encode($myArray);
         print $notes;
+
+        // $val=$jwt1->verify($token);
          
     }
 

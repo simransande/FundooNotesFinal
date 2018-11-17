@@ -55,8 +55,6 @@ $route['default_controller'] = 'Accountcontroller';
 //s$route['register']='register';
 // $route['register/(:any)']='Manage_Accounts/register';
 
-// $route['admin'] = 'Accountcontroller';
-$route['admin'] = 'Accountcontroller';
 $route['login'] = 'Accountcontroller/login';
 $route['register'] = 'Accountcontroller/register';
 $route['forgotpassword'] = 'Accountcontroller/forgotpassword';

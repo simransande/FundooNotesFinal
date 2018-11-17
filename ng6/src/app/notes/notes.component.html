@@ -342,7 +342,7 @@
 
 
         <!--UnPinned Notes-->
-        <div class="notesDisplay" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)">
+        <div class="notesDisplay"  cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)">
             <div *ngFor="let note of alldata" cdkDrag>
                 <mat-card [ngClass]="direction=='row' ? 'cardDisplay' : 'cardDisplayrow'" *ngIf="note.archive!=1 && note.pin!=1 && note.trash!=1" [style.background-color]="note.colorcode">
 
@@ -394,7 +394,7 @@
                             <div *ngIf="collab.noteId==note.id">
                                 <button mat-icon-button class="signout" style="background-color:rgb(233, 14, 79)" (click)="openDialogcoll(note)">
                                     <div class="sharedEmail">                                              
-                                        {{m.sharedEmail}}                                      
+                                        {{m.sharedEmail[0]}}                                      
 
                                     </div>
                                 </button>

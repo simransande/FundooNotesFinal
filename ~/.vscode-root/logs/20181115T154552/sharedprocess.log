@@ -1,0 +1,60 @@
+[2018-11-15 15:45:59.717] [sharedprocess] [info] main {"machineId":"bc6780d3df07958fd8265e1f2de50453f8eb6c8632bd6d10c08d9ff36801141a"}
+[2018-11-15 15:46:02.329] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 15:46:05.087] [sharedprocess] [info] Scanned system extensions: 71
+[2018-11-15 15:46:05.830] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 15:46:05.837] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 15:46:05.891] [sharedprocess] [info] Scanned system extensions: 71
+[2018-11-15 15:46:09.036] [sharedprocess] [info] Installing extension: php-intellisense
+[2018-11-15 15:46:09.041] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 15:46:09.223] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 15:46:10.502] [sharedprocess] [info] Downloaded extension: php-intellisense /tmp/156c162b-4a33-481f-af0a-564818b7398f
+[2018-11-15 15:46:13.460] [sharedprocess] [info] Extracted extension to /home/bridgeit/.vscode/extensions/.felixfbecker.php-intellisense-2.3.10: felixfbecker.php-intellisense-2.3.10
+[2018-11-15 15:46:13.460] [sharedprocess] [info] Renamed to /home/bridgeit/.vscode/extensions/felixfbecker.php-intellisense-2.3.10
+[2018-11-15 15:46:13.460] [sharedprocess] [info] Installation completed. felixfbecker.php-intellisense-2.3.10
+[2018-11-15 15:46:17.661] [sharedprocess] [info] Extensions installed successfully: felixfbecker.php-intellisense
+[2018-11-15 15:46:17.803] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 15:46:17.831] [sharedprocess] [info] Scanned system extensions: 71
+[2018-11-15 15:46:39.724] [sharedprocess] [info] Starting to clean up unused language packs.
+[2018-11-15 15:51:10.056] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 15:56:10.324] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 16:01:10.341] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 16:06:10.377] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 16:11:10.402] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 16:16:10.450] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 16:21:10.465] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 16:26:10.481] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 16:31:10.497] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 16:36:10.510] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 16:41:10.526] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 16:46:10.967] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 16:51:10.984] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 16:56:11.001] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 17:01:11.017] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 17:06:11.033] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 17:11:11.048] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 17:16:11.092] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 17:21:11.106] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 17:26:11.121] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 17:31:11.137] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 17:36:11.152] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 17:41:11.167] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 17:46:11.795] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 17:51:11.811] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 17:56:11.826] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 18:01:11.840] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 18:06:11.855] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 18:11:11.871] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 18:16:11.888] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 18:21:11.920] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 18:26:11.936] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 18:31:11.952] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 18:36:11.967] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 18:41:11.982] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 18:46:12.108] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 18:51:12.123] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 18:56:12.158] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 19:01:12.172] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 19:06:12.188] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 19:11:12.203] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 19:16:12.218] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-15 19:21:12.233] [sharedprocess] [info] Scanned user extensions: 8

@@ -1,0 +1,250 @@
+Looking for git in: git
+Using git 2.7.4 from git
+> git rev-parse --show-toplevel
+> git config --get commit.template
+Open repository: /var/www/html/code1/codeigniter
+> git status -z -u
+> git show :ng6/src/app/service/view.service.ts
+> git check-ignore -z --stdin
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :ng6/src/app/service/view.service.ts
+> git check-ignore -z --stdin
+> git show :application/controllers/Notescontroller.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :ng6/src/app/auth.guard.ts
+> git show :ng6/src/app/service/auth.service.ts
+> git check-ignore -z --stdin
+> git show :ng6/src/app/editnote/editnote.component.ts
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git show :ng6/src/app/editnote/editnote.component.html
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -z --stdin
+> git show :ng6/src/app/editlabel/editlabel.component.ts
+> git show :ng6/src/app/editnote/editnote.component.html
+> git show :ng6/src/app/notes/notes.component.html
+> git show :ng6/src/app/notes/notes.component.css
+> git show :ng6/src/app/notes/notes.component.html
+> git show :ng6/src/app/notes/notes.component.css
+> git show :ng6/src/app/notes/notes.component.html
+> git show :ng6/src/app/notes/notes.component.css
+> git show :ng6/src/app/notes/notes.component.html
+> git show :ng6/src/app/notes/notes.component.css
+> git show :ng6/src/app/notes/notes.component.html
+> git show :ng6/src/app/notes/notes.component.css
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :phpunittest/tests/unit/FirstTest.php
+> git show :phpunittest/phpunit.xml
+> git show :phpunittest/tests/unit/FirstTest.php
+> git show :phpunittest/phpunit.xml
+> git show :phpunittest/tests/unit/FirstTest.php
+> git show :application/controllers/Accountcontroller.php
+> git show :phpunittest/tests/unit/FirstTest.php
+> git show :application/controllers/Accountcontroller.php
+> git show :system/core/Common.php
+> git show :application/controllers/Accountcontroller.php
+> git check-ignore -z --stdin
+> git show :phpunittest/phpunit.xml
+> git show :phpunittest/vendor/phpunit/phpunit/src/Runner/StandardTestSuiteLoader.php
+> git check-ignore -z --stdin
+> git show :phpunittest/tests/unit/FirstTest.php
+> git show :application/controllers/Accountcontroller.php
+> git show :system/core/Common.php
+> git show :application/controllers/Accountcontroller.php
+> git check-ignore -z --stdin
+> git show :application/config/routes.php
+> git show :application/controllers/Accountcontroller.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/tests/controllers/Welcome_test.php
+> git show :application/controllers/Accountcontroller.php
+> git show :system/core/CodeIgniter.php
+> git show :application/controllers/Accountcontroller.php
+> git show :system/core/CodeIgniter.php
+> git show :application/controllers/Accountcontroller.php
+> git show :system/core/CodeIgniter.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/tests/TestCase.php
+> git show :application/controllers/Accountcontroller.php
+> git check-ignore -z --stdin
+> git show :index.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/composer.json
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/index.html
+> git show :application/controllers/Accountcontroller.php
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git show :application/controllers/Accountcontroller.php
+> git show :system/core/Common.php
+> git show :application/controllers/Accountcontroller.php
+> git show :phpunittest/tests/unit/FirstTest.php
+> git show :application/controllers/Accountcontroller.php
+> git show :phpunittest/tests/unit/FirstTest.php
+> git show :phpunittest/tests/unit/Accountcontroller.php
+> git ls-files --stage -- phpunittest/tests/unit/
+> git check-ignore -z --stdin
+> git show :application/controllers/Accountcontroller.php
+> git show :phpunittest/vendor/phpunit/phpunit/src/Runner/PhptTestCase.php
+> git show :application/tests/TestCase.php
+> git show :application/tests/controllers/Welcome_test.php
+> git show :application/tests/TestCase.php
+> git show :application/tests/controllers/Welcome_test.php
+> git show :phpunittest/tests/unit/Accountcontroller.php
+> git ls-files --stage -- phpunittest/tests/unit/
+> git show :application/controllers/Accountcontroller.php
+> git show :phpunittest/tests/unit/Accountcontroller.php
+> git ls-files --stage -- phpunittest/tests/unit/
+> git show :application/tests/controllers/Welcome_test.php
+> git show :application/config/routes.php
+> git show :application/controllers/Accountcontroller.php
+> git show :phpunittest/tests/unit/Accountcontroller.php
+> git ls-files --stage -- phpunittest/tests/unit/
+> git show :application/tests/controllers/Welcome_test.php
+> git show :application/tests/controllers/Accountcontroller.php
+> git ls-files --stage -- application/tests/controllers/
+> git check-ignore -z --stdin
+> git show :application/controllers/Accountcontroller.php
+> git show :application/tests/TestCase.php
+> git show :application/tests/controllers/Accountcontroller.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/TestCase.php
+> git ls-files --stage -- application/controllers/
+> git check-ignore -z --stdin
+> git show :application/tests/TestCase.php
+> git show :application/controllers/TestCase.php
+> git ls-files --stage -- application/controllers/
+> git show :application/controllers/Accountcontroller.php
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git show :application/controllers/Accountcontroller.php
+> git show :phpunittest/tests/unit/Accountcontroller.php
+> git ls-files --stage -- phpunittest/tests/unit/
+> git show :application/controllers/Accountcontroller.php
+> git show :phpunittest/tests/unit/Accountcontroller.php
+> git ls-files --stage -- phpunittest/tests/unit/
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/Notescontroller.php
+> git show :application/controllers/Accountcontroller.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :phpunittest/tests/unit/Accountcontroller.php
+> git ls-files --stage -- phpunittest/tests/unit/
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/vendor/composer/ClassLoader.php
+> git show :application/vendor/composer/autoload_static.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/vendor/firebase/php-jwt/src/JWT.php
+> git ls-files --stage -- application/vendor/firebase/php-jwt/src/
+> git show :application/vendor/core.php
+> git ls-files --stage -- application/vendor/
+> git check-ignore -z --stdin
+> git show :application/controllers/Accountcontroller.php
+> git show :ng6/src/app/service/dataservice.service.ts
+> git show :ng6/src/app/login/login.component.ts
+> git show :application/controllers/Accountcontroller.php
+> git show :system/core/Common.php
+> git show :application/controllers/Accountcontroller.php
+> git show :ng6/src/app/auth.guard.ts
+> git show :ng6/src/app/service/auth.service.ts
+> git show :application/controllers/Accountcontroller.php
+> git show :phpunittest/tests/unit/Accountcontroller.php
+> git ls-files --stage -- phpunittest/tests/unit/
+> git show :application/controllers/Accountcontroller.php
+> git show :system/core/Common.php
+> git show :application/controllers/Accountcontroller.php
+> git show :system/core/Common.php
+> git show :application/controllers/Accountcontroller.php
+> git show :system/core/Common.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/vendor/core.php
+> git ls-files --stage -- application/vendor/
+> git show :application/controllers/Accountcontroller.php
+> git show :system/core/Common.php
+> git show :application/controllers/Accountcontroller.php
+> git show :system/core/Common.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/vendor/firebase/php-jwt/src/JWT.php
+> git ls-files --stage -- application/vendor/firebase/php-jwt/src/
+> git show :application/controllers/Accountcontroller.php
+> git show :application/vendor/firebase/php-jwt/src/JWT.php
+> git ls-files --stage -- application/vendor/firebase/php-jwt/src/
+> git show :application/controllers/Accountcontroller.php
+> git show :application/vendor/firebase/php-jwt/src/JWT.php
+> git ls-files --stage -- application/vendor/firebase/php-jwt/src/
+> git show :application/controllers/forgot-password-recovery-mail.php
+> git show :application/controllers/Accountcontroller.php
+> git show :system/core/Common.php
+> git show :application/controllers/Accountcontroller.php
+> git show :ng6/src/app/login/login.component.ts
+> git show :application/controllers/Accountcontroller.php
+> git show :system/core/Common.php
+> git show :application/controllers/forgot-password-recovery-mail.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/vendor/firebase/php-jwt/src/JWT.php
+> git ls-files --stage -- application/vendor/firebase/php-jwt/src/
+> git show :application/controllers/Accountcontroller.php
+> git check-ignore -z --stdin
+> git show :system/core/Common.php
+> git show :application/controllers/Accountcontroller.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/vendor/core.php
+> git ls-files --stage -- application/vendor/
+> git show :application/controllers/Accountcontroller.php
+> git show :system/core/CodeIgniter.php
+> git show :application/controllers/Accountcontroller.php
+> git show :system/core/Common.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/vendor/firebase/php-jwt/src/JWT.php
+> git ls-files --stage -- application/controllers/vendor/firebase/php-jwt/src/
+> git show :application/controllers/vendor/firebase/php-jwt/src/SignatureInvalidException.php
+> git ls-files --stage -- application/controllers/vendor/firebase/php-jwt/src/
+> git show :application/vendor/core.php
+> git ls-files --stage -- application/vendor/
+> git show :application/controllers/Accountcontroller.php
+> git show :application/tests/TestCase.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/TestCase.php
+> git ls-files --stage -- application/controllers/
+> git show :application/controllers/Accountcontroller.php
+> git check-ignore -z --stdin
+> git show :application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php
+> git show :application/tests/_ci_phpunit_test/functions.php
+> git show :application/tests/_ci_phpunit_test/CIPHPUnitTestSuperGlobal.php
+> git show :application/tests/_ci_phpunit_test/CIPHPUnitTestRouter.php
+> git show :application/tests/_ci_phpunit_test/CIPHPUnitTestRequest.php
+> git show :application/tests/_ci_phpunit_test/CIPHPUnitTestReflection.php
+> git show :application/tests/_ci_phpunit_test/CIPHPUnitTest.php
+> git show :application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php
+> git show :application/tests/controllers/Accountcontroller.php
+> git ls-files --stage -- application/tests/controllers/

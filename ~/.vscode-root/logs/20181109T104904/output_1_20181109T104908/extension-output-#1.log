@@ -1,0 +1,170 @@
+Looking for git in: git
+Using git 2.7.4 from git
+> git rev-parse --show-toplevel
+> git config --get commit.template
+Open repository: /var/www/html/code1/codeigniter
+> git status -z -u
+> git show :application/tests/controllers/Accountcontroller.php
+> git ls-files --stage -- application/tests/controllers/
+> git check-ignore -z --stdin
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git show :application/tests/controllers/Accountcontroller.php
+> git ls-files --stage -- application/tests/controllers/
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -z --stdin
+> git show :application/controllers/Accountcontroller.php
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :application/controllers/Accountcontroller.php
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :ng6/src/app/editnote/editnote.component.html
+> git show :ng6/src/app/editnote/editnote.component.ts
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :ng6/src/app/editnote/editnote.component.html
+> git show :ng6/src/app/editnote/editnote.component.ts
+> git show :ng6/src/app/editnote/editnote.component.html
+> git show :ng6/src/app/editnote/editnote.component.ts
+> git show :ng6/src/app/editnote/editnote.component.html
+> git show :ng6/src/app/editnote/editnote.component.ts
+> git show :ng6/src/app/editnote/editnote.component.html
+> git show :ng6/src/app/editnote/editnote.component.ts
+> git show :ng6/src/app/editnote/editnote.component.html
+> git show :application/tests/TestCase.php
+> git check-ignore -z --stdin
+> git show :ng6/src/app/editnote/editnote.component.html
+> git check-ignore -z --stdin
+> git show :application/vendor/core.php
+> git ls-files --stage -- application/vendor/
+> git show :ng6/src/app/editnote/editnote.component.html
+> git show :ng6/src/app/editnote/editnote.component.ts
+> git show :ng6/src/app/editnote/editnote.component.html
+> git show :ng6/src/app/editnote/editnote.component.ts
+> git show :ng6/src/app/editnote/editnote.component.html
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/Notescontroller.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :ng6/src/app/service/auth.service.ts
+> git show :ng6/src/app/login/login.component.ts
+> git show :application/controllers/Accountcontroller.php
+> git show :system/core/Common.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/tests/TestCase.php
+> git show :application/tests/DbTestCase.php
+> git show :application/tests/TestCase.php
+> git show :application/controllers/Accountcontroller.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/controllers/jwt.php
+> git ls-files --stage -- application/controllers/
+> git check-ignore -z --stdin
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/Notescontroller.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/Notescontroller.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/Notescontroller.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/jwt.php
+> git ls-files --stage -- application/controllers/
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/jwt.php
+> git ls-files --stage -- application/controllers/
+> git show :application/controllers/Accountcontroller.php
+> git show :system/core/Common.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/jwt.php
+> git ls-files --stage -- application/controllers/
+> git show :application/controllers/Accountcontroller.php
+> git show :system/core/CodeIgniter.php
+> git show :system/core/Benchmark.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/jwt.php
+> git ls-files --stage -- application/controllers/
+> git show :application/controllers/Accountcontroller.php
+> git show :ng6/src/app/service/notes.service.ts
+> git show :application/controllers/Accountcontroller.php
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/service/dataservice.service.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/service/dataservice.service.ts
+> git show :ng6/src/app/service/notes.service.spec.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git check-ignore -z --stdin
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/service/dataservice.service.ts
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/service/notes.service.spec.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/Notescontroller.php
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :application/controllers/Notescontroller.php
+> git show :application/controllers/Accountcontroller.php
+> git show :ng6/src/app/service/dataservice.service.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/login/login.component.ts
+> git show :application/controllers/Accountcontroller.php
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git check-ignore -z --stdin
+> git show :ng6/src/app/service/jwttokwn.service.ts
+> git ls-files --stage -- ng6/src/app/service/
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/app-routing.module.ts
+> git show :ng6/src/app/app.module.ts
+> git show :ng6/src/app/service/jwttokwn.service.ts
+> git ls-files --stage -- ng6/src/app/service/
+> git show :ng6/src/app/app.module.ts
+> git show :ng6/src/app/service/jwttokwn.service.ts
+> git ls-files --stage -- ng6/src/app/service/
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/app.module.ts
+> git show :ng6/src/app/service/notes.service.spec.ts
+> git show :ng6/src/app/service/jwttokwn.service.ts
+> git ls-files --stage -- ng6/src/app/service/

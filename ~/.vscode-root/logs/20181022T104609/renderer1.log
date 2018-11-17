@@ -1,6 +1,0 @@
-[2018-10-22 10:46:16.074] [renderer1] [info] no standard startup: panel is active
-[2018-10-22 11:16:02.449] [renderer1] [error] Inotify limit reached (ENOSPC)
-[2018-10-22 13:19:21.658] [renderer1] [error] An unknown error occurred. Please consult the log for more details.
-[2018-10-22 13:19:30.466] [renderer1] [error] An unknown error occurred. Please consult the log for more details.
-[2018-10-22 13:19:32.584] [renderer1] [error] An unknown error occurred. Please consult the log for more details.
-[2018-10-22 13:19:36.705] [renderer1] [error] An unknown error occurred. Please consult the log for more details.

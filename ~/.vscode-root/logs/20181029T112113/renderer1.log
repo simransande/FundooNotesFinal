@@ -1,3 +1,0 @@
-[2018-10-29 11:21:16.142] [renderer1] [info] no standard startup: panel is active
-[2018-10-29 11:21:36.446] [renderer1] [error] net::ERR_NAME_RESOLUTION_FAILED: Error: net::ERR_NAME_RESOLUTION_FAILED
-[2018-10-29 11:34:13.290] [renderer1] [error] Inotify limit reached (ENOSPC)

@@ -1,13 +1,19 @@
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+require_once 'PHPUnit/Autoload.php';
+ include_once '/var/www/html/code1/codeigniter/application/controllers/jwt.php';
+ require '/var/www/html/code1/codeigniter/application/controllers/vendor/autoload.php';
+ 
+
+  use PHPUnit\Framework\TestCase;
+//  var /www/html/code1/codeigniter/application/tests/TestCase.php;
+
 //include "models/responseModel.php";
+// extends TestCase
 
-
-class Accountcontroller extends CI_Controller
-{
-    
-
-   
+class Accountcontroller extends \PHPUnit_Framework_TestCase
+{   
     public function index() 
     {
          //loading session library 
@@ -15,8 +21,7 @@ class Accountcontroller extends CI_Controller
     }
    
     
-     // function regestercreate a new user with name,email,password and phone number
-     
+     // function regestercreate a new user with name,email,password and phone number     
     public function register()
     {
         $flag=0; 
@@ -27,11 +32,14 @@ class Accountcontroller extends CI_Controller
         */
        $name=$_POST['username'];
 
+       
        /**
         * @var integer
         *@range(4,8)
         *@label('password')
         */
+        assertEquals($name,'prashant');
+
        $pass=$_POST['password'];
 
          /**
@@ -94,7 +102,8 @@ class Accountcontroller extends CI_Controller
     // login the user using email id and password 
     public function login()
     {     
-        $flag=1;
+
+        $flag=0;
         /**
         * @Assert\Email(
         *     message = "The email '{{ value }}' is not a valid email.",
@@ -103,17 +112,17 @@ class Accountcontroller extends CI_Controller
         */
         $mail=$_POST['email'];
         // $this->load->library($mail);
-
-
+        // $this->assertEquals($mail,'simransande.a@gmail.com');
+ 
         /**
         * @var integer
         *@range(8,14)
         *@label('password')
         */
+
         $pass=$_POST['password'];
    
         
-        // ($servername, $username, $password, $dbname)
         
         $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
         $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -121,20 +130,15 @@ class Accountcontroller extends CI_Controller
         $sql = "SELECT * FROM user  WHERE email = '$mail' and pass='$pass'";
         $stmt = $connect->prepare($sql);
         $res = $stmt->execute();
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        $name=$row['uname'];
-
-        // select query to select that perticular row
-        //  $sql = "SELECT * From user where email='$mail' and password='$pass'";
-    
-        // $result = mysqli_query($conn, $sql);
-        // $name=$result->fetch_object()->uname;
-        
+             
+         $row = $stmt->fetch(PDO::FETCH_ASSOC);
+         $name=$row['uname'];
+       
         //if the number of rows greater or equal to 1
          if ($row!=false) 
          {  
-            // $mail=$_POST['email'];              
-            // $flag++;            
+             $mail=$_POST['email'];              
+            $flag++;            
             $myjson='{"email":'.'"'.$mail.'","name":'.'"'.$name.'","status":'.$flag."}";           
             print $myjson;  
          } 
@@ -242,3 +246,4 @@ class Accountcontroller extends CI_Controller
    
 
 }
+

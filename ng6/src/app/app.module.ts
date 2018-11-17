@@ -39,7 +39,6 @@ import { LabelComponent } from './label/label.component';
 import { AuthService } from './service/auth.service';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 
-
 @NgModule({
   declarations: [
     AppComponent,

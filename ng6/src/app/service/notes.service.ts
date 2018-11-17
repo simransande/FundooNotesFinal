@@ -44,6 +44,7 @@ export class NotesService {
     let note = new FormData();
     var data ={'pin': value.data[0].pin}
     let email = localStorage.getItem('email');
+
     note.append('title', value.data[0].title);
     note.append('description', value.data[0].description);
     note.append('email', email);
@@ -69,6 +70,8 @@ export class NotesService {
    
     let getnote = new FormData();
     let email = localStorage.getItem('email');
+    let token=localStorage.getItem('token');
+
     getnote.append('email', email);
 
     let otheroption: any = 

@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   flag:any;
   mail:any;
   name:any;
-
+  token:any;
   MailIdFormControl=new FormControl('',[
     Validators.required
   ]);
@@ -50,12 +50,14 @@ export class LoginComponent implements OnInit {
     this.flag=Statusdata.status;
     this.mail=Statusdata.email;
     this.name=Statusdata.name;
-   
+    this.token=Statusdata.token;
 
       if (this.flag == 1) 
       {
         localStorage.setItem('email', this.mail);
         localStorage.setItem('uname', this.name);
+        localStorage.setItem('token',this.token);
+
         // localStorage.setItem('email', this.mail);
          this.auth.sendToken(this.mail)
         // this.myRoute.navigate(["home"]);
