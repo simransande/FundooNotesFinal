@@ -6,20 +6,20 @@ import { Router } from '@angular/router';
   selector: 'app-registration',
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.css'],
-  providers: [DataserviceService]  
+  providers: [DataserviceService]
 })
 export class RegistrationComponent implements OnInit {
- model:any={}
- flag:any;
- Error: boolean = false;
+  model: any = {}
+  flag: any;
+  Error: boolean = false;
 
-  constructor(private service:DataserviceService,private router:Router){//private service:DataserviceService) { 
+  constructor(private service: DataserviceService, private router: Router) {//private service:DataserviceService) { 
 
- }
+  }
 
   ngOnInit() {
   }
- 
+
 
   /**
    * formcontrol for UsernameFormControl,emailFormControl,
@@ -30,47 +30,49 @@ export class RegistrationComponent implements OnInit {
     Validators.minLength(4),
     Validators.maxLength(128)
   ]);
-  emailFormControl=new FormControl('',[
+  emailFormControl = new FormControl('', [
     Validators.required,
     Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
   ]);
-  PasswordFormControl=new FormControl('',[
+  PasswordFormControl = new FormControl('', [
     Validators.required,
     Validators.minLength(4),
     Validators.maxLength(8)
   ]);
-  PhoneFormControl=new FormControl('',[
+  PhoneFormControl = new FormControl('', [
     Validators.required,
     Validators.pattern("[0-9]{10}")
   ]);
 
   s_register() {
-   debugger;
+    debugger;
     this.model;
 
-    //binding the username, password,email,password into the data
+    /**
+     * binding the username,password,email and phone number into the data
+     */
     let data = [
       { 'username': this.model.uname, 'password': this.model.pass, 'email': this.model.email, 'phone': this.model.phone }
     ];
-    this.service.Register(data).subscribe((Statusdata: any) => { 
-      this.flag=Statusdata.status;
+    this.service.Register(data).subscribe((Statusdata: any) => {
+      this.flag = Statusdata.status;
 
-      //if flag is 1 the it will navigate to login page
-      if (this.flag == 1) 
-      {
+      /**
+       * if flag is 1 then it will navigate to login page
+       */
+      if (this.flag == 1) {
         alert("succsessfully registered");
         this.router.navigate(['/login']);
 
       }
-      else
-      {
+      else {
         this.Error = true;
 
 
       }
     });
-     
-    }
+
+  }
 
 
 }

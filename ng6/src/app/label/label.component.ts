@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NotesService } from '../service/notes.service';
 import { CollaboratorComponent } from '../collaborator/collaborator.component';
-import {MatDialog, MAT_DIALOG_DATA} from '@angular/material';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 import { CreatelabelService } from '../service/createlabel.service';
 
 
@@ -15,8 +15,8 @@ export class LabelComponent implements OnInit {
   model: any = {}
   archive: number = 0;
   pin: number = 0;
-  trash:number=0;
-  labell:any;
+  trash: number = 0;
+  labell: any;
 
   unpin: number = 1;
   mainCard: boolean = true;
@@ -30,20 +30,19 @@ export class LabelComponent implements OnInit {
   DateTime: boolean = false;
   filecolor;
   localUrl: any;
-  imgUrl:any;
+  imgUrl: any;
   selectedFile: any;
   imageDisplay: boolean;
   reminder: string;
   colored: any;
 
-  
-  constructor(private service: NotesService,private labelService:CreatelabelService,public dialog: MatDialog) { 
+
+  constructor(private service: NotesService, private labelService: CreatelabelService, public dialog: MatDialog) {
     this.labelService.getLabel().subscribe(responseLabel => {
 
       this.labell = responseLabel;
-       console.log(this.labell);
+      console.log(this.labell);
     });
-    // this.archive = 1;
   }
 
   ngOnInit() {
@@ -55,46 +54,50 @@ export class LabelComponent implements OnInit {
     this.createCard = true;
   }
 
-  //full note box on click
-  closeNote() 
-  {
+
+  /**
+   * full note box on click 
+   */
+  closeNote() {
     debugger;
     this.model;
     let data = [
-      { 'title': this.model.title, 'description': this.model.note,'reminder':this.remainderData,
-      'color':this.colored,'image':this.imgUrl}
+      {
+        'title': this.model.title, 'description': this.model.note, 'reminder': this.remainderData,
+        'color': this.colored, 'image': this.imgUrl
+      }
     ];
-   
+
     if ((this.model.title != "" || this.model.note != "") && (this.model.title != undefined || this.model.note != undefined)) {
 
       this.service.Notes({ data }).subscribe((data: any) => {
         this.labelService.getLabel().subscribe(responseLabel => {
 
           this.labell = responseLabel;
-           console.log(this.labell);
+          console.log(this.labell);
         });
 
       });
       this.model.title = "";
       this.model.note = "";
-      this.remainderData="";
-      this.remainderDisplay=true;
-      this.getColor=true;
-      this.imageDisplay=true;
+      this.remainderData = "";
+      this.remainderDisplay = true;
+      this.getColor = true;
+      this.imageDisplay = true;
       this.archive = 0;
       this.pin = 0;
-      this.trash= 0;
-      this.reminder='';
+      this.trash = 0;
+      this.reminder = '';
       this.mainCard = true;
       this.createCard = false;
-      this.imgUrl='';
+      this.imgUrl = '';
     }
     else {
       this.mainCard = true;
       this.createCard = false;
     }
   }
- 
+
   Archive(note: any) {
     debugger;
 
@@ -102,45 +105,41 @@ export class LabelComponent implements OnInit {
     this.crud(note, flag);
   }
 
-  Trash(note: any){
+  Trash(note: any) {
     debugger;
 
-    var flag='trash';
-    this.crud(note,flag);
+    var flag = 'trash';
+    this.crud(note, flag);
   }
-  deletRem(note:any){
+  deletRem(note: any) {
     debugger;
-    var flag='dltReminder'
-    this.crud(note,flag);
+    var flag = 'dltReminder'
+    this.crud(note, flag);
   }
   pinNote(note: any) {
-   
+
     var flag = 'pin';
     this.crud(note, flag);
   }
 
-  // unPin(note: any) {
-  //   this.pin;
-  //   this.crud(note);
-  // }
-  Reminder(note: any){
-   
-    this.notes1=note;
-       
-  }
-  more(note:any){
-    this.notes1=note;
+  Reminder(note: any) {
+
+    this.notes1 = note;
 
   }
-  labelShow1(label: any){
+  more(note: any) {
+    this.notes1 = note;
+
+  }
+  labelShow1(label: any) {
     debugger;
-    var newnote=this.notes1;
+    var newnote = this.notes1;
 
-    newnote.labell=label;
-    if(newnote.label!=0){
-      var flag="label";
-      this.crud(newnote,flag);
-      
+    newnote.labell = label;
+    if (newnote.label != 0) {
+      var flag = "label";
+      this.crud(newnote, flag);
+
     }
   }
 
@@ -151,7 +150,7 @@ export class LabelComponent implements OnInit {
       {
         'id': note.id, 'pin': note.pin, 'description': note.description, 'email': note.email, 'trash': note.trash,
         'title': note.title, 'isarchive': note.archive, 'flag': flag, 'color': note.colorcode,
-        'reminder':note.reminder,'label':note.labell
+        'reminder': note.reminder, 'label': note.labell
       }
     ];
     debugger;
@@ -159,7 +158,7 @@ export class LabelComponent implements OnInit {
       this.labelService.getLabel().subscribe(responseLabel => {
 
         this.labell = responseLabel;
-         console.log(this.labell);
+        console.log(this.labell);
       });
       this.service.getNote().subscribe(data => {
         debugger;
@@ -170,7 +169,7 @@ export class LabelComponent implements OnInit {
   }
 
 
-   
+
   Fillupload(event, note: any) {
     debugger;
     this.localUrl = event.target.result;
@@ -178,21 +177,21 @@ export class LabelComponent implements OnInit {
       { 'selectedFile': <File>event.target.files[0], 'id': note.id, 'image': note.image }
     ];
     console.log(this.selectedFile);
-   this.service.uploading({data}).subscribe((data:any)=>{
-        this.service.getNote().subscribe(data=>{
+    this.service.uploading({ data }).subscribe((data: any) => {
+      this.service.getNote().subscribe(data => {
 
-          this.imgUrl=data;
-          this.notes=data;
-        });
+        this.imgUrl = data;
+        this.notes = data;
       });
-   
-    }
+    });
 
-    openDialogcoll(): void {
-debugger;
-      const dialogRef = this.dialog.open(CollaboratorComponent, {
-       });
-    }
+  }
+
+  openDialogcoll(): void {
+    debugger;
+    const dialogRef = this.dialog.open(CollaboratorComponent, {
+    });
+  }
 
   setcolor(color: any, note: any) {
     debugger;
@@ -203,27 +202,27 @@ debugger;
   }
 
   today() {
-    var newnote=this.notes1;
+    var newnote = this.notes1;
     this.remainderDisplay = true;
     var day = new Date();
     day.setDate(day.getDate());
     this.remainderData = day.toUTCString().substring(0, 22);
     //this.crud(this.remainderData,this.flag);
-    newnote.reminder=day.toUTCString().substring(0, 22);
-    var flag='reminder';
+    newnote.reminder = day.toUTCString().substring(0, 22);
+    var flag = 'reminder';
     this.crud(newnote, flag);
-   
+
   }
 
   //onclick tomorrow()
   tomorrow() {
-    var newnote=this.notes1;
+    var newnote = this.notes1;
     this.remainderDisplay = true;
-    var flag='reminder';
+    var flag = 'reminder';
     var day = new Date();
     day.setDate(day.getDate() + 1);
     this.remainderData = day.toUTCString().substring(0, 22);
-    newnote.reminder=day.toUTCString().substring(0, 22);
+    newnote.reminder = day.toUTCString().substring(0, 22);
     this.crud(newnote, flag);
 
 
@@ -231,10 +230,10 @@ debugger;
 
   //onclick nextWeek()
   nextWeek() {
-    var newnote=this.notes1;
+    var newnote = this.notes1;
 
     this.remainderDisplay = true;
-    var flag='reminder';
+    var flag = 'reminder';
     var day = new Date();
     day.setDate(day.getDate() + (1 + 7 - day.getDay()) % 7);
     this.remainderData = day.toUTCString().substring(0, 22);
@@ -247,12 +246,6 @@ debugger;
   More(note: any) {
     this.MoreNotes = note;
   }
-
-  // DeleteNote() {
-  //   debugger;
-  //   this.DeleteData = 1;
-  //   this.crud(this.MoreNotes);
-  // }
 
   pinnedRemainder(note: any) {
     this.NoteId = note;

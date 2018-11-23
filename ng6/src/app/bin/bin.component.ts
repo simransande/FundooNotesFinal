@@ -14,12 +14,12 @@ import { ViewService } from '../service/view.service';
 export class BinComponent implements OnInit {
 
   notes: any;
-  labell:any;
+  labell: any;
 
   model: any = {}
   archive: number = 0;
   pin: number = 0;
-  trash:number=0;
+  trash: number = 0;
   unpin: number = 1;
   mainCard: boolean = true;
   createCard: boolean = false;
@@ -31,10 +31,10 @@ export class BinComponent implements OnInit {
   NoteId: any;
   DateTime: boolean = false;
   filecolor;
-  notes2:any;
+  notes2: any;
 
-  
-  constructor(private service: NotesService, private viewService: ViewService,private labelService:CreatelabelService) { 
+
+  constructor(private service: NotesService, private viewService: ViewService, private labelService: CreatelabelService) {
     this.service.getNote().subscribe(notesData => {
       this.notes = notesData;
       console.log(this.notes);
@@ -43,16 +43,16 @@ export class BinComponent implements OnInit {
     this.labelService.getLabel().subscribe(responseLabel => {
 
       this.labell = responseLabel;
-       console.log(this.labell);
+      console.log(this.labell);
     });
 
     this.service.getLabelid().subscribe(data => {
       debugger;
-       this.notes2 = data;
-      console.log(this.notes2);         
+      this.notes2 = data;
+      console.log(this.notes2);
 
-     });
-     this.viewService.getView().subscribe(res => {
+    });
+    this.viewService.getView().subscribe(res => {
 
       console.log("View Result is ", res);
       this.view = res;
@@ -80,22 +80,25 @@ export class BinComponent implements OnInit {
     this.crud(note, flag);
   }
 
-  //for restoring the note
-  Trash(note: any){
+  /**
+   * @param note for restoring the note
+   */
+  Trash(note: any) {
 
-    var flag='restore';
-    this.crud(note,flag);
+    var flag = 'restore';
+    this.crud(note, flag);
   }
 
-  //function for delete note from trash
-  dltForever(note:any)
-  {
-    var flag='dltForever';
-    this.crud(note,flag);
+  /**
+   * @param note function for delete note from trash
+   */
+  dltForever(note: any) {
+    var flag = 'dltForever';
+    this.crud(note, flag);
 
   }
   pinNote(note: any) {
-   
+
     var flag = 'pin';
     this.crud(note, flag);
   }
@@ -108,14 +111,14 @@ export class BinComponent implements OnInit {
         'title': note.title, 'isarchive': note.archive, 'flag': flag, 'color': note.colorcode
       }
     ];
-      this.service.updatenotes({ data }).subscribe((data: any) => {
-        this.labelService.getLabel().subscribe(responseLabel => {
-      this.service.getNote().subscribe(data => {
-        this.notes = data;
-        this.labell = responseLabel;
-        console.log(this.labell);         
- 
-       })
+    this.service.updatenotes({ data }).subscribe((data: any) => {
+      this.labelService.getLabel().subscribe(responseLabel => {
+        this.service.getNote().subscribe(data => {
+          this.notes = data;
+          this.labell = responseLabel;
+          console.log(this.labell);
+
+        })
       });
 
     });
@@ -123,7 +126,7 @@ export class BinComponent implements OnInit {
 
 
   setcolor(color: any, note: any) {
-   
+
     this.getColor = color;
     var data = { 'colorcode': this.getColor, 'id': note.id };
     var flg = 'color';

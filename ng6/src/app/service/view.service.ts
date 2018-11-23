@@ -12,6 +12,9 @@ export class ViewService {
     this.gridview();
     return this.subject.asObservable();
   }
+  /**
+   * to check the data is column or row
+   */
   gridview() {
 
     if (this.result) {

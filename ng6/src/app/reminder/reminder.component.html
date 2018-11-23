@@ -3,191 +3,191 @@
     <mat-sidenav-content class="example">
         <div class="notesDisplay">
             <div *ngFor="let note of notes">
-                <mat-card  [ngClass]="direction=='row' ? 'cardDisplay' : 'cardDisplayrow'" class="cardDisplay"*ngIf="note.reminder!=null && note.reminder!=0 && note.pin!=1 && note.reminder!='' && note.trash==0"
+                <mat-card [ngClass]="direction=='row' ? 'cardDisplay' : 'cardDisplayrow'" class="cardDisplay" *ngIf="note.reminder!=null && note.reminder!=0 && note.pin!=1 && note.reminder!='' && note.trash==0"
                     [style.background-color]="note.colorcode">
-                            <div>
-                                <!-- binding of image -->
-                                <div  *ngIf='note.image!=""'>
-                                    <img class="imgcss" src="{{note.image}}">
-                                </div>
+                    <div>
+                        <!-- binding of image -->
+                        <div *ngIf='note.image!=""'>
+                            <img class="imgcss" src="{{note.image}}">
+                        </div>
 
-                                <!-- binding title -->
-                                <mat-card-title class="title-pin1" style="width:75%">
-                                    {{note.tittle}}
-                                </mat-card-title>
-                        
-                                <button mat-icon-button class="pin1" matTooltip="Pin note" (click)="pinNote(note)">
-                                    <img src="../../assets/pin.svg" />
-                                </button>
-                            </div>
+                        <!-- binding title -->
+                        <mat-card-title class="title-pin1" style="width:75%">
+                            {{note.tittle}}
+                        </mat-card-title>
+
+                        <button mat-icon-button class="pin1" matTooltip="Pin note" (click)="pinNote(note)">
+                            <img src="../../assets/pin.svg" />
+                        </button>
+                    </div>
                     <!-- binding of description -->
                     <mat-card-content class="title-pin">{{note.description}}</mat-card-content>
-                    
-                            <div class="remainder-Div"  >
-                                    <div><img class="remainder-Div-image" src="../../assets/outline-watch_later-24px.svg" /></div>
-                                    <div class="remainderTime">{{note.reminder}}</div>
-                                    <button mat-icon-button class="cross" matTooltip="Delete Reminder" (click)="deletRem(note)">
-                                        <img src="../../assets/baseline-clear-24px.svg" />
-                                    </button>
-                            </div>
 
-                            <!-- collaborator mail -->
-                            <div *ngFor="let collab of collaborator">
-                                <div *ngIf="collab.noteId==note.id">
-                                    <button mat-icon-button class="signout" style="background-color:rgb(233, 14, 79)" (click)="openDialogcoll(note)">
-                                     <div class="sharedEmail">                                              
-                                       {{collab.sharedEmail}}
-                                     </div>
-                                   </button>
+                    <div class="remainder-Div">
+                        <div><img class="remainder-Div-image" src="../../assets/outline-watch_later-24px.svg" /></div>
+                        <div class="remainderTime">{{note.reminder}}</div>
+                        <button mat-icon-button class="cross" matTooltip="Delete Reminder" (click)="deletRem(note)">
+                            <img src="../../assets/baseline-clear-24px.svg" />
+                        </button>
+                    </div>
+
+                    <!-- collaborator mail -->
+                    <div *ngFor="let collab of collaborator">
+                        <div *ngIf="collab.noteId==note.id">
+                            <button mat-icon-button class="signout" style="background-color:rgb(233, 14, 79)" (click)="openDialogcoll(note)">
+                                <div class="sharedEmail">
+                                    {{collab.sharedEmail}}
                                 </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <mat-card-actions class="button-display">
+                        <button mat-icon-button class="notes" matTooltip="Remind me" [matMenuTriggerFor]="Remaindermenu"
+                            (click)="Reminder(note)">
+                            <img class="imageNote" src="../../assets/reminder.svg" />
+                        </button>
+
+                        <button mat-icon-button class="notes" matTooltip="Collaborator" (click)="openDialogcoll()">
+                            <img class="imageNote" src="../../assets/baseline-person_add-24px.svg" />
+                        </button>
+
+                        <button mat-icon-button class="notes" matTooltip="Change Color" [matMenuTriggerFor]="menuColor">
+                            <img class="imageNote" src="../../assets/baseline-color_lens-24px.svg" />
+                        </button>
+
+                        <!-- color div -->
+                        <mat-menu #menuColor="matMenu" class="colorCard">
+                            <div class="colorDiv">
+                                <button mat-menu-item (click)="setcolor('rgb(250, 250, 250)',note)" class="colorPalette"
+                                    style="background-color:rgb(250, 250, 250)">
+                                    <mat-icon></mat-icon>
+                                </button>
+
+                                <button mat-menu-item (click)="setcolor('rgb(255,240,245)',note)" class="colorPalette"
+                                    style="background-color: rgb(255,240,245)">
+                                    <mat-icon></mat-icon>
+                                </button>
+
+                                <button mat-menu-item (click)="setcolor(' rgb(230,230,250)',note)" class="colorPalette"
+                                    style="background-color:rgb(230,230,250)">
+                                    <mat-icon></mat-icon>
+                                </button>
+
+                                <button mat-menu-item (click)="setcolor(' rgb(255, 138, 128)',note)" class="colorPalette"
+                                    style="background-color:rgb(255, 138, 128)">
+                                    <mat-icon></mat-icon>
+                                </button>
+
                             </div>
 
-                               <mat-card-actions class="button-display">
-                                    <button mat-icon-button class="notes" matTooltip="Remind me" [matMenuTriggerFor]="Remaindermenu" (click)="Reminder(note)">
-                                        <img class="imageNote" src="../../assets/reminder.svg" />
-                                    </button>
+                            <div class="colorDiv">
+                                <button mat-menu-item (click)="setcolor(' rgb(204, 255, 144)',note)" class="colorPalette"
+                                    style="background-color:rgb(204, 255, 144)">
+                                    <mat-icon></mat-icon>
+                                </button>
 
-                                    <button mat-icon-button class="notes" matTooltip="Collaborator" (click)="openDialogcoll()">
-                                        <img class="imageNote" src="../../assets/baseline-person_add-24px.svg" />
-                                    </button>
+                                <button mat-menu-item (click)="setcolor(' rgb(167, 255, 235)',note)" class="colorPalette"
+                                    style="background-color:rgb(167, 255, 235)">
+                                    <mat-icon></mat-icon>
+                                </button>
 
-                                    <button mat-icon-button class="notes" matTooltip="Change Color" [matMenuTriggerFor]="menuColor">
-                                        <img class="imageNote" src="../../assets/baseline-color_lens-24px.svg" />
-                                    </button>
+                                <button mat-menu-item (click)="setcolor(' rgb(128, 216, 255)',note)" class="colorPalette"
+                                    style="background-color:rgb(128, 216, 255)">
+                                    <mat-icon></mat-icon>
+                                </button>
 
-                                    <!-- color div -->
-                                    <mat-menu #menuColor="matMenu" class="colorCard">
-                                        <div class="colorDiv">
-                                            <button mat-menu-item (click)="setcolor('rgb(250, 250, 250)',note)" class="colorPalette"
-                                                style="background-color:rgb(250, 250, 250)">
-                                                <mat-icon></mat-icon>
-                                            </button>
+                                <button mat-menu-item (click)="setcolor(' rgb(130, 177, 255)',note)" class="colorPalette"
+                                    style="background-color:rgb(130, 177, 255)">
+                                    <mat-icon></mat-icon>
+                                </button>
 
-                                            <button mat-menu-item (click)="setcolor('rgb(255,240,245)',note)" class="colorPalette"
-                                                style="background-color: rgb(255,240,245)">
-                                                <mat-icon></mat-icon>
-                                            </button>
+                            </div>
 
-                                            <button mat-menu-item (click)="setcolor(' rgb(230,230,250)',note)" class="colorPalette"
-                                                style="background-color:rgb(230,230,250)">
-                                                <mat-icon></mat-icon>
-                                            </button>
+                            <div class="colorDiv">
+                                <button mat-menu-item (click)="setcolor(' rgb(179, 136, 255)',note)" class="colorPalette"
+                                    style="background-color:rgb(179, 136, 255)">
+                                    <mat-icon></mat-icon>
+                                </button>
 
-                                            <button mat-menu-item (click)="setcolor(' rgb(255, 138, 128)',note)" class="colorPalette"
-                                                style="background-color:rgb(255, 138, 128)">
-                                                <mat-icon></mat-icon>
-                                            </button>
+                                <button mat-menu-item (click)="setcolor(' rgb(248, 187, 208)',note)" class="colorPalette"
+                                    style="background-color:rgb(248, 187, 208)">
+                                    <mat-icon></mat-icon>
+                                </button>
 
-                                        </div>
+                                <button mat-menu-item (click)="setcolor(' rgb(215, 204, 200)',note)" class="colorPalette"
+                                    style="background-color:rgb(215, 204, 200)">
+                                    <mat-icon></mat-icon>
+                                </button>
 
-                                        <div class="colorDiv">
-                                            <button mat-menu-item (click)="setcolor(' rgb(204, 255, 144)',note)" class="colorPalette"
-                                                style="background-color:rgb(204, 255, 144)">
-                                                <mat-icon></mat-icon>
-                                            </button>
+                                <button mat-menu-item (click)="setcolor(' rgb(207, 216, 220)',note)" class="colorPalette"
+                                    style="background-color:rgb(207, 216, 220)">
+                                    <mat-icon></mat-icon>
+                                </button>
+                            </div>
+                        </mat-menu>
 
-                                            <button mat-menu-item (click)="setcolor(' rgb(167, 255, 235)',note)" class="colorPalette"
-                                                style="background-color:rgb(167, 255, 235)">
-                                                <mat-icon></mat-icon>
-                                            </button>
+                        <input type="file" accept="image/*" #file (change)="Fillupload($event,note)" class="filecss" id="selectedFile">
+                        <button mat-icon-button class="notes" matTooltip="Add image" (click)="file.click()">
+                            <img style="width:20px;" src="../../assets/addimage.svg" />
+                        </button>
 
-                                            <button mat-menu-item (click)="setcolor(' rgb(128, 216, 255)',note)" class="colorPalette"
-                                                style="background-color:rgb(128, 216, 255)">
-                                                <mat-icon></mat-icon>
-                                            </button>
+                        <button mat-icon-button class="notes" matTooltip="Unarchive" (click)="Archive(note)">
+                            <img class="imageNote" src="../../assets/archive.svg" />
+                        </button>
 
-                                            <button mat-menu-item (click)="setcolor(' rgb(130, 177, 255)',note)" class="colorPalette"
-                                                style="background-color:rgb(130, 177, 255)">
-                                                <mat-icon></mat-icon>
-                                            </button>
-
-                                        </div>
-
-                                        <div class="colorDiv">
-                                            <button mat-menu-item (click)="setcolor(' rgb(179, 136, 255)',note)" class="colorPalette"
-                                                style="background-color:rgb(179, 136, 255)">
-                                                <mat-icon></mat-icon>
-                                            </button>
-
-                                            <button mat-menu-item (click)="setcolor(' rgb(248, 187, 208)',note)" class="colorPalette"
-                                                style="background-color:rgb(248, 187, 208)">
-                                                <mat-icon></mat-icon>
-                                            </button>
-
-                                            <button mat-menu-item (click)="setcolor(' rgb(215, 204, 200)',note)" class="colorPalette"
-                                                style="background-color:rgb(215, 204, 200)">
-                                                <mat-icon></mat-icon>
-                                            </button>
-
-                                            <button mat-menu-item (click)="setcolor(' rgb(207, 216, 220)',note)" class="colorPalette"
-                                                style="background-color:rgb(207, 216, 220)">
-                                                <mat-icon></mat-icon>
-                                            </button>
-                                        </div>
-                                    </mat-menu>
-
-                                    <input type="file" accept="image/*" #file (change)="Fillupload($event,note)" class="filecss" id="selectedFile">
-                                        <button mat-icon-button class="notes" matTooltip="Add image" (click)="file.click()">
-                                           <img style="width:20px;" src="../../assets/addimage.svg" />
-                                        </button>
-
-                                        <button mat-icon-button class="notes" matTooltip="Unarchive" (click)="Archive(note)">
-                                            <img class="imageNote" src="../../assets/archive.svg" />
-                                        </button>
-
-                                        <button mat-icon-button class="notes" matTooltip="More" (click)="More(note)"
-                                            [matMenuTriggerFor]="menu">
-                                            <img class="imageNote" src="../../assets/baseline-more_vert-24px.svg" />
-                                        </button>
-                               </mat-card-actions>
+                        <button mat-icon-button class="notes" matTooltip="More" (click)="More(note)"
+                            [matMenuTriggerFor]="menu">
+                            <img class="imageNote" src="../../assets/baseline-more_vert-24px.svg" />
+                        </button>
+                    </mat-card-actions>
                 </mat-card>
             </div>
         </div>
 
-                    <!-- more menu -->
-                    <mat-menu #menu="matMenu">
-                        <button mat-menu-item (click)="DeleteNote()">Delete Note</button>
-                        <button mat-menu-item [matMenuTriggerFor]="label">Add Label</button>
-                    </mat-menu>
+        <!-- more menu -->
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="DeleteNote()">Delete Note</button>
+            <button mat-menu-item [matMenuTriggerFor]="label">Add Label</button>
+        </mat-menu>
 
-                    <mat-menu #label="matMenu">               
-                        <button mat-menu-item *ngFor="let lbel of labell" (click)="labelShow1(lbel)">
-                            {{lbel.label}}
-                        </button> 
-                    </mat-menu>
+        <mat-menu #label="matMenu">
+            <button mat-menu-item *ngFor="let lbel of labell" (click)="labelShow1(lbel)">
+                {{lbel.label}}
+            </button>
+        </mat-menu>
 
-                    <!-- reminder menu -->
-                    <mat-menu #Remaindermenu="matMenu">
-                        <span>Remainder</span>
-                        <button mat-menu-item (click)="today()">
-                        <div style="display:flex">
-                            <div>Later Today</div>
-                            <div style="margin-left: 111px;">8:00 PM</div>
-                        </div>
-                        </button>
+        <!-- reminder menu -->
+        <mat-menu #Remaindermenu="matMenu">
+            <span>Remainder</span>
+            <button mat-menu-item (click)="today()">
+                <div style="display:flex">
+                    <div>Later Today</div>
+                    <div style="margin-left: 111px;">8:00 PM</div>
+                </div>
+            </button>
 
-                        <button mat-menu-item (click)="tomorrow()">
-                        <div style="display:flex">
-                            <div>Tomorrow</div>
-                            <div style="margin-left: 121px;">8:00 AM</div>
-                        </div>
-                        </button>
+            <button mat-menu-item (click)="tomorrow()">
+                <div style="display:flex">
+                    <div>Tomorrow</div>
+                    <div style="margin-left: 121px;">8:00 AM</div>
+                </div>
+            </button>
 
-                        <button mat-menu-item (click)="nextWeek()">
-                        <div style="display:flex">
-                            <div>Next Week</div>
-                            <div style="margin-left: 84px;">Mon, 8:00 AM</div>
-                        </div>
-                        </button>
+            <button mat-menu-item (click)="nextWeek()">
+                <div style="display:flex">
+                    <div>Next Week</div>
+                    <div style="margin-left: 84px;">Mon, 8:00 AM</div>
+                </div>
+            </button>
 
-                        <button mat-menu-item>
-                        <div style="display:flex">
-                            <div><img style="width:15px;" src="../../assets/outline-watch_later-24px.svg" /></div>
-                            <div style="margin-left: 10px; margin-top: -3px;">Pick Date & Time</div>
-                        </div>
-                        </button>
+            <button mat-menu-item>
+                <div style="display:flex">
+                    <div><img style="width:15px;" src="../../assets/outline-watch_later-24px.svg" /></div>
+                    <div style="margin-left: 10px; margin-top: -3px;">Pick Date & Time</div>
+                </div>
+            </button>
 
-                    </mat-menu>
+        </mat-menu>
     </mat-sidenav-content>
 </mat-sidenav-container>
-       

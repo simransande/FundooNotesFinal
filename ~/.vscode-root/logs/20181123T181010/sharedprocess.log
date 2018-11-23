@@ -1,0 +1,62 @@
+[2018-11-23 18:10:14.935] [sharedprocess] [info] main {"machineId":"bc6780d3df07958fd8265e1f2de50453f8eb6c8632bd6d10c08d9ff36801141a"}
+[2018-11-23 18:10:15.020] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-23 18:10:15.121] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-23 18:10:15.136] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-23 18:10:15.410] [sharedprocess] [info] Deleted from disk vscjava.vscode-maven-0.11.1
+[2018-11-23 18:10:15.421] [sharedprocess] [info] Scanned system extensions: 71
+[2018-11-23 18:10:15.438] [sharedprocess] [info] Scanned system extensions: 71
+[2018-11-23 18:10:15.598] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-23 18:10:20.033] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-23 18:10:20.102] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-23 18:10:20.108] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-23 18:10:20.118] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-23 18:10:20.223] [sharedprocess] [info] Scanned system extensions: 71
+[2018-11-23 18:10:20.233] [sharedprocess] [info] Scanned system extensions: 71
+[2018-11-23 18:10:20.239] [sharedprocess] [info] Scanned system extensions: 71
+[2018-11-23 18:10:28.261] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-23 18:10:28.266] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-23 18:10:28.269] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-23 18:10:28.358] [sharedprocess] [info] Scanned system extensions: 71
+[2018-11-23 18:10:28.367] [sharedprocess] [info] Scanned system extensions: 71
+[2018-11-23 18:10:28.372] [sharedprocess] [info] Scanned system extensions: 71
+[2018-11-23 18:10:34.424] [sharedprocess] [info] Installing extension: tsfmt-vscode
+[2018-11-23 18:10:34.434] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-23 18:10:44.757] [sharedprocess] [info] Downloaded extension: tsfmt-vscode /tmp/94bf5e6b-c28f-4244-9837-eb1165fe812b
+[2018-11-23 18:10:50.922] [sharedprocess] [info] Extracted extension to /home/bridgeit/.vscode/extensions/.eternalphane.tsfmt-vscode-0.2.1: eternalphane.tsfmt-vscode-0.2.1
+[2018-11-23 18:10:50.922] [sharedprocess] [info] Renamed to /home/bridgeit/.vscode/extensions/eternalphane.tsfmt-vscode-0.2.1
+[2018-11-23 18:10:50.922] [sharedprocess] [info] Installation completed. eternalphane.tsfmt-vscode-0.2.1
+[2018-11-23 18:10:50.983] [sharedprocess] [info] Extensions installed successfully: eternalphane.tsfmt-vscode
+[2018-11-23 18:10:51.122] [sharedprocess] [info] Scanned user extensions: 9
+[2018-11-23 18:10:51.161] [sharedprocess] [info] Scanned system extensions: 71
+[2018-11-23 18:10:54.810] [sharedprocess] [info] Scanned user extensions: 9
+[2018-11-23 18:10:54.814] [sharedprocess] [info] Scanned user extensions: 9
+[2018-11-23 18:10:54.816] [sharedprocess] [info] Scanned user extensions: 9
+[2018-11-23 18:10:54.842] [sharedprocess] [info] Scanned system extensions: 71
+[2018-11-23 18:10:54.944] [sharedprocess] [info] Starting to clean up unused language packs.
+[2018-11-23 18:10:54.948] [sharedprocess] [info] Scanned user extensions: 9
+[2018-11-23 18:10:54.952] [sharedprocess] [info] Scanned user extensions: 9
+[2018-11-23 18:10:54.955] [sharedprocess] [info] Scanned user extensions: 9
+[2018-11-23 18:10:55.024] [sharedprocess] [info] Scanned system extensions: 71
+[2018-11-23 18:10:55.027] [sharedprocess] [info] Scanned system extensions: 71
+[2018-11-23 18:10:55.031] [sharedprocess] [info] Scanned system extensions: 71
+[2018-11-23 18:10:58.081] [sharedprocess] [info] Scanned user extensions: 9
+[2018-11-23 18:15:58.105] [sharedprocess] [info] Scanned user extensions: 9
+[2018-11-23 18:20:58.120] [sharedprocess] [info] Scanned user extensions: 9
+[2018-11-23 18:25:58.131] [sharedprocess] [info] Scanned user extensions: 9
+[2018-11-23 18:30:58.144] [sharedprocess] [info] Scanned user extensions: 9
+[2018-11-23 18:35:58.157] [sharedprocess] [info] Scanned user extensions: 9
+[2018-11-23 18:40:58.171] [sharedprocess] [info] Scanned user extensions: 9
+[2018-11-23 18:45:58.186] [sharedprocess] [info] Scanned user extensions: 9
+[2018-11-23 18:50:58.198] [sharedprocess] [info] Scanned user extensions: 9
+[2018-11-23 18:55:58.212] [sharedprocess] [info] Scanned user extensions: 9
+[2018-11-23 19:01:03.696] [sharedprocess] [info] Scanned user extensions: 9
+[2018-11-23 19:06:03.708] [sharedprocess] [info] Scanned user extensions: 9
+[2018-11-23 19:11:03.719] [sharedprocess] [info] Scanned user extensions: 9
+[2018-11-23 19:16:03.731] [sharedprocess] [info] Scanned user extensions: 9
+[2018-11-23 19:21:03.742] [sharedprocess] [info] Scanned user extensions: 9
+[2018-11-23 19:26:03.756] [sharedprocess] [info] Scanned user extensions: 9
+[2018-11-23 19:31:03.769] [sharedprocess] [info] Scanned user extensions: 9
+[2018-11-23 19:36:03.780] [sharedprocess] [info] Scanned user extensions: 9
+[2018-11-23 19:41:03.792] [sharedprocess] [info] Scanned user extensions: 9
+[2018-11-23 19:46:03.805] [sharedprocess] [info] Scanned user extensions: 9
+[2018-11-23 19:51:03.824] [sharedprocess] [info] Scanned user extensions: 9

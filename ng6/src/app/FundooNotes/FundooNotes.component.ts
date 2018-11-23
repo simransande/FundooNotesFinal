@@ -8,7 +8,6 @@ import { CollaboratorComponent } from '../collaborator/collaborator.component';
 import { ViewService } from '../service/view.service';
 
 
-//import { NotesService } from '../service/notes.service'
 export interface DialogData {
   label: string;
   notelabel: string;
@@ -25,20 +24,20 @@ export interface DialogData {
 export class FundooNotesComponent implements OnInit {
 
   labels: any;
-  message:boolean;
-  
+  message: boolean;
+
   grid: boolean = false;
   list: boolean = true;
 
 
-  constructor(private service: CreatelabelService, public dialog: MatDialog, 
-    public noteService: NotesService,private router:Router,private viewServiceObj: ViewService) {
+  constructor(private service: CreatelabelService, public dialog: MatDialog,
+    public noteService: NotesService, private router: Router, private viewServiceObj: ViewService) {
 
-      this.changeView();
+    this.changeView();
     this.service.getLabel().subscribe(responseLabel => {
 
       this.notelabel = responseLabel;
-       console.log(this.notelabel);
+      console.log(this.notelabel);
     });
   }
 
@@ -46,8 +45,6 @@ export class FundooNotesComponent implements OnInit {
   notelabel: any;
   noteView = 'grid';
   email = localStorage.getItem('email');
-  //Initial=this.email.substring(0,1);
-  //localStorage.setItem('uname', this.name);
   username = localStorage.getItem('uname');
 
 
@@ -56,13 +53,15 @@ export class FundooNotesComponent implements OnInit {
     this.noteService.currentMessage.subscribe(message => this.message = message)
   }
   listview() {
-    
+
     this.noteService.changeMessage(true)
   }
-  // Display:boolean=true;
+
+
   
-  
-  //dialog box for label
+  /**
+   * dialog box for label
+   */
   openDialog(): void {
     const dialogRef = this.dialog.open(EditlabelComponent, {
 
@@ -88,7 +87,9 @@ export class FundooNotesComponent implements OnInit {
     });
   }
 
-  //view of notes
+  /**
+   * view of notes 
+   */
   changeView() {
     debugger;
     if (this.list == true) {
@@ -102,16 +103,14 @@ export class FundooNotesComponent implements OnInit {
     }
 
     this.viewServiceObj.gridview()
-
-
   }
 
-  //logout button
-  logout()
-  {
-      // localStorage.removeItem('email');
-      localStorage.clear();
-      this.router.navigate(['/login']);
+  /**
+   * logout button
+   */
+  logout() {
+    localStorage.clear();
+    this.router.navigate(['/login']);
   }
 
 }

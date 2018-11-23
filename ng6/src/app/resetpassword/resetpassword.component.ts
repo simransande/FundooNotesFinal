@@ -13,7 +13,6 @@ export class ResetpasswordComponent implements OnInit {
   model: any = {}
   params: any = {}
   userid: any = {}
-  // Error: boolean = false;
 
   constructor(private service: DataserviceService, private route: ActivatedRoute) { }
 
@@ -36,7 +35,6 @@ export class ResetpasswordComponent implements OnInit {
   ]);
 
   s_reset() {
-    debugger;
     this.model;
 
     let data = [
@@ -46,13 +44,10 @@ export class ResetpasswordComponent implements OnInit {
       .subscribe(response => {
         console.log(response);
       }
-        // response => this.handleResponse(response)  
-        // error => this.handleResponse(error)
       );
   }
 
   handleResponse(response) {
-    // debugger;
     if (response.success) {
       console.log("success");
     } else if (response.error) {

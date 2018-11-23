@@ -8,27 +8,29 @@
         </mat-card>
 
         <!--Expanded Main card-->
-        <mat-card class="fundoo-card1" *ngIf="createCard"  [style.background-color]="colored">
+        <mat-card class="fundoo-card1" *ngIf="createCard" [style.background-color]="colored">
             <input placeholder="Title" class="titleinput" [(ngModel)]="model.title" [style.background-color]="colored">
             <button mat-icon-button class="pin" matTooltip="Pin note" (click)="pinNote()">
                 <img src="../../assets/pin.svg" />
             </button>
             <br>
-            <input class="noteinput" id="searchid" placeholder="Take a note...." [(ngModel)]="model.note" [style.background-color]="colored"/>
+            <input class="noteinput" id="searchid" placeholder="Take a note...." [(ngModel)]="model.note"
+                [style.background-color]="colored" />
 
             <div *ngIf='imgUrl!=null'>
-                    <img class="imgcss" src="{{imgUrl}}">
-                </div>
-            
+                <img class="imgcss" src="{{imgUrl}}">
+            </div>
+
             <div class="remainder-Div" *ngIf='remainderDisplay'>
                 <div><img class="remainder-Div-image" src="../../assets/outline-watch_later-24px.svg" /></div>
                 <div class="remainderTime">{{remainderData}}</div>
             </div>
 
             <div class="button-display1">
-                <button mat-icon-button class="fundoo33" matTooltip="Remind me" [matMenuTriggerFor]="Remaindermenu" (click)="Reminder(note)">
+                <button mat-icon-button class="fundoo33" matTooltip="Remind me" [matMenuTriggerFor]="Remaindermenu"
+                    (click)="Reminder(note)">
                     <img style="width:20px;" src="../../assets/reminder.svg" />
-            
+
                 </button>
                 <button mat-icon-button class="fundoo33" matTooltip="Collaborator">
                     <img style="width:20px;" src="../../assets/baseline-person_add-24px.svg" />
@@ -43,12 +45,10 @@
                                 style="background-color:rgb(250, 250, 250)">
                                 <mat-icon></mat-icon>
                             </button>
-                            <button mat-menu-item (click)="setcolor('rgb(255,240,245)','')" class="colorPalette"
-                                style="background-color: rgb(255,240,245)">
+                            <button mat-menu-item (click)="setcolor('rgb(255,240,245)','')" class="colorPalette" style="background-color: rgb(255,240,245)">
                                 <mat-icon></mat-icon>
                             </button>
-                            <button mat-menu-item (click)="setcolor(' rgb(230,230,250)','')" class="colorPalette"
-                                style="background-color:rgb(230,230,250)">
+                            <button mat-menu-item (click)="setcolor(' rgb(230,230,250)','')" class="colorPalette" style="background-color:rgb(230,230,250)">
                                 <mat-icon></mat-icon>
                             </button>
                             <button mat-menu-item (click)="setcolor(' rgb(255, 138, 128)','')" class="colorPalette"
@@ -149,19 +149,18 @@
                     <div style="margin-left: 10px; margin-top: -3px;">Pick Date & Time</div>
                 </div>
             </button>
-       
+
         </mat-menu>
         <mat-menu #menu="matMenu">
             <button mat-menu-item (click)="Trash(note)">Delete Note</button>
             <button mat-menu-item [matMenuTriggerFor]="label">Add Label</button>
         </mat-menu>
 
-         <mat-menu #label="matMenu">
-           
-                 <button mat-menu-item *ngFor="let lbel of labell" (click)="labelShow1(lbel.label)">
-                    {{lbel.label}}
-                 </button> 
-            </mat-menu>
-        </mat-sidenav-content>
-        </mat-sidenav-container>
-        
+        <mat-menu #label="matMenu">
+
+            <button mat-menu-item *ngFor="let lbel of labell" (click)="labelShow1(lbel.label)">
+                {{lbel.label}}
+            </button>
+        </mat-menu>
+    </mat-sidenav-content>
+</mat-sidenav-container>

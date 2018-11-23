@@ -8,8 +8,11 @@ class Notescontroller extends CI_Controller
          $this->load->library('session');
     }
 
-    //create notes
-    //if variable is empty or undefined then it will be blank it will not inserted
+    /**
+     *function for create notes
+     *if variable is empty or undefined then it will be blank it will not inserted 
+     */
+    
     public function notes()
     {
         /**
@@ -78,16 +81,24 @@ class Notescontroller extends CI_Controller
         
     }
 
-    //get notes and return data
+    /**
+     *get notes and return data 
+     */
+    
     public function getnotes()
     { 
-        //depend on $mail all data will be fetched and return it in the form of json
+        /**
+         *depend on $mail all data will be fetched and return it in the form of json 
+         */
         $mail=$_POST['email'];  
 
         $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
         $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        //queury for selecting that perticular notes for the mail id
+        /**
+         *queury for selecting that perticular notes for the mail id 
+         */
+        
         $sql = "SELECT * From note where email='$mail'";
       
         $stmt = $connect->prepare($sql);
@@ -102,7 +113,10 @@ class Notescontroller extends CI_Controller
          
     }
 
-    //find the mail and its collaborate note from two tabel
+    /**
+     *find the mail and its collaborate note from two tabel 
+     */
+    
     public function joinNoteCollab()
     {
         $mail=$_POST['email'];  
@@ -126,7 +140,9 @@ class Notescontroller extends CI_Controller
     }
  
  
-     //update a notes
+     /**
+      * function for update a notes
+      */
     public function updatenotes()
     {
 
@@ -358,10 +374,14 @@ class Notescontroller extends CI_Controller
             }
             else
             {
-             //Move the file to the uploads folder
+                /**
+                 * Move the file to the uploads folder 
+                 */
              move_uploaded_file($_FILES["file"]["tmp_name"], "uploads/" . $_FILES["file"]["name"]);
 
-             //Set location for image
+             /**
+              * Set location for image
+              */
              $fileloc='http://localhost/code1/codeigniter/uploads/'.$_FILES["file"]["name"];
          
              $sql="UPDATE note SET image='$fileloc' WHERE id=$id";
@@ -375,7 +395,10 @@ class Notescontroller extends CI_Controller
     }
 
 
-    //delete a note forever
+    /**
+     * function for delete a note forever 
+     */
+    
     public function deleteurl()
     {
         $flag=$_POST['flag'];   
@@ -395,7 +418,10 @@ class Notescontroller extends CI_Controller
     }
 
 
-    //check the colaborator mail is registered if true the mailid will return
+    /**
+     * function for check the colaborator mail is registered if true the mailid will return 
+     */
+    
     public function collaborator()
     {   
         $mail=$_POST['mail'];   
@@ -421,7 +447,9 @@ class Notescontroller extends CI_Controller
 
     }
 
-    //add colaborator to a note
+    /**
+     * function for add colaborator to a note 
+     */
     public function AddCollab()
     {
         $noteid=$_POST['noteid']; 
@@ -470,7 +498,10 @@ class Notescontroller extends CI_Controller
         }
     }
 
-    //get colaborator id
+    /**
+     * function for get colaborator id 
+     */
+    
     public function GetCollab()
     {
         $mail=$_POST['email'];     
@@ -494,7 +525,10 @@ class Notescontroller extends CI_Controller
     }
 
 
-    //relation between note and label with id
+    /**
+     * function for select the note on the basis of relation between note and label with id 
+     */
+    
     public function notelabe()
     {
 
@@ -541,7 +575,9 @@ class Notescontroller extends CI_Controller
     }
 
 
-    //get notelabel and return data
+    /**
+     * function for get notelabel and return data
+     */
     public function getnotelabe()
     { 
         $mail=$_POST['email'];        
@@ -562,12 +598,15 @@ class Notescontroller extends CI_Controller
 
     }
 
-
-    //delete the label
+    /**
+     * function for delete the label 
+     */
     public function deletelabel1()
     {
     
-        //$labelid is the id of that perticular id which user want to delete
+        /**
+         * $labelid is the id of that perticular id which user want to delete
+         */
         $labelid=$_POST['labelid'];   
         if(empty($labelid)|| $labelid=='undefined'  )
         {
@@ -576,7 +615,9 @@ class Notescontroller extends CI_Controller
         $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
         $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-        //query to select labelid from notelabel tabel to delete it
+        /**
+         * query to select labelid from notelabel tabel to delete it 
+         */
         $sql ="DELETE FROM noteLabel WHERE labelid=$labelid"; 
         $stmt = $connect->prepare($sql); 
         $res = $stmt->execute(); 

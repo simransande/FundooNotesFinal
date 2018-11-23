@@ -1,55 +1,52 @@
-
 <div>
   <div class="collaborators">
-      <h3>Collaborators</h3>
+    <h3>Collaborators</h3>
 
- 
+
     <mat-divider class="devider"></mat-divider>
-<div>
-  <div >
-  <button mat-fab color="accent" class="profile">
-      <div class="Initial1">
-              {{Initial}}
+    <div>
+      <div>
+        <button mat-fab color="accent" class="profile">
+          <div class="Initial1">
+            {{Initial}}
+          </div>
+        </button>
+        <div class="name">{{username}}(owner)</div>
+
+        <div class="name1">{{mail}}</div>
+
+        <!-- <div class="collab" *ngFor="let collab of collaborator"> -->
+
+        <div class="collmail" style="display: flex" *ngIf="sharedEmail!=null">
+          <!-- <button mat-button-icon class="signout"> -->
+          <div class="collaborator">
+            <div>
+              <button mat-fab color="accent" class="profile1">
+              </button>
+
+              <div class="name"> {{sharedEmail}}</div>
+
+
+            </div>
+
+          </div>
+          <!-- </div> -->
+
+        </div>
+        <div>
+          <button mat-icon-button class="addUser"></button>
+
+          <div class="test">
+            <input class="inputCollab" placeholder="Person or email to share with" [(ngModel)]="data.mail" />
+            <img class="addPerson" src="../../assets/baseline-person_add-24px.svg" />
+          </div>
+        </div>
+
+
+        <div class="greyArea">
+          <!-- <button mat-button (click)="onNoClick()">CANCEL</button> -->
+          <button mat-button class="cancel">CANCEL</button>
+          <button mat-button class="save" [mat-dialog-close]="data.mail">SAVE</button>
+        </div>
+
       </div>
-  </button>
-  <div class="name">{{username}}(owner)</div>
-  
-  <div class="name1">{{mail}}</div>
-
-  <!-- <div class="collab" *ngFor="let collab of collaborator"> -->
-     
-  <div class="collmail" style="display: flex" *ngIf="sharedEmail!=null">
-    <!-- <button mat-button-icon class="signout"> -->
-    <div class="collaborator">
-        <div >
-            <button mat-fab color="accent" class="profile1">           
-            </button>
-            
-            <div class="name"> {{sharedEmail}}</div>
-
-     
-    </div>
-
-    </div>
-    <!-- </div> -->
-   
-  </div>
-  <div>
-      <button  mat-icon-button class="addUser"></button>
-
-      <div class="test">
-      <input class="inputCollab" placeholder="Person or email to share with" [(ngModel)]="data.mail"/>
-      <img  class="addPerson" src="../../assets/baseline-person_add-24px.svg" />
-    </div>
-  </div>
-  
-  
-  <div class="greyArea">
-      <!-- <button mat-button (click)="onNoClick()">CANCEL</button> -->
-   <button mat-button class="cancel">CANCEL</button>
-   <button mat-button class="save" [mat-dialog-close]="data.mail" >SAVE</button>
-  </div>
- 
-</div>
-
-

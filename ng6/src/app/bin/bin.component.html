@@ -1,57 +1,56 @@
 <mat-sidenav-container class="example-sidenav-container">
 
-  <mat-sidenav-content class="example">
-      <div class="notesDisplay">
-          <div *ngFor="let note of notes">
-              <mat-card  [ngClass]="direction=='row' ? 'cardDisplay' : 'cardDisplayrow'" class="cardDisplay" *ngIf="note.archive==0 && note.pin==0 && note.trash==1"
-                  [style.background-color]="note.colorcode">
-                  <div>
-                    <div *ngIf='note.image!=""'>
-                        <img class="imgcss" src="{{note.image}}">
+    <mat-sidenav-content class="example">
+        <div class="notesDisplay">
+            <div *ngFor="let note of notes">
+                <mat-card [ngClass]="direction=='row' ? 'cardDisplay' : 'cardDisplayrow'" class="cardDisplay" *ngIf="note.archive==0 && note.pin==0 && note.trash==1"
+                    [style.background-color]="note.colorcode">
+                    <div>
+                        <div *ngIf='note.image!=""'>
+                            <img class="imgcss" src="{{note.image}}">
+                        </div>
+                        <mat-card-title class="title-pin" style="width:75%">
+                            {{note.tittle}}
+                        </mat-card-title>
+                        <button mat-icon-button class="pin1" matTooltip="Pin note" (click)="pinNote(note)">
+                            <img src="../../assets/pin.svg" />
+                        </button>
                     </div>
-                      <mat-card-title class="title-pin" style="width:75%">
-                          {{note.tittle}}
-                      </mat-card-title>
-                      <button mat-icon-button class="pin1" matTooltip="Pin note" (click)="pinNote(note)">
-                          <img src="../../assets/pin.svg" />
-                      </button>
-                  </div>
-                  <mat-card-content class="mat-card-content">{{note.description}}</mat-card-content>
-                  <div class="remainder-Div"  *ngIf="note.reminder!=0 && note.reminder!=null && note.reminder!=''">
+                    <mat-card-content class="mat-card-content">{{note.description}}</mat-card-content>
+                    <div class="remainder-Div" *ngIf="note.reminder!=0 && note.reminder!=null && note.reminder!=''">
                         <div><img class="remainder-Div-image" src="../../assets/outline-watch_later-24px.svg" /></div>
                         <div class="remainderTime">{{note.reminder}}</div>
                         <button mat-icon-button class="cross" matTooltip="Delete Reminder" (click)="deletRem(note)">
-                                <img src="../../assets/baseline-clear-24px.svg" />
-                            </button>
-                        </div>
+                            <img src="../../assets/baseline-clear-24px.svg" />
+                        </button>
+                    </div>
 
                     <div *ngFor="let label of notes2">
-                            <div class="label-Div" *ngIf="label.noteid==note.id" matTooltip="Remove Label">
-                              <div *ngFor="let lbel of labell">
+                        <div class="label-Div" *ngIf="label.noteid==note.id" matTooltip="Remove Label">
+                            <div *ngFor="let lbel of labell">
                                 <div *ngIf="label.labelid==lbel.id" style="display:flex">
-                                  <div class="remainderTime">{{lbel.label}}</div>
+                                    <div class="remainderTime">{{lbel.label}}</div>
                                     <div (click)="deletLabel(label)">
-                                      <img class="remainder-Div-image" src="../../assets/baseline-clear-24px.svg" />
+                                        <img class="remainder-Div-image" src="../../assets/baseline-clear-24px.svg" />
                                     </div>
-                                  </div>
                                 </div>
-                              </div>
                             </div>
+                        </div>
+                    </div>
 
-                  <mat-card-actions class="button-display">
-                      <button mat-icon-button class="notes" matTooltip="More" (click)="More(note)"
-                          [matMenuTriggerFor]="menu">
-                          <img class="imageNote" src="../../assets/baseline-more_vert-24px.svg" />
-                      </button>
-                  </mat-card-actions>
-              </mat-card>
-              <mat-menu #menu="matMenu">
+                    <mat-card-actions class="button-display">
+                        <button mat-icon-button class="notes" matTooltip="More" (click)="More(note)"
+                            [matMenuTriggerFor]="menu">
+                            <img class="imageNote" src="../../assets/baseline-more_vert-24px.svg" />
+                        </button>
+                    </mat-card-actions>
+                </mat-card>
+                <mat-menu #menu="matMenu">
                     <button mat-menu-item (click)="dltForever(note)">Delete Forevere</button>
                     <button mat-menu-item (click)="Trash(note)">Restore</button>
-                  </mat-menu>
-          </div>
-      </div>
-  
-      </mat-sidenav-content>
-      </mat-sidenav-container>
-     
+                </mat-menu>
+            </div>
+        </div>
+
+    </mat-sidenav-content>
+</mat-sidenav-container>

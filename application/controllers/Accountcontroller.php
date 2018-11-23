@@ -16,8 +16,10 @@ class Accountcontroller extends \PHPUnit_Framework_TestCase
          $this->load->library('session');
     }
    
-    
-     // function regestercreate a new user with name,email,password and phone number     
+    /**
+     * function regestercreate a new user with name,email,password and phone number     
+     */
+     
     public function register()
     {
         $flag=0; 
@@ -46,7 +48,9 @@ class Accountcontroller extends \PHPUnit_Framework_TestCase
         
        $mail=$_POST['email'];
  
-        // check if e-mail address is well-formed
+       /**
+        * check if e-mail address is well-formed
+        */
         if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) 
         {
          echo "Invalid email format"; 
@@ -94,7 +98,9 @@ class Accountcontroller extends \PHPUnit_Framework_TestCase
     }
 
 
-    // login the user using email id and password 
+    /**
+     * login the user using email id and password 
+     */ 
     public function login()
     {     
 
@@ -144,13 +150,12 @@ class Accountcontroller extends \PHPUnit_Framework_TestCase
         
     }
 
-
-    
-    // if user forget password then with using mail id it will recover the password
-     
+     /**
+      * if user forget password then with using mail id it will recover the password
+      */
     public function forgotpassword()
     {
-        //if its not set the response will not get back to frontend   
+        //if its not set the response will not get back to frontend  
         header('Access-Control-Allow-Origin: *');
         header('Access-Control-Allow-Headers: X-Requested-With');
         header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
@@ -179,7 +184,9 @@ class Accountcontroller extends \PHPUnit_Framework_TestCase
             if (!empty($user)) 
             {    
                
-            //flag will be 1 here for sending the status 1
+            /**
+             * flag will be 1 here for sending the status 1
+             */
             $flag++;
             $myjson='{"status":"1"}';     
             print $myjson;
@@ -196,8 +203,9 @@ class Accountcontroller extends \PHPUnit_Framework_TestCase
     }
 
 
-    //reset a password using mail and password
-
+    /**
+     * reset a password using mail and password
+     */
     public function resetpassword()
     { 
 

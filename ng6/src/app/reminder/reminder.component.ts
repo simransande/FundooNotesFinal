@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NotesService } from '../service/notes.service';
 import { CollaboratorComponent } from '../collaborator/collaborator.component';
-import {MatDialog, MAT_DIALOG_DATA} from '@angular/material';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 import { CreatelabelService } from '../service/createlabel.service';
 import { ViewService } from '../service/view.service';
 import { MatIconRegistry } from '@angular/material';
@@ -19,7 +19,7 @@ export class ReminderComponent implements OnInit {
   model: any = {}
   archive: number = 0;
   pin: number = 0;
-  trash:number=0;
+  trash: number = 0;
   unpin: number = 1;
   mainCard: boolean = true;
   createCard: boolean = false;
@@ -32,49 +32,47 @@ export class ReminderComponent implements OnInit {
   DateTime: boolean = false;
   filecolor;
   localUrl: any;
-  imgUrl:any;
+  imgUrl: any;
   selectedFile: any;
-  labell:any;
-  notes2:any;
-  collaborator:any;
+  labell: any;
+  notes2: any;
+  collaborator: any;
   labels: any;
-  fulldate:any;
+  fulldate: any;
 
-  
-  constructor(private service: NotesService,public dialog: MatDialog,
-              private labelService:CreatelabelService,iconRegistry: MatIconRegistry, 
-              sanitizer: DomSanitizer, private viewService: ViewService)
-              { 
-                this.service.getNote().subscribe(notesData => 
-                  {
-                  this.notes = notesData;
-                  console.log(this.notes);
-                  })
-                this.labelService.getLabel().subscribe(responseLabel =>
-                  {
-                  this.labell = responseLabel;
-                  console.log(this.labell);
-                  });
-                this.service.getCollaborator().subscribe(data=>
-                  {
-                  this.collaborator=data;
-                  });
-                
-                this.service.getLabelid().subscribe(data => {
-                  debugger;
-                  this.notes2 = data;
-                  console.log(this.notes2);         
 
-                });
+  constructor(private service: NotesService, public dialog: MatDialog,
+    private labelService: CreatelabelService, iconRegistry: MatIconRegistry,
+    sanitizer: DomSanitizer, private viewService: ViewService) {
+    this.service.getNote().subscribe(notesData => {
+      this.notes = notesData;
+      console.log(this.notes);
+    })
+    this.labelService.getLabel().subscribe(responseLabel => {
+      this.labell = responseLabel;
+      console.log(this.labell);
+    });
+    this.service.getCollaborator().subscribe(data => {
+      this.collaborator = data;
+    });
 
-     iconRegistry.addSvgIcon(
+    this.service.getLabelid().subscribe(data => {
+      debugger;
+      this.notes2 = data;
+      console.log(this.notes2);
+
+    });
+
+    iconRegistry.addSvgIcon(
       'pin123',
-      // Bypass security and trust the given value 
-      // to be a safe resource URL, i.e. a location that may be used to 
-      // load executable code
+    
+      /**
+       * Bypass security and trust the given value 
+       * to be a safe resource URL, i.e. a location that may be used to 
+       * load executable code
+       */
       sanitizer.bypassSecurityTrustResourceUrl('../../assets/pin.svg'));
-      this.viewService.getView().subscribe(res => 
-      {
+    this.viewService.getView().subscribe(res => {
 
       console.log("View Result is ", res);
       this.view = res;
@@ -84,7 +82,7 @@ export class ReminderComponent implements OnInit {
       this.layout = this.direction + " " + this.wrap;
       console.log("Layout is ", this.layout);
 
-      });
+    });
   }
 
   ngOnInit() {
@@ -97,86 +95,111 @@ export class ReminderComponent implements OnInit {
   public res;
   public view;
 
- 
-  //archive note
+  /**
+   * function for archive the note
+   * @param note on that perticular note
+   */
   Archive(note: any) {
     var flag = 'archive';
     this.crud(note, flag);
   }
 
-  //delete note
-  Trash(note: any){
-    var flag='trash';
-    this.crud(note,flag);
+  /**
+   * function for delete the note
+   * @param note on thet particular note
+   */
+  Trash(note: any) {
+    var flag = 'trash';
+    this.crud(note, flag);
   }
 
-  //remove reminder
-  deletRem(note:any){
-    var flag='dltReminder'
-    this.crud(note,flag);
+  /**
+   * function is for delete the remider
+   * @param note on that perticular note
+   */
+  deletRem(note: any) {
+    var flag = 'dltReminder'
+    this.crud(note, flag);
   }
 
-  //pin the note
+  /**
+   * function is for pinned the note
+   * @param note on that prticular note
+   */
   pinNote(note: any) {
     var flag = 'pin';
     this.crud(note, flag);
   }
- 
-  //reminder show
-  Reminder(note: any){
-    this.notes1=note;      
+
+  /**
+   * function is for showing the reminder on that note
+   * @param note which one is selected
+   */
+  Reminder(note: any) {
+    this.notes1 = note;
   }
 
-  //crud operation for updating notes
+  /**
+   * function is for updatig the notes
+   * @param note to that particular note
+   * @param flag passing the string to backend to initilize the function/operation
+   */
   crud(note: any, flag: any) {
 
     let data = [
       {
         'id': note.id, 'pin': note.pin, 'description': note.description, 'email': note.email, 'trash': note.trash,
         'title': note.title, 'isarchive': note.archive, 'flag': flag, 'color': note.colorcode,
-        'reminder':note.reminder
+        'reminder': note.reminder
       }
     ];
     this.service.updatenotes({ data }).subscribe((data: any) => {
       this.labelService.getLabel().subscribe(responseLabel => {
 
         this.service.getNote().subscribe(data => {
-        this.notes = data;
-        this.labell = responseLabel;
-        console.log(this.labell);         
- 
-       })
+          this.notes = data;
+          this.labell = responseLabel;
+          console.log(this.labell);
+
+        })
       });
 
     });
   }
 
-
-  //image upload function
-  Fillupload(event, note: any)
-   {
+  /**
+   * function for uploading the image
+   * @param event to open the file
+   * @param note on that particular note
+   */
+  Fillupload(event, note: any) {
     this.localUrl = event.target.result;
     let data = [
       { 'selectedFile': <File>event.target.files[0], 'id': note.id, 'image': note.image }
     ];
     console.log(this.selectedFile);
-    this.service.uploading({data}).subscribe((data:any)=>{
-        this.service.getNote().subscribe(data=>{
+    this.service.uploading({ data }).subscribe((data: any) => {
+      this.service.getNote().subscribe(data => {
 
-          this.imgUrl=data;
-          this.notes=data;
-        });
+        this.imgUrl = data;
+        this.notes = data;
       });
-   
-    }
+    });
 
-    //collaborator dailog box
-    openDialogcoll(): void {
-      const dialogRef = this.dialog.open(CollaboratorComponent, {
-       });
-    }
+  }
+
+  /**
+   * open dailog box for collaborator
+   */
+  openDialogcoll(): void {
+    const dialogRef = this.dialog.open(CollaboratorComponent, {
+    });
+  }
 
   //set the color of note
+  /**
+   * function for set the color
+   */
   setcolor(color: any, note: any) {
     debugger;
     this.getColor = color;
@@ -185,7 +208,9 @@ export class ReminderComponent implements OnInit {
     this.crud(data, flg);
   }
 
-  //today reminder
+  /**
+   * function is for setting reminder for today button
+   */
   today() {
     var newnote = this.notes1;
     this.remainderDisplay = true;
@@ -196,32 +221,37 @@ export class ReminderComponent implements OnInit {
     this.crud(newnote, flag);
   }
 
-  //onclick tomorrow()
-  tomorrow() 
-  {
-    var newnote=this.notes1;
+  /**
+   * function is for setting reminder for tommorow button
+   */
+  tomorrow() {
+    var newnote = this.notes1;
     this.remainderDisplay = true;
-    var flag='reminder';
+    var flag = 'reminder';
     var day = new Date();
-    var fulldate = (day.toDateString()+1) + " 08:00";
+    var fulldate = (day.toDateString() + 1) + " 08:00";
     newnote.reminder = fulldate;
     this.crud(newnote, flag);
   }
 
-  //onclick nextWeek()
-  nextWeek()
-  {
-    var newnote=this.notes1;
+  /**
+   * function is for setting the reminder for nextweek button
+   */
+  nextWeek() {
+    var newnote = this.notes1;
     this.remainderDisplay = true;
-    var flag='reminder';
+    var flag = 'reminder';
     var day = new Date();
-    var fulldate = (day.toDateString()+(1 + 7 - day.getDay()) % 7) + " 08:00";
+    var fulldate = (day.toDateString() + (1 + 7 - day.getDay()) % 7) + " 08:00";
     newnote.reminder = fulldate;
     this.crud(newnote, flag);
 
   }
 
- //mpre button
+  /**
+   * function for the more button
+   * @param note on that particular note
+   */
   More(note: any) {
     this.MoreNotes = note;
   }

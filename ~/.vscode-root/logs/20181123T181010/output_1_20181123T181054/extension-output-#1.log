@@ -1,0 +1,105 @@
+Looking for git in: git
+Using git 2.7.4 from git
+> git rev-parse --show-toplevel
+> git config --get commit.template
+Open repository: /var/www/html/code1/codeigniter
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/Accountcontroller.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :ng6/src/app/archive/archive.component.ts
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :ng6/src/app/archive/archive.component.html
+> git show :ng6/src/app/archive/archive.component.css
+> git show :ng6/src/app/bin/bin.component.html
+> git show :ng6/src/app/editnote/editnote.component.html
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :ng6/src/app/collaborator/collaborator.component.html
+> git check-ignore -z --stdin
+> git show :ng6/src/app/editlabel/editlabel.component.html
+> git check-ignore -z --stdin
+> git show :ng6/src/app/ForgotPassword/ForgotPassword.component.html
+> git check-ignore -z --stdin
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.html
+> git show :ng6/src/app/ForgotPassword/ForgotPassword.component.html
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.html
+> git check-ignore -z --stdin
+> git show :ng6/src/app/label/label.component.html
+> git show :ng6/src/app/login/login.component.html
+> git check-ignore -z --stdin
+> git show :ng6/src/app/notes/notes.component.html
+> git check-ignore -z --stdin
+> git show :ng6/src/app/registration/registration.component.html
+> git check-ignore -z --stdin
+> git show :ng6/src/app/reminder/reminder.component.html
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :ng6/src/app/resetpassword/resetpassword.component.html
+> git show :ng6/src/app/resetpassword/resetpassword.component.ts
+> git show :ng6/src/app/reminder/reminder.component.ts
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :phpunittest/tests/unit/Accountcontroller.php
+> git check-ignore -z --stdin
+> git show :ng6/src/app/archive/archive.component.ts
+> git show :application/controllers/Accountcontroller.php
+> git show :ng6/src/app/archive/archive.component.ts
+> git show :ng6/src/app/bin/bin.component.ts
+> git show :ng6/src/app/collaborator/collaborator.component.ts
+> git show :ng6/src/app/editlabel/editlabel.component.ts
+> git show :ng6/src/app/editnote/editnote.component.ts
+> git show :ng6/src/app/ForgotPassword/ForgotPassword.component.ts
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :ng6/src/app/label/label.component.ts
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/registration/registration.component.ts
+> git show :ng6/src/app/reminder/reminder.component.ts
+> git show :ng6/src/app/resetpassword/resetpassword.component.ts
+> git check-ignore -z --stdin
+> git show :ng6/src/app/service/createlabel.service.ts
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/Notescontroller.php
+> git show :ng6/src/app/archive/archive.component.ts
+> git show :ng6/src/app/bin/bin.component.ts
+> git show :ng6/src/app/collaborator/collaborator.component.ts
+> git show :ng6/src/app/editlabel/editlabel.component.ts
+> git show :ng6/src/app/editnote/editnote.component.ts
+> git show :ng6/src/app/editlabel/editlabel.component.ts
+> git show :ng6/src/app/editnote/editnote.component.ts
+> git show :ng6/src/app/ForgotPassword/ForgotPassword.component.ts
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :ng6/src/app/label/label.component.ts
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git check-ignore -z --stdin
+> git show :ng6/src/app/service/createlabel.service.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/registration/registration.component.ts
+> git show :ng6/src/app/reminder/reminder.component.ts
+> git show :ng6/src/app/resetpassword/resetpassword.component.ts
+> git show :ng6/src/app/service/auth.service.ts
+> git show :ng6/src/app/service/createlabel.service.ts
+> git show :ng6/src/app/service/dataservice.service.ts
+> git show :ng6/src/app/service/jwttokwn.service.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/service/view.service.ts
+> git show :ng6/src/app/archive/archive.component.ts
+> git show :application/controllers/Notescontroller.php
+> git show :application/controllers/Accountcontroller.php
