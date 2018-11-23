@@ -1,0 +1,144 @@
+Looking for git in: git
+Using git 2.7.4 from git
+> git rev-parse --show-toplevel
+> git config --get commit.template
+Open repository: /var/www/html/code1/codeigniter
+> git status -z -u
+> git show :phpunittest/phpunit.xml
+> git check-ignore -z --stdin
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :phpunittest/phpunit.xml
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/controllers/Notescontroller.php
+> git show :application/controllers/Accountcontroller.php
+> git show :ng6/src/app/editnote/editnote.component.html
+> git check-ignore -z --stdin
+> git show :application/controllers/Accountcontroller.php
+> git show :application/UnitTestCase.php
+> git show :application/TestCase.php
+> git show :application/UnitTestCase.php
+> git show :application/phpunit.xml
+> git check-ignore -z --stdin
+> git show :phpunittest/phpunit.xml
+> git check-ignore -z --stdin
+> git show :phpunittest/tests/unit/Accountcontroller.php
+> git show :phpunittest/phpunit.xml
+> git show :phpunittest/tests/unit/Accountcontroller.php
+> git show :phpunittest/phpunit.xml
+> git show :phpunittest/tests/unit/Accountcontroller.php
+> git show :ng6/src/app/editnote/editnote.component.ts
+> git check-ignore -z --stdin
+> git show :application/controllers/Accountcontroller.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :phpunittest/vendor/autoload.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/TestCase.php
+> git show :application/controllers/testingcontroller.php
+> git show :application/tests/controllers/Accountcontroller.php
+> git check-ignore -z --stdin
+> git show :application/TestCase.php
+> git show :application/UnitTestCase.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/vendor/autoload.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/vendor/autoload.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/vendor/autoload.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/composer.json
+> git show :application/controllers/composer.lock
+> git check-ignore -z --stdin
+> git show :application/config/config.php
+> git show :application/composer.json
+> git show :application/TestCase.php
+> git show :application/UnitTestCase.php
+> git show :application/TestCase.php
+> git show :application/UnitTestCase.php
+> git show :application/phpunit.xml
+> git show :application/index.html
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/test1.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/TestCase.php
+> git show :application/UnitTestCase.php
+> git show :application/controllers/test.html
+> git show :application/controllers/test1.php
+> git show :application/controllers/Accountcontroller.php
+> git check-ignore -z --stdin
+> git show :application/TestCase.php
+> git show :application/UnitTestCase.php
+> git show :application/controllers/test1.php
+> git show :application/controllers/test.html
+> git show :application/controllers/test1.php
+> git show :application/controllers/Welcome.php
+> git show :application/controllers/testingcontroller.php
+> git show :application/tests/controllers/Accountcontroller.php
+> git show :application/controllers/test1.php
+> git show :application/controllers/TestCase.php
+> git show :application/controllers/testingcontroller.php
+> git show :phpunittest/vendor/phpunit/phpunit/phpunit.xml
+> git show :phpunittest/vendor/phpunit/phpunit/phpunit.xsd
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/views/index.html
+> git show :application/index.html
+> git show :application/phpunit.xml
+> git show :application/controllers/test.html
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/controllers/Accountcontroller.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/TestCase.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/config/database.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/config/database.php
+> git show :application/controllers/Accountcontroller.php
+> git show :system/core/Common.php
+> git show :system/core/Exceptions.php
+> git show :system/core/Common.php
+> git show :system/core/Exceptions.php
+> git show :system/core/Common.php
+> git show :system/core/Exceptions.php
+> git show :system/core/Common.php
+> git show :system/core/Log.php
+> git show :system/core/Common.php
+> git show :system/core/Exceptions.php
+> git show :system/core/Common.php
+> git show :application/controllers/Accountcontroller.php

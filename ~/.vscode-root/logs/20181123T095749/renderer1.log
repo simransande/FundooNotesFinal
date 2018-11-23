@@ -1,0 +1,16 @@
+[2018-11-23 09:57:56.148] [renderer1] [info] no standard startup: panel is active
+[2018-11-23 10:13:22.420] [renderer1] [error] Inotify limit reached (ENOSPC)
+[2018-11-23 16:57:04.347] [renderer1] [error] Illegal argument: character must be non-negative: Error: Illegal argument: character must be non-negative
+	at Object.t.illegalArgument (/usr/share/code/resources/app/out/vs/workbench/node/extensionHostProcess.js:91:544)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/node/extensionHostProcess.js:475:904)
+	at asPosition (/home/bridgeit/.vscode/extensions/felixfbecker.php-intellisense-2.3.10/node_modules/vscode-languageclient/lib/protocolConverter.js:53:16)
+	at asRange (/home/bridgeit/.vscode/extensions/felixfbecker.php-intellisense-2.3.10/node_modules/vscode-languageclient/lib/protocolConverter.js:59:31)
+	at asHover (/home/bridgeit/.vscode/extensions/felixfbecker.php-intellisense-2.3.10/node_modules/vscode-languageclient/lib/protocolConverter.js:134:63)
+	at <anonymous>
+[2018-11-23 16:57:05.470] [renderer1] [error] Illegal argument: character must be non-negative: Error: Illegal argument: character must be non-negative
+	at Object.t.illegalArgument (/usr/share/code/resources/app/out/vs/workbench/node/extensionHostProcess.js:91:544)
+	at new e (/usr/share/code/resources/app/out/vs/workbench/node/extensionHostProcess.js:475:904)
+	at asPosition (/home/bridgeit/.vscode/extensions/felixfbecker.php-intellisense-2.3.10/node_modules/vscode-languageclient/lib/protocolConverter.js:53:16)
+	at asRange (/home/bridgeit/.vscode/extensions/felixfbecker.php-intellisense-2.3.10/node_modules/vscode-languageclient/lib/protocolConverter.js:59:31)
+	at asHover (/home/bridgeit/.vscode/extensions/felixfbecker.php-intellisense-2.3.10/node_modules/vscode-languageclient/lib/protocolConverter.js:134:63)
+	at <anonymous>

@@ -21,6 +21,10 @@ export class RegistrationComponent implements OnInit {
   }
  
 
+  /**
+   * formcontrol for UsernameFormControl,emailFormControl,
+   * PasswordFormControl,PhoneFormControl
+   */
   UsernameFormControl = new FormControl('', [
     Validators.required,
     Validators.minLength(4),
@@ -44,12 +48,14 @@ export class RegistrationComponent implements OnInit {
    debugger;
     this.model;
 
+    //binding the username, password,email,password into the data
     let data = [
       { 'username': this.model.uname, 'password': this.model.pass, 'email': this.model.email, 'phone': this.model.phone }
     ];
     this.service.Register(data).subscribe((Statusdata: any) => { 
       this.flag=Statusdata.status;
 
+      //if flag is 1 the it will navigate to login page
       if (this.flag == 1) 
       {
         alert("succsessfully registered");

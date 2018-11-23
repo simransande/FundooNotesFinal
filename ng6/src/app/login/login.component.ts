@@ -35,9 +35,7 @@ export class LoginComponent implements OnInit {
   ]);
 
   s_login() {
-    
-   
-   // debugger;
+    // debugger;
     this.model;
   
     let data = [
@@ -52,6 +50,7 @@ export class LoginComponent implements OnInit {
     this.name=Statusdata.name;
     this.token=Statusdata.token;
 
+    //if flag is 1 then it will navigate to fundooNotes 
       if (this.flag == 1) 
       {
         localStorage.setItem('email', this.mail);

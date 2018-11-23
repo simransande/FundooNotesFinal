@@ -80,12 +80,14 @@ export class BinComponent implements OnInit {
     this.crud(note, flag);
   }
 
+  //for restoring the note
   Trash(note: any){
 
     var flag='restore';
     this.crud(note,flag);
   }
 
+  //function for delete note from trash
   dltForever(note:any)
   {
     var flag='dltForever';

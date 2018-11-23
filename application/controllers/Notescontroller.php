@@ -1,7 +1,5 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-// include_once 'JWT.php';
-
 class Notescontroller extends CI_Controller
 {
    
@@ -14,7 +12,11 @@ class Notescontroller extends CI_Controller
     //if variable is empty or undefined then it will be blank it will not inserted
     public function notes()
     {
-        
+        /**
+         * $title is the title of note coming from frontend
+         * $mail is the mail id who has loged in 
+         * $des is the content of note
+         */
         $title=$_POST['title'];
         if(empty($title)|| $title=='undefined'  )
         {
@@ -27,6 +29,13 @@ class Notescontroller extends CI_Controller
         {
             $reminder='';
         }
+        /**
+         * $pin is the response of pined and unpined note
+         * $archive is the response of archived note
+         * $trash is the response of delete note
+         * $colorcode is for changing the color of notes
+         * $image if for uploading image
+         */
         $pin=$_POST['pin'];
         if(empty($pin)|| $pin=='undefined' )
         {
@@ -56,12 +65,15 @@ class Notescontroller extends CI_Controller
         $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
         $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+        //insert all the data into tabel
         $sql = "INSERT INTO note (tittle,description,email, reminder, pin,
                 archive, trash, colorcode, image)
                 VALUES('$title','$des','$mail','$reminder', $pin,
                 $archive, $trash, '$colorcode', '$image')";
 
+        //prepare connection
         $stmt = $connect->prepare($sql);
+        //excuting that stmt
         $res = $stmt->execute();
         
     }
@@ -69,12 +81,13 @@ class Notescontroller extends CI_Controller
     //get notes and return data
     public function getnotes()
     { 
+        //depend on $mail all data will be fetched and return it in the form of json
         $mail=$_POST['email'];  
-        // $jwt1=new JWT();
 
         $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
         $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+        //queury for selecting that perticular notes for the mail id
         $sql = "SELECT * From note where email='$mail'";
       
         $stmt = $connect->prepare($sql);
@@ -86,7 +99,6 @@ class Notescontroller extends CI_Controller
         $notes= json_encode($myArray);
         print $notes;
 
-        // $val=$jwt1->verify($token);
          
     }
 
@@ -98,6 +110,7 @@ class Notescontroller extends CI_Controller
         $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
         $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+        //query to join two tabels note and collaborator
         $sql = "SELECT * FROM fundooNotes.note INNER JOIN fundooNotes.collaborator ON note.id = collaborator.noteId
                 where collaborator.sharedEmail='$mail'";
     
@@ -116,6 +129,7 @@ class Notescontroller extends CI_Controller
      //update a notes
     public function updatenotes()
     {
+
         $flag=$_POST['flag'];   
         $id=$_POST['id'];
 
@@ -361,6 +375,7 @@ class Notescontroller extends CI_Controller
     }
 
 
+    //delete a note forever
     public function deleteurl()
     {
         $flag=$_POST['flag'];   
@@ -406,7 +421,7 @@ class Notescontroller extends CI_Controller
 
     }
 
-    //add colaborator
+    //add colaborator to a note
     public function AddCollab()
     {
         $noteid=$_POST['noteid']; 
@@ -540,7 +555,6 @@ class Notescontroller extends CI_Controller
 
         while( $row = $stmt->fetchAll(PDO::FETCH_ASSOC)) 
         {
-            //$myArray[] = $row;
             $notes= json_encode($row);
         }
        
@@ -553,6 +567,7 @@ class Notescontroller extends CI_Controller
     public function deletelabel1()
     {
     
+        //$labelid is the id of that perticular id which user want to delete
         $labelid=$_POST['labelid'];   
         if(empty($labelid)|| $labelid=='undefined'  )
         {
@@ -561,6 +576,7 @@ class Notescontroller extends CI_Controller
         $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
         $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
+        //query to select labelid from notelabel tabel to delete it
         $sql ="DELETE FROM noteLabel WHERE labelid=$labelid"; 
         $stmt = $connect->prepare($sql); 
         $res = $stmt->execute(); 

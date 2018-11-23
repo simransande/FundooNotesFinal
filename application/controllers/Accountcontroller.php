@@ -7,10 +7,6 @@ require_once 'PHPUnit/Autoload.php';
  
 
   use PHPUnit\Framework\TestCase;
-//  var /www/html/code1/codeigniter/application/tests/TestCase.php;
-
-//include "models/responseModel.php";
-// extends TestCase
 
 class Accountcontroller extends \PHPUnit_Framework_TestCase
 {   
@@ -31,14 +27,13 @@ class Accountcontroller extends \PHPUnit_Framework_TestCase
         * @label('Name of user')
         */
        $name=$_POST['username'];
-
+       assertEquals($name,'prashant');
        
        /**
         * @var integer
-        *@range(4,8)
-        *@label('password')
+        * @range(4,8)
+        * @label('password')
         */
-        assertEquals($name,'prashant');
 
        $pass=$_POST['password'];
 
@@ -59,7 +54,7 @@ class Accountcontroller extends \PHPUnit_Framework_TestCase
    
         else
         {
-           
+           // Create connection
             $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
             $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -111,8 +106,7 @@ class Accountcontroller extends \PHPUnit_Framework_TestCase
         * )
         */
         $mail=$_POST['email'];
-        // $this->load->library($mail);
-        // $this->assertEquals($mail,'simransande.a@gmail.com');
+        // assertEquals($mail,'simransande.a@gmail.com');
  
         /**
         * @var integer
@@ -156,8 +150,7 @@ class Accountcontroller extends \PHPUnit_Framework_TestCase
      
     public function forgotpassword()
     {
-            //loading session library
-            // $this->load->library('session');
+        //if its not set the response will not get back to frontend   
         header('Access-Control-Allow-Origin: *');
         header('Access-Control-Allow-Headers: X-Requested-With');
         header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
@@ -175,7 +168,6 @@ class Accountcontroller extends \PHPUnit_Framework_TestCase
            * )
            */
             $email = $_POST["email"];
-            //($servername, $username, $password, $dbname)
             $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
             $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
@@ -184,38 +176,20 @@ class Accountcontroller extends \PHPUnit_Framework_TestCase
             $res = $stmt->execute();
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            // $conn = mysqli_connect("localhost", "root", "root", "fundooNotes");
-            // $sql = "Select * from user where email='$email'";
-            // $result = mysqli_query($conn, $sql);
-            // $user = mysqli_fetch_array($result);
-
             if (!empty($user)) 
             {    
-                /**** SET SESSION DATA ****/
-               // set single item in session
-               /*
-                When a page is loaded, the session class will check to see if
-                valid session cookie is sent by the user’s browser */
-                /*cookie is often used to identify a user*/
                
-            //    $this->load->library('session');
-               
-            //     $this->session->set_userdata('token','1234');
+            //flag will be 1 here for sending the status 1
             $flag++;
             $myjson='{"status":"1"}';     
             print $myjson;
 
                $token= md5(uniqid(rand(), true));
-             //  $GLOBALS['token'];
-            //   $this.session_id($token);            
-            //    $_SESSION['token'] = 123 ;
-            //    $abc=$_SESSION['token'];
-                require_once("forgot-password-recovery-mail.php");
+               require_once("forgot-password-recovery-mail.php");
             } else
             {
                 $myjson='{"status":"0"}';    
                 print $myjson;
-              //  $error_message = 'No User Found';
             }
         }
     
@@ -227,10 +201,14 @@ class Accountcontroller extends \PHPUnit_Framework_TestCase
     public function resetpassword()
     { 
 
+        /**
+         * $mail is taking mail id from fronend
+         * $pass is the new password
+         * $token is genarating the token
+         */
         $mail=$_POST['email'];
         $pass=$_POST['password'];
         $token=$_POST['token'];
-        //$GLOBALS['token'];
         if($_POST['token']==$token)
         {    
             $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
