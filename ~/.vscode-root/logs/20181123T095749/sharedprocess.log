@@ -98,3 +98,32 @@
 [2018-11-23 17:23:05.577] [sharedprocess] [info] Scanned user extensions: 8
 [2018-11-23 17:28:05.588] [sharedprocess] [info] Scanned user extensions: 8
 [2018-11-23 17:33:05.603] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-23 17:38:05.618] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-23 17:43:05.630] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-23 17:48:05.650] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-23 17:53:05.668] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-23 17:58:06.541] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-23 18:00:21.684] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-23 18:00:21.765] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-23 18:00:21.770] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-23 18:00:21.779] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-23 18:00:21.857] [sharedprocess] [info] Scanned system extensions: 71
+[2018-11-23 18:00:21.860] [sharedprocess] [info] Scanned system extensions: 71
+[2018-11-23 18:00:21.863] [sharedprocess] [info] Scanned system extensions: 71
+[2018-11-23 18:00:26.549] [sharedprocess] [info] Installing extension: vscode-maven
+[2018-11-23 18:00:26.555] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-23 18:00:47.127] [sharedprocess] [info] Downloaded extension: vscode-maven /tmp/d3188a47-844e-4a31-8e1a-c93b12d3c7ad
+[2018-11-23 18:00:47.717] [sharedprocess] [info] Extracted extension to /home/bridgeit/.vscode/extensions/.vscjava.vscode-maven-0.11.2: vscjava.vscode-maven-0.11.2
+[2018-11-23 18:00:47.717] [sharedprocess] [info] Renamed to /home/bridgeit/.vscode/extensions/vscjava.vscode-maven-0.11.2
+[2018-11-23 18:00:47.717] [sharedprocess] [info] Installation completed. vscjava.vscode-maven-0.11.2
+[2018-11-23 18:00:47.776] [sharedprocess] [info] Extensions installed successfully: vscjava.vscode-maven
+[2018-11-23 18:00:47.894] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-23 18:00:47.917] [sharedprocess] [info] Scanned system extensions: 71
+[2018-11-23 18:01:06.092] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-23 18:01:06.096] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-23 18:01:06.099] [sharedprocess] [info] Scanned user extensions: 8
+[2018-11-23 18:01:06.155] [sharedprocess] [info] Scanned system extensions: 71
+[2018-11-23 18:01:06.159] [sharedprocess] [info] Scanned system extensions: 71
+[2018-11-23 18:01:06.164] [sharedprocess] [info] Scanned system extensions: 71
+[2018-11-23 18:01:12.184] [sharedprocess] [info] Installing extension: tsfmt-vscode
+[2018-11-23 18:01:12.190] [sharedprocess] [info] Scanned user extensions: 8

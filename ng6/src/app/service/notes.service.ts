@@ -37,8 +37,12 @@ export class NotesService {
     this.messageSource.next(message)
   }
 
-  // Observable<{}> -respond to user
-  //creating a note
+  /**
+   * creating a note
+   * title,description,email,reminder,pin,archive,trash,color,image this data
+   * is sending to api to insert in database
+   */
+  
   Notes(value: any): Observable<{}> 
   {
     let note = new FormData();
@@ -63,8 +67,9 @@ export class NotesService {
     
   }
 
-  // Observable<{}> -respond to user
-  //get the notes
+  /**
+   * get the notes from the database for that perticular email id whoever is loged in
+   */
   getNote(): Observable<{}>
   {
    
@@ -82,11 +87,16 @@ export class NotesService {
 
   }
 
-  // Observable<{}> -respond to user
-  //update notes
+  
+  /**
+   * update a note 
+   */
   updatenotes(value: any): Observable<{}> 
   {
     let getnote = new FormData();
+    /**
+     * email is the geting email from local storage
+     */
     let email = localStorage.getItem('email');
     getnote.append('email', email);
     getnote.append('description', value.data[0].description);
@@ -110,7 +120,10 @@ export class NotesService {
 
   }
 
-  //image uploading
+  /**
+   * 
+   * @param imgdata uploading the image for the perticular note id
+   */
   uploading(imgdata: any): Observable<any> 
   {
     var abc=imgdata.data[0].id
@@ -134,7 +147,10 @@ export class NotesService {
     );
   }
 
-  //input mail for colaborating
+  /**
+   * 
+   * @param value mail id to whoom user want to send the note
+   */
   collaborator(value: any): Observable<{}>
   {
       let collab = new FormData();
@@ -149,7 +165,11 @@ export class NotesService {
       );
   }
 
-  //add note for colaborating
+  /**
+   * 
+   * @param note perticular note for adding colaborator
+   * @param mail to whoom the note should collaborate
+   */
   addCollaborator(note:any,mail:any):Observable<{}>
   {
       let addcollab=new FormData();
@@ -168,7 +188,9 @@ export class NotesService {
 
   }
 
-  //get collaborated id
+  /**
+   * get the collaboratored mailid
+   */
   getCollaborator():Observable<{}>
   {
     let getcollab=new FormData();
@@ -184,7 +206,9 @@ export class NotesService {
        );
   }
 
-  //get collaborated note
+  /**
+   * get the collaborated note
+   */
   getNotesColl():Observable<{}>
   {
     let test=new FormData();
@@ -200,7 +224,9 @@ export class NotesService {
        );
   }
 
-  //to set the id for label
+  /**
+   * to set the id for label
+   */
   setLabelid(value:any): Observable<{}>
   {
     let setid = new FormData();
@@ -219,7 +245,9 @@ export class NotesService {
     );
   }
 
-  //delete the label
+  /**
+   * @param value labelid for deleting label
+   */
   deleteLabel(value:any):Observable<{}>
   {
     let dltid=new FormData();
@@ -232,8 +260,9 @@ export class NotesService {
       return this.http.post(this.deleteUrl,dltid,otheroption)
   }
 
-    //get label id
-    // Observable<{}> -respond to user
+  /**
+   * get the label id
+   */
   getLabelid(): Observable<{}>
   {
    

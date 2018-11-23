@@ -14,8 +14,11 @@ export class CreatelabelService {
   constructor(private http: HttpClient) { 
 
   }
-  //add label
-    // Observable<{}> -respond to user
+     /**
+      * add label
+      * Observable<{}> -respond to user
+      */
+ 
     addLabel(value: any): Observable<{}> {
   
       let label = new FormData();
@@ -32,8 +35,11 @@ export class CreatelabelService {
       
     }
 
-  //get label
-    // Observable<{}> -respond to user
+    /**
+      * get label
+      * Observable<{}> -respond to user
+      */
+ 
     getLabel(): Observable<{}> {
    
     let getlabel = new FormData();
@@ -50,8 +56,11 @@ export class CreatelabelService {
 
   }
   
-  // update the label
-    // Observable<{}> -respond to user
+  
+   /**
+      * update the label
+      * Observable<{}> -respond to user
+      */
     updatlabel(value: any): Observable<{}> {
     debugger;
     let updatlabel = new FormData();
@@ -69,10 +78,12 @@ export class CreatelabelService {
 
   }
   
-  //delete the label
+  /**
+      * delete the label
+      * Observable<{}> -respond to user
+      */
   deletelabel(value:any): Observable<{}>{
 
-    debugger;
     let deletelabel = new FormData();
     let email = localStorage.getItem('email');
     deletelabel.append('email', email);

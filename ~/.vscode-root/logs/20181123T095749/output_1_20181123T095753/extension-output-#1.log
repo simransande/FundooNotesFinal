@@ -48,3 +48,11 @@ fatal: no upstream configured for branch 'master'
 > git show :ng6/src/app/bin/bin.component.ts
 > git check-ignore -z --stdin
 > git show :ng6/src/app/editnote/editnote.component.ts
+> git check-ignore -z --stdin
+> git show :ng6/src/app/archive/archive.component.ts
+> git check-ignore -z --stdin
+> git show :ng6/src/app/service/createlabel.service.ts
+> git show :ng6/src/app/service/dataservice.service.ts
+> git show :ng6/src/app/service/createlabel.service.ts
+> git show :ng6/src/app/service/dataservice.service.ts
+> git show :ng6/src/app/service/notes.service.ts

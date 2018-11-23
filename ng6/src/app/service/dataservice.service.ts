@@ -14,17 +14,18 @@ import { pipe } from '@angular/core/src/render3/pipe';
 })
 export class DataserviceService {
 
-  //private _contactUrl = 'http://localhost:8080/html/codeigniter/register';
-  private _contactUrl = ' http://localhost/code1/codeigniter/register';
-  private _contactUrl1 = 'http://localhost/code1/codeigniter/login';
-  // private _contactUrl1='http://localhost:8080/login';
-  private _contactUrl2 = 'http://localhost/code1/codeigniter/forgotpassword';
-  private _contactUrl3 = 'http://localhost/code1/codeigniter/resetpassword';
+  private register = ' http://localhost/code1/codeigniter/register';
+  private login = 'http://localhost/code1/codeigniter/login';
+  private forgotpassword = 'http://localhost/code1/codeigniter/forgotpassword';
+  private resetpassword = 'http://localhost/code1/codeigniter/resetpassword';
   constructor(private http: HttpClient) {
 
   }
+  /**
+      * Regester a new id
+      * Observable<{}> -respond to user
+      */
   Register(value: any): Observable<{}> {
-    // debugger;
     let register = new FormData();
     register.append('username', value[0].username);
     register.append('password', value[0].password);
@@ -34,14 +35,18 @@ export class DataserviceService {
     let otheroption: any = {
       'Content-Type': 'application/x-www-form-urlencoded'
     }
-    return this.http.post(this._contactUrl, register, otheroption).pipe(
+    return this.http.post(this.register, register, otheroption).pipe(
       map((res: Response) => res)
     );
   }
 
 
+  /**
+      * login the id
+      * Observable<{}> -respond to user
+      */
   Login(value: any): Observable<{}> {
-    //debugger;
+  
     let login = new FormData();
 
     login.append('email', value[0].email);
@@ -50,23 +55,29 @@ export class DataserviceService {
       'Content-Type': 'application/x-www-form-urlencoded'
     }
 
-    return this.http.post(this._contactUrl1, login, otheroption).pipe(
+    return this.http.post(this.login, login, otheroption).pipe(
       map((res: Response) => res)
     );
 
   }
 
-
+  /**
+      * mail will send your the register mail id if password forget
+      * Observable<{}> -respond to user
+      */
   ForgotPass(value: any): Observable<{}> {
-    // debugger;
     let forgot = new FormData();
     forgot.append('email', value.data[0].email);
     let otheroption: any = {
       'Content-Type': 'application/x-www-form-urlencoded'
     }
-    return this.http.post(this._contactUrl2, forgot, otheroption);
+    return this.http.post(this.forgotpassword, forgot, otheroption);
   }
 
+  /**
+   * for reseting the password
+   * append email,password,and token in reset
+   */
   RessetPass(value: any): Observable<{}> {
     debugger;
     let reset = new FormData();
@@ -77,7 +88,7 @@ export class DataserviceService {
     let otheroption: any = {
       'Content-Type': 'application/x-www-form-urlencoded'
     }
-    return this.http.post(this._contactUrl3, reset, otheroption);
+    return this.http.post(this.resetpassword, reset, otheroption);
   }
 
 }
