@@ -223,7 +223,7 @@
                         <div *ngIf="collab.noteId==note.id">
                             <button mat-icon-button class="signout" style="background-color:rgb(233, 14, 79)" (click)="openDialogcoll(note)">
                                 <div class="sharedEmail">
-                                    {{collab.sharedEmail}}
+                                    {{collab.sharedEmail[0]}}
                                 </div>
                             </button>
                         </div>

@@ -148,7 +148,7 @@ export class NotesComponent implements OnInit {
     this.callfirst();
 
     this.labelService.getLabel().subscribe(responseLabel => {
-
+debugger;
       this.labell = responseLabel;
       console.log(this.labell);
     });
@@ -205,7 +205,7 @@ export class NotesComponent implements OnInit {
   }
 
   /**
-   * note box
+   * @method is for opening the full card 
    */
   createNote() {
     this.mainCard = false;
@@ -216,7 +216,6 @@ export class NotesComponent implements OnInit {
    * full note box on click 
    */
   closeNote() {
-    debugger;
     this.model;
     let data =
       [
@@ -286,6 +285,7 @@ export class NotesComponent implements OnInit {
    * @param note on that perticular note
    */
   deletLabel(note: any) {
+    debugger;
     this.service.deleteLabel(note).subscribe((note: any) => {
       this.service.getLabelid().subscribe(data => {
         this.notes2 = data;

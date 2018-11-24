@@ -103,3 +103,9 @@ fatal: no upstream configured for branch 'master'
 > git show :ng6/src/app/archive/archive.component.ts
 > git show :application/controllers/Notescontroller.php
 > git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/Notescontroller.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/Notescontroller.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/Notescontroller.php
+> git show :application/controllers/Accountcontroller.php

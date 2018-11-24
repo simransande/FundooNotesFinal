@@ -58,7 +58,9 @@ class Accountcontroller extends \PHPUnit_Framework_TestCase
    
         else
         {
-           // Create connection
+            /**
+             * Create connection
+             */
             $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
             $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

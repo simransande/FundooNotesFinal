@@ -38,7 +38,7 @@ export class NotesService {
   }
 
   /**
-   * creating a note
+   * @method Notes for creating a note
    * title,description,email,reminder,pin,archive,trash,color,image this data
    * is sending to api to insert in database
    */
@@ -68,6 +68,7 @@ export class NotesService {
   }
 
   /**
+   * @method getNote() is for fetching notes
    * get the notes from the database for that perticular email id whoever is loged in
    */
   getNote(): Observable<{}>
@@ -166,7 +167,7 @@ export class NotesService {
   }
 
   /**
-   * 
+   * function is for adding collaborator
    * @param note perticular note for adding colaborator
    * @param mail to whoom the note should collaborate
    */
