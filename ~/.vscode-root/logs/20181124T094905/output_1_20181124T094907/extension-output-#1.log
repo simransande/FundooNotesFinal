@@ -138,3 +138,9 @@ fatal: no upstream configured for branch 'master'
 > git show :application/controllers/Notescontroller.php
 > git show :ng6/src/app/service/notes.service.ts
 > git show :application/controllers/Notescontroller.php
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/reminder/reminder.component.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/reminder/reminder.component.ts
+> git show :ng6/src/app/reminder/reminder.component.html
+> git show :ng6/src/app/reminder/reminder.component.ts

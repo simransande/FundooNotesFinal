@@ -203,7 +203,7 @@ export class ReminderComponent implements OnInit {
   setcolor(color: any, note: any) {
     debugger;
     this.getColor = color;
-    var data = { 'colorcode': this.getColor, 'id': note.id };
+    var data = { 'colorcode': this.getColor, 'id': note.id,'description': note.description, 'title': note.tittle };
     var flg = 'color';
     this.crud(data, flg);
   }

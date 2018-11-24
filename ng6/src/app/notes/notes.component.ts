@@ -132,7 +132,6 @@ export class NotesComponent implements OnInit {
     });
 
     this.service.getNote().subscribe(notesData => {
-      debugger;
       this.alldata = notesData;
       console.log(this.notes);
     });
@@ -148,13 +147,11 @@ export class NotesComponent implements OnInit {
     this.callfirst();
 
     this.labelService.getLabel().subscribe(responseLabel => {
-debugger;
       this.labell = responseLabel;
       console.log(this.labell);
     });
 
     this.service.getLabelid().subscribe(data => {
-      debugger;
       this.notes2 = data;
       console.log("fdfgd", this.notes2);
     });
@@ -285,7 +282,6 @@ debugger;
    * @param note on that perticular note
    */
   deletLabel(note: any) {
-    debugger;
     this.service.deleteLabel(note).subscribe((note: any) => {
       this.service.getLabelid().subscribe(data => {
         this.notes2 = data;
