@@ -251,9 +251,10 @@ export class NotesService {
    */
   deleteLabel(value:any):Observable<{}>
   {
+    debugger;
     let dltid=new FormData();
     dltid.append('labelid',value.labelid);
-
+    dltid.append('noteid',value.noteid);
     let otheroption: any =
       {
         'Content-Type': 'application/x-www-form-urlencoded'

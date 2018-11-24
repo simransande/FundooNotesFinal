@@ -607,7 +607,8 @@ class Notescontroller extends CI_Controller
         /**
          * $labelid is the id of that perticular id which user want to delete
          */
-        $labelid=$_POST['labelid'];   
+        $labelid=$_POST['labelid'];  
+        $noteid=$_POST['noteid'];          
         if(empty($labelid)|| $labelid=='undefined'  )
         {
             $labelid="";
@@ -618,7 +619,7 @@ class Notescontroller extends CI_Controller
         /**
          * query to select labelid from notelabel tabel to delete it 
          */
-        $sql ="DELETE FROM noteLabel WHERE labelid=$labelid"; 
+        $sql ="DELETE FROM noteLabel WHERE labelid=$labelid and noteid=$noteid"; 
         $stmt = $connect->prepare($sql); 
         $res = $stmt->execute(); 
         
