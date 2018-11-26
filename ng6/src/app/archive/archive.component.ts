@@ -108,7 +108,7 @@ export class ArchiveComponent implements OnInit {
       [
         {
           'id': note.id, 'pin': note.pin, 'description': note.description, 'email': note.email, 'trash': note.trash,
-          'title': note.title, 'isarchive': note.archive,
+          'title': note.tittle, 'isarchive': note.archive,
           'reminder': note.reminder, 'flag': flag, 'color': note.colorcode
         }
       ];

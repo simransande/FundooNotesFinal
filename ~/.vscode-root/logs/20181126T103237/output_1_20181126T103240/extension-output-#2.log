@@ -1,0 +1,72 @@
+Looking for git in: git
+Using git 2.7.4 from git
+> git rev-parse --show-toplevel
+> git config --get commit.template
+Open repository: /var/www/html/code1/codeigniter
+> git status -z -u
+> git show :ng6/src/app/resetpassword/resetpassword.component.ts
+> git check-ignore -z --stdin
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :ng6/src/app/resetpassword/resetpassword.component.ts
+> git check-ignore -z --stdin
+> git show :application/config/config.php
+> git check-ignore -z --stdin
+> git show :ng6/src/app/app.module.ts
+> git show :ng6/src/index.html
+> git check-ignore -z --stdin
+> git show :ng6/src/main.ts
+> git show :ng6/src/app/app.module.ts
+> git show :ng6/src/main.ts
+> git show :ng6/src/app/app.module.ts
+> git show :ng6/src/index.html
+> git show :ng6/src/app/app.component.html
+> git show :ng6/src/app/resetpassword/resetpassword.component.html
+> git show :ng6/src/app/notes/notes.component.html
+> git show :ng6/src/app/login/login.component.html
+> git show :ng6/src/app/label/label.component.html
+> git show :ng6/src/app/notes/notes.component.html
+> git show :ng6/src/main.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/notes/notes.component.html
+> git show :ng6/src/app/login/login.component.html
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :ng6/src/app/label/label.component.spec.ts
+> git show :ng6/src/app/label/label.component.html
+> git show :ng6/src/app/app-routing.module.ts
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/Notescontroller.php
+> git show :ng6/src/app/app-routing.module.ts
+> git show :ng6/src/app/app.module.ts
+> git show :ng6/src/index.html
+> git show :ng6/src/app/app.component.html
+> git check-ignore -z --stdin
+> git show :ng6/src/app/service/createlabel.service.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/main.ts
+> git show :ng6/src/app/app.module.ts
+> git show :ng6/src/index.html
+> git show :ng6/src/app/app.component.html
+> git show :ng6/src/main.ts
+> git show :ng6/src/app/app.module.ts
+> git show :ng6/src/index.html
+> git show :ng6/src/app/app.component.html
+> git show :ng6/src/app/app-routing.module.ts
+> git show :ng6/src/app/app.component.html
+> git show :ng6/src/app/app-routing.module.ts
+> git show :ng6/src/app/app.component.ts
+> git show :ng6/src/app/app-routing.module.ts
+> git show :application/controllers/Notescontroller.php
+> git show :ng6/src/main.ts
+> git show :ng6/src/app/archive/archive.component.html
+> git show :ng6/src/app/archive/archive.component.ts

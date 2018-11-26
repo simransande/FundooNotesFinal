@@ -33,6 +33,9 @@ export class LoginComponent implements OnInit {
     Validators.maxLength(8)
   ]);
 
+  /**
+   * @method s_login() for login the page using gmail and password
+   */
   s_login() {
     this.model;
 

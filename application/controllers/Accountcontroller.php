@@ -17,7 +17,7 @@ class Accountcontroller extends \PHPUnit_Framework_TestCase
     }
    
     /**
-     * function regestercreate a new user with name,email,password and phone number     
+     * function regester create a new user with name,email,password and phone number     
      */
      
     public function register()

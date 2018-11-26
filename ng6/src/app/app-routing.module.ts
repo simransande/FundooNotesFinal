@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import{RegistrationComponent} from './registration/registration.component';
-import { LoginComponent} from './login/login.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { LoginComponent } from './login/login.component';
 import { FundooNotesComponent } from './FundooNotes/FundooNotes.component';
 import { ForgotPasswordComponent } from './ForgotPassword/ForgotPassword.component';
 import { NotesComponent } from './notes/notes.component';
@@ -22,34 +22,37 @@ import { AuthGuard } from './auth.guard';
     CommonModule,
     RouterModule.forRoot([
       { path: '', redirectTo: 'login', pathMatch: 'full' },
-      
+
       { path: 'registration', component: RegistrationComponent },
       { path: 'login', component: LoginComponent },
       { path: 'ForgotPassword', component: ForgotPasswordComponent },
       { path: 'resetpassword', component: ResetpasswordComponent },
-      { path: 'FundooNotes', component: FundooNotesComponent,canActivate: [AuthGuard],
-       children:[
-        {path: '',component:NotesComponent},
-        { path: 'archive', component: ArchiveComponent },
-        {path: 'notes',component:NotesComponent,
-        children:[
-          { path: 'collaborator', component: CollaboratorComponent },
-          { path: 'editnote', component: EditnoteComponent }
-        ]},
-        { path: 'bin', component: BinComponent },
-        { path: 'label', component: LabelComponent },
+      {
+        path: 'FundooNotes', component: FundooNotesComponent, canActivate: [AuthGuard],
+        children: [
+          { path: '', component: NotesComponent },
+          { path: 'archive', component: ArchiveComponent },
+          {
+            path: 'notes', component: NotesComponent,
+            children: [
+              { path: 'collaborator', component: CollaboratorComponent },
+              { path: 'editnote', component: EditnoteComponent }
+            ]
+          },
+          { path: 'bin', component: BinComponent },
+          { path: 'label', component: LabelComponent },
 
-        { path: 'editlabel', component: EditlabelComponent },
-        { path: 'reminder', component: ReminderComponent }
-        
+          { path: 'editlabel', component: EditlabelComponent },
+          { path: 'reminder', component: ReminderComponent }
+
 
         ]
-     },
-     
-     
+      },
+
+
     ])
   ],
-  exports: [ RouterModule ],
+  exports: [RouterModule],
   declarations: []
 })
 export class AppRoutingModule { }

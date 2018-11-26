@@ -605,7 +605,7 @@ class Notescontroller extends CI_Controller
     {
     
         /**
-         * $labelid is the id of that perticular id which user want to delete
+         * @var labelid is the id of that perticular id which user want to delete
          */
         $labelid=$_POST['labelid'];  
         $noteid=$_POST['noteid'];          
