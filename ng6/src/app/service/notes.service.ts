@@ -235,7 +235,6 @@ export class NotesService {
     setid.append('mail',email);
     setid.append('noteid',value.noteId);
     setid.append('labelid',value.labelId);
-
     let otheroption: any = 
     {
       'Content-Type': 'application/x-www-form-urlencoded'
