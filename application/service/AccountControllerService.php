@@ -1,8 +1,9 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
 require_once 'PHPUnit/Autoload.php';
-include_once '/var/www/html/code1/codeigniter/application/controllers/jwt.php';
-require '/var/www/html/code1/codeigniter/application/controllers/vendor/autoload.php';
+// include_once '/var/www/html/code1/codeigniter/application/controllers/jwt.php';
+// require '/var/www/html/code1/codeigniter/application/controllers/vendor/autoload.php';
+// include "/var/www/html/code1/codeigniter/application/rabitMQ/send.php";
+include "/var/www/html/code1/codeigniter/application/rabitMQ/send.php";
 class AccountControllerService
 {
     
@@ -88,29 +89,60 @@ class AccountControllerService
 
          public function forgotpassword($email,$flag){
 
+            // $sql = "SELECT * FROM user  WHERE email = '$email'";
+            // $stmt = $this->connect->prepare($sql);
+            // $res = $stmt->execute();
+            // $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            // $sendmail=new SendMail();
+            // if (!empty($user)) 
+            // {    
+            // $flag++;
+            // $myjson='{"status":"1"}';     
+            // print $myjson;
+
+            //    $token= md5(uniqid(rand(), true));
+            //    require_once("forgot-password-recovery-mail.php");
+            // } else
+            // {
+            //     $myjson='{"status":"0"}';    
+            //     print $myjson;
+            // }
+
+
             $sql = "SELECT * FROM user  WHERE email = '$email'";
             $stmt = $this->connect->prepare($sql);
             $res = $stmt->execute();
-            $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-            if (!empty($user)) 
+            // $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            // set the resulting array to associative
+            while ($result = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                if (!empty($result)) 
             {    
-               
-            /**
-             * flag will be 1 here for sending the status 1
-             */
-            $flag++;
-            $myjson='{"status":"1"}';     
-            print $myjson;
-
-               $token= md5(uniqid(rand(), true));
-               require_once("forgot-password-recovery-mail.php");
-            } else
-            {
-                $myjson='{"status":"0"}';    
-                print $myjson;
+             $flag++;
+             $myjson='{"status":"1"}';     
+             print $myjson;
+             
+                if ($email == $result['email']) {
+                    $name = $result['uname'];
+                    $flag = 1;
+                    // $ref = new MailClass();
+                    $ref=new SendMail();
+                    $token = md5($email);
+                    $query = "UPDATE user SET token='$token' WHERE email='$email'";
+                    $statement = $this->connect->prepare($query);
+                    $statement->execute();
+                    $subject="Forgot Password Recovery";
+                    $body="Click this link to recover your password http://localhost:4200/resetpassword?token=" . $token;
+                    $ref->sendEmail($email,$subject,$body);
+                    break;
+                }
             }
-        
+         else
+         {
+            $myjson='{"status":"0"}';    
+             print $myjson;
+         }
+            }
          }
 
          public function resetpassword($mail, $pass){

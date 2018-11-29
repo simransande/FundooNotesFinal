@@ -457,3 +457,348 @@ fatal: no upstream configured for branch 'master'
 > git show :ng6/src/app/login/login.component.ts
 > git show :ng6/src/app/service/dataservice.service.ts
 > git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/login/login.component.ts
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git check-ignore -z --stdin
+> git show :application/rabitMQ/receive.php
+> git ls-files --stage -- application/rabitMQ/
+> git check-ignore -z --stdin
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/controllers/Accountcontroller.php
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/receive.php
+> git ls-files --stage -- application/rabitMQ/
+> git check-ignore -z --stdin
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/receive.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/mail_configuration.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/vendor/autoload.php
+> git show :application/vendor/core.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/vendor/phpmailer/phpmailer/src/PHPMailer.php
+> git show :application/controllers/SocialLoginController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/vendor/phpmailer/phpmailer/src/PHPMailer.php
+> git show :application/vendor/autoload.php
+> git show :application/vendor/core.php
+> git show :application/vendor/autoload.php
+> git show :application/vendor/phpmailer/phpmailer/get_oauth_token.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/vendor/phpmailer/phpmailer/src/SMTP.php
+> git show :application/vendor/phpmailer/phpmailer/src/POP3.php
+> git show :application/vendor/phpmailer/phpmailer/src/PHPMailer.php
+> git show :application/DbTestCase.php
+> git show :application/Bootstrap.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/receive.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/service/NoteControllerService.php
+> git show :application/service/AccountControllerService.php
+> git check-ignore -z --stdin
+> git show :application/vendor/phpmailer/phpmailer/src/PHPMailer.php
+> git show :application/service/AccountControllerService.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/vendor/composer/ClassLoader.php
+> git show :application/controllers/mail_configuration.php
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/receive.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/service/AccountControllerService.php
+> git show :application/vendor/composer/ClassLoader.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/receive.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php
+> git ls-files --stage -- application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/
+> git check-ignore -z --stdin
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php
+> git ls-files --stage -- application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/receive.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/controllers/vendor/composer/ClassLoader.php
+> git check-ignore -z --stdin
+> git show :application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AMQPStreamConnection.php
+> git ls-files --stage -- application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/
+> git show :application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php
+> git ls-files --stage -- application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/AMQPWriter.php
+> git ls-files --stage -- application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/
+> git check-ignore -z --stdin
+> git show :application/rabitMQ/receive.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/controllers/vendor/composer/ClassLoader.php
+> git show :application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AMQPStreamConnection.php
+> git ls-files --stage -- application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php
+> git ls-files --stage -- application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AMQPChannel.php
+> git ls-files --stage -- application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/
+> git check-ignore -z --stdin
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/AMQPWriter.php
+> git ls-files --stage -- application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/controllers/vendor/composer/ClassLoader.php
+> git show :application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AMQPStreamConnection.php
+> git ls-files --stage -- application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/AMQPWriter.php
+> git ls-files --stage -- application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AMQPChannel.php
+> git ls-files --stage -- application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :system/core/Common.php
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AMQPChannel.php
+> git ls-files --stage -- application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/
+> git show :application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/AMQPWriter.php
+> git ls-files --stage -- application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/
+> git show :application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AMQPChannel.php
+> git ls-files --stage -- application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/
+> git show :application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/AMQPWriter.php
+> git ls-files --stage -- application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AMQPChannel.php
+> git ls-files --stage -- application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/
+> git show :application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php
+> git ls-files --stage -- application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/
+> git show :system/core/Common.php
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AMQPChannel.php
+> git ls-files --stage -- application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/
+> git show :application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/AMQPWriter.php
+> git ls-files --stage -- application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AMQPChannel.php
+> git ls-files --stage -- application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/receive.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AMQPChannel.php
+> git ls-files --stage -- application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/
+> git show :application/rabitMQ/receive.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/controllers/vendor/composer/ClassLoader.php
+> git show :application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AMQPStreamConnection.php
+> git ls-files --stage -- application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/Accountcontroller.php
+> git show :system/core/CodeIgniter.php
+> git show :system/core/Common.php
+> git show :application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AbstractConnection.php
+> git ls-files --stage -- application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/
+> git show :application/controllers/Accountcontroller.php
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/receive.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/controllers/vendor/composer/ClassLoader.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/receive.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/receive.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/receive.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/controllers/Notescontroller.php
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/controllers/vendor/composer/ClassLoader.php
+> git show :application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AMQPStreamConnection.php
+> git ls-files --stage -- application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AMQPStreamConnection.php
+> git ls-files --stage -- application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/
+> git show :application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php
+> git ls-files --stage -- application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/
+> git show :application/rabitMQ/receive.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :ng6/src/app/notes/notes.component.html
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :ng6/src/app/login/login.component.spec.ts
+> git show :ng6/src/app/app.module.ts
+> git show :ng6/src/app/login/login.component.spec.ts
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/receive.php
+> git ls-files --stage -- application/rabitMQ/
+> git check-ignore -z --stdin
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/receive.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/receive.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/receive.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/controllers/vendor/composer/ClassLoader.php
+> git show :application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/AMQPStreamConnection.php
+> git ls-files --stage -- application/rabitMQ/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Connection/
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/receive.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/receive.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/receive.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/rabitMQ/receive.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/vendor/composer/ClassLoader.php
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/Accountcontroller.php
+> git show :system/core/CodeIgniter.php
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/receive.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/receive.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/receive.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/send.php
+> git ls-files --stage -- application/rabitMQ/
+> git check-ignore -z --stdin

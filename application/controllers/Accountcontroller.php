@@ -1,8 +1,8 @@
 
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-require_once 'PHPUnit/Autoload.php';
-include_once '/var/www/html/code1/codeigniter/application/controllers/jwt.php';
+// require_once 'PHPUnit/Autoload.php';
+// include_once '/var/www/html/code1/codeigniter/application/controllers/jwt.php';
 require '/var/www/html/code1/codeigniter/application/controllers/vendor/autoload.php';
 include '/var/www/html/code1/codeigniter/application/service/AccountControllerService.php';
  

@@ -14,7 +14,6 @@ import { interval, Subscription } from 'rxjs';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 // import { CookieService } from "angular2-cookie";
 
-
 export interface DialogData {
   tittle: any;
   noteDes: string;
