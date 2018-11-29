@@ -1,0 +1,2 @@
+[2018-11-28 09:40:08.843] [renderer1] [info] no standard startup: panel is active
+[2018-11-28 10:01:09.151] [renderer1] [error] Inotify limit reached (ENOSPC)

@@ -29,12 +29,27 @@
       <div *ngIf="Error" class="UserError">
         User entered wrong email or password
       </div>
-      <div align="center">
+      <div align="center" xfbml-parse>
         <h4>or Sign in with:</h4>
-        <img src="../../assets/icons8-facebook.svg">
-        <img src="../../assets/icons8-google.svg">
+        <!-- <button class="facebook" (click)="socialSignIn('facebook')">
+          <img src="../../assets/icons8-facebook.svg">
+        </button> -->
+        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+        </fb:login-button>
+        <div id="fb-root"></div>
+        <div class="fb-login-button" 
+        data-max-rows="1" data-size="large" data-button-type="continue_with" 
+        data-show-faces="false" data-auto-logout-link="false" 
+        data-use-continue-as="false"></div>
+        <!-- <div class="fb-login-button" 
+        data-show-faces="true" data-width="200" data-max-rows="1"
+        (click)="checkLoginState()"
+        >Login w/ Facebook</div> -->
+
+        <!-- <img src="../../assets/icons8-google.svg"> -->
 
       </div>
+      
       <hr>
       <!--instead of mat divider-->
       <!-- 

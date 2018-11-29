@@ -1,12 +1,16 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+include '/var/www/html/code1/codeigniter/application/service/NoteControllerService.php';
+
 class Notescontroller extends CI_Controller
 {
-   
-    public function index() 
-    {
-         $this->load->library('session');
-    }
+
+     // protected $connect;
+   public $serviceNote;
+   public function __construct()
+   {
+       $this->serviceNote = new NoteControllerService();
+   }
 
     /**
      *function for create notes
@@ -65,24 +69,14 @@ class Notescontroller extends CI_Controller
             $image="";
         }
        
-        $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
-        $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $this->serviceNote->note($title,$des,$mail,$reminder, $pin,
+        $archive, $trash, $colorcode, $image);
 
-        //insert all the data into tabel
-        $sql = "INSERT INTO note (tittle,description,email, reminder, pin,
-                archive, trash, colorcode, image)
-                VALUES('$title','$des','$mail','$reminder', $pin,
-                $archive, $trash, '$colorcode', '$image')";
-
-        //prepare connection
-        $stmt = $connect->prepare($sql);
-        //excuting that stmt
-        $res = $stmt->execute();
         
     }
 
     /**
-     *get notes and return data 
+     * @method to get notes and return data 
      */
     
     public function getnotes()
@@ -92,51 +86,23 @@ class Notescontroller extends CI_Controller
          */
         $mail=$_POST['email'];  
 
-        $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
-        $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
         /**
          *queury for selecting that perticular notes for the mail id 
          */
         
-        $sql = "SELECT * From note where email='$mail'";
-      
-        $stmt = $connect->prepare($sql);
-        $res = $stmt->execute();
-        while( $row = $stmt->fetch(PDO::FETCH_ASSOC)) 
-        {
-            $myArray[] = $row;
-        }
-        $notes= json_encode($myArray);
-        print $notes;
-
-         
+        $this->serviceNote->getnotes($mail);
+       
     }
 
     /**
-     *find the mail and its collaborate note from two tabel 
+     * @method to find the mail and its collaborate note from two tabel 
      */
     
     public function joinNoteCollab()
     {
         $mail=$_POST['email'];  
 
-        $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
-        $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        //query to join two tabels note and collaborator
-        $sql = "SELECT * FROM fundooNotes.note INNER JOIN fundooNotes.collaborator ON note.id = collaborator.noteId
-                where collaborator.sharedEmail='$mail'";
-    
-        $stmt = $connect->prepare($sql);
-        $res = $stmt->execute();
-        while( $row = $stmt->fetch(PDO::FETCH_ASSOC)) 
-        {
-          $myArray[] = $row;
-        }
-        $notes= json_encode($myArray);
-        print $notes;
-         
+        $this->serviceNote->joinNoteCollab($mail);         
     }
  
  
@@ -204,194 +170,9 @@ class Notescontroller extends CI_Controller
           $reminder='';
         }
   
-        if($flag=='pin')
-        {
-           $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
-           $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-     
+        $this->serviceNote->updatenotes($flag,$id,$mail,$image,$description,$trash,$title,$isarchive,$pin,$color,$reminder);         
 
-           if($pin==0)
-           {        
-             $sql = "UPDATE note SET pin=1 WHERE id=$id";
-             $stmt = $connect->prepare($sql);
-             $res = $stmt->execute();
-           }
-           else
-           {
-             $sql = "UPDATE note SET pin=0 WHERE id=$id";
-             $stmt = $connect->prepare($sql);
-             $res = $stmt->execute();
-           }
-        
-        }
-    
-
-        if($title==$title)
-        {
        
-            $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
-            $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-            $sql = "UPDATE note SET tittle='$title' WHERE id=$id";
-            $stmt = $connect->prepare($sql);
-            $res = $stmt->execute(); 
-        }
-    
-       
-        if($description==$description)
-        {
-
-            $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
-            $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-       
-            $sql="UPDATE note SET description='$description' WHERE id=$id";
-            $stmt = $connect->prepare($sql);
-            $res = $stmt->execute();
-        
-        }
-    
-        if($color=='color')
-        {
-
-           $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
-           $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-           $sql="UPDATE note SET colorcode='$color' WHERE id=$id";
-           $stmt = $connect->prepare($sql);
-           $res = $stmt->execute();
-        
-        }
-    
-        if($flag=='color')
-        {
-
-            $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
-            $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-            $sql="UPDATE note SET colorcode='$color' WHERE id=$id";
-            $stmt = $connect->prepare($sql);
-            $res = $stmt->execute();
-        }
-
-        if($flag=='archive')
-        {
-            $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
-            $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-            if($isarchive==0)
-            {        
-                $sql="UPDATE note SET archive='1' WHERE id=$id";
-                $stmt = $connect->prepare($sql);
-                $res = $stmt->execute();
-            }
-            else
-            {
-                $sql="UPDATE note SET archive='0' WHERE id=$id";
-                $stmt = $connect->prepare($sql);
-                $res = $stmt->execute();
-            }
-        }
-
-        if($flag=='trash')
-        {
-            $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
-            $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-            if($trash==0)
-            {        
-                $sql="UPDATE note SET trash=1 WHERE id=$id";
-                $stmt = $connect->prepare($sql);
-                $res = $stmt->execute();
-            }
-            else{
-                $sql="UPDATE note SET trash=0 WHERE id=$id";
-            }
-            $stmt = $connect->prepare($sql);
-            $res = $stmt->execute();
-
-        }
-
-        if($flag=='dltForever')
-        {
-            $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
-            $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        
-            $sql="DELETE FROM note WHERE id=$id";
-            $stmt = $connect->prepare($sql);
-            $res = $stmt->execute();
-        
-        }
-
-        if($flag=='restore')
-        {
-            $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
-            $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-            $sql="UPDATE note SET trash=0 WHERE id=$id";
-            $stmt = $connect->prepare($sql);
-            $res = $stmt->execute();
-        }
-
-        if($flag=='reminder')
-        {
-            $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
-            $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-            $sql="UPDATE note SET reminder='$reminder' WHERE id=$id";
-            $stmt = $connect->prepare($sql);
-            $res = $stmt->execute();
-        } 
-        
-        if($flag=='dltReminder')
-        {
-            $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
-            $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-            $sql="UPDATE note SET reminder='' WHERE id=$id";
-            $stmt = $connect->prepare($sql);
-            $res = $stmt->execute();
-        }
-            
-        if($flag=='dltLabel')
-        {
-            $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
-            $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-       
-            $sql="UPDATE note SET label='' WHERE id=$id";
-            $stmt = $connect->prepare($sql);
-            $res = $stmt->execute();
-        }
-
-        if($flag=='image')
-        {
-            $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
-            $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-            if ($_FILES['file']['size'] == 0 && $_FILES['file']['error'] == 0)
-            {
-                // cover_image is empty (and not an error)
-            }
-            else
-            {
-                /**
-                 * Move the file to the uploads folder 
-                 */
-             move_uploaded_file($_FILES["file"]["tmp_name"], "uploads/" . $_FILES["file"]["name"]);
-
-             /**
-              * Set location for image
-              */
-             $fileloc='http://localhost/code1/codeigniter/uploads/'.$_FILES["file"]["name"];
-         
-             $sql="UPDATE note SET image='$fileloc' WHERE id=$id";
-             $stmt = $connect->prepare($sql);
-             $res = $stmt->execute();
-           
-            }
-             
-        }
-
     }
 
 
@@ -407,13 +188,7 @@ class Notescontroller extends CI_Controller
  
         if($flag=='dltForever')
         {
-            $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
-            $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
-            $sql = "DELETE FROM note WHERE id=$id";
-            $stmt = $connect->prepare($sql);
-            $res = $stmt->execute();
-    
+            $this->serviceNote->deleteurl($id,$mail);         
         }
     }
 
@@ -429,22 +204,7 @@ class Notescontroller extends CI_Controller
         {
           $mail='';
         }
-
-        $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
-        $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        $sql = "SELECT count(*) FROM user  where email='$mail'"; 
-        $result = $connect->prepare($sql); 
-        $result->execute(); 
-        $number_of_rows = $result->fetchColumn();
-     
-        if ($number_of_rows>=1) 
-        {  
-            $mail=$_POST['mail'];                     
-            $myjson='{"email":'.'"'.$mail.'"}';           
-            print $myjson;  
-        } 
-
+        $this->serviceNote->collaborator($mail);         
     }
 
     /**
@@ -470,32 +230,7 @@ class Notescontroller extends CI_Controller
             $email='';
         }
 
-        $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
-        $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        $sql = "SELECT count(*)  FROM collaborator  where  sharedEmail='$sharedEmail'  and   noteId=$noteid"; 
-        $result = $connect->prepare($sql); 
-        $result->execute(); 
-        $number_of_rows = $result->fetchColumn();
- 
-        if($number_of_rows>=1)
-        {
-            //  echo("already exist");
-        }
-        else
-        {
-            $sql = "INSERT INTO collaborator (noteId,email,sharedEmail)
-                    VALUES($noteid,'$email','$sharedEmail')";
-            $result = $connect->prepare($sql); 
-            $result->execute(); 
-
-            $noteid=$_POST['noteid']; 
-            $sharedEmail=$_POST['sharedEmail'];   
-            $email=$_POST['email'];   
-
-            $myjson='{"noteid":'.'"'.$noteid.'","sharedEmail":'.'"'.$sharedEmail.'","email":'.'"'.$email.'"}';           
-            print $myjson;  
-        }
+        $this->serviceNote->AddCollab($noteid,$sharedEmail,$email);         
     }
 
     /**
@@ -505,23 +240,8 @@ class Notescontroller extends CI_Controller
     public function GetCollab()
     {
         $mail=$_POST['email'];     
-         
-        $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
-        $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
-        $sql = "SELECT * From collaborator where email='$mail'"; 
-        $stmt = $connect->prepare($sql); 
-        $res = $stmt->execute();
-        while( $row = $stmt->fetch(PDO::FETCH_ASSOC)) 
-        {
-          $myArray[] = $row;
-        }
-        for ($a=0;$a<count($myArray);$a++)
-        {
-            array_push($myArray[$a],substr($myArray[$a]['sharedEmail'],0,1) );
-        }        
-        $notes= json_encode($myArray);
-        print $notes;    
+        $this->serviceNote->GetCollab($mail);         
+  
     }
 
 
@@ -549,29 +269,8 @@ class Notescontroller extends CI_Controller
         {
             $labelid="";
         }
-       
-        $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
-        $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $this->serviceNote->notelabe($mail,$noteid,$labelid);         
 
-        $sql = "SELECT * FROM noteLabel  where  labelid=$labelid  and   noteid=$noteid "; 
-        $result = $connect->prepare($sql); 
-        $result->execute(); 
-        $number_of_rows = $result->fetchColumn();
-
-
-        if($number_of_rows >=1)
-        {
-            //  echo("already exist");
-
-        }
-        else
-        {
-            $sql = "INSERT INTO noteLabel (noteid,labelid,email)
-                    VALUES('$noteid','$labelid','$mail')";
-            $result = $connect->prepare($sql); 
-            $result->execute(); 
-           
-        }
     }
 
 
@@ -580,22 +279,8 @@ class Notescontroller extends CI_Controller
      */
     public function getnotelabe()
     { 
-        $mail=$_POST['email'];        
-
-        $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
-        $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
-        $sql ="SELECT * From noteLabel where email='$mail'"; 
-        $stmt = $connect->prepare($sql); 
-        $res = $stmt->execute();
-
-        while( $row = $stmt->fetchAll(PDO::FETCH_ASSOC)) 
-        {
-            $notes= json_encode($row);
-        }
-       
-        print $notes;
-
+        $mail=$_POST['email'];       
+        $this->serviceNote->getnotelabe($mail);         
     }
 
     /**
@@ -613,18 +298,38 @@ class Notescontroller extends CI_Controller
         {
             $labelid="";
         }
-        $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
-        $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
-        /**
-         * query to select labelid from notelabel tabel to delete it 
-         */
-        $sql ="DELETE FROM noteLabel WHERE labelid=$labelid and noteid=$noteid"; 
-        $stmt = $connect->prepare($sql); 
-        $res = $stmt->execute(); 
+       
+        $this->serviceNote->deletelabel1($labelid,$noteid);         
+
         
     }
 
+
+    public function DragAndDrop(){
+        $email     = $_POST["email"];
+        $id        = $_POST["id"];
+        $loop      = $_POST["loop"];
+        $direction = $_POST["direction"];
+        /**
+         * If direction is upward get the note id which is less than current id
+         */
+        for ($i = 0; $i < $loop; $i++) {
+            if ($direction == "upward") {
+                $querry = "SELECT max(id) as nextid from note where id < '$id' and email='$email'";
+            } else {
+                $querry = "SELECT min(id) as nextid from note where id > '$id' and email='$email'";
+            }
+            $stmt   = $this->connect->prepare($querry);
+            $var    = $stmt->execute();
+            $noteid = $stmt->fetch(PDO::FETCH_ASSOC);
+            $noteid = $noteid['nextid'];
+            $querry = "UPDATE note a inner join note b on a.id <> b.id set a.email = b.email,a.tittle = b.tittle,a.description = b.description,a.colorcode = b.colorcode,a.reminder = b.reminder,a.archive = b.archive,a.trash = b.trash,a.image=b.image,a.pin=b.pin where a.id in('$noteid','$id') and b.id in('$noteid','$id')";
+            $stmt   = $this->connect->prepare($querry);
+            $var    = $stmt->execute();
+            $id=$noteid;
+        }
+
+    }
 
 }
 ?>

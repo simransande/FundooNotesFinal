@@ -2,20 +2,22 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 require_once 'PHPUnit/Autoload.php';
- include_once '/var/www/html/code1/codeigniter/application/controllers/jwt.php';
- require '/var/www/html/code1/codeigniter/application/controllers/vendor/autoload.php';
+include_once '/var/www/html/code1/codeigniter/application/controllers/jwt.php';
+require '/var/www/html/code1/codeigniter/application/controllers/vendor/autoload.php';
+include '/var/www/html/code1/codeigniter/application/service/AccountControllerService.php';
  
-
-  use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\TestCase;
 
 class Accountcontroller extends \PHPUnit_Framework_TestCase
 {   
-    public function index() 
-    {
-         //loading session library 
-         $this->load->library('session');
-    }
-   
+   // protected $connect;
+   public $ref;
+   public function __construct()
+   {
+       $this->ref = new AccountControllerService();
+   }
+
+    
     /**
      * function regester create a new user with name,email,password and phone number     
      */
@@ -29,7 +31,7 @@ class Accountcontroller extends \PHPUnit_Framework_TestCase
         * @label('Name of user')
         */
        $name=$_POST['username'];
-       assertEquals($name,'prashant');
+    //    assertEquals($name,'prashant');
        
        /**
         * @var integer
@@ -39,7 +41,7 @@ class Accountcontroller extends \PHPUnit_Framework_TestCase
 
        $pass=$_POST['password'];
 
-         /**
+        /**
         * @var integer
         *@label('phone number')
         */
@@ -48,55 +50,16 @@ class Accountcontroller extends \PHPUnit_Framework_TestCase
         
        $mail=$_POST['email'];
  
-       /**
-        * check if e-mail address is well-formed
-        */
-        if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) 
-        {
-         echo "Invalid email format"; 
-        }
-   
-        else
-        {
-            /**
-             * Create connection
-             */
-            $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
-            $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $this->ref->register($name, $pass, $phone, $mail,$flag);
 
-       $sql = "SELECT * FROM user  WHERE email = '$mail' and uname='$name'";
-       $stmt = $connect->prepare($sql);
-       $res = $stmt->execute();
-  
-      if( $row = $stmt->fetch(PDO::FETCH_ASSOC))
-       { 
-            echo "User name or Email id already exists.";
-    
-        }
-
-         else
-         {
-
-         $sql1 = "INSERT INTO user(uname,email,pass,phone) VALUES('$name','$mail','$pass',$phone)";
-         $stmt = $connect->prepare($sql1);
-         if($stmt->execute())
-         {
-            $flag++;
-                    $myjson='{"status":"1"}';     
-                    $myjson='{"status":'.$flag."}";     
-                    print $myjson;                
-                 }
-                else 
-                {
-                    $myjson='{"status":"0"}';     
-                    $myjson='{"status":'.$flag."}";     
-                    print $myjson;
-                }
-         }
-       
-        }
-    
         
+    }
+    public function uploadimage()
+    {
+
+        $image=$_POST['image'];
+        $this->ref->uploadimage($image);
+
     }
 
 
@@ -123,33 +86,8 @@ class Accountcontroller extends \PHPUnit_Framework_TestCase
         */
 
         $pass=$_POST['password'];
-   
-        
-        
-        $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
-        $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
-        $sql = "SELECT * FROM user  WHERE email = '$mail' and pass='$pass'";
-        $stmt = $connect->prepare($sql);
-        $res = $stmt->execute();
-             
-         $row = $stmt->fetch(PDO::FETCH_ASSOC);
-         $name=$row['uname'];
-       
-        //if the number of rows greater or equal to 1
-         if ($row!=false) 
-         {  
-             $mail=$_POST['email'];              
-            $flag++;            
-            $myjson='{"email":'.'"'.$mail.'","name":'.'"'.$name.'","status":'.$flag."}";           
-            print $myjson;  
-         } 
-        else
-         {
-     $flag--;
-             print  $flag;
-         }
-        
+
+        $this->ref->login($mail, $pass,$flag);        
     }
 
      /**
@@ -157,7 +95,9 @@ class Accountcontroller extends \PHPUnit_Framework_TestCase
       */
     public function forgotpassword()
     {
-        //if its not set the response will not get back to frontend  
+        /**
+         * header-if its not set the response will not get back to frontend
+         */  
         header('Access-Control-Allow-Origin: *');
         header('Access-Control-Allow-Headers: X-Requested-With');
         header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
@@ -174,34 +114,10 @@ class Accountcontroller extends \PHPUnit_Framework_TestCase
            *     checkMX = true
            * )
            */
-            $email = $_POST["email"];
-            $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
-            $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            
-            $sql = "SELECT * FROM user  WHERE email = '$email'";
-            $stmt = $connect->prepare($sql);
-            $res = $stmt->execute();
-            $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-            if (!empty($user)) 
-            {    
-               
-            /**
-             * flag will be 1 here for sending the status 1
-             */
-            $flag++;
-            $myjson='{"status":"1"}';     
-            print $myjson;
-
-               $token= md5(uniqid(rand(), true));
-               require_once("forgot-password-recovery-mail.php");
-            } else
-            {
-                $myjson='{"status":"0"}';    
-                print $myjson;
-            }
-        }
-    
+            $email = $_POST["email"]; 
+            $this->ref->forgotpassword($email,$flag);        
+       
+           }
     }
 
 
@@ -220,18 +136,36 @@ class Accountcontroller extends \PHPUnit_Framework_TestCase
         $pass=$_POST['password'];
         $token=$_POST['token'];
         if($_POST['token']==$token)
-        {    
-            $connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
-            $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            
-            $sql = "update user SET pass='$pass' where email='$mail'";
-            $stmt = $connect->prepare($sql);
-            $res = $stmt->execute();
+        {                
+            $this->ref->resetpassword($mail, $pass);
         }
 
 
     }
    
 
+    public function socialLogin()
+    {
+        $fb = new Facebook\Facebook([
+            'app_id' => '{347982709337483}',
+            'app_secret' => '{7f63c380e7f88a905590d1ea991735b6}',
+            'default_graph_version' => 'v3.2',
+            ]);
+          
+          try {
+            // Returns a `Facebook\FacebookResponse` object
+            $response = $fb->get('/me?fields=id,name', '{accessToken}');
+          } catch(Facebook\Exceptions\FacebookResponseException $e) {
+            echo 'Graph returned an error: ' . $e->getMessage();
+            exit;
+          } catch(Facebook\Exceptions\FacebookSDKException $e) {
+            echo 'Facebook SDK returned an error: ' . $e->getMessage();
+            exit;
+          }
+          
+          $user = $response->getGraphUser();
+          
+          echo 'Name: ' . $user['name'];
+    }
 }
 

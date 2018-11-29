@@ -1,0 +1,109 @@
+Looking for git in: git
+Using git 2.7.4 from git
+> git rev-parse --show-toplevel
+> git config --get commit.template
+Open repository: /var/www/html/code1/codeigniter
+> git status -z -u
+> git show :ng6/src/app/login/login.component.spec.ts
+> git check-ignore -z --stdin
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :ng6/src/app/login/login.component.spec.ts
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :ng6/src/karma.conf.js
+> git show :ng6/src/app/service/jwttokwn.service.ts
+> git show :ng6/src/app/service/jwttokwn.service.spec.ts
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :ng6/src/app/service/jwttokwn.service.spec.ts
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :ng6/src/app/login/login.component.spec.ts
+> git show :ng6/src/app/registration/registration.component.html
+> git show :ng6/src/app/registration/registration.component.spec.ts
+> git show :ng6/src/app/registration/registration.component.html
+> git show :ng6/src/app/registration/registration.component.spec.ts
+> git show :ng6/src/app/registration/registration.component.html
+> git show :ng6/src/app/registration/registration.component.spec.ts
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :ng6/src/app/registration/registration.component.html
+> git show :ng6/src/app/registration/registration.component.spec.ts
+> git show :ng6/src/environments/environment.ts
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :ng6/src/karma.conf.js
+> git show :ng6/src/test.ts
+> git show :ng6/src/app/reminder/reminder.component.html
+> git show :ng6/src/app/service/auth.service.ts
+> git show :ng6/src/app/auth.guard.ts
+> git show :ng6/src/app/service/auth.service.ts
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/service/auth.service.ts
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/auth.guard.ts
+> git show :ng6/src/app/service/auth.service.ts
+> git show :ng6/src/app/auth.guard.ts
+> git show :ng6/src/app/service/auth.service.ts
+> git show :ng6/src/app/auth.guard.ts
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :ng6/src/app/label/label.component.ts
+> git show :ng6/src/app/app-routing.module.ts
+> git show :ng6/src/app/app.component.ts
+> git show :ng6/src/app/app.module.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/service/auth.service.ts
+> git show :ng6/src/app/service/view.service.ts
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.html
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :ng6/src/app/service/view.service.ts
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :ng6/src/app/service/view.service.ts
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/login/login.component.html
+> git show :ng6/src/app/ForgotPassword/ForgotPassword.component.html
+> git show :ng6/src/app/ForgotPassword/ForgotPassword.component.ts
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/controllers/Accountcontroller.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin

@@ -57,6 +57,8 @@ $route['default_controller'] = 'Accountcontroller';
 
 $route['login'] = 'Accountcontroller/login';
 $route['register'] = 'Accountcontroller/register';
+$route['uploadimage'] = 'Accountcontroller/uploadimage';
+
 $route['forgotpassword'] = 'Accountcontroller/forgotpassword';
 $route['resetpassword'] = 'Accountcontroller/resetpassword';
 $route['notes'] = 'Notescontroller/notes';
@@ -76,6 +78,11 @@ $route['deletelabel1'] = 'Notescontroller/deletelabel1';
 $route['AddCollab'] = 'Notescontroller/AddCollab';
 $route['GetCollab'] = 'Notescontroller/GetCollab';
 $route['joinNoteCollab'] = 'Notescontroller/joinNoteCollab';
+$route['DragAndDrop'] = 'Notescontroller/DragAndDrop';
+$route['socialLogin'] = 'Accountcontroller/socialLogin';
+
+
+
 // $route['test1'] = 'testingcontroller';
 $route['test']='test1/test';
 

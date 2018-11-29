@@ -6,6 +6,7 @@ import { CreatelabelService } from '../service/createlabel.service';
 import { Router } from '@angular/router';
 import { CollaboratorComponent } from '../collaborator/collaborator.component';
 import { ViewService } from '../service/view.service';
+import { DataserviceService } from '../service/dataservice.service';
 
 
 export interface DialogData {
@@ -30,7 +31,7 @@ export class FundooNotesComponent implements OnInit {
   list: boolean = true;
 
 
-  constructor(private service: CreatelabelService, public dialog: MatDialog,
+  constructor(private service: CreatelabelService, public dialog: MatDialog,private serviceData: DataserviceService,
     public noteService: NotesService, private router: Router, private viewServiceObj: ViewService) {
 
     this.changeView();
@@ -46,6 +47,7 @@ export class FundooNotesComponent implements OnInit {
   noteView = 'grid';
   email = localStorage.getItem('email');
   username = localStorage.getItem('uname');
+  localUrl: any;
 
 
 
@@ -112,6 +114,32 @@ export class FundooNotesComponent implements OnInit {
     localStorage.clear();
     this.router.navigate(['/login']);
   }
+
+    /**
+   * function is for uploading the image on selected note
+   * @param event it is the file to select
+   * @param note on that perticular note
+   */
+  Fillupload(event) {
+    debugger;
+    this.localUrl = event.target.result;
+    let email = localStorage.getItem('email');
+
+    let data =
+      [
+        { 'selectedFile': <File>event.target.files[0],email }
+      ];
+
+      this.serviceData.uploading(data).subscribe((Statusdata: any) => {
+      
+    });
+
+  }
+
+  search(searchItem) {
+    this.viewServiceObj.searchItem(searchItem);
+    }
+    
 
 }
 

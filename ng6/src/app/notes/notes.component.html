@@ -170,7 +170,7 @@
 
         <!--Pinned Notes-->
         <div class="notesDisplay">
-            <div *ngFor="let note of alldata">
+            <div *ngFor="let note of (alldata | search: searchItem)">
                 <mat-card [ngClass]="direction=='row' ? 'cardDisplay' : 'cardDisplayrow'" *ngIf="note.archive!=1 && note.pin==1 && note.trash!=1"
                     [style.background-color]="note.colorcode">
 
@@ -345,7 +345,7 @@
 
         <!--UnPinned Notes-->
         <div class="notesDisplay" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)">
-            <div *ngFor="let note of alldata" cdkDrag>
+            <div cdkDrag *ngFor="let note of (alldata | search: searchItem)">
                 <mat-card [ngClass]="direction=='row' ? 'cardDisplay' : 'cardDisplayrow'" *ngIf="note.archive!=1 && note.pin!=1 && note.trash!=1"
                     [style.background-color]="note.colorcode">
 
@@ -510,7 +510,7 @@
 
         <!--colaborator note-->
         <div class="notesDisplay">
-            <div *ngFor="let note of collabNotes">
+            <div *ngFor="let note of (collabNotes | search: searchItem)">
                 <mat-card [ngClass]="direction=='row' ? 'cardDisplay' : 'cardDisplayrow'" *ngIf="note.archive!=1 && note.pin!=1 && note.trash!=1"
                     [style.background-color]="note.colorcode">
                     <div>

@@ -28,6 +28,9 @@ export class NotesService {
   private AddCollab='http://localhost/code1/codeigniter/AddCollab';
   private GetCollab='http://localhost/code1/codeigniter/GetCollab';
   private joinNoteCollab='http://localhost/code1/codeigniter/joinNoteCollab';
+  private DragDrop_url='http://localhost/code1/codeigniter/DragAndDrop';
+
+  
   noteview: any;
   constructor(private http: HttpClient) {
   }
@@ -279,6 +282,16 @@ export class NotesService {
       map((res: Response) => res)
     );
 
+  }
+
+  dragnotes(email: any, id: any, loops: any, dir: any): any {
+    const data = new FormData();
+    debugger;
+    data.append("email", email);
+    data.append("id", id);
+    data.append("loop", loops);
+    data.append("direction", dir);
+    return this.http.post(this.DragDrop_url, data);
   }
 
 

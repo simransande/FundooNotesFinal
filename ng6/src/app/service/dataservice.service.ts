@@ -5,6 +5,8 @@ import { from } from 'rxjs';
 import { map, filter, catchError, mergeMap } from 'rxjs/operators';
 import { text } from '@angular/core/src/render3/instructions';
 import { pipe } from '@angular/core/src/render3/pipe';
+import { Router } from '@angular/router';
+
 
 
 
@@ -18,9 +20,46 @@ export class DataserviceService {
   private login = 'http://localhost/code1/codeigniter/login';
   private forgotpassword = 'http://localhost/code1/codeigniter/forgotpassword';
   private resetpassword = 'http://localhost/code1/codeigniter/resetpassword';
-  constructor(private http: HttpClient) {
+  private uploadimage= 'http://localhost/code1/codeigniter/uploadimage';
+  private socialLogin= 'http://localhost/code1/codeigniter/socialLogin';
+
+  
+  constructor(private http: HttpClient,public router: Router) {
 
   }
+
+  async storeData(data) {
+    localStorage.setItem('userData', JSON.stringify(data));
+    const newData = await this.getData();
+    return this.router.navigate(['/FundooNotes'], newData);
+}
+
+getData() {
+   return JSON.parse(localStorage.getItem('email'));
+}
+
+sessionIn() {
+   let A;
+   if (this.getData()) {
+       A = this.router.navigate(['/FundooNotes'], this.getData());
+   }
+   return A;
+}
+
+sessionOut() {
+   let A;
+   if (!this.getData()) {
+     A = this.router.navigate(['']);
+   }
+   return A;
+}
+
+logOut() {
+   localStorage.setItem('email', '');
+   localStorage.clear();
+   return this.router.navigate(['']);
+}
+
   /**
       * Regester a new id
       * Observable<{}> -respond to user
@@ -61,6 +100,19 @@ export class DataserviceService {
 
   }
 
+  uploading(imgdata: any): Observable<any> 
+  {
+    debugger;
+    let getnote = new FormData();
+     
+    getnote.append('image', imgdata.data[0].image);
+   
+   
+    return this.http.post(this.uploadimage, getnote).pipe(
+      map((res: Response) => res)
+    );
+  }
+
   /**
       * mail will send your the register mail id if password forget
       * Observable<{}> -respond to user
@@ -91,6 +143,17 @@ export class DataserviceService {
     return this.http.post(this.resetpassword, reset, otheroption);
   }
 
+
+  SocialLogin(value: any): Observable<{}> {
+    let social = new FormData();
+    social.append('email', value.data[0].accessToken);
+
+    let otheroption: any = {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    }
+    return this.http.post(this.socialLogin, social, otheroption);
+
+   }
 }
 
 

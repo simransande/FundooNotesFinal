@@ -27,7 +27,9 @@
   position:relative;
   padding: 0;
   white-space: pre-wrap;
-  word-wrap: break-word
+  word-wrap: break-word;
+  /* border-radius: 15px; */
+
 }
 .cardDisplayrow {
  

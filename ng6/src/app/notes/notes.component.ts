@@ -10,8 +10,10 @@ import { CollaboratorComponent } from '../collaborator/collaborator.component';
 import { ViewService } from '../service/view.service';
 import { EditnoteComponent } from '../editnote/editnote.component';
 import { CreatelabelService } from '../service/createlabel.service';
-import { interval } from 'rxjs';
+import { interval, Subscription } from 'rxjs';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+// import { CookieService } from "angular2-cookie";
+
 
 export interface DialogData {
   tittle: any;
@@ -99,6 +101,10 @@ export class NotesComponent implements OnInit {
 
   public res;
   public view;
+  searchSubscription: Subscription;
+  searchItem: any;
+  iserror: boolean;
+  errorMessage: any;
 
 
   /**
@@ -111,7 +117,9 @@ export class NotesComponent implements OnInit {
    * @param viewService for service of view
    */
   constructor(private service: NotesService, private labelService: CreatelabelService,
-    iconRegistry: MatIconRegistry, sanitizer: DomSanitizer, public dialog: MatDialog,
+    iconRegistry: MatIconRegistry, sanitizer: DomSanitizer,
+    public dialog: MatDialog,
+
     private viewService: ViewService) {
 
     this.service.getNotesColl().subscribe(response => {
@@ -163,6 +171,12 @@ export class NotesComponent implements OnInit {
 
     });
 
+    this.searchSubscription = this.viewService
+      .getsearchItem()
+      .subscribe(message => {
+        this.searchItem = message;
+      });
+
     interval(1000).subscribe(x => {
       var day = new Date();
       var fulldate = day.toDateString() + " " + day.getHours() % 12 + ":" + day.getMinutes();
@@ -188,9 +202,44 @@ export class NotesComponent implements OnInit {
    * drop the dragged note 
    * @param event for droping on that event 
    */
+  // drop(event: CdkDragDrop<string[]>) {
+  //   alert(1);
+  //   debugger;
+  //   moveItemInArray(this.alldata, event.previousIndex, event.currentIndex);
+  // }
+
   drop(event: CdkDragDrop<string[]>) {
-    alert(1);
     moveItemInArray(this.alldata, event.previousIndex, event.currentIndex);
+    let diff: any;
+    let direction: any;
+
+    if (event.currentIndex > event.previousIndex) {
+      direction = "upward";
+      diff = event.currentIndex - event.previousIndex;
+    } else {
+      diff = event.previousIndex - event.currentIndex;
+      direction = "downward";
+    }
+    // alert(event.previousIndex)
+    // alert(event.currentIndex)
+
+    let email = this.Email;
+    debugger;
+    let obs = this.service.dragnotes(
+      email,
+      this.alldata[event.currentIndex].id,
+      diff,
+      direction
+    );
+    obs.subscribe(
+      (notes: any) => {
+        debugger;
+      },
+      error => {
+        this.iserror = true;
+        this.errorMessage = error.message;
+      }
+    );
   }
 
   callfirst() {
@@ -485,6 +534,7 @@ export class NotesComponent implements OnInit {
       console.log("Dialog result:" + result);
     });
   }
+
 
 }
 

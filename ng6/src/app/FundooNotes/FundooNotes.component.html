@@ -7,7 +7,8 @@
         <button mat-icon-button class="search-button">
             <img class="button" src="../../assets/search.svg" />
         </button>
-        <input type="search" class="search" matInput placeholder="Search" />
+        <!-- <input type="search" class="search" matInput placeholder="Search" /> -->
+        <input class="search" type="text" [(ngModel)]="searchItem" (keyup)="search(searchItem, $event)"/>
     </div>
 
 
@@ -34,15 +35,16 @@
         <img class="bell" src="../../assets/bell.svg">
     </button>
 
-
-    <button mat-fab color="accent" class="signout" [matMenuTriggerFor]="logoutrmenu">
-        <div class="Initial1">
+    <button mat-fab color="accent" class="signout" [matMenuTriggerFor]="logoutrmenu" >
+        <!-- <div class="Initial1">
             {{Initial}}
-        </div>
+        </div> -->
     </button>
-    <mat-menu #logoutrmenu="matMenu" class="signoutmenu">
 
-        <button mat-fab color="accent" class="profile">
+    <mat-menu #logoutrmenu="matMenu" class="signoutmenu">
+        <!-- <input type="file" accept="image/*" #file (change)="Fillupload($event,note)" class="filecss" id="selectedFile"> -->
+        <!-- (click)="file.click()" -->
+        <button mat-fab color="accent" class="profile" >
             <div class="Initial">
                 {{Initial}}
             </div>

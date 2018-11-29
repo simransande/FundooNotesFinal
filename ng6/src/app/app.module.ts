@@ -38,6 +38,25 @@ import { EditnoteComponent } from './editnote/editnote.component';
 import { LabelComponent } from './label/label.component';
 import { AuthService } from './service/auth.service';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+// import { SearchPipePipe } from './search-pipe.pipe';
+import { SearchPipe } from './notes/search.pipe';
+
+// import { SocialLoginModule,
+//   AuthServiceConfig,FacebookLoginProvider} from "angular-6-social-login";
+
+//Configs 
+// export function getAuthServiceConfigs() {
+//   let config = new AuthServiceConfig(
+//       [
+//         {
+//           id: FacebookLoginProvider.PROVIDER_ID,
+//           provider: new FacebookLoginProvider("Your-Facebook-app-id")
+//         }
+//       ]);
+
+//   return config;
+// }
 
 @NgModule({
   declarations: [
@@ -55,7 +74,9 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     ReminderComponent,
      CollaboratorComponent,
      EditnoteComponent,
-     LabelComponent
+     LabelComponent,
+    //  SearchPipetittlePipe,
+     SearchPipe
     
     
   ],
@@ -80,9 +101,20 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     MatMenuModule,
     MatDialogModule,
     DragDropModule
+    // FacebookLoginProvider,
+    // SocialLoginModule
+    
+
   
   ],
-  providers: [DataserviceService,HttpClientModule,ViewService,FundooNotesComponent],
-  bootstrap: [AppComponent]
+  providers: [DataserviceService,HttpClientModule,ViewService,FundooNotesComponent
+  //   ,{
+  //   provide: AuthServiceConfig,
+  //   useFactory: getAuthServiceConfigs
+  // }
+],
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+
 })
 export class AppModule { }
