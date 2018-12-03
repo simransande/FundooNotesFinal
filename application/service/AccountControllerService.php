@@ -4,6 +4,7 @@ require_once 'PHPUnit/Autoload.php';
 // require '/var/www/html/code1/codeigniter/application/controllers/vendor/autoload.php';
 // include "/var/www/html/code1/codeigniter/application/rabitMQ/send.php";
 include "/var/www/html/code1/codeigniter/application/rabitMQ/send.php";
+include "/var/www/html/code1/codeigniter/application/static/HardCode.php";
 class AccountControllerService
 {
     
@@ -15,7 +16,8 @@ class AccountControllerService
             /**
              * Database conncetion using PDO
              */
-            $this->connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
+            $data=new HardCode();
+            $this->connect = new PDO("$data->database:host=$data->host;dbname=$data->dbname", "$data->user", "$data->password");
         } catch (PDOException $e) {
             print "Error!: " . $e->getMessage() . "<br/>";
             die();
@@ -27,7 +29,7 @@ class AccountControllerService
      * @method getRegisterValue() add the registration details
      * @return void
      */
-    public function register($name, $mail, $pass, $phone,$flag)
+    public function register($name, $pass, $phone, $mail,$flag)
     {
        
         $sql = "SELECT * FROM user  WHERE email = '$mail' and uname='$name'";
@@ -42,10 +44,10 @@ class AccountControllerService
  
           else
           {
- 
-          $sql1 = "INSERT INTO user(uname,email,pass,phone) VALUES('$name','$mail','$pass',$phone)";
-          $stmt = $this->connect->prepare($sql1);
-          if($stmt->execute())
+          $reg = "insert into user (uname,email,pass,phone) values ('$name','$mail',$pass,'$phone')";
+          $stmt = $this->connect->prepare($reg);
+          $ref = $stmt->execute();
+          if($ref)
           {
              $flag++;
                      $myjson='{"status":"1"}';     
@@ -63,7 +65,8 @@ class AccountControllerService
          }
 
 
-         public function login($mail, $pass,$flag){
+         public function login($mail, $pass,$flag)
+         {
 
             $sql = "SELECT * FROM user  WHERE email = '$mail' and pass='$pass'";
             $stmt = $this->connect->prepare($sql);
@@ -89,27 +92,6 @@ class AccountControllerService
 
          public function forgotpassword($email,$flag){
 
-            // $sql = "SELECT * FROM user  WHERE email = '$email'";
-            // $stmt = $this->connect->prepare($sql);
-            // $res = $stmt->execute();
-            // $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-            // $sendmail=new SendMail();
-            // if (!empty($user)) 
-            // {    
-            // $flag++;
-            // $myjson='{"status":"1"}';     
-            // print $myjson;
-
-            //    $token= md5(uniqid(rand(), true));
-            //    require_once("forgot-password-recovery-mail.php");
-            // } else
-            // {
-            //     $myjson='{"status":"0"}';    
-            //     print $myjson;
-            // }
-
-
             $sql = "SELECT * FROM user  WHERE email = '$email'";
             $stmt = $this->connect->prepare($sql);
             $res = $stmt->execute();
@@ -125,7 +107,6 @@ class AccountControllerService
                 if ($email == $result['email']) {
                     $name = $result['uname'];
                     $flag = 1;
-                    // $ref = new MailClass();
                     $ref=new SendMail();
                     $token = md5($email);
                     $query = "UPDATE user SET token='$token' WHERE email='$email'";
@@ -151,13 +132,72 @@ class AccountControllerService
             $res = $stmt->execute();
          }
     
-         public function uploadimage($image){
 
-        $sql = "INSERT INTO user(image) VALUES('$image')";
-        $stmt = $this->connect->prepare($sql);
-        $res = $stmt->execute();
-         }
+         public function profileUpload($email,$filePath){
 
+
+        //     move_uploaded_file($fileTmpName, "uploads/" . $name);
+
+        //     // $dataD=new Constant();
+        //     $newfileloc = 'http://localhost/code1/codeigniter/uploads/' . $name;
+        //     // $upload = move_uploaded_file($fileTmpName, $newfileloc);
+
+        //     $sql = "UPDATE user SET profilepic='$name' WHERE email='$email'";
+        //     $res = $this->connect->exec($sql);
+
+        //     $stmt = $this->connect->prepare("SELECT * From user where email='$email'");
+        //     $stmt->execute();
+
+        //     $myArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        //     $myjson = json_encode($myArray);
+        //     print($myjson);
+
+        //  }
+
+         if ($email != null) {
+
+            // $filePath = base64_decode($_POST['fileKey']);
+            $stmt = $this->connect->prepare("UPDATE user SET `profilepic` = :filePath where `email`= :email ");
+            
+            $stmt->execute(array(
+            ':filePath' => $filePath,
+            ':email' => $email
+            ));
+            
+            $stmt = $this->connect->prepare("SELECT profilepic From user where email='$email'");
+            $stmt->execute();
+            $row=$stmt->fetch(PDO::FETCH_ASSOC);
+            $res=$row['profilepic'];
+            // print json_encode($data);
+            $ref=json_encode(base64_encode($res));
+            print $ref;
+        }
+    }
+
+        public function socilaLoginReg($email, $profilepic, $username){
+
+            $flag=0;
+            $large_parts = explode(" ", $username);
+            $name=$large_parts[0];
+
+              $reg = "insert into user (uname,email,pass,phone) values ('$name','$email',123123,'9632587410')";
+              $stmt = $this->connect->prepare($reg);
+              $ref = $stmt->execute();
+              if($ref)
+              {
+                 $flag++;
+                         $myjson='{"status":"1"}';     
+                         $myjson='{"status":'.$flag."}";     
+                         print $myjson;                
+                      }
+                     else 
+                     {
+                         $myjson='{"status":"0"}';     
+                         $myjson='{"status":'.$flag."}";     
+                         print $myjson;
+                     }
+            
+        }
     
 }
 

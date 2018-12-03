@@ -12,14 +12,9 @@ import { NotesService } from '../service/notes.service'
 })
 export class EditnoteComponent implements OnInit {
 
-  constructor(private service: NotesService, public dialogRef: MatDialogRef<EditnoteComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
-
-  ngOnInit() {
-    console.log(this.data);
-  }
   imgUrl: any;
   colored: any;
+  observer:any;
   selectedFile: any;
   Image: any;
   notes: any;
@@ -51,6 +46,13 @@ export class EditnoteComponent implements OnInit {
   DateTime: boolean = false;
   filecolor;
 
+  constructor(private service: NotesService, public dialogRef: MatDialogRef<EditnoteComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
+
+  ngOnInit() {
+    console.log(this.data);
+  }
+  
   Reminder(note: any) {
 
     this.notes1 = note;
@@ -130,13 +132,17 @@ export class EditnoteComponent implements OnInit {
 
     if ((this.data.tittle.tittle != "") && (this.data.tittle.tittle != undefined)) {
 
-      this.service.updatenotes({ data }).subscribe((data: any) => {
-        this.service.getNote().subscribe(data => {
+      this.observer=this.service.updatenotes({ data }).subscribe((data: any) => {
+        this.observer=this.service.getNote().subscribe(data => {
           this.notes = data;
         });
       });
       this.mainCard = false;
     }
 
+  }
+  ngOnDestroy()
+  {
+    this.observer.unsubscribe();
   }
 }

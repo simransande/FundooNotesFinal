@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, OnDestroy } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { DialogData } from '../FundooNotes/FundooNotes.component';
 import { CreatelabelService } from '../service/createlabel.service';
@@ -9,11 +9,18 @@ import { CreatelabelService } from '../service/createlabel.service';
   templateUrl: './editlabel.component.html',
   styleUrls: ['./editlabel.component.css']
 })
-export class EditlabelComponent implements OnInit {
+export class EditlabelComponent implements OnInit,OnDestroy {
 
   editInput: boolean = false;
   LabelData: any;
   labelUpdate: any;
+  observer1:any;
+  observer2:any;
+
+  observer3:any;
+
+  observer4:any;
+
 
   constructor(public dialogRef: MatDialogRef<EditlabelComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
@@ -62,7 +69,6 @@ export class EditlabelComponent implements OnInit {
    * @param lbel label delete
    */
   DeleteLabel(lbel: any) {
-
     this.editInput = true;
     var flag = 'deleteLabel';
     this.deleteCrud(lbel, flag);
@@ -78,8 +84,8 @@ export class EditlabelComponent implements OnInit {
       { 'id': lbel.id, 'flag': flag, 'label': lbel.label }
     ];
 
-    this.service.updatlabel({ data }).subscribe((data: any) => {
-      this.service.getLabel().subscribe(data => {
+    this.observer3=this.service.updatlabel({ data }).subscribe((data: any) => {
+      this.observer4=this.service.getLabel().subscribe(data => {
         this.labels = data;
       });
     });
@@ -96,13 +102,22 @@ export class EditlabelComponent implements OnInit {
       { 'id': lbel.id, 'flag': flag, 'label': lbel.label }
     ];
 
-    this.service.deletelabel({ data }).subscribe((data: any) => {
-      this.service.getLabel().subscribe(data => {
+    this.observer1=this.service.deletelabel({ data }).subscribe((data: any) => {
+      this.observer2=this.service.getLabel().subscribe(data => {
         this.labels = data;
       });
     });
   }
 
+  ngOnDestroy()
+  {
+    // this.observer1.unsubscribe();
+    // this.observer2.unsubscribe();
 
+    // this.observer3.unsubscribe();
+
+    // this.observer4.unsubscribe();
+
+  }
 
 }

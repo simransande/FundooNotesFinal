@@ -1,0 +1,140 @@
+Looking for git in: git
+Using git 2.7.4 from git
+> git rev-parse --show-toplevel
+> git config --get commit.template
+Open repository: /var/www/html/code1/codeigniter
+> git status -z -u
+> git show :ng6/src/app/login/login.component.ts
+> git check-ignore -z --stdin
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/login/login.component.html
+> git show :ng6/src/app/login/login.component.ts
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/login/login.component.html
+> git show :ng6/src/app/login/login.component.ts
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :ng6/src/app/app.module.ts
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :ng6/src/environments/environment.ts
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :ng6/src/app/core/model/note.ts
+> git ls-files --stage -- ng6/src/app/core/model/
+> git check-ignore -z --stdin
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/core/model/note.ts
+> git ls-files --stage -- ng6/src/app/core/model/
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/login/login.component.ts
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :ng6/src/environments/environment.ts
+> git show :ng6/src/app/app.module.ts
+> git show :ng6/src/environments/environment.ts
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/app-routing.module.ts
+> git show :ng6/src/app/auth.guard.ts
+> git show :ng6/src/app/service/auth.service.ts
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/service/auth.service.ts
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/service/auth.service.ts
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/app-routing.module.ts
+> git show :ng6/node_modules/@angular/router/src/config.d.ts
+> git ls-files --stage -- ng6/node_modules/@angular/router/src/
+> git check-ignore -z --stdin
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/service/auth.service.ts
+> git show :ng6/src/app/login/login.component.ts
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/service/NoteControllerService.php
+> git show :application/service/AccountControllerService.php
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/node_modules/angular-6-social-login/auth.service.d.ts
+> git ls-files --stage -- ng6/node_modules/angular-6-social-login/
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/service/auth.service.ts
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/node_modules/angular-6-social-login/auth.service.d.ts
+> git ls-files --stage -- ng6/node_modules/angular-6-social-login/
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/service/auth.service.ts
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/environments/environment.ts
+> git show :ng6/src/app/serviceUrl/serviceUrl.ts
+> git ls-files --stage -- ng6/src/app/serviceUrl/
+> git show :ng6/src/environments/environment.ts
+> git show :ng6/src/app/serviceUrl/serviceUrl.ts
+> git ls-files --stage -- ng6/src/app/serviceUrl/
+> git show :ng6/src/environments/environment.ts
+> git show :ng6/src/app/serviceUrl/serviceUrl.ts
+> git ls-files --stage -- ng6/src/app/serviceUrl/
+> git show :ng6/src/app/core/model/note.ts
+> git ls-files --stage -- ng6/src/app/core/model/
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/core/model/note.ts
+> git ls-files --stage -- ng6/src/app/core/model/
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/notes/notes.component.html
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/notes/notes.component.html
+> git show :ng6/src/app/login/login.component.ts
+> git check-ignore -z --stdin
+> git show :application/controllers/Accountcontroller.php
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/core/model/note.ts
+> git ls-files --stage -- ng6/src/app/core/model/
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/LoginController.php
+> git ls-files --stage -- application/controllers/
+> git show :application/controllers/Accountcontroller.php
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/service/AccountControllerService.php
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/service/auth.service.ts
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.html
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.html
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.html
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.html
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/Notescontroller.php
+> git show :application/service/NoteControllerService.php
+> git show :application/controllers/Notescontroller.php
+> git show :system/core/CodeIgniter.php
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/Notescontroller.php

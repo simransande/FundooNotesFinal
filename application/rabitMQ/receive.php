@@ -1,7 +1,8 @@
 <?php
-require_once '/var/www/html/code1/codeigniter/application/vendor/autoload.php';
+require_once "/var/www/html/code1/codeigniter/application/rabitMQ/vendor/autoload.php";
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 
+// require_once '/var/www/html/codeigniter/RabbitMQ/vendor/autoload.php';
 class Receiver
 {
     /*
@@ -50,7 +51,7 @@ class Receiver
              * Create a message
              */
             $message = (new Swift_Message($subject))
-                ->setFrom([$data['from_email'] => 'simran sande'])
+                ->setFrom([$data['from'] => 'simran sande'])
                 ->setTo([$to_email])
                 ->setBody($message);
             /**
@@ -63,7 +64,11 @@ class Receiver
 
         $channel->basic_qos(null, 1, null);
         $channel->basic_consume('hello', '', false, false, false, false, $callback);
- return "abc";
+
+        while(count[$channel->callbacks]){
+            $channel->wait();
+        }
+       
 
     }
 }

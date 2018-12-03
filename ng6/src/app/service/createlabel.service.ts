@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { serviceUrl } from '../../app/serviceUrl/serviceUrl';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class CreatelabelService {
   private _updatelabelUrl = 'http://localhost/code1/codeigniter/updatlabel';
   private _deletelabelUrl = 'http://localhost/code1/codeigniter/deletelabel';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,private serviceurl:serviceUrl) {
 
   }
   /**
@@ -31,7 +32,7 @@ export class CreatelabelService {
       'Content-Type': 'application/x-www-form-urlencoded'
     }
 
-    return this.http.post(this._labelUrl, label, otheroption)
+    return this.http.post(this.serviceurl.host+this.serviceurl.label, label, otheroption)
 
   }
 
@@ -52,7 +53,7 @@ export class CreatelabelService {
     }
 
 
-    return this.http.post(this._getlabelUrl, getlabel, otheroption)
+    return this.http.post(this.serviceurl.host+this.serviceurl.getlabel, getlabel, otheroption)
 
   }
 
@@ -74,7 +75,7 @@ export class CreatelabelService {
     let otheroption: any = {
       'Content-Type': 'application/x-www-form-urlencoded' //body-x-www-form-urlencoded
     }
-    return this.http.post(this._updatelabelUrl, updatlabel, otheroption)
+    return this.http.post(this.serviceurl.host+this.serviceurl.updatlabel, updatlabel, otheroption)
 
   }
 
@@ -83,7 +84,7 @@ export class CreatelabelService {
       * Observable<{}> -respond to user
       */
   deletelabel(value: any): Observable<{}> {
-
+debugger;
     let deletelabel = new FormData();
     let email = localStorage.getItem('email');
     deletelabel.append('email', email);
@@ -93,9 +94,6 @@ export class CreatelabelService {
     let otheroption: any = {
       'Content-Type': 'application/x-www-form-urlencoded' //body-x-www-form-urlencoded
     }
-    return this.http.post(this._deletelabelUrl, deletelabel, otheroption)
+    return this.http.post(this.serviceurl.host+this.serviceurl.deletelabell, deletelabel, otheroption)
   }
-
-
-
 }

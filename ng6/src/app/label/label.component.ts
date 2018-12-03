@@ -17,7 +17,7 @@ export class LabelComponent implements OnInit {
   pin: number = 0;
   trash: number = 0;
   labell: any;
-
+  label:any;
   unpin: number = 1;
   mainCard: boolean = true;
   createCard: boolean = false;
@@ -59,7 +59,6 @@ export class LabelComponent implements OnInit {
    * full note box on click 
    */
   closeNote() {
-    debugger;
     this.model;
     let data = [
       {
@@ -70,8 +69,8 @@ export class LabelComponent implements OnInit {
 
     if ((this.model.title != "" || this.model.note != "") && (this.model.title != undefined || this.model.note != undefined)) {
 
-      this.service.Notes({ data }).subscribe((data: any) => {
-        this.labelService.getLabel().subscribe(responseLabel => {
+this.label=this.service.Notes({ data }).subscribe((data: any) => {
+        this.label=this.labelService.getLabel().subscribe(responseLabel => {
 
           this.labell = responseLabel;
           console.log(this.labell);
@@ -99,20 +98,17 @@ export class LabelComponent implements OnInit {
   }
 
   Archive(note: any) {
-    debugger;
 
     var flag = 'archive';
     this.crud(note, flag);
   }
 
   Trash(note: any) {
-    debugger;
 
     var flag = 'trash';
     this.crud(note, flag);
   }
   deletRem(note: any) {
-    debugger;
     var flag = 'dltReminder'
     this.crud(note, flag);
   }
@@ -132,7 +128,6 @@ export class LabelComponent implements OnInit {
 
   }
   labelShow1(label: any) {
-    debugger;
     var newnote = this.notes1;
 
     newnote.labell = label;
@@ -144,7 +139,6 @@ export class LabelComponent implements OnInit {
   }
 
   crud(note: any, flag: any) {
-    debugger;
 
     let data = [
       {
@@ -153,15 +147,14 @@ export class LabelComponent implements OnInit {
         'reminder': note.reminder, 'label': note.labell
       }
     ];
-    debugger;
-    this.service.updatenotes({ data }).subscribe((data: any) => {
-      this.labelService.getLabel().subscribe(responseLabel => {
+    
+    this.label=this.service.updatenotes({ data }).subscribe((data: any) => {
+      this.label=this.labelService.getLabel().subscribe(responseLabel => {
 
         this.labell = responseLabel;
         console.log(this.labell);
       });
-      this.service.getNote().subscribe(data => {
-        debugger;
+      this.label=this.service.getNote().subscribe(data => {
         this.notes = data;
       });
 
@@ -171,14 +164,13 @@ export class LabelComponent implements OnInit {
 
 
   Fillupload(event, note: any) {
-    debugger;
     this.localUrl = event.target.result;
     let data = [
       { 'selectedFile': <File>event.target.files[0], 'id': note.id, 'image': note.image }
     ];
     console.log(this.selectedFile);
-    this.service.uploading({ data }).subscribe((data: any) => {
-      this.service.getNote().subscribe(data => {
+    this.label=this.service.uploading({ data }).subscribe((data: any) => {
+      this.label=this.service.getNote().subscribe(data => {
 
         this.imgUrl = data;
         this.notes = data;
@@ -251,5 +243,9 @@ export class LabelComponent implements OnInit {
     this.NoteId = note;
   }
 
+  ngOnDestroy()
+  {
+    this.label.unsubscribe();
+  }
 
 }

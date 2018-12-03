@@ -50,36 +50,46 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |        my-controller/my-method    -> my_controller/my_method
  */
 $route['default_controller'] = 'Accountcontroller';
-// $route['404_override'] = '';
-// $route['translate_uri_dashes'] = FALSE;
-//s$route['register']='register';
-// $route['register/(:any)']='Manage_Accounts/register';
 
-$route['login'] = 'Accountcontroller/login';
-$route['register'] = 'Accountcontroller/register';
-$route['uploadimage'] = 'Accountcontroller/uploadimage';
+$route['register']='RegisterController/register';
+$route['login'] = 'LoginController/login';
+$route['forgotPassword'] = 'ForgotpasswordController/forgotpassword';
+$route['resetpassword'] = 'ResetPasswordController/resetpassword';
+// $route['profileUpload'] = 'ProfileUploadController/profileUpload';
+$route['imageurl'] = 'ProfileUploadController/uploads';
 
-$route['forgotpassword'] = 'Accountcontroller/forgotpassword';
-$route['resetpassword'] = 'Accountcontroller/resetpassword';
+
 $route['notes'] = 'Notescontroller/notes';
 $route['getnotes'] = 'Notescontroller/getnotes';
 $route['updatenotes'] = 'Notescontroller/updatenotes';
-
 $route['deleteurl'] = 'Notescontroller/deleteurl';
-
-$route['label'] = 'Labelcontroller/label';
-$route['getlabel'] = 'Labelcontroller/getlabel';
-$route['updatlabel'] = 'Labelcontroller/updatlabel';
-$route['deletelabel'] = 'Labelcontroller/deletelabel';
 $route['collaborator'] = 'Notescontroller/collaborator';
 $route['notelabe'] = 'Notescontroller/notelabe';
 $route['getnotelabe'] = 'Notescontroller/getnotelabe';
-$route['deletelabel1'] = 'Notescontroller/deletelabel1';
+$route['deletelabel'] = 'Notescontroller/deletelabel1';
 $route['AddCollab'] = 'Notescontroller/AddCollab';
 $route['GetCollab'] = 'Notescontroller/GetCollab';
 $route['joinNoteCollab'] = 'Notescontroller/joinNoteCollab';
 $route['DragAndDrop'] = 'Notescontroller/DragAndDrop';
+$route['profileUploadinGeturl'] = 'Notescontroller/profileUploadinGet';
+
+$route['label'] = 'Labelcontroller/label';
+$route['getlabel'] = 'Labelcontroller/getlabel';
+$route['updatlabel'] = 'Labelcontroller/updatlabel';
+$route['deletelabell'] = 'Labelcontroller/deletelabel';
+
+
 $route['socialLogin'] = 'Accountcontroller/socialLogin';
+
+
+
+
+
+
+
+
+
+
 
 
 

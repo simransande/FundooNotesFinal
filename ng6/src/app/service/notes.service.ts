@@ -6,6 +6,7 @@ import { map, filter, catchError, mergeMap } from 'rxjs/operators';
 import { text } from '@angular/core/src/render3/instructions';
 import { pipe } from '@angular/core/src/render3/pipe';
 import { BehaviorSubject } from 'rxjs';
+import { serviceUrl } from '../../app/serviceUrl/serviceUrl';
 
 
 
@@ -17,22 +18,9 @@ export class NotesService {
 
   private messageSource = new BehaviorSubject(true);
   currentMessage = this.messageSource.asObservable();
-
-  private _NoteUrl = 'http://localhost/code1/codeigniter/notes';
-  private _getNoteUrl = 'http://localhost/code1/codeigniter/getnotes';
-  private _updateNoteUrl = 'http://localhost/code1/codeigniter/updatenotes';
-  private collaboratorUrl='http://localhost/code1/codeigniter/collaborator';
-  private labelUrl='http://localhost/code1/codeigniter/notelabe';
-  private labelgetUrl='http://localhost/code1/codeigniter/getnotelabe';
-  private deleteUrl='http://localhost/code1/codeigniter/deletelabel1';
-  private AddCollab='http://localhost/code1/codeigniter/AddCollab';
-  private GetCollab='http://localhost/code1/codeigniter/GetCollab';
-  private joinNoteCollab='http://localhost/code1/codeigniter/joinNoteCollab';
-  private DragDrop_url='http://localhost/code1/codeigniter/DragAndDrop';
-
   
   noteview: any;
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,private serviceurl:serviceUrl) {
   }
 
   changeMessage(message: boolean) {
@@ -66,7 +54,7 @@ export class NotesService {
     {
       'Content-Type': 'application/x-www-form-urlencoded'
     }
-    return this.http.post(this._NoteUrl, note, otheroption)
+    return this.http.post(this.serviceurl.host+this.serviceurl.notes, note, otheroption)
     
   }
 
@@ -87,7 +75,7 @@ export class NotesService {
     {
       'Content-Type': 'application/x-www-form-urlencoded'
     }
-    return this.http.post(this._getNoteUrl, getnote, otheroption)
+    return this.http.post(this.serviceurl.host+this.serviceurl.getnotes, getnote, otheroption)
 
   }
 
@@ -120,7 +108,7 @@ export class NotesService {
     {
       'Content-Type': 'application/x-www-form-urlencoded' //body-x-www-form-urlencoded
     }
-    return this.http.post(this._updateNoteUrl, getnote, otheroption)
+    return this.http.post(this.serviceurl.host+this.serviceurl.updatenotes, getnote, otheroption)
 
   }
 
@@ -146,9 +134,13 @@ export class NotesService {
     getnote.append('trash', '0');
     getnote.append('description', imgdata.data[0].description);
    
-    return this.http.post(this._updateNoteUrl, getnote).pipe(
+    return this.http.post(this.serviceurl.host+this.serviceurl.updatenotes, getnote).pipe(
       map((res: Response) => res)
     );
+  }
+
+  uploadImage(base64textString,alldata, email){
+    
   }
 
   /**
@@ -164,7 +156,7 @@ export class NotesService {
       {
         'Content-Type': 'application/x-www-form-urlencoded'
       }
-      return this.http.post(this.collaboratorUrl, collab, otheroption).pipe(
+      return this.http.post(this.serviceurl.host+this.serviceurl.collaborator, collab, otheroption).pipe(
       map((res: Response) => res)
       );
   }
@@ -186,7 +178,7 @@ export class NotesService {
       {
         'Content-Type': 'application/x-www-form-urlencoded'
       }
-      return this.http.post(this.AddCollab, addcollab, otheroption).pipe(
+      return this.http.post(this.serviceurl.host+this.serviceurl.AddCollab, addcollab, otheroption).pipe(
        map((res: Response) => res)
       );
 
@@ -205,7 +197,7 @@ export class NotesService {
       {
         'Content-Type': 'application/x-www-form-urlencoded'
       }
-      return this.http.post(this.GetCollab, getcollab, otheroption).pipe(
+      return this.http.post(this.serviceurl.host+this.serviceurl.GetCollab, getcollab, otheroption).pipe(
         map((res: Response) => res)
        );
   }
@@ -223,7 +215,7 @@ export class NotesService {
       {
         'Content-Type': 'application/x-www-form-urlencoded'
       }
-      return this.http.post(this.joinNoteCollab, test, otheroption).pipe(
+      return this.http.post(this.serviceurl.host+this.serviceurl.joinNoteCollab, test, otheroption).pipe(
         map((res: Response) => res)
        );
   }
@@ -243,7 +235,7 @@ export class NotesService {
       'Content-Type': 'application/x-www-form-urlencoded'
     }
 
-    return this.http.post(this.labelUrl,setid,otheroption).pipe(
+    return this.http.post(this.serviceurl.host+this.serviceurl.notelabe,setid,otheroption).pipe(
     map((res: Response) => res)
     );
   }
@@ -253,14 +245,16 @@ export class NotesService {
    */
   deleteLabel(value:any):Observable<{}>
   {
+    debugger;
     let dltid=new FormData();
+    // dltid.append('flag','deleteLabel');
     dltid.append('labelid',value.labelid);
     dltid.append('noteid',value.noteid);
     let otheroption: any =
       {
         'Content-Type': 'application/x-www-form-urlencoded'
       }
-      return this.http.post(this.deleteUrl,dltid,otheroption)
+      return this.http.post(this.serviceurl.host+this.serviceurl.deletelabel,dltid,otheroption)
   }
 
   /**
@@ -278,12 +272,19 @@ export class NotesService {
       'Content-Type': 'application/x-www-form-urlencoded'
     }
 
-    return this.http.post(this.labelgetUrl, getid, otheroption).pipe(
+    return this.http.post(this.serviceurl.host+this.serviceurl.getnotelabe, getid, otheroption).pipe(
       map((res: Response) => res)
     );
 
   }
 
+  /**
+   * function for drag and drop the note
+   * @param email on the localstorage mail
+   * @param id passing the note id
+   * @param loops number of loops
+   * @param dir direction of draging and droping
+   */
   dragnotes(email: any, id: any, loops: any, dir: any): any {
     const data = new FormData();
     debugger;
@@ -291,7 +292,7 @@ export class NotesService {
     data.append("id", id);
     data.append("loop", loops);
     data.append("direction", dir);
-    return this.http.post(this.DragDrop_url, data);
+    return this.http.post(this.serviceurl.host+this.serviceurl.DragAndDrop, data);
   }
 
 

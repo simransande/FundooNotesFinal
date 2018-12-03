@@ -13,6 +13,7 @@ export class ForgotPasswordComponent implements OnInit {
   model: any = {}
   Error: boolean = false;
   flag: any;
+  observer:any;
 
 
   constructor(private service: DataserviceService, private router: Router) { }
@@ -45,5 +46,8 @@ export class ForgotPasswordComponent implements OnInit {
 
 
   }
-
+  // ngOnDestroy()
+  // {
+  //   this.observer.unsubscribe();
+  // }
 }

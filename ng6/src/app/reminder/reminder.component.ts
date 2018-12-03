@@ -39,7 +39,7 @@ export class ReminderComponent implements OnInit {
   collaborator: any;
   labels: any;
   fulldate: any;
-
+  observe:any;
 
   constructor(private service: NotesService, public dialog: MatDialog,
     private labelService: CreatelabelService, iconRegistry: MatIconRegistry,
@@ -153,10 +153,10 @@ export class ReminderComponent implements OnInit {
         'reminder': note.reminder
       }
     ];
-    this.service.updatenotes({ data }).subscribe((data: any) => {
-      this.labelService.getLabel().subscribe(responseLabel => {
+    this.observe=this.service.updatenotes({ data }).subscribe((data: any) => {
+      this.observe=this.labelService.getLabel().subscribe(responseLabel => {
 
-        this.service.getNote().subscribe(data => {
+        this.observe=this.service.getNote().subscribe(data => {
           this.notes = data;
           this.labell = responseLabel;
           console.log(this.labell);
@@ -178,8 +178,8 @@ export class ReminderComponent implements OnInit {
       { 'selectedFile': <File>event.target.files[0], 'id': note.id, 'image': note.image }
     ];
     console.log(this.selectedFile);
-    this.service.uploading({ data }).subscribe((data: any) => {
-      this.service.getNote().subscribe(data => {
+    this.observe=this.service.uploading({ data }).subscribe((data: any) => {
+      this.observe=this.service.getNote().subscribe(data => {
 
         this.imgUrl = data;
         this.notes = data;
@@ -260,6 +260,9 @@ export class ReminderComponent implements OnInit {
     this.NoteId = note;
   }
 
-
+  // ngOnDestroy()
+  // {
+  //   this.observe.unsubscribe();
+  // }
 }
 

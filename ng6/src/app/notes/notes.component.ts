@@ -13,6 +13,8 @@ import { CreatelabelService } from '../service/createlabel.service';
 import { interval, Subscription } from 'rxjs';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 // import { CookieService } from "angular2-cookie";
+import {Note} from '../core/model/note';
+
 
 export interface DialogData {
   tittle: any;
@@ -40,14 +42,6 @@ export class NotesComponent implements OnInit {
   tittle: any;
   noteDes: any;
   alldata: any;
-
-  ngOnInit() {
-    this.service.currentMessage.subscribe((message: any) => {
-      this.message = message
-      console.log(message);
-    });
-  }
-
   m: any;
   Ini: any;
   Initial: any;
@@ -97,14 +91,31 @@ export class NotesComponent implements OnInit {
   wrap: string = "wrap"
   direction: string = "row";
   layout: string = this.direction + " " + this.wrap;
+  // alldata: Note[] =[];
 
   public res;
   public view;
+  
+
   searchSubscription: Subscription;
   searchItem: any;
   iserror: boolean;
   errorMessage: any;
+  base64textString: string;
+  url: string;
 
+
+  ngOnInit() {
+    this.service.currentMessage.subscribe((message: any) => {
+      this.message = message
+      console.log(message);
+    });
+    // obs.unsubscribe();
+  }
+
+ 
+
+ 
 
   /**
    *   injectable service that allows you to associate icon names with SVG URLs,
@@ -139,6 +150,7 @@ export class NotesComponent implements OnInit {
     });
 
     this.service.getNote().subscribe(notesData => {
+      
       this.alldata = notesData;
       console.log(this.notes);
     });
@@ -207,6 +219,7 @@ export class NotesComponent implements OnInit {
   //   moveItemInArray(this.alldata, event.previousIndex, event.currentIndex);
   // }
 
+
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.alldata, event.previousIndex, event.currentIndex);
     let diff: any;
@@ -219,19 +232,18 @@ export class NotesComponent implements OnInit {
       diff = event.previousIndex - event.currentIndex;
       direction = "downward";
     }
-    // alert(event.previousIndex)
-    // alert(event.currentIndex)
 
     let email = this.Email;
     debugger;
     let obs = this.service.dragnotes(
       email,
-      this.alldata[event.currentIndex].id,
+      this.alldata[event.currentIndex].DragAndDropID,
       diff,
       direction
     );
     obs.subscribe(
       (notes: any) => {
+        // this.all_notes = notes;
         debugger;
       },
       error => {
@@ -485,6 +497,44 @@ export class NotesComponent implements OnInit {
 
   }
 
+
+  // Fillupload(event) {
+  //   debugger;
+  //   var files = event.target.files;
+  //   var file = files[0];
+  //   if (files && file) {
+  //   var reader = new FileReader();
+  //   reader.onload = this._handleReaderLoaded.bind(this);
+  //   reader.readAsBinaryString(file);
+  //   }
+  //   }
+    
+  //   _handleReaderLoaded(readerEvt) {
+  //     let email = localStorage.getItem('email');
+  //   debugger;
+  //   var binaryString = readerEvt.target.result;
+  //   this.base64textString = btoa(binaryString);
+  //   // let data =
+  //   //      [
+  //   //        { base64textString, 'id': note.id, 'image': note.image, 'description': note.description, 'title': note.tittle }
+  //   //      ];
+  //   console.log(btoa(binaryString));
+    
+  //   this.service.uploadImage(this.base64textString,this.alldata, email )
+  //   .subscribe(
+  //   (status: any) => {
+  //   console.log("darshuuuu");
+    
+    
+  //   console.log(status);
+    
+  //   this.url = "data:image/jpeg;base64," + status;
+  //   }, error => {
+  //   console.log(error);
+  //   alert(error.error.text)
+  //   });
+  //   }
+
   /**
    * function for opening the dailog box for collaborator
    * @param note dailog box will be open on that particular note
@@ -535,6 +585,10 @@ export class NotesComponent implements OnInit {
   }
 
 
+  ngOnDestroy()
+  {
+    // this.registration.unsubscribe();
+  }
 }
 
 

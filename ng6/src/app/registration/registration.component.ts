@@ -44,8 +44,9 @@ export class RegistrationComponent implements OnInit {
     Validators.pattern("[0-9]{10}")
   ]);
 
+  registration;
   s_register() {
-    debugger;
+    
     this.model;
 
     /**
@@ -54,7 +55,8 @@ export class RegistrationComponent implements OnInit {
     let data = [
       { 'username': this.model.uname, 'password': this.model.pass, 'email': this.model.email, 'phone': this.model.phone }
     ];
-    this.service.Register(data).subscribe((Statusdata: any) => {
+    this.registration=this.service.Register(data).subscribe((Statusdata: any) => {
+      debugger;
       this.flag = Statusdata.status;
 
       /**
@@ -66,6 +68,8 @@ export class RegistrationComponent implements OnInit {
 
       }
       else {
+        //this.router.navigate(['/login']);
+
         this.Error = true;
 
 
@@ -74,5 +78,9 @@ export class RegistrationComponent implements OnInit {
 
   }
 
+  ngOnDestroy()
+  {
+    this.registration.unsubscribe();
+  }
 
 }

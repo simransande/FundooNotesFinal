@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NotesService } from '../service/notes.service'
 import { ViewService } from '../service/view.service';
 import { CreatelabelService } from '../service/createlabel.service';
@@ -10,7 +10,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   templateUrl: './archive.component.html',
   styleUrls: ['./archive.component.css']
 })
-export class ArchiveComponent implements OnInit {
+export class ArchiveComponent implements OnInit,OnDestroy{
 
   notes: any;
   model: any = {}
@@ -31,6 +31,8 @@ export class ArchiveComponent implements OnInit {
   notes1: any;
   labell: any;
   notes2: any;
+  observer:any;
+  observerGet:any;
 
 
   constructor(private service: NotesService, private viewService: ViewService,
@@ -112,8 +114,9 @@ export class ArchiveComponent implements OnInit {
           'reminder': note.reminder, 'flag': flag, 'color': note.colorcode
         }
       ];
-    this.service.updatenotes({ data }).subscribe((data: any) => {
-      this.service.getNote().subscribe(data => {
+      // debugger;
+    this.observer=this.service.updatenotes({ data }).subscribe((data: any) => {
+      this.observerGet=this.service.getNote().subscribe(data => {
         this.notes = data;
       });
 
@@ -192,7 +195,11 @@ export class ArchiveComponent implements OnInit {
   pinnedRemainder(note: any) {
     this.NoteId = note;
   }
-
+  ngOnDestroy()
+  {
+    // this.observer.unsubscribe();
+    // this.observerGet.unsubscribe();
+  }
 
 }
 

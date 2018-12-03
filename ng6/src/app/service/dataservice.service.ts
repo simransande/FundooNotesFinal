@@ -6,7 +6,8 @@ import { map, filter, catchError, mergeMap } from 'rxjs/operators';
 import { text } from '@angular/core/src/render3/instructions';
 import { pipe } from '@angular/core/src/render3/pipe';
 import { Router } from '@angular/router';
-
+import { serviceUrl } from '../../app/serviceUrl/serviceUrl';
+// /var/www/html/code1/codeigniter/ng6/src/app/serviceUrl/serviceUrl.ts
 
 
 
@@ -15,16 +16,8 @@ import { Router } from '@angular/router';
 
 })
 export class DataserviceService {
-
-  private register = ' http://localhost/code1/codeigniter/register';
-  private login = 'http://localhost/code1/codeigniter/login';
-  private forgotpassword = 'http://localhost/code1/codeigniter/forgotpassword';
-  private resetpassword = 'http://localhost/code1/codeigniter/resetpassword';
-  private uploadimage= 'http://localhost/code1/codeigniter/uploadimage';
-  private socialLogin= 'http://localhost/code1/codeigniter/socialLogin';
-
   
-  constructor(private http: HttpClient,public router: Router) {
+  constructor(private http: HttpClient,public router: Router,private serviceurl:serviceUrl) {
 
   }
 
@@ -74,7 +67,7 @@ logOut() {
     let otheroption: any = {
       'Content-Type': 'application/x-www-form-urlencoded'
     }
-    return this.http.post(this.register, register, otheroption).pipe(
+    return this.http.post(this.serviceurl.host+this.serviceurl.register, register, otheroption).pipe(
       map((res: Response) => res)
     );
   }
@@ -94,36 +87,25 @@ logOut() {
       'Content-Type': 'application/x-www-form-urlencoded'
     }
 
-    return this.http.post(this.login, login, otheroption).pipe(
+    return this.http.post( this.serviceurl.host+this.serviceurl.login,login,otheroption).pipe(
       map((res: Response) => res)
     );
 
   }
 
-  uploading(imgdata: any): Observable<any> 
-  {
-    debugger;
-    let getnote = new FormData();
-     
-    getnote.append('image', imgdata.data[0].image);
-   
-   
-    return this.http.post(this.uploadimage, getnote).pipe(
-      map((res: Response) => res)
-    );
-  }
 
   /**
       * mail will send your the register mail id if password forget
       * Observable<{}> -respond to user
       */
   ForgotPass(value: any): Observable<{}> {
+    debugger;
     let forgot = new FormData();
     forgot.append('email', value.data[0].email);
     let otheroption: any = {
       'Content-Type': 'application/x-www-form-urlencoded'
     }
-    return this.http.post(this.forgotpassword, forgot, otheroption);
+    return this.http.post( this.serviceurl.host+this.serviceurl.forgotPassword,forgot,otheroption);
   }
 
   /**
@@ -140,20 +122,56 @@ logOut() {
     let otheroption: any = {
       'Content-Type': 'application/x-www-form-urlencoded'
     }
-    return this.http.post(this.resetpassword, reset, otheroption);
+    return this.http.post(this.serviceurl.host+this.serviceurl.resetpassword, reset, otheroption);
   }
 
 
   SocialLogin(value: any): Observable<{}> {
+    debugger;
     let social = new FormData();
-    social.append('email', value.data[0].accessToken);
+    social.append('email', value.data[0].email);
+    social.append('profilepic', value.data[0].profilepic);
+    social.append('username', value.data[0].username);
 
     let otheroption: any = {
       'Content-Type': 'application/x-www-form-urlencoded'
     }
-    return this.http.post(this.socialLogin, social, otheroption);
-
+    return this.http.post(this.serviceurl.host+this.serviceurl.socialLogin, social, otheroption).pipe(
+      map((res: Response) => res)
+    );
    }
+
+
+/**
+* to upload the image for the profile picture
+* @param fileToUpload image file to be stored in db
+* @param email email of particular 
+* @return Observables
+*/
+uploadImage(base64string, email) {
+  debugger;
+let otheroption: any = {
+'Content-Type': 'application/x-www-form-urlencoded'
+}
+const params = new FormData();
+params.append("fileKey", base64string);
+params.append("email", email);
+
+return this.http.post(this.serviceurl.host+this.serviceurl.imageurl, params, otheroption);
+}
+
+   profileUploadinGet(value:any): Observable<{}> {
+     debugger;
+    let profileget = new FormData();
+    profileget.append('email', value);
+
+
+    let otheroption: any = {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    }
+    return this.http.post(this.serviceurl.host+this.serviceurl.profileUploadinGeturl, profileget, otheroption);
+   }
+
 }
 
 

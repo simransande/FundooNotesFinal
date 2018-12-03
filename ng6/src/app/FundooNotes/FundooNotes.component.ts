@@ -29,7 +29,12 @@ export class FundooNotesComponent implements OnInit {
 
   grid: boolean = false;
   list: boolean = true;
-
+  prof: {};
+  observer:any;
+  base64textString: string;
+  image: any;
+  cookie: any;
+  url: string;
 
   constructor(private service: CreatelabelService, public dialog: MatDialog,private serviceData: DataserviceService,
     public noteService: NotesService, private router: Router, private viewServiceObj: ViewService) {
@@ -39,6 +44,14 @@ export class FundooNotesComponent implements OnInit {
 
       this.notelabel = responseLabel;
       console.log(this.notelabel);
+    });
+    let email = localStorage.getItem('email');
+
+    this.serviceData.profileUploadinGet(email).subscribe(Statusdata=> {
+      debugger;
+      this.url='data:image/jpeg;base64,'+Statusdata;    
+      console.log("simran"+Statusdata);
+      
     });
   }
 
@@ -77,9 +90,9 @@ export class FundooNotesComponent implements OnInit {
         { 'label': this.label }
       ];
       if (result != undefined && result != "") {
-        this.service.addLabel({ data }).subscribe(responseData => {
+        this.observer=this.service.addLabel({ data }).subscribe(responseData => {
           console.log(responseData);
-          this.service.getLabel().subscribe(responseLabel => {
+          this.observer=this.service.getLabel().subscribe(responseLabel => {
 
             this.notelabel = responseLabel;
             console.log(this.notelabel);
@@ -93,7 +106,6 @@ export class FundooNotesComponent implements OnInit {
    * view of notes 
    */
   changeView() {
-    debugger;
     if (this.list == true) {
 
       this.grid = true;
@@ -120,27 +132,70 @@ export class FundooNotesComponent implements OnInit {
    * @param event it is the file to select
    * @param note on that perticular note
    */
+  // Fillupload(event) {
+  //   this.localUrl = event.target.result;
+  //   let email = localStorage.getItem('email');
+
+  //   let data =
+  //     [
+  //       { 'selectedFile': <File>event.target.files[0],email }
+  //     ];
+
+  //     this.observer=this.serviceData.profileUploading(data).subscribe((Statusdata: any) => {
+  //       // console.log(Statusdata);
+      
+
+  //     });
+
+  // }
+
   Fillupload(event) {
     debugger;
-    this.localUrl = event.target.result;
-    let email = localStorage.getItem('email');
-
-    let data =
-      [
-        { 'selectedFile': <File>event.target.files[0],email }
-      ];
-
-      this.serviceData.uploading(data).subscribe((Statusdata: any) => {
+    var files = event.target.files;
+    var file = files[0];
+    if (files && file) {
+    var reader = new FileReader();
+    reader.onload = this._handleReaderLoaded.bind(this);
+    reader.readAsBinaryString(file);
+    }
+    }
+    
+    _handleReaderLoaded(readerEvt) {
+      let email = localStorage.getItem('email');
+    debugger;
+    var binaryString = readerEvt.target.result;
+    this.base64textString = btoa(binaryString);
+    console.log(btoa(binaryString));
+    
+    this.serviceData.uploadImage(this.base64textString, email )
+    .subscribe(
+    (status: any) => {
+    console.log("darshuuuu");
+    
+    
+    console.log(status);
+    
+    this.url = "data:image/jpeg;base64," + status;
+    }, error => {
+    console.log(error);
+    alert(error.error.text)
+    });
+    this.serviceData.profileUploadinGet(email).subscribe(Statusdata=> {
+      debugger;
+      this.url='data:image/jpeg;base64,'+Statusdata;    
+      console.log("simran"+Statusdata);
       
     });
-
-  }
+    }
 
   search(searchItem) {
     this.viewServiceObj.searchItem(searchItem);
     }
     
-
+    // ngOnDestroy()
+    // {
+    //   this.observer.unsubscribe();
+    // }
 }
 
 

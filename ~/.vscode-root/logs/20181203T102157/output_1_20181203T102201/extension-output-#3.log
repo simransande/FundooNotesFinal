@@ -1,0 +1,37 @@
+[Info  - 10:22:17 AM] Using tsserver from: /usr/share/code/resources/app/extensions/node_modules/typescript/lib
+[Info  - 10:22:17 AM] Forking TSServer
+PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin 
+[Info  - 10:22:17 AM] Started TSServer
+[Error  - 12:27:30 PM] 'getCodeFixes' request failed with error.
+Error processing request. Cannot read property 'parent' of undefined
+TypeError: Cannot read property 'parent' of undefined
+    at Object.deleteDeclaration (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:103727:56)
+    at _loop_10 (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:103373:43)
+    at ChangeTracker.finishDeleteDeclarations (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:103379:21)
+    at ChangeTracker.getChanges (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:103399:22)
+    at Function.ChangeTracker.with (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:102977:32)
+    at Object.getCodeActions (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:106020:68)
+    at /usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:103931:121
+    at Object.flatMap (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:498:25)
+    at Object.getFixes (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:103931:23)
+    at /usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:111782:35
+    at Object.flatMap (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:498:25)
+    at Object.getCodeFixesAtPosition (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:111780:23)
+    at IOSession.Session.getCodeFixes (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:119374:64)
+    at Session.handlers.ts.createMapFromTemplate._a.(anonymous function) (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:118248:61)
+    at /usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:119531:88
+    at IOSession.Session.executeWithRequestId (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:119522:28)
+    at IOSession.Session.executeCommand (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:119531:33)
+    at IOSession.Session.onMessage (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:119551:35)
+    at Interface.<anonymous> (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:120805:27)
+    at emitOne (events.js:116:13)
+    at Interface.emit (events.js:211:7)
+    at Interface._onLine (readline.js:282:10)
+    at Interface._normalWrite (readline.js:424:12)
+    at Socket.ondata (readline.js:141:10)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at Pipe.onread (net.js:594:20)

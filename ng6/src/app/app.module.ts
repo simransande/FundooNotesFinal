@@ -41,22 +41,33 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 // import { SearchPipePipe } from './search-pipe.pipe';
 import { SearchPipe } from './notes/search.pipe';
+import { serviceUrl } from './serviceUrl/serviceUrl';
+// import { SocialLoginModule, AuthServiceConfig } from "angular5-social-login";import { FacebookLoginProvider } from "angular5-social-login";
+// import { getAuthServiceConfigs } from "./socialloginConfig ";
 
-// import { SocialLoginModule,
-//   AuthServiceConfig,FacebookLoginProvider} from "angular-6-social-login";
+import {
+  SocialLoginModule,
+  AuthServiceConfig,
+  GoogleLoginProvider,
+  FacebookLoginProvider
+  } from "angular-6-social-login";
+  //import { ConstantsComponent } from './constants/constants.component';
+  
+  // Configs
+  export function getAuthServiceConfigs() {
+  let config = new AuthServiceConfig([
+  {
+  id: FacebookLoginProvider.PROVIDER_ID,
+  provider: new FacebookLoginProvider("347982709337483")
+  },
+  {
+  id: GoogleLoginProvider.PROVIDER_ID,
+  provider: new GoogleLoginProvider("198946252969-hepq58tqbqpfu3m10avj8k0nql6hnj4m.apps.googleusercontent.com")
+  }
+  ]);
+  return config;
+  }
 
-//Configs 
-// export function getAuthServiceConfigs() {
-//   let config = new AuthServiceConfig(
-//       [
-//         {
-//           id: FacebookLoginProvider.PROVIDER_ID,
-//           provider: new FacebookLoginProvider("Your-Facebook-app-id")
-//         }
-//       ]);
-
-//   return config;
-// }
 
 @NgModule({
   declarations: [
@@ -100,18 +111,21 @@ import { SearchPipe } from './notes/search.pipe';
     MatTooltipModule,
     MatMenuModule,
     MatDialogModule,
-    DragDropModule
+    DragDropModule,
+    SocialLoginModule
     // FacebookLoginProvider,
     // SocialLoginModule
     
 
   
   ],
-  providers: [DataserviceService,HttpClientModule,ViewService,FundooNotesComponent
-  //   ,{
-  //   provide: AuthServiceConfig,
-  //   useFactory: getAuthServiceConfigs
-  // }
+  providers: [DataserviceService,HttpClientModule,ViewService,FundooNotesComponent,serviceUrl
+
+    ,AuthService,
+  {
+    provide: AuthServiceConfig,
+    useFactory: getAuthServiceConfigs
+  }
 ],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]

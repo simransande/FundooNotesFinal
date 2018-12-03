@@ -5,13 +5,11 @@ import { Router } from '@angular/router';
 import { RouterModule, Routes } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
 import * as $ from 'jquery';
-// import 'rxjs/add/operator/takeUntil'
-// import { Subject } from '@angular/core';
+
 import { AuthService } from '../service/auth.service';
-// import {
-//   AuthService,
-//   FacebookLoginProvider,
-// } from 'angular-6-social-login';
+import { takeUntil } from 'rxjs/operators';
+import { AuthService as social ,FacebookLoginProvider, GoogleLoginProvider } from 'angular-6-social-login';
+
 
 declare var FB: any;
 @Component({
@@ -23,60 +21,87 @@ declare var FB: any;
 export class LoginComponent implements OnInit {
   model: any = {}
   Error: boolean = false;
-  constructor(private service: DataserviceService, private router: Router, private auth: AuthService,
+  // socialAuthService: any;
+  constructor(private service: DataserviceService,  private socialAuthService: social,
+    private router: Router
+    , private auth: AuthService,
 ) {
 
      }
 
-  //    public socialSignIn(socialPlatform : string) {
-  //     let socialPlatformProvider;
-  //     if(socialPlatform == "facebook"){
-  //       socialPlatformProvider = FacebookLoginProvider.PROVIDER_ID;
-  //     }
-      
-  //     this.socialAuthService.signIn(socialPlatformProvider).then(
-  //       (userData) => {
-  //         console.log(socialPlatform+" sign in data : " , userData);
-  //         // Now sign-in with userData
-  //         // ...
-              
-  //       }
-  //     );
-  // }
-
-  public statusChangeCallback(response){
-    console.log(response);
-    
-  }
-
-  checkLoginState(){
-    FB.getLoginStatus((resp: any) =>
-      this.statusChangeCallback(resp)
-    );
-  }
 
   ngOnInit() {
-
-    $(document).ready(function() {
-      $.ajaxSetup({ cache: true });
-      $.getScript('https://connect.facebook.net/en_US/sdk.js', function(){
-        FB.init({
-          appId: '347982709337483',
-          version: 'v2.7' // or v2.1, v2.2, v2.3, ...
-        });     
-        // $('#loginbutton,#feedbutton').removeAttr('disabled');
-        FB.XFBML.parse();
-        debugger;
-        FB.getLoginStatus((resp: any) =>
-         //console.log(resp)
-        this.service.SocialLogin(resp).subscribe((Statusdata: any) => {
-          console.log(Statusdata.accessToken);
-          
-        })        
-      );
-      });
-    });
   }
+  public socialSignIn(socialPlatform: string) {
+    debugger;
+    let socialPlatformProvider;
+    if (socialPlatform == "facebook") {
+    socialPlatformProvider = FacebookLoginProvider.PROVIDER_ID;
+    } else if (socialPlatform == "google") {
+    socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
+    }
+    
+    this.socialAuthService.signIn(socialPlatformProvider).then(userData => {
+    // console.log(socialPlatform + " sign in data : ", userData);
+    // Now sign-in with userData
+    // ...
+    this.sendToRestApiMethod(
+    userData.token,
+    userData.email,
+    userData.image,
+    userData.name
+    );
+    });
+    }
+
+    sendToRestApiMethod(
+      token: string,
+      email: string,
+      profilepic: string,
+      first_name: string
+      ): void {
+            
+      let data = [{ username: first_name, email: email, profilepic: profilepic }];
+      this.service.SocialLogin({data}).subscribe((Statusdata: any) => {
+      var abc=Statusdata;
+      console.log(Statusdata);
+      debugger;
+      this.flag = abc.status;
+      this.mail = Statusdata.email;
+      this.name = Statusdata.name;
+      this.flag = Statusdata.status;
+
+      /**
+       * if flag is 1 then it will navigate to login page
+       */
+      if (this.flag == 1) {
+        debugger;
+        alert("succsessfully registered");
+        // this.auth.sendToken(this.mail)
+        this.auth.sendToken(this.mail);
+
+        this.router.navigate(['/FundooNotes']);
+
+      }
+      else {
+        //this.router.navigate(['/login']);
+
+        this.Error = true;
+
+
+      }
+      
+      });
+      }
+    onSignIn(googleUser) {
+      debugger;
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
+  
   flag: any;
   mail: any;
   name: any;
@@ -90,7 +115,7 @@ export class LoginComponent implements OnInit {
     Validators.minLength(4),
     Validators.maxLength(8)
   ]);
-
+  login;
   /**
    * @method s_login() for login the page using gmail and password
    */
@@ -101,7 +126,7 @@ export class LoginComponent implements OnInit {
       { 'email': this.model.email, 'password': this.model.pass }
     ];
 
-    this.service.Login(data).subscribe((Statusdata: any) => {
+    this.login=this.service.Login(data).subscribe((Statusdata: any) => {
       debugger;
       console.log(Statusdata);
       this.flag = Statusdata.status;
@@ -116,8 +141,9 @@ export class LoginComponent implements OnInit {
         debugger;
         localStorage.setItem('email', this.mail);
         localStorage.setItem('uname', this.name);
-        localStorage.setItem('token', this.token);
+        localStorage.setItem('LoggedInUser', this.mail);
 
+        
         this.auth.sendToken(this.mail)
 
         this.router.navigate(['/FundooNotes']);
@@ -126,7 +152,10 @@ export class LoginComponent implements OnInit {
         this.Error = true;
       }
     });
-
+    }
+  ngOnDestroy()
+  {
+    this.login.unsubscribe();
   }
 }
 

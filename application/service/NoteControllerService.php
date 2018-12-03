@@ -3,6 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 require_once 'PHPUnit/Autoload.php';
 include_once '/var/www/html/code1/codeigniter/application/controllers/jwt.php';
 require '/var/www/html/code1/codeigniter/application/controllers/vendor/autoload.php';
+include "/var/www/html/code1/codeigniter/application/static/HardCode.php";
+
 class NoteControllerService
 {
     
@@ -14,7 +16,9 @@ class NoteControllerService
             /**
              * Database conncetion using PDO
              */
-            $this->connect = new PDO("mysql:host=localhost;dbname=fundooNotes", "root", "root");
+            $data=new HardCode();
+
+            $this->connect = new PDO("$data->database:host=$data->host;dbname=$data->dbname", "$data->user", "$data->password");
         } catch (PDOException $e) {
             print "Error!: " . $e->getMessage() . "<br/>";
             die();
@@ -41,12 +45,25 @@ class NoteControllerService
         /**
          * excuting that stmt
          */
-        $res = $stmt->execute();
+        // $res = $stmt->execute();
+            if ($stmt->execute()) {
+                $sql    = "select max(id) as id from note where email = '$mail'";
+                $stmt   = $this->connect->prepare($sql);
+                $var    = $stmt->execute();
+                $noteid = $stmt->fetch(PDO::FETCH_ASSOC);
+                $noteid = $noteid['id'];
+                /**
+                 * To update ID for Drag and drop.
+                 */
+                $sqlquerry         = "UPDATE note set DragAndDropID = $noteid where id = '$noteid'";
+                $statementofQuerry = $this->connect->prepare($sqlquerry);
+                $var               = $statementofQuerry->execute();
+            }
     }
 
     public function getnotes($mail){
 
-        $sql = "SELECT * From note where email='$mail'";
+        $sql = "SELECT * From note where email='$mail' order by DragAndDropID DESC ";
       
         $stmt = $this->connect->prepare($sql);
         $res = $stmt->execute();
@@ -335,4 +352,42 @@ class NoteControllerService
         $stmt = $this->connect->prepare($sql); 
         $res = $stmt->execute(); 
     }
+
+    public function DragAndDrop($email,$id,$loop,$direction){
+
+        for ($i = 0; $i < $loop; $i++) {
+            if ($direction == "upward") {
+                $querry = "SELECT max(DragAndDropID) as nextid from note where DragAndDropID < '$id' and email='$email'";
+            }
+            else {
+                $querry = "SELECT min(DragAndDropID) as nextid from note where DragAndDropID > '$id' and email='$email'";
+            }
+       
+            $stmt   = $this->connect->prepare($querry);
+            $var    = $stmt->execute();
+            $noteid = $stmt->fetch(PDO::FETCH_ASSOC);
+            $noteid = $noteid['nextid'];
+
+            $querry = "UPDATE note a inner join note b on a.DragAndDropID <> b.DragAndDropID 
+             set a.DragAndDropID =b.DragAndDropID  where a.DragAndDropID in('$noteid','$id')
+              and b.DragAndDropID in('$noteid','$id')";
+              $stmt   = $this->connect->prepare($querry);
+              $var    = $stmt->execute();
+              $id=$noteid;
+    }
+}
+
+public function profileUploadinGet($email){
+
+    $sql ="SELECT * From user where email='$email'"; 
+    $stmt = $this->connect->prepare($sql); 
+    $res = $stmt->execute();
+    $row=$stmt->fetch(PDO::FETCH_ASSOC);
+
+        // $notes= json_encode(base64_encode($row));
+        print json_encode(base64_encode($row['profilepic']));
+    // print $notes;
+
+
+}
 }

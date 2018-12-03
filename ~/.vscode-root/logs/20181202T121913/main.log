@@ -1,0 +1,6 @@
+[2018-12-02 12:19:13.763] [main] [info] update#setState idle
+[2018-12-02 12:19:43.765] [main] [info] update#setState checking for updates
+[2018-12-02 12:20:03.790] [main] [error] Error: net::ERR_NAME_RESOLUTION_FAILED
+[2018-12-02 12:20:03.790] [main] [info] update#setState idle
+[2018-12-02 13:19:41.015] [main] [info] update#setState checking for updates
+[2018-12-02 13:19:41.561] [main] [info] update#setState available for download

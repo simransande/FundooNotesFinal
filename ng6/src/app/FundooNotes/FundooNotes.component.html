@@ -36,19 +36,26 @@
     </button>
 
     <button mat-fab color="accent" class="signout" [matMenuTriggerFor]="logoutrmenu" >
-        <!-- <div class="Initial1">
-            {{Initial}}
-        </div> -->
+            <!-- <div *ngFor="let profile of prof"></div> -->
+                    <img class="profilePicFundoo" src="{{url}}">
+                <!-- <div class="Initial">
+                    {{Initial}}
+                </div> -->
+            <!-- </div> -->
     </button>
 
     <mat-menu #logoutrmenu="matMenu" class="signoutmenu">
-        <!-- <input type="file" accept="image/*" #file (change)="Fillupload($event,note)" class="filecss" id="selectedFile"> -->
-        <!-- (click)="file.click()" -->
-        <button mat-fab color="accent" class="profile" >
-            <div class="Initial">
+         <!-- <input type="file" accept="image/*" #file (change)="Fillupload($event,note)" class="filecss" id="selectedFile"> -->
+        <button mat-fab color="accent" class="profile"(click)="fileInput.click()">
+            <!-- <div *ngFor="let profile of prof"> -->
+                <img class="profilePic" src="{{url}}">
+            <!-- <div class="Initial">
                 {{Initial}}
-            </div>
+            </div> -->
+        <!-- </div> -->
         </button>
+        <input style="display: none" type="file" (change)="Fillupload($event)" #fileInput>
+
         <div class="name">{{email}}</div>
         <div class="name1">{{username}}</div>
 

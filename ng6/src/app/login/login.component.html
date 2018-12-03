@@ -34,13 +34,19 @@
         <!-- <button class="facebook" (click)="socialSignIn('facebook')">
           <img src="../../assets/icons8-facebook.svg">
         </button> -->
-        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-        </fb:login-button>
+        <button (click)="socialSignIn('facebook')">
+            Sign in with Facebook123
+            </button><button (click)="socialSignIn('google')">
+                Sign in with google
+                </button>
+
+
+       
         <div id="fb-root"></div>
         <div class="fb-login-button" 
         data-max-rows="1" data-size="large" data-button-type="continue_with" 
         data-show-faces="false" data-auto-logout-link="false" 
-        data-use-continue-as="false"></div>
+        data-use-continue-as="false"></div> 
         <!-- <div class="fb-login-button" 
         data-show-faces="true" data-width="200" data-max-rows="1"
         (click)="checkLoginState()"

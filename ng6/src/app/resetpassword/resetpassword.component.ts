@@ -13,6 +13,7 @@ export class ResetpasswordComponent implements OnInit {
   model: any = {}
   params: any = {}
   userid: any = {}
+  observe:any;
 
   constructor(private service: DataserviceService, private route: ActivatedRoute) { }
 
@@ -40,7 +41,7 @@ export class ResetpasswordComponent implements OnInit {
     let data = [
       { 'password': this.model.pass, 'email': this.model.email, 'token': this.userid }
     ];
-    this.service.RessetPass({ data })
+    this.observe=this.service.RessetPass({ data })
       .subscribe(response => {
         console.log(response);
       }
@@ -54,5 +55,10 @@ export class ResetpasswordComponent implements OnInit {
       console.log("errror");
     }
 
+  }
+
+  ngOnDestroy()
+  {
+    this.observe.unsubscribe();
   }
 }

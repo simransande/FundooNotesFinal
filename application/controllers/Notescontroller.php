@@ -292,6 +292,7 @@ class Notescontroller extends CI_Controller
         /**
          * @var labelid is the id of that perticular id which user want to delete
          */
+        // $flag=$_POST['deleteLabel'];
         $labelid=$_POST['labelid'];  
         $noteid=$_POST['noteid'];          
         if(empty($labelid)|| $labelid=='undefined'  )
@@ -310,24 +311,19 @@ class Notescontroller extends CI_Controller
         $id        = $_POST["id"];
         $loop      = $_POST["loop"];
         $direction = $_POST["direction"];
+
+        $this->serviceNote->DragAndDrop($email,$id,$loop,$direction);         
+
         /**
          * If direction is upward get the note id which is less than current id
-         */
-        for ($i = 0; $i < $loop; $i++) {
-            if ($direction == "upward") {
-                $querry = "SELECT max(id) as nextid from note where id < '$id' and email='$email'";
-            } else {
-                $querry = "SELECT min(id) as nextid from note where id > '$id' and email='$email'";
-            }
-            $stmt   = $this->connect->prepare($querry);
-            $var    = $stmt->execute();
-            $noteid = $stmt->fetch(PDO::FETCH_ASSOC);
-            $noteid = $noteid['nextid'];
-            $querry = "UPDATE note a inner join note b on a.id <> b.id set a.email = b.email,a.tittle = b.tittle,a.description = b.description,a.colorcode = b.colorcode,a.reminder = b.reminder,a.archive = b.archive,a.trash = b.trash,a.image=b.image,a.pin=b.pin where a.id in('$noteid','$id') and b.id in('$noteid','$id')";
-            $stmt   = $this->connect->prepare($querry);
-            $var    = $stmt->execute();
-            $id=$noteid;
-        }
+         */    
+
+    }
+
+    public function profileUploadinGet(){
+        $email     = $_POST["email"];
+        $this->serviceNote->profileUploadinGet($email);         
+
 
     }
 

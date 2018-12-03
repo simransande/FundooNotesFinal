@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NotesService } from '../service/notes.service';
 import { CreatelabelService } from '../service/createlabel.service';
 import { ViewService } from '../service/view.service';
+import { Subscription } from 'rxjs';
 
 
 
@@ -11,10 +12,14 @@ import { ViewService } from '../service/view.service';
   templateUrl: './bin.component.html',
   styleUrls: ['./bin.component.css']
 })
-export class BinComponent implements OnInit {
+export class BinComponent implements OnInit,OnDestroy {
 
-  notes: any;
+  notes: any; 
   labell: any;
+  observer:any;
+  observer1:Subscription;
+
+  observer2:any;
 
   model: any = {}
   archive: number = 0;
@@ -111,9 +116,9 @@ export class BinComponent implements OnInit {
         'title': note.title, 'isarchive': note.archive, 'flag': flag, 'color': note.colorcode
       }
     ];
-    this.service.updatenotes({ data }).subscribe((data: any) => {
-      this.labelService.getLabel().subscribe(responseLabel => {
-        this.service.getNote().subscribe(data => {
+    this.observer=this.service.updatenotes({ data }).subscribe((data: any) => {
+      this.observer1=this.labelService.getLabel().subscribe(responseLabel => {
+        this.observer2=this.service.getNote().subscribe(data => {
           this.notes = data;
           this.labell = responseLabel;
           console.log(this.labell);
@@ -162,6 +167,13 @@ export class BinComponent implements OnInit {
     this.NoteId = note;
   }
 
+  ngOnDestroy()
+  {
+    // this.observer.unsubscribe();
+    // this.observer1.remove(this.observer1);
+    // this.observer1.unsubscribe();
+    // this.observer2.unsubscribe();
+  }
 
 }
 
