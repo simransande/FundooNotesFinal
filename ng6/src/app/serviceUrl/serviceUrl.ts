@@ -16,6 +16,7 @@ export class serviceUrl
     public imageurl="imageurl";
     public noteSaveImage="noteSaveImage";
     public notesFetchImage="notesFetchImage";
+    public fetchUserData="fetchUserData";
 
     public notes="notes";
     public getnotes="getnotes";

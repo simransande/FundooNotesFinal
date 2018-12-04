@@ -6,9 +6,9 @@
                 <mat-card [ngClass]="direction=='row' ? 'cardDisplay' : 'cardDisplayrow'" class="cardDisplay" *ngIf="note.archive==0 && note.pin==0 && note.trash==1"
                     [style.background-color]="note.colorcode">
                     <div>
-                        <div *ngIf='note.image!=""'>
-                            <img class="imgcss" src="{{note.image}}">
-                        </div>
+                        <div *ngIf="note.image !='data:image/jpeg;base64,'">
+                            <img src={{note.image}} class="imgcss">
+                            </div>
                         <mat-card-title class="title-pin" style="width:75%">
                             {{note.tittle}}
                         </mat-card-title>

@@ -4,15 +4,17 @@ header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Headers: Authorization");
 include "/var/www/html/code1/codeigniter/application/rabitMQ/send.php";
 include "/var/www/html/code1/codeigniter/application/static/HardCode.php";
-// require '/var/www/html/code1/codeigniter/application/controllers/vendor/autoload.php';
+require '/var/www/html/code1/codeigniter/application/controllers/vendor/autoload.php';
 
-class AccountControllerService
+class AccountControllerService extends CI_Controller
 {
     
     protected $connect;
    
     public function __construct()
     {
+        parent::__construct();
+
         try {
             /**
              * Database conncetion using PDO
@@ -23,6 +25,7 @@ class AccountControllerService
             print "Error!: " . $e->getMessage() . "<br/>";
             die();
         }
+
     }
     
 
@@ -69,23 +72,14 @@ class AccountControllerService
          public function login($mail, $pass,$flag)
          {
 
-            // $this->load->library('Redis');
-            // $redis=$this->redis->config();
-            // $set= $redis->set('name','sdfas');
-            //  $get=  $redis->get('name');
-            //  echo $get;
-            // $this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
-            // $this->cache->save('name1', 'dfdf');
-            // if ($this->cache->get('name1'))
-            // {
-                
-            //      $testdata = $this->cache->get('name');
-            //       echo $testdata;
-                 
-            // }
-            // else{
-    
-            // }
+            $this->load->library('Redis');
+        $redis=$this->redis->config();
+
+        $set= $redis->set('email',$mail);
+         $get=  $redis->get('email');
+        $this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
+        $this->cache->save('email', $mail);
+       
             $sql = "SELECT * FROM user  WHERE email = '$mail' and pass='$pass'";
             $stmt = $this->connect->prepare($sql);
             $res = $stmt->execute();

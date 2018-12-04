@@ -365,5 +365,10 @@ $email = $_POST["email"];
 $this->serviceNote->notesFetchImage($email);
 
 }
+
+public function fetchUserData()
+{
+    $this->serviceNote->fetchUserData();
+}
 }
 ?>

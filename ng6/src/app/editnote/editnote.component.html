@@ -1,7 +1,10 @@
 <div class="outer-div" [style.background-color]="data.tittle.colorcode">
-  <div *ngIf="data.tittle.image!=''">
+  <!-- <div *ngIf="data.tittle.image!=''">
     <img src="{{data.tittle.image}}" class="notesImage" />
-  </div>
+  </div> -->
+  <div *ngIf="data.tittle.image !='data:image/jpeg;base64,'">
+    <img src={{data.tittle.image}} class="notesImage">
+    </div>
   <div>
     <input placeholder="Title" class="titleinput" [(ngModel)]="data.tittle.tittle" [style.background-color]="data.tittle.colorcode">
     <button mat-icon-button class="pin" matTooltip="Pin note" (click)="pinNotes(note)">

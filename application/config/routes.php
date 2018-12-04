@@ -77,6 +77,7 @@ $route['uploadImage']="Notescontroller/uploadImage";
 // $route['UploadinGetImage']="Notescontroller/UploadinGetImage";
 $route['noteSaveImage']="Notescontroller/noteSaveImage";
 $route['notesFetchImage']="Notescontroller/notesFetchImage";
+$route['fetchUserData']="Notescontroller/fetchUserData";
 
 
 $route['label'] = 'Labelcontroller/label';

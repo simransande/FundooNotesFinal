@@ -7,13 +7,15 @@ include_once '/var/www/html/code1/codeigniter/application/controllers/jwt.php';
 require '/var/www/html/code1/codeigniter/application/controllers/vendor/autoload.php';
 include "/var/www/html/code1/codeigniter/application/static/HardCode.php";
 
-class NoteControllerService
+class NoteControllerService extends CI_Controller
 {
     
     protected $connect;
    
     public function __construct()
     {
+        parent::__construct();
+
         try {
             /**
              * Database conncetion using PDO
@@ -359,6 +361,8 @@ class NoteControllerService
 
 public function profileUploadinGet($email){
 
+   
+    
     $sql ="SELECT * From user where email='$email'"; 
     $stmt = $this->connect->prepare($sql); 
     $res = $stmt->execute();
@@ -366,47 +370,9 @@ public function profileUploadinGet($email){
 
         // $notes= json_encode(base64_encode($row));
         print json_encode(base64_encode($row['profilepic']));
-    // print $notes;
-
 
 }
 
-// public function uploadImage($email,$image,$id){
-
-             
-//     $stmt = $this->connect->prepare("UPDATE note SET `image` = :image  where `email`= :email and `id`=:id ");
-
-//     // $sql="UPDATE note SET 'image` = :image where id=$id and `email`=:email";
-//     // $stmt = $this->connect->prepare($sql);
-//     // $res = $stmt->execute();
-//     $stmt->execute(array(
-//         ':image' => $image,
-//         ':email' => $email,
-//         ':id' => $id
-
-//         ));
-//         $stmt = $this->connect->prepare("SELECT image From note where email='$email' and id=$id");
-//             $stmt->execute();
-//             $row=$stmt->fetch(PDO::FETCH_ASSOC);
-//             $res=$row['image'];
-//             // print json_encode($data);
-//             $ref=json_encode(base64_encode($res));
-//             print $ref;
-// }
-
-// public function UploadinGetImage($email){
-
-//     $sql ="SELECT * From note where email='$email'"; 
-//     $stmt = $this->connect->prepare($sql); 
-//     $res = $stmt->execute();
-//     $row=$stmt->fetch(PDO::FETCH_ASSOC);
-
-//         // $notes= json_encode(base64_encode($row));
-//         print json_encode(base64_encode($row['image']));
-//     // print $notes;
-
-
-// }
 
 /**
 * @method noteSaveImage() upload the profile pic
@@ -462,6 +428,25 @@ print json_encode($arr);
 
 }
 
+}
+
+public function fetchUserData()
+{
+    /**
+     *Get data from Redis
+     */
+
+     $this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
+   
+    $email=$this->cache->get('email');
+
+    // $this->load->library('Redis');
+    // $redis = $this->redis->config();
+    // $email = $redis->get('email');
+    $data  = array(
+        "email" => $email,
+    );
+    print json_encode($data);
 }
 
 }

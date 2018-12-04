@@ -58,7 +58,8 @@ export class FundooNotesComponent implements OnInit {
   label: string;
   notelabel: any;
   noteView = 'grid';
-  email = localStorage.getItem('email');
+  // email = localStorage.getItem('email');
+  email;
   username = localStorage.getItem('uname');
   localUrl: any;
 
@@ -66,6 +67,10 @@ export class FundooNotesComponent implements OnInit {
 
   ngOnInit() {
     this.noteService.currentMessage.subscribe(message => this.message = message)
+    let observer = this.noteService.fetchUserData();
+        observer.subscribe((res: any) => {
+            this.email = res.email;
+        });
   }
   listview() {
 

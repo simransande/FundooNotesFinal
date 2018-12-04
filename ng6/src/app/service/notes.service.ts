@@ -15,6 +15,7 @@ import { serviceUrl } from '../../app/serviceUrl/serviceUrl';
 
 })
 export class NotesService {
+ 
 
   private messageSource = new BehaviorSubject(true);
   currentMessage = this.messageSource.asObservable();
@@ -293,7 +294,9 @@ noteSaveImage(url, email, noteId) {
   return this.http.post(this.serviceurl.host + this.serviceurl.notesFetchImage, noteFetchImage)
   }
   
-
+  fetchUserData(): any {
+    return this.http.get(this.serviceurl.host + this.serviceurl.fetchUserData);
+}
 }
 
 

@@ -15,28 +15,11 @@ class LoginController extends CI_Controller
    public function __construct()
    {
        $this->ref = new AccountControllerService();
-       parent::__construct();
    }
 
    public function login()
    {     
-        // $this->load->library('Redis');
-        // $redis=$this->redis->config();
-        // $set= $redis->set('name','sdfas');
-        //  $get=  $redis->get('name');
-        //  echo $get;
-        // $this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
-        // $this->cache->save('name1', 'dfdf');
-        // if ($this->cache->get('name1'))
-        // {
-            
-        //      $testdata = $this->cache->get('name');
-        //       echo $testdata;
-             
-        // }
-        // else{
-
-        // }
+        
        $flag=0;
        /**
        * @Assert\Email(
