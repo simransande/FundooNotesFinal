@@ -163,21 +163,21 @@ this.label=this.service.Notes({ data }).subscribe((data: any) => {
 
 
 
-  Fillupload(event, note: any) {
-    this.localUrl = event.target.result;
-    let data = [
-      { 'selectedFile': <File>event.target.files[0], 'id': note.id, 'image': note.image }
-    ];
-    console.log(this.selectedFile);
-    this.label=this.service.uploading({ data }).subscribe((data: any) => {
-      this.label=this.service.getNote().subscribe(data => {
+  // Fillupload(event, note: any) {
+  //   this.localUrl = event.target.result;
+  //   let data = [
+  //     { 'selectedFile': <File>event.target.files[0], 'id': note.id, 'image': note.image }
+  //   ];
+  //   console.log(this.selectedFile);
+  //   this.label=this.service.uploading({ data }).subscribe((data: any) => {
+  //     this.label=this.service.getNote().subscribe(data => {
 
-        this.imgUrl = data;
-        this.notes = data;
-      });
-    });
+  //       this.imgUrl = data;
+  //       this.notes = data;
+  //     });
+  //   });
 
-  }
+  // }
 
   openDialogcoll(): void {
     debugger;

@@ -104,7 +104,10 @@ export class EditlabelComponent implements OnInit,OnDestroy {
 
     this.observer1=this.service.deletelabel({ data }).subscribe((data: any) => {
       this.observer2=this.service.getLabel().subscribe(data => {
+      
+
         this.labels = data;
+
       });
     });
   }

@@ -38,12 +38,6 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  it('should create', () => {
-    expect(1 + 1).toBeTruthy(2);
-  });
-  it('should create', () => {
-    expect(1 + 1).toBeTruthy(2);
-  });
   
   it('form should be invalid',async(() => {
     expect(component.model.email.toEqual('@asd.dzf.asd'));
@@ -56,5 +50,15 @@ describe('LoginComponent', () => {
     expect(component.model.pass.toEqual('121210'));
    
     });
+    it('should login', async(()=>{
+      component.login()
+    }))
+    it('should call the login method', async(()=>{
+      fixture.detectChanges();
+      spyOn(component,'login')
+      el=fixture.debugElement.query(By.css('button')).nativeElement;
+      el.click();
+      expect(component.login).toHaveBeenCalledTimes(1);
+    }))
   
 });

@@ -11,8 +11,11 @@ export class serviceUrl
     public socialLogin="socialLogin";
     // public profileUpload="profileUpload";
     public profileUploadinGeturl="profileUploadinGeturl";
-
+    public uploadImage="uploadImage";
+    public UploadinGetImage="UploadinGetImage";
     public imageurl="imageurl";
+    public noteSaveImage="noteSaveImage";
+    public notesFetchImage="notesFetchImage";
 
     public notes="notes";
     public getnotes="getnotes";

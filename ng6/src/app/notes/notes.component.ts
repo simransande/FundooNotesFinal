@@ -92,6 +92,7 @@ export class NotesComponent implements OnInit {
   direction: string = "row";
   layout: string = this.direction + " " + this.wrap;
   // alldata: Note[] =[];
+  imageId:any;
 
   public res;
   public view;
@@ -103,6 +104,7 @@ export class NotesComponent implements OnInit {
   errorMessage: any;
   base64textString: string;
   url: string;
+  image: any;
 
 
   ngOnInit() {
@@ -132,6 +134,7 @@ export class NotesComponent implements OnInit {
 
     private viewService: ViewService) {
 
+         
     this.service.getNotesColl().subscribe(response => {
       this.collabNotes = response;
       console.log(response);
@@ -150,7 +153,7 @@ export class NotesComponent implements OnInit {
     });
 
     this.service.getNote().subscribe(notesData => {
-      
+      debugger;
       this.alldata = notesData;
       console.log(this.notes);
     });
@@ -213,13 +216,7 @@ export class NotesComponent implements OnInit {
    * drop the dragged note 
    * @param event for droping on that event 
    */
-  // drop(event: CdkDragDrop<string[]>) {
-  //   alert(1);
-  //   debugger;
-  //   moveItemInArray(this.alldata, event.previousIndex, event.currentIndex);
-  // }
-
-
+ 
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.alldata, event.previousIndex, event.currentIndex);
     let diff: any;
@@ -376,6 +373,7 @@ export class NotesComponent implements OnInit {
    * @param note on that paerticular note
    */
   setcolor(color: any, note: any) {
+    debugger;
     if (note == '') {
       console.log('got it');
       this.colored = color;
@@ -476,65 +474,47 @@ export class NotesComponent implements OnInit {
     });
   }
 
-  /**
-   * function is for uploading the image on selected note
-   * @param event it is the file to select
-   * @param note on that perticular note
-   */
-  Fillupload(event, note: any) {
-    this.localUrl = event.target.result;
-    let data =
-      [
-        { 'selectedFile': <File>event.target.files[0], 'id': note.id, 'image': note.image, 'description': note.description, 'title': note.tittle }
-      ];
 
-    this.service.uploading({ data }).subscribe((data: any) => {
-      this.service.getNote().subscribe(data => {
-        this.imgUrl = data;
-        this.alldata = data;
-      });
-    });
+/**
+* variable to store the note id of image to be added
+*/
+imageNoteId:any;
+/**
+* @method onSelectFile()
+* @return void
+* @description Function to save the image 
+*/
+onSelectFile(event, noteId) {
+debugger;
+this.imageNoteId = noteId;
+// alert(this.imageNoteId);
+var files = event.target.files;
+var file = files[0];
+if (files && file) {
+var reader = new FileReader();
+reader.onload = this._handleReaderLoaded.bind(this);
+reader.readAsBinaryString(file);
+}
+}
 
-  }
+_handleReaderLoaded(readerEvt) {
+var binaryString = readerEvt.target.result;
+this.base64textString = btoa(binaryString);
+this.notes.forEach(element => {
+if (element.id == this.imageNoteId) {
+element.image = "data:image/jpeg;base64," + this.base64textString;
+}
+});
+
+let obss = this.service.noteSaveImage(this.base64textString, this.Email, this.imageNoteId);
+obss.subscribe(
+(res: any) => {
+});
 
 
-  // Fillupload(event) {
-  //   debugger;
-  //   var files = event.target.files;
-  //   var file = files[0];
-  //   if (files && file) {
-  //   var reader = new FileReader();
-  //   reader.onload = this._handleReaderLoaded.bind(this);
-  //   reader.readAsBinaryString(file);
-  //   }
-  //   }
-    
-  //   _handleReaderLoaded(readerEvt) {
-  //     let email = localStorage.getItem('email');
-  //   debugger;
-  //   var binaryString = readerEvt.target.result;
-  //   this.base64textString = btoa(binaryString);
-  //   // let data =
-  //   //      [
-  //   //        { base64textString, 'id': note.id, 'image': note.image, 'description': note.description, 'title': note.tittle }
-  //   //      ];
-  //   console.log(btoa(binaryString));
-    
-  //   this.service.uploadImage(this.base64textString,this.alldata, email )
-  //   .subscribe(
-  //   (status: any) => {
-  //   console.log("darshuuuu");
-    
-    
-  //   console.log(status);
-    
-  //   this.url = "data:image/jpeg;base64," + status;
-  //   }, error => {
-  //   console.log(error);
-  //   alert(error.error.text)
-  //   });
-  //   }
+}
 
+  
   /**
    * function for opening the dailog box for collaborator
    * @param note dailog box will be open on that particular note

@@ -7,9 +7,9 @@
                     [style.background-color]="note.colorcode">
                     <div>
                         <!-- binding of image -->
-                        <div *ngIf='note.image!=""'>
-                            <img class="imgcss" src="{{note.image}}">
-                        </div>
+                        <div *ngIf="note.image !='data:image/jpeg;base64,'">
+                            <img src={{note.image}} class="imgcss">
+                            </div>
 
                         <!-- binding title -->
                         <mat-card-title class="title-pin1" style="width:75%">
@@ -127,10 +127,9 @@
                             </div>
                         </mat-menu>
 
-                        <input type="file" accept="image/*" #file (change)="Fillupload($event,note)" class="filecss" id="selectedFile">
-                        <button mat-icon-button class="notes" matTooltip="Add image" (click)="file.click()">
-                            <img style="width:20px;" src="../../assets/addimage.svg" />
-                        </button>
+                        <input style="display: none;" type='file' #file (change)="onSelectFile($event,note.id)">
+                        <button matTooltip="Add image "class="notes" (click)="file.click()" mat-icon-button>
+                            <mat-icon> <img src="../../assets/addimage.svg "></mat-icon> </button>
 
                         <button mat-icon-button class="notes" matTooltip="Unarchive" (click)="Archive(note)">
                             <img class="imageNote" src="../../assets/archive.svg" />

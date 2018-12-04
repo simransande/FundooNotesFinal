@@ -1,5 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Headers: Authorization");
 // require_once 'PHPUnit/Autoload.php';
 // include_once '/var/www/html/code1/codeigniter/application/controllers/jwt.php';
 require '/var/www/html/code1/codeigniter/application/controllers/vendor/autoload.php';

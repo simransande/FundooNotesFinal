@@ -1,10 +1,11 @@
 <?php
 require_once 'PHPUnit/Autoload.php';
-// include_once '/var/www/html/code1/codeigniter/application/controllers/jwt.php';
-// require '/var/www/html/code1/codeigniter/application/controllers/vendor/autoload.php';
-// include "/var/www/html/code1/codeigniter/application/rabitMQ/send.php";
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Headers: Authorization");
 include "/var/www/html/code1/codeigniter/application/rabitMQ/send.php";
 include "/var/www/html/code1/codeigniter/application/static/HardCode.php";
+// require '/var/www/html/code1/codeigniter/application/controllers/vendor/autoload.php';
+
 class AccountControllerService
 {
     
@@ -68,6 +69,23 @@ class AccountControllerService
          public function login($mail, $pass,$flag)
          {
 
+            // $this->load->library('Redis');
+            // $redis=$this->redis->config();
+            // $set= $redis->set('name','sdfas');
+            //  $get=  $redis->get('name');
+            //  echo $get;
+            // $this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
+            // $this->cache->save('name1', 'dfdf');
+            // if ($this->cache->get('name1'))
+            // {
+                
+            //      $testdata = $this->cache->get('name');
+            //       echo $testdata;
+                 
+            // }
+            // else{
+    
+            // }
             $sql = "SELECT * FROM user  WHERE email = '$mail' and pass='$pass'";
             $stmt = $this->connect->prepare($sql);
             $res = $stmt->execute();
@@ -134,29 +152,7 @@ class AccountControllerService
     
 
          public function profileUpload($email,$filePath){
-
-
-        //     move_uploaded_file($fileTmpName, "uploads/" . $name);
-
-        //     // $dataD=new Constant();
-        //     $newfileloc = 'http://localhost/code1/codeigniter/uploads/' . $name;
-        //     // $upload = move_uploaded_file($fileTmpName, $newfileloc);
-
-        //     $sql = "UPDATE user SET profilepic='$name' WHERE email='$email'";
-        //     $res = $this->connect->exec($sql);
-
-        //     $stmt = $this->connect->prepare("SELECT * From user where email='$email'");
-        //     $stmt->execute();
-
-        //     $myArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        //     $myjson = json_encode($myArray);
-        //     print($myjson);
-
-        //  }
-
          if ($email != null) {
-
-            // $filePath = base64_decode($_POST['fileKey']);
             $stmt = $this->connect->prepare("UPDATE user SET `profilepic` = :filePath where `email`= :email ");
             
             $stmt->execute(array(
@@ -180,23 +176,37 @@ class AccountControllerService
             $large_parts = explode(" ", $username);
             $name=$large_parts[0];
 
+            $sql = "SELECT * FROM user  WHERE email = '$email' and uname='$name'";
+            $stmt = $this->connect->prepare($sql);
+            $res = $stmt->execute();
+       
+           if( $row = $stmt->fetch(PDO::FETCH_ASSOC))
+            { 
+                $flag++;
+                        $myjson='{"email":'.'"'.$email.'","name":'.'"'.$name.'","status":'.$flag."}";           
+                        $fg= $myjson;
+                        print $fg;                                
+            }
+            else
+            {
+
               $reg = "insert into user (uname,email,pass,phone) values ('$name','$email',123123,'9632587410')";
               $stmt = $this->connect->prepare($reg);
               $ref = $stmt->execute();
               if($ref)
               {
                  $flag++;
-                         $myjson='{"status":"1"}';     
-                         $myjson='{"status":'.$flag."}";     
-                         print $myjson;                
+                        $myjson='{"email":'.'"'.$email.'","name":'.'"'.$name.'","status":'.$flag."}";           
+                        $fg= $myjson;
+                        print $fg;                
                       }
                      else 
                      {
-                         $myjson='{"status":"0"}';     
-                         $myjson='{"status":'.$flag."}";     
-                         print $myjson;
+                        $myjson='{"status":"0"}';     
+                        $myjson='{"status":'.$flag."}";     
+                        print $myjson;
                      }
-            
+                    }
         }
     
 }

@@ -40,6 +40,9 @@ export class ReminderComponent implements OnInit {
   labels: any;
   fulldate: any;
   observe:any;
+  base64textString: string;
+  Email: any = localStorage.getItem('email');
+
 
   constructor(private service: NotesService, public dialog: MatDialog,
     private labelService: CreatelabelService, iconRegistry: MatIconRegistry,
@@ -167,27 +170,43 @@ export class ReminderComponent implements OnInit {
     });
   }
 
-  /**
-   * function for uploading the image
-   * @param event to open the file
-   * @param note on that particular note
-   */
-  Fillupload(event, note: any) {
-    this.localUrl = event.target.result;
-    let data = [
-      { 'selectedFile': <File>event.target.files[0], 'id': note.id, 'image': note.image }
-    ];
-    console.log(this.selectedFile);
-    this.observe=this.service.uploading({ data }).subscribe((data: any) => {
-      this.observe=this.service.getNote().subscribe(data => {
+/**
+* variable to store the note id of image to be added
+*/
+imageNoteId:any;
+/**
+* @method onSelectFile()
+* @return void
+* @description Function to save the image 
+*/
+onSelectFile(event, noteId) {
+debugger;
+this.imageNoteId = noteId;
+// alert(this.imageNoteId);
+var files = event.target.files;
+var file = files[0];
+if (files && file) {
+var reader = new FileReader();
+reader.onload = this._handleReaderLoaded.bind(this);
+reader.readAsBinaryString(file);
+}
+}
 
-        this.imgUrl = data;
-        this.notes = data;
-      });
-    });
+_handleReaderLoaded(readerEvt) {
+var binaryString = readerEvt.target.result;
+this.base64textString = btoa(binaryString);
+this.notes.forEach(element => {
+if (element.id == this.imageNoteId) {
+element.image = "data:image/jpeg;base64," + this.base64textString;
+}
+});
 
-  }
+let obss = this.service.noteSaveImage(this.base64textString, this.Email, this.imageNoteId);
+obss.subscribe(
+(res: any) => {
+});
 
+}
   /**
    * open dailog box for collaborator
    */

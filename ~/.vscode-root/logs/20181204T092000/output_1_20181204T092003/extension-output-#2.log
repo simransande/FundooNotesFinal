@@ -1,0 +1,533 @@
+Looking for git in: git
+Using git 2.7.4 from git
+> git rev-parse --show-toplevel
+> git config --get commit.template
+Open repository: /var/www/html/code1/codeigniter
+> git status -z -u
+> git show :ng6/src/app/reminder/reminder.component.ts
+> git check-ignore -z --stdin
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :ng6/src/app/reminder/reminder.component.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git check-ignore -z --stdin
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/registration/registration.component.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/notes/notes.component.html
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/notes/notes.component.html
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/notes/notes.component.html
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/notes/notes.component.html
+> git show :ng6/src/app/notes/notes.component.ts
+> git check-ignore -z --stdin
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/controllers/Notescontroller.php
+> git show :application/service/NoteControllerService.php
+> git show :application/controllers/Notescontroller.php
+> git show :application/service/NoteControllerService.php
+> git show :ng6/src/app/notes/notes.component.ts
+> git check-ignore -z --stdin
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/serviceUrl/serviceUrl.ts
+> git show :ng6/src/app/service/notes.service.spec.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git check-ignore -z --stdin
+> git show :ng6/src/app/serviceUrl/serviceUrl.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/serviceUrl/serviceUrl.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :application/controllers/Notescontroller.php
+> git show :application/config/routes.php
+> git show :application/controllers/Notescontroller.php
+> git show :application/config/routes.php
+> git show :application/controllers/Notescontroller.php
+> git show :application/config/routes.php
+> git show :application/service/NoteControllerService.php
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/notes/notes.component.html
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/notes/notes.component.html
+> git show :application/service/AccountControllerService.php
+> git show :application/service/NoteControllerService.php
+> git show :application/controllers/Notescontroller.php
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :application/controllers/Notescontroller.php
+> git show :application/config/routes.php
+> git show :application/controllers/Notescontroller.php
+> git show :ng6/src/app/serviceUrl/serviceUrl.ts
+> git show :application/controllers/Notescontroller.php
+> git show :application/config/routes.php
+> git show :application/controllers/Notescontroller.php
+> git show :application/service/NoteControllerService.php
+> git show :application/controllers/vendor/composer/ClassLoader.php
+> git check-ignore -z --stdin
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git show :application/service/NoteControllerService.php
+> git show :application/controllers/Notescontroller.php
+> git show :application/service/NoteControllerService.php
+> git show :application/controllers/vendor/composer/ClassLoader.php
+> git show :application/service/NoteControllerService.php
+> git show :application/controllers/Notescontroller.php
+> git show :application/config/routes.php
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/serviceUrl/serviceUrl.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :application/config/routes.php
+> git show :application/controllers/Notescontroller.php
+> git show :application/service/NoteControllerService.php
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/notes/notes.component.html
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :application/service/NoteControllerService.php
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/notes/notes.component.html
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :application/service/AccountControllerService.php
+> git show :application/service/NoteControllerService.php
+> git show :application/controllers/Notescontroller.php
+> git show :application/service/NoteControllerService.php
+> git show :application/controllers/Notescontroller.php
+> git show :system/core/CodeIgniter.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :application/service/NoteControllerService.php
+> git show :ng6/src/app/notes/notes.component.html
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/notes/notes.component.spec.ts
+> git show :ng6/src/app/notes/notes.component.html
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :application/service/NoteControllerService.php
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :ng6/src/app/notes/notes.component.html
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :application/controllers/Notescontroller.php
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :application/service/NoteControllerService.php
+> git show :application/controllers/Notescontroller.php
+> git show :system/core/Common.php
+> git show :application/controllers/Notescontroller.php
+> git show :application/service/NoteControllerService.php
+> git show :ng6/src/app/archive/archive.component.html
+> git show :ng6/src/app/archive/archive.component.ts
+> git show :ng6/src/app/archive/archive.component.html
+> git show :ng6/src/app/notes/notes.component.html
+> git show :ng6/src/app/archive/archive.component.html
+> git show :ng6/src/app/notes/notes.component.html
+> git show :ng6/src/app/archive/archive.component.html
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/archive/archive.component.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/archive/archive.component.ts
+> git show :ng6/src/app/reminder/reminder.component.ts
+> git show :ng6/src/app/archive/archive.component.ts
+> git show :ng6/src/app/reminder/reminder.component.ts
+> git show :ng6/src/app/reminder/reminder.component.html
+> git show :ng6/src/app/archive/archive.component.html
+> git show :ng6/src/app/reminder/reminder.component.html
+> git show :ng6/src/app/archive/archive.component.html
+> git show :ng6/src/app/reminder/reminder.component.html
+> git show :ng6/src/app/reminder/reminder.component.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :ng6/src/app/notes/notes.component.html
+> git check-ignore -z --stdin
+> git show :ng6/src/app/resetpassword/resetpassword.component.spec.ts
+> git show :ng6/src/app/notes/notes.component.html
+> git show :index.php
+> git check-ignore -z --stdin
+> git show :application/config/redis.php
+> git ls-files --stage -- application/config/
+> git check-ignore -z --stdin
+> git show :index.php
+> git show :application/controllers/Accountcontroller.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/config/routes.php
+> git show :application/controllers/LoginController.php
+> git show :application/redis.php
+> git ls-files --stage -- application/
+> git check-ignore -z --stdin
+> git show :application/controllers/Notescontroller.php
+> git show :application/controllers/LoginController.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/libraries/redis.php
+> git ls-files --stage -- application/libraries/
+> git check-ignore -z --stdin
+> git show :application/controllers/LoginController.php
+> git show :application/libraries/redis.php
+> git ls-files --stage -- application/libraries/
+> git show :application/controllers/LoginController.php
+> git show :application/libraries/redis.php
+> git ls-files --stage -- application/libraries/
+> git show :application/controllers/LoginController.php
+> git show :system/core/Common.php
+> git show :application/controllers/LoginController.php
+> git show :application/libraries/redis.php
+> git ls-files --stage -- application/libraries/
+> git show :application/controllers/LoginController.php
+> git show :system/core/Common.php
+> git show :application/controllers/LoginController.php
+> git show :application/libraries/redis.php
+> git ls-files --stage -- application/libraries/
+> git show :application/controllers/LoginController.php
+> git show :system/core/Common.php
+> git show :application/controllers/LoginController.php
+> git show :application/config/redis.php
+> git ls-files --stage -- application/config/
+> git show :application/controllers/LoginController.php
+> git show :application/libraries/redis.php
+> git ls-files --stage -- application/libraries/
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :index.php
+> git show :application/libraries/redis.php
+> git ls-files --stage -- application/libraries/
+> git show :application/controllers/ForgotpasswordController.PHP
+> git show :application/controllers/LoginController.php
+> git show :system/core/Common.php
+> git show :application/config/config.php
+> git show :application/config/redis.php
+> git ls-files --stage -- application/config/
+> git show :application/config/config.php
+> git show :application/controllers/LoginController.php
+> git show :system/core/Common.php
+> git show :application/controllers/LoginController.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/controllers/vendor/autoload.php
+> git show :application/controllers/ForgotpasswordController.PHP
+> git show :application/controllers/LoginController.php
+> git show :application/libraries/redis.php
+> git ls-files --stage -- application/libraries/
+> git show :application/libraries/Redis.php
+> git ls-files --stage -- application/libraries/
+> git check-ignore -z --stdin
+> git show :application/controllers/LoginController.php
+> git show :system/core/Common.php
+> git show :application/controllers/LoginController.php
+> git show :system/core/Loader.php
+> git show :application/controllers/LoginController.php
+> git show :application/libraries/Redis.php
+> git ls-files --stage -- application/libraries/
+> git show :application/controllers/vendor/composer/ClassLoader.php
+> git show :application/predis/src/Autoloader.php
+> git ls-files --stage -- application/predis/src/
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git show :system/core/Common.php
+> git show :application/controllers/LoginController.php
+> git show :application/libraries/Redis.php
+> git ls-files --stage -- application/libraries/
+> git show :application/controllers/LoginController.php
+> git show :system/core/Common.php
+> git show :application/controllers/LoginController.php
+> git show :application/libraries/Redis.php
+> git ls-files --stage -- application/libraries/
+> git show :application/controllers/LoginController.php
+> git show :index.php
+> git show :application/config/routes.php
+> git show :application/service/NoteControllerService.php
+> git show :application/controllers/LoginController.php
+> git show :ng6/src/app/login/login.component.spec.ts
+> git show :ng6/src/app/app-routing.module.ts
+> git show :ng6/src/app/auth.guard.ts
+> git show :ng6/src/app/app.module.ts
+> git show :ng6/src/app/login/login.component.spec.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/notes/notes.component.spec.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/login/login.component.spec.ts
+> git show :application/controllers/LoginController.php
+> git show :application/libraries/Redis.php
+> git ls-files --stage -- application/libraries/
+> git show :system/core/Common.php
+> git show :application/controllers/LoginController.php
+> git show :application/service/AccountControllerService.php
+> git show :ng6/src/app/login/login.component.spec.ts
+> git show :application/controllers/LoginController.php
+> git show :application/libraries/Redis.php
+> git ls-files --stage -- application/libraries/
+> git show :application/controllers/LoginController.php
+> git show :application/libraries/Redis.php
+> git ls-files --stage -- application/libraries/
+> git show :application/controllers/LoginController.php
+> git show :application/predis/autoload.php
+> git ls-files --stage -- application/predis/
+> git show :index.php
+> git show :application/controllers/LoginController.php
+> git show :application/predis/autoload.php
+> git ls-files --stage -- application/predis/
+> git show :system/core/Common.php
+> git show :application/controllers/LoginController.php
+> git show :application/predis/autoload.php
+> git ls-files --stage -- application/predis/
+> git show :application/controllers/LoginController.php
+> git show :system/core/Loader.php
+> git show :application/controllers/LoginController.php
+> git show :application/libraries/Redis.php
+> git ls-files --stage -- application/libraries/
+> git show :application/controllers/vendor/composer/ClassLoader.php
+> git show :application/libraries/Redis.php
+> git ls-files --stage -- application/libraries/
+> git show :application/controllers/LoginController.php
+> git show :index.php
+> git show :application/controllers/LoginController.php
+> git show :application/libraries/Redis.php
+> git ls-files --stage -- application/libraries/
+> git show :application/predis/autoload.php
+> git ls-files --stage -- application/predis/
+> git show :application/controllers/LoginController.php
+> git show :application/predis/autoload.php
+> git ls-files --stage -- application/predis/
+> git show :application/controllers/LoginController.php
+> git show :application/libraries/Redis.php
+> git ls-files --stage -- application/libraries/
+> git show :index.php
+> git show :application/controllers/LoginController.php
+> git show :application/libraries/Redis.php
+> git ls-files --stage -- application/libraries/
+> git show :application/controllers/LoginController.php
+> git show :application/predis/autoload.php
+> git ls-files --stage -- application/predis/
+> git show :application/controllers/LoginController.php
+> git show :application/predis/autoload.php
+> git ls-files --stage -- application/predis/
+> git show :application/predis/src/Autoloader.php
+> git ls-files --stage -- application/predis/src/
+> git show :application/predis/autoload.php
+> git ls-files --stage -- application/predis/
+> git show :application/predis/src/Autoloader.php
+> git ls-files --stage -- application/predis/src/
+> git show :application/controllers/LoginController.php
+> git show :system/core/CodeIgniter.php
+> git show :application/controllers/LoginController.php
+> git show :system/core/Loader.php
+> git show :application/controllers/LoginController.php
+> git show :application/libraries/Redis.php
+> git ls-files --stage -- application/libraries/
+> git show :application/controllers/LoginController.php
+> git show :application/libraries/Redis.php
+> git ls-files --stage -- application/libraries/
+> git show :application/predis/autoload.php
+> git ls-files --stage -- application/predis/
+> git show :application/controllers/LoginController.php
+> git show :application/libraries/Redis.php
+> git ls-files --stage -- application/libraries/
+> git show :application/controllers/LoginController.php
+> git show :application/libraries/Redis.php
+> git ls-files --stage -- application/libraries/
+> git show :application/controllers/LoginController.php
+> git show :application/libraries/Redis.php
+> git ls-files --stage -- application/libraries/
+> git show :application/controllers/LoginController.php
+> git show :application/libraries/Redis.php
+> git ls-files --stage -- application/libraries/
+> git show :application/controllers/LoginController.php
+> git show :index.php
+> git show :application/predis/autoload.php
+> git ls-files --stage -- application/predis/
+> git show :index.php
+> git show :application/predis/autoload.php
+> git ls-files --stage -- application/predis/
+> git show :application/controllers/LoginController.php
+> git show :application/libraries/Redis.php
+> git ls-files --stage -- application/libraries/
+> git show :application/controllers/LoginController.php
+> git show :index.php
+> git show :application/predis/autoload.php
+> git ls-files --stage -- application/predis/
+> git show :application/controllers/LoginController.php
+> git show :system/core/Loader.php
+> git show :application/controllers/LoginController.php
+> git show :application/libraries/Redis.php
+> git ls-files --stage -- application/libraries/
+> git show :application/config/redis.php
+> git ls-files --stage -- application/config/
+> git show :index.php
+> git show :application/config/config.php
+> git show :application/libraries/Redis.php
+> git ls-files --stage -- application/libraries/
+> git show :index.php
+> git show :application/controllers/LoginController.php
+> git show :application/libraries/Redis.php
+> git ls-files --stage -- application/libraries/
+> git show :application/controllers/LoginController.php
+> git show :application/libraries/Redis.php
+> git ls-files --stage -- application/libraries/
+> git show :application/controllers/LoginController.php
+> git show :index.php
+> git show :application/predis/autoload.php
+> git ls-files --stage -- application/predis/
+> git show :index.php
+> git show :application/predis/autoload.php
+> git ls-files --stage -- application/predis/
+> git show :index.php
+> git show :application/predis/autoload.php
+> git ls-files --stage -- application/predis/
+> git show :index.php
+> git show :application/predis/autoload.php
+> git ls-files --stage -- application/predis/
+> git show :index.php
+> git show :application/libraries/Redis.php
+> git ls-files --stage -- application/libraries/
+> git show :index.php
+> git show :application/libraries/Redis.php
+> git ls-files --stage -- application/libraries/
+> git show :index.php
+> git show :application/controllers/LoginController.php
+> git show :index.php
+> git show :application/predis/autoload.php
+> git ls-files --stage -- application/predis/
+> git show :application/config/config.php
+> git show :application/controllers/LoginController.php
+> git show :index.php
+> git show :application/controllers/LoginController.php
+> git show :system/core/CodeIgniter.php
+> git show :application/controllers/LoginController.php
+> git show :application/libraries/Redis.php
+> git ls-files --stage -- application/libraries/
+> git show :system/core/Common.php
+> git show :application/controllers/LoginController.php
+> git show :system/core/CodeIgniter.php
+> git show :application/controllers/LoginController.php
+> git show :application/controllers/LoginController.php
+> git show :system/core/CodeIgniter.php
+> git show :application/controllers/LoginController.php
+> git show :application/controllers/LoginController.php
+> git show :application/controllers/LoginController.php
+> git show :system/core/CodeIgniter.php
+> git show :application/controllers/LoginController.php
+> git show :application/controllers/LoginController.php
+> git show :system/core/CodeIgniter.php
+> git show :application/controllers/LoginController.php
+> git check-ignore -z --stdin
+> git show :application/cache/name1
+> git ls-files --stage -- application/cache/
+> git show :ng6/src/app/login/login.component.spec.ts
+> git show :application/controllers/LoginController.php
+> git check-ignore -z --stdin
+> git show :index.php
+> git show :index.php
+> git show :application/cache/name1
+> git ls-files --stage -- application/cache/
+> git show :index.php
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/LoginController.php
+> git show :application/cache/name1
+> git ls-files --stage -- application/cache/
+> git show :application/redis.php
+> git ls-files --stage -- application/
+> git show :index.php
+> git show :application/controllers/LoginController.php
+> git show :ng6/src/app/login/login.component.spec.ts
+> git show :ng6/src/app/archive/archive.component.spec.ts
+> git show :ng6/src/app/login/login.component.spec.ts
+> git show :ng6/src/app/archive/archive.component.spec.ts
+> git show :ng6/src/app/archive/archive.component.html
+> git show :ng6/src/app/archive/archive.component.ts
+> git show :ng6/src/app/archive/archive.component.spec.ts
+> git show :ng6/src/app/archive/archive.component.html
+> git show :ng6/src/app/archive/archive.component.spec.ts
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/LoginController.php
+> git show :application/cache/name1
+> git ls-files --stage -- application/cache/
+> git show :application/controllers/LoginController.php
+> git show :application/cache/name1
+> git ls-files --stage -- application/cache/
+> git show :application/controllers/LoginController.php
+> git show :application/cache/name1
+> git ls-files --stage -- application/cache/
+> git show :application/controllers/LoginController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/LoginController.php
+> git show :application/service/AccountControllerService.php
+> git show :index.php
+> git show :application/predis/src/Autoloader.php
+> git ls-files --stage -- application/predis/src/
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/LoginController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/LoginController.php
+> git show :application/service/AccountControllerService.php
+> git show :index.php
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/LoginController.php

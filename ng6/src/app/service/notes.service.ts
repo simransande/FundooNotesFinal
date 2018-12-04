@@ -64,7 +64,7 @@ export class NotesService {
    */
   getNote(): Observable<{}>
   {
-   
+   debugger;
     let getnote = new FormData();
     let email = localStorage.getItem('email');
     let token=localStorage.getItem('token');
@@ -99,7 +99,7 @@ export class NotesService {
     getnote.append('title', value.data[0].title);
     getnote.append('color', value.data[0].color);
     getnote.append('reminder',value.data[0].reminder);
-    getnote.append('image',value.data[0].image);
+    // getnote.append('image',value.data[0].image);
     getnote.append('flag', value.data[0].flag);
     getnote.append('label','')
     getnote.append('collaborator', '')
@@ -112,37 +112,8 @@ export class NotesService {
 
   }
 
-  /**
-   * 
-   * @param imgdata uploading the image for the perticular note id
-   */
-  uploading(imgdata: any): Observable<any> 
-  {
-    var abc=imgdata.data[0].id
-    let getnote = new FormData();
-   
-    getnote.append('file', imgdata.data[0].selectedFile);
-    getnote.append('id', imgdata.data[0].id);
-    getnote.append('image', imgdata.data[0].image);
-    getnote.append('flag', 'image');
-    getnote.append('email', '');
-    getnote.append('reminder', '');
-    getnote.append('color', '');
-    getnote.append('pin','0');
-    getnote.append('isarchive', '');
-    getnote.append('title', imgdata.data[0].title);
-    getnote.append('trash', '0');
-    getnote.append('description', imgdata.data[0].description);
-   
-    return this.http.post(this.serviceurl.host+this.serviceurl.updatenotes, getnote).pipe(
-      map((res: Response) => res)
-    );
-  }
 
-  uploadImage(base64textString,alldata, email){
-    
-  }
-
+  
   /**
    * 
    * @param value mail id to whoom user want to send the note
@@ -295,7 +266,33 @@ export class NotesService {
     return this.http.post(this.serviceurl.host+this.serviceurl.DragAndDrop, data);
   }
 
-
+/**
+* @method noteSaveImage() 
+* @return observable data
+* @param email 
+* @param url 
+* @description Function to send email and url to server
+*/
+noteSaveImage(url, email, noteId) {
+  debugger;
+  let saveImage = new FormData();
+  saveImage.append("url", url)
+  saveImage.append("email", email)
+  saveImage.append("id", noteId)
+  return this.http.post(this.serviceurl.host + this.serviceurl.noteSaveImage, saveImage)
+  }
+  /**
+  * @method notesFetchImage() 
+  * @return observable data
+  * @param email 
+  * @description Function to send email and url to server
+  */
+  notesFetchImage(email) {
+  let noteFetchImage = new FormData();
+  noteFetchImage.append("email", email)
+  return this.http.post(this.serviceurl.host + this.serviceurl.notesFetchImage, noteFetchImage)
+  }
+  
 
 }
 

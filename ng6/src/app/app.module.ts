@@ -112,12 +112,7 @@ import {
     MatMenuModule,
     MatDialogModule,
     DragDropModule,
-    SocialLoginModule
-    // FacebookLoginProvider,
-    // SocialLoginModule
-    
-
-  
+    SocialLoginModule  
   ],
   providers: [DataserviceService,HttpClientModule,ViewService,FundooNotesComponent,serviceUrl
 

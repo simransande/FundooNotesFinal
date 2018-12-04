@@ -1,5 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Headers: Authorization");
 include '/var/www/html/code1/codeigniter/application/service/NoteControllerService.php';
 
 class Notescontroller extends CI_Controller
@@ -121,11 +123,11 @@ class Notescontroller extends CI_Controller
           $mail='';
         }
 
-        $image=$_POST['image'];   
-        if(empty($image) || $image=='undefined' )
-        {
-          $image='';
-        }
+        // $image=$_POST['image'];   
+        // if(empty($image) || $image=='undefined' )
+        // {
+        //   $image='';
+        // }
  
         $description=$_POST['description'];   
         if(empty($description) || $description=='undefined' )
@@ -170,7 +172,7 @@ class Notescontroller extends CI_Controller
           $reminder='';
         }
   
-        $this->serviceNote->updatenotes($flag,$id,$mail,$image,$description,$trash,$title,$isarchive,$pin,$color,$reminder);         
+        $this->serviceNote->updatenotes($flag,$id,$mail,$description,$trash,$title,$isarchive,$pin,$color,$reminder);         
 
        
     }
@@ -327,5 +329,41 @@ class Notescontroller extends CI_Controller
 
     }
 
+    public function uploadImage(){
+
+        $email     = $_POST["Email"];
+        $image     = $_POST["image"];
+        $id     = $_POST["id"];
+        $this->serviceNote->uploadImage($email,$image,$id);         
+    }
+
+    // public function UploadinGetImage(){
+    //     $email     = $_POST["Email"];
+    //     $this->serviceNote->UploadinGetImage($email);         
+
+    // }
+
+    /**
+* @method noteSaveImage() upload the profile pic
+* @return void
+*/
+public function noteSaveImage()
+{
+$email = $_POST["email"];
+$url = $_POST["url"];
+$id = $_POST["id"];
+$this->serviceNote->noteSaveImage($url, $email, $id);
+
+}
+/**
+* @method noteFetchImage() upload the profile pic
+* @return void
+*/
+public function notesFetchImage()
+{
+$email = $_POST["email"];
+$this->serviceNote->notesFetchImage($email);
+
+}
 }
 ?>

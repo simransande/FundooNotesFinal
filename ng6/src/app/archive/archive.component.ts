@@ -33,6 +33,8 @@ export class ArchiveComponent implements OnInit,OnDestroy{
   notes2: any;
   observer:any;
   observerGet:any;
+  base64textString: string;
+  Email: any = localStorage.getItem('email');
 
 
   constructor(private service: NotesService, private viewService: ViewService,
@@ -201,6 +203,43 @@ export class ArchiveComponent implements OnInit,OnDestroy{
     // this.observerGet.unsubscribe();
   }
 
+
+/**
+* variable to store the note id of image to be added
+*/
+imageNoteId:any;
+/**
+* @method onSelectFile()
+* @return void
+* @description Function to save the image 
+*/
+onSelectFile(event, noteId) {
+debugger;
+this.imageNoteId = noteId;
+alert(this.imageNoteId);
+var files = event.target.files;
+var file = files[0];
+if (files && file) {
+var reader = new FileReader();
+reader.onload = this._handleReaderLoaded.bind(this);
+reader.readAsBinaryString(file);
+}
 }
 
+_handleReaderLoaded(readerEvt) {
+var binaryString = readerEvt.target.result;
+this.base64textString = btoa(binaryString);
+this.notes.forEach(element => {
+if (element.id == this.imageNoteId) {
+element.image = "data:image/jpeg;base64," + this.base64textString;
+}
+});
 
+let obss = this.service.noteSaveImage(this.base64textString, this.Email, this.imageNoteId);
+obss.subscribe(
+(res: any) => {
+});
+
+}
+
+}

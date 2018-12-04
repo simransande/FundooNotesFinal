@@ -128,26 +128,10 @@ export class FundooNotesComponent implements OnInit {
   }
 
     /**
-   * function is for uploading the image on selected note
+   * function is for uploading the image on profile
    * @param event it is the file to select
-   * @param note on that perticular note
    */
-  // Fillupload(event) {
-  //   this.localUrl = event.target.result;
-  //   let email = localStorage.getItem('email');
 
-  //   let data =
-  //     [
-  //       { 'selectedFile': <File>event.target.files[0],email }
-  //     ];
-
-  //     this.observer=this.serviceData.profileUploading(data).subscribe((Statusdata: any) => {
-  //       // console.log(Statusdata);
-      
-
-  //     });
-
-  // }
 
   Fillupload(event) {
     debugger;

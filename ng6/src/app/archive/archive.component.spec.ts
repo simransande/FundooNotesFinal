@@ -22,4 +22,16 @@ describe('ArchiveComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+  it('should unarchive', async(()=>{
+    expect(component.archive['isArchived']).toEqual(false)
+    expect(component.archive['isArchived']).toBeTruthy();
+  }));
+  it('should not unarchive', async(()=>{
+    expect(component.archive['isArchived']).toEqual(true)
+    expect(component.archive['isArchived']).toBeFalsy();
+  }));
 });

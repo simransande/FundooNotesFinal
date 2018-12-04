@@ -1,5 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Headers: Authorization");
 //include "models/responseModel.php";
 include "/var/www/html/code1/codeigniter/application/service/LabelService.php";
 

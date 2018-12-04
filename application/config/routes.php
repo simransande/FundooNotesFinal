@@ -72,6 +72,12 @@ $route['GetCollab'] = 'Notescontroller/GetCollab';
 $route['joinNoteCollab'] = 'Notescontroller/joinNoteCollab';
 $route['DragAndDrop'] = 'Notescontroller/DragAndDrop';
 $route['profileUploadinGeturl'] = 'Notescontroller/profileUploadinGet';
+$route['uploadingImage']='Notescontroller/uploadingImage';
+$route['uploadImage']="Notescontroller/uploadImage";
+// $route['UploadinGetImage']="Notescontroller/UploadinGetImage";
+$route['noteSaveImage']="Notescontroller/noteSaveImage";
+$route['notesFetchImage']="Notescontroller/notesFetchImage";
+
 
 $route['label'] = 'Labelcontroller/label';
 $route['getlabel'] = 'Labelcontroller/getlabel';

@@ -1,5 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Headers: Authorization");
 require_once 'PHPUnit/Autoload.php';
 include_once '/var/www/html/code1/codeigniter/application/controllers/jwt.php';
 require '/var/www/html/code1/codeigniter/application/controllers/vendor/autoload.php';
@@ -67,12 +69,17 @@ class NoteControllerService
       
         $stmt = $this->connect->prepare($sql);
         $res = $stmt->execute();
-        while( $row = $stmt->fetch(PDO::FETCH_ASSOC)) 
-        {
-            $myArray[] = $row;
-        }
-        $notes= json_encode($myArray);
-        print $notes;    
+        $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        for ($i = 0; $i < count($arr); $i++) {
+        $arr[$i]['image'] = "data:image/jpeg;base64," . base64_encode($arr[$i]['image']);
+           }
+
+        // while( $row = $stmt->fetch(PDO::FETCH_ASSOC)) 
+        // {
+        //     $myArray[] = $row;
+        // }
+        print json_encode($arr);
+        // print $notes;    
     }
 
     public function joinNoteCollab($mail){
@@ -92,7 +99,7 @@ class NoteControllerService
         print $notes;
     }
 
-    public function updatenotes($flag,$id,$mail,$image,$description,$trash,$title,
+    public function updatenotes($flag,$id,$mail,$description,$trash,$title,
     $isarchive,$pin,$color,$reminder){
         if($flag=='pin')
         {
@@ -210,33 +217,6 @@ class NoteControllerService
             $stmt = $this->connect->prepare($sql);
             $res = $stmt->execute();
         }
-
-        if($flag=='image')
-        {
-            if ($_FILES['file']['size'] == 0 && $_FILES['file']['error'] == 0)
-            {
-                // cover_image is empty (and not an error)
-            }
-            else
-            {
-                /**
-                 * Move the file to the uploads folder 
-                 */
-             move_uploaded_file($_FILES["file"]["tmp_name"], "uploads/" . $_FILES["file"]["name"]);
-
-             /**
-              * Set location for image
-              */
-             $fileloc='http://localhost/code1/codeigniter/uploads/'.$_FILES["file"]["name"];
-         
-             $sql="UPDATE note SET image='$fileloc' WHERE id=$id";
-             $stmt = $this->connect->prepare($sql);
-             $res = $stmt->execute();
-           
-            }
-             
-        }
-
 
     }
 
@@ -390,4 +370,98 @@ public function profileUploadinGet($email){
 
 
 }
+
+// public function uploadImage($email,$image,$id){
+
+             
+//     $stmt = $this->connect->prepare("UPDATE note SET `image` = :image  where `email`= :email and `id`=:id ");
+
+//     // $sql="UPDATE note SET 'image` = :image where id=$id and `email`=:email";
+//     // $stmt = $this->connect->prepare($sql);
+//     // $res = $stmt->execute();
+//     $stmt->execute(array(
+//         ':image' => $image,
+//         ':email' => $email,
+//         ':id' => $id
+
+//         ));
+//         $stmt = $this->connect->prepare("SELECT image From note where email='$email' and id=$id");
+//             $stmt->execute();
+//             $row=$stmt->fetch(PDO::FETCH_ASSOC);
+//             $res=$row['image'];
+//             // print json_encode($data);
+//             $ref=json_encode(base64_encode($res));
+//             print $ref;
+// }
+
+// public function UploadinGetImage($email){
+
+//     $sql ="SELECT * From note where email='$email'"; 
+//     $stmt = $this->connect->prepare($sql); 
+//     $res = $stmt->execute();
+//     $row=$stmt->fetch(PDO::FETCH_ASSOC);
+
+//         // $notes= json_encode(base64_encode($row));
+//         print json_encode(base64_encode($row['image']));
+//     // print $notes;
+
+
+// }
+
+/**
+* @method noteSaveImage() upload the profile pic
+* @return void
+*/
+public function noteSaveImage($file, $email, $id)
+{
+// $ref = new DatabaseConnection();
+// $this->connect = $ref->Connection();
+$file = base64_decode($file);
+/**
+* @var string $query has query to update the user profile pic
+*/
+$query = "UPDATE note SET `image` = :file where `email`= :email and `id`= :id ";
+$statement = $this->connect->prepare($query);
+if ($statement->execute(array(
+':file' => $file,
+':email' => $email,
+':id' => $id))) {
+
+ $ref = new NoteControllerService();
+ $ref->getnotes($email);
+} else {
+$data = array(
+"message" => "203",
+);
+print json_encode($data);
+
+}
+}
+/**
+* @method noteFetchImage() fetch the user profile pic
+* @return void
+*/
+public function notesFetchImage($email)
+{
+/**
+* @var string $query has query to select the profile pic of the user
+*/
+$query = "SELECT image , id FROM note where email='$email'";
+$statement = $this->connect->prepare($query);
+if ($statement->execute()) {
+
+$arr = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+for ($i = 0; $i < count($arr); $i++) {
+$arr[$i]['image'] = "data:image/jpeg;base64,".base64_encode($arr[$i]['image']);
+}
+/**
+* returns json array response
+*/
+print json_encode($arr);
+
+}
+
+}
+
 }

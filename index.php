@@ -304,7 +304,12 @@ switch (ENVIRONMENT)
 	}
 
 	define('VIEWPATH', $view_folder.DIRECTORY_SEPARATOR);
-
+// Prepend a base path if Predis is not available in your "include_path".
+	//require_once APPPATH.'C:/xampp/htdocs/code1/codeigniter/application/redis/autoload.php';
+	include 'application/predis/autoload.php';
+	
+//	C:\xampp\htdocs\code1\codeigniter\application\predis\autoload.php
+	Predis\Autoloader::register();
 /*
  * --------------------------------------------------------------------
  * LOAD THE BOOTSTRAP FILE

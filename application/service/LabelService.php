@@ -1,6 +1,7 @@
 <?php
 include "/var/www/html/code1/codeigniter/application/static/HardCode.php";
-
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Headers: Authorization");
 class LabelService{
 
     protected $connect;
