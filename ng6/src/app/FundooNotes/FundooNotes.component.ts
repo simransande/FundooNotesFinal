@@ -68,6 +68,7 @@ export class FundooNotesComponent implements OnInit {
   ngOnInit() {
     this.noteService.currentMessage.subscribe(message => this.message = message)
     let observer = this.noteService.fetchUserData();
+    debugger;
         observer.subscribe((res: any) => {
             this.email = res.email;
         });
@@ -89,18 +90,15 @@ export class FundooNotesComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
       this.label = result;
       let data = [
         { 'label': this.label }
       ];
       if (result != undefined && result != "") {
         this.observer=this.service.addLabel({ data }).subscribe(responseData => {
-          console.log(responseData);
           this.observer=this.service.getLabel().subscribe(responseLabel => {
 
             this.notelabel = responseLabel;
-            console.log(this.notelabel);
           });
         });
       }
@@ -158,22 +156,14 @@ export class FundooNotesComponent implements OnInit {
     
     this.serviceData.uploadImage(this.base64textString, email )
     .subscribe(
-    (status: any) => {
-    console.log("darshuuuu");
-    
-    
-    console.log(status);
-    
+    (status: any) => {  
     this.url = "data:image/jpeg;base64," + status;
     }, error => {
-    console.log(error);
     alert(error.error.text)
     });
     this.serviceData.profileUploadinGet(email).subscribe(Statusdata=> {
       debugger;
-      this.url='data:image/jpeg;base64,'+Statusdata;    
-      console.log("simran"+Statusdata);
-      
+      this.url='data:image/jpeg;base64,'+Statusdata;          
     });
     }
 

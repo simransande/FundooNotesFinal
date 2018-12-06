@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+// defined('BASEPATH') OR exit('No direct script access allowed');
 header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Headers: Authorization");
 // require_once 'PHPUnit/Autoload.php';
@@ -9,7 +9,7 @@ include '/var/www/html/code1/codeigniter/application/service/AccountControllerSe
  
 use PHPUnit\Framework\TestCase;
 
-class ResetPasswordController extends \PHPUnit_Framework_TestCase
+class ResetPasswordController
 {   
    // protected $connect;
    public $ref;
@@ -33,7 +33,7 @@ class ResetPasswordController extends \PHPUnit_Framework_TestCase
         $token=$_POST['token'];
         if($_POST['token']==$token)
         {                
-            $this->ref->resetpassword($mail, $pass);
+            return $this->ref->resetpassword($mail, $pass);
         }
 
     }

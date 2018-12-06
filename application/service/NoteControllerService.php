@@ -438,11 +438,11 @@ public function fetchUserData()
 
      $this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
    
-    $email=$this->cache->get('email');
+    $email=$this->cache->get('name1');
 
-    // $this->load->library('Redis');
-    // $redis = $this->redis->config();
-    // $email = $redis->get('email');
+    $this->load->library('Redis');
+    $redis = $this->redis->config();
+    $email = $redis->get('email');
     $data  = array(
         "email" => $email,
     );

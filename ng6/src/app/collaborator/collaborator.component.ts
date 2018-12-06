@@ -4,6 +4,7 @@ import { DialogData } from '../FundooNotes/FundooNotes.component';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { NotesService } from '../service/notes.service'
 import { CollaboratorData } from '../notes/notes.component';
+import { LoggerService } from '../service/logger/logger.service';
 
 
 @Component({
@@ -19,14 +20,14 @@ export class CollaboratorComponent implements OnInit {
   model: any = {}
   notes: any;
   sharedEmail: any;
-  constructor(private service: NotesService, public dialogRef: MatDialogRef<CollaboratorComponent>,
+  constructor(private service: NotesService,private loggerService:LoggerService, public dialogRef: MatDialogRef<CollaboratorComponent>,
     @Inject(MAT_DIALOG_DATA) public data: CollaboratorData) { }
 
   ngOnInit() {
     this.service.getCollaborator().subscribe(response => {
       this.collaborator = response;
-      console.log(response);
-      for (var item of this.collaborator) {
+      LoggerService.log('success');
+            for (var item of this.collaborator) {
         if (this.data.sharedid == item.noteId) {
           this.sharedEmail = item.sharedEmail;
         }

@@ -22,4 +22,12 @@ describe('BinComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should trash', async(()=>{
+    expect(component.trash['trash']).toEqual(1)
+    expect(component.trash['trash']).toBeTruthy();
+  }));
+  it('should not trash', async(()=>{
+    expect(component.trash['trash']).toEqual(0)
+    expect(component.trash['trash']).toBeFalsy();
+  }));
 });

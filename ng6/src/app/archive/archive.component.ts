@@ -4,6 +4,7 @@ import { ViewService } from '../service/view.service';
 import { CreatelabelService } from '../service/createlabel.service';
 import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
+import { LoggerService } from '../service/logger/logger.service';
 
 @Component({
   selector: 'app-archive',
@@ -38,7 +39,8 @@ export class ArchiveComponent implements OnInit,OnDestroy{
 
 
   constructor(private service: NotesService, private viewService: ViewService,
-    iconRegistry: MatIconRegistry, sanitizer: DomSanitizer, private labelService: CreatelabelService) {
+              iconRegistry: MatIconRegistry, sanitizer: DomSanitizer,
+              private labelService: CreatelabelService,private loggerService:LoggerService) {
 
     this.service.getNote().subscribe(notesData => {
       this.notes = notesData;
@@ -53,12 +55,15 @@ export class ArchiveComponent implements OnInit,OnDestroy{
     });
 
     this.viewService.getView().subscribe(res => {
-      console.log("View Result is ", res);
+      LoggerService.logdata('view Result is',res);
+
       this.view = res;
       this.direction = this.view.data;
-      console.log("Direction is :", this.direction);
+      LoggerService.logdata('Direction is :',this.direction);
+
       this.layout = this.direction + " " + this.wrap;
-      console.log("Layout is ", this.layout);
+      LoggerService.logdata('Layout is',this.layout);
+
     });
     iconRegistry.addSvgIcon('pin123',
       // Bypass security and trust the given value 
@@ -116,7 +121,6 @@ export class ArchiveComponent implements OnInit,OnDestroy{
           'reminder': note.reminder, 'flag': flag, 'color': note.colorcode
         }
       ];
-      // debugger;
     this.observer=this.service.updatenotes({ data }).subscribe((data: any) => {
       this.observerGet=this.service.getNote().subscribe(data => {
         this.notes = data;
@@ -216,7 +220,6 @@ imageNoteId:any;
 onSelectFile(event, noteId) {
 debugger;
 this.imageNoteId = noteId;
-alert(this.imageNoteId);
 var files = event.target.files;
 var file = files[0];
 if (files && file) {

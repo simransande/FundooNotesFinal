@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { DataserviceService } from '../service/dataservice.service';
 import { Router } from '@angular/router';
+import { LoggerService } from '../service/logger/logger.service';
+
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -13,14 +15,13 @@ export class RegistrationComponent implements OnInit {
   flag: any;
   Error: boolean = false;
 
-  constructor(private service: DataserviceService, private router: Router) {//private service:DataserviceService) { 
+  constructor(private service: DataserviceService, private router: Router,
+              private loggerService:LoggerService) {//private service:DataserviceService) { 
 
   }
 
   ngOnInit() {
   }
-
-
   /**
    * formcontrol for UsernameFormControl,emailFormControl,
    * PasswordFormControl,PhoneFormControl
@@ -56,9 +57,8 @@ export class RegistrationComponent implements OnInit {
       { 'username': this.model.uname, 'password': this.model.pass, 'email': this.model.email, 'phone': this.model.phone }
     ];
     this.registration=this.service.Register(data).subscribe((Statusdata: any) => {
-      debugger;
       this.flag = Statusdata.status;
-
+      LoggerService.log('Registered');
       /**
        * if flag is 1 then it will navigate to login page
        */

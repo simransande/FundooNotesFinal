@@ -1,10 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
 header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Headers: Authorization");
 require '/var/www/html/code1/codeigniter/application/controllers/vendor/autoload.php';
 include '/var/www/html/code1/codeigniter/application/service/AccountControllerService.php';
-// include '/var/www/html/code1/codeigniter/application/predis/autoload.php';
 
 use PHPUnit\Framework\TestCase;
 
@@ -38,6 +36,6 @@ class LoginController extends CI_Controller
 
        $pass=$_POST['password'];
 
-       $this->ref->login($mail, $pass,$flag);        
+       return $this->ref->login($mail, $pass,$flag);        
    }
 }

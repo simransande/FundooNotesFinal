@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { RouterModule, Routes } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
 import * as $ from 'jquery';
+import { LoggerService } from '../service/logger/logger.service';
 
 import { AuthService } from '../service/auth.service';
 import { takeUntil } from 'rxjs/operators';
@@ -23,8 +24,7 @@ export class LoginComponent implements OnInit {
   Error: boolean = false;
   // socialAuthService: any;
   constructor(private service: DataserviceService, private socialAuthService: social,
-    private router: Router, private auth: AuthService,
-  ) {
+              private loggerService:LoggerService, private router: Router, private auth: AuthService,) {
 
   }
 
@@ -66,9 +66,8 @@ export class LoginComponent implements OnInit {
   ): void {
     let data = [{ username: first_name, email: email, profilepic: profilepic }];
     this.service.SocialLogin({ data }).subscribe((Statusdata: any) => {
-      var abc = Statusdata;
-      console.log(Statusdata);
-      this.flag = abc.status;
+      var Status = Statusdata;
+      this.flag = Status.status;
       this.mail = Statusdata.email;
       this.name = Statusdata.name;
       this.flag = Statusdata.status;
@@ -77,25 +76,16 @@ export class LoginComponent implements OnInit {
        * if flag is 1 then it will navigate to login page
        */
       if (Statusdata.status == 1) {
-        debugger;
         alert("succsessfully registered");
-        // this.auth.sendToken(this.mail)
         localStorage.setItem('email', this.mail);
         localStorage.setItem('uname', this.name);
         localStorage.setItem('LoggedInUser', this.mail);
-
         this.auth.sendToken(this.mail);
-
-
         this.router.navigate(['/FundooNotes']);
 
       }
       else {
-        //this.router.navigate(['/login']);
-
         this.Error = true;
-
-
       }
 
     });
@@ -126,6 +116,7 @@ export class LoginComponent implements OnInit {
    * @method s_login() for login the page using gmail and password
    */
   s_login() {
+    debugger;
     this.model;
 
     let data = [
@@ -133,8 +124,8 @@ export class LoginComponent implements OnInit {
     ];
 
     this.login = this.service.Login(data).subscribe((Statusdata: any) => {
-      debugger;
-      console.log(Statusdata);
+     debugger;
+      LoggerService.log('Login');
       this.flag = Statusdata.status;
       this.mail = Statusdata.email;
       this.name = Statusdata.name;
@@ -144,7 +135,6 @@ export class LoginComponent implements OnInit {
        * if flag is 1 then it will navigate to fundooNotes  
        */
       if (this.flag == 1) {
-        debugger;
         localStorage.setItem('email', this.mail);
         localStorage.setItem('uname', this.name);
         localStorage.setItem('LoggedInUser', this.mail);

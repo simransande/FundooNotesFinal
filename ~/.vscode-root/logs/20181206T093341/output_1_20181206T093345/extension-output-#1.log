@@ -1,0 +1,508 @@
+Looking for git in: git
+Using git 2.7.4 from git
+> git rev-parse --show-toplevel
+> git config --get commit.template
+Open repository: /var/www/html/code1/codeigniter
+> git status -z -u
+> git show :application/_ci_phpunit_test/CIPHPUnitTestCase.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/controllers/LoginController.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :application/controllers/LoginController.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :ng6/src/app/service/dataservice.service.spec.ts
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :ng6/src/test.ts
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :ng6/src/app/registration/registration.component.spec.ts
+> git show :ng6/src/app/app.module.ts
+> git check-ignore -z --stdin
+> git show :ng6/src/test.ts
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/LoginController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/service/AccountControllerService.php
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/userData.json
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/service/AccountControllerService.php
+> git show :application/tests/controllers/userData.json
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git show :application/controllers/LoginController.php
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git show :application/_ci_phpunit_test/CIPHPUnitTestCase.php
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/LoginController.php
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/LoginController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/LoginController.php
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git show :application/_ci_phpunit_test/CIPHPUnitTestCase.php
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/LoginController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/LoginController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git check-ignore -z --stdin
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/RegisterController.php
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/service/AccountControllerService.php
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/LoginController.php
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git show :application/_ci_phpunit_test/CIPHPUnitTestCase.php
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/LoginController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/LoginController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/LoginController.php
+> git show :application/controllers/RegisterController.php
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/RegisterController.php
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/RegisterController.php
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/RegisterController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/RegisterController.php
+> git show :application/tests/controllers/userData.json
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/RegistrationTestCase.json
+> git ls-files --stage -- application/tests/controllers/
+> git check-ignore -z --stdin
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/RegistrationTestCase.json
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/LoginController.php
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/RegisterController.php
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/LoginController.php
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/RegisterController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/RegisterController.php
+> git show :application/controllers/LoginController.php
+> git show :application/controllers/RegisterController.php
+> git show :application/controllers/LoginController.php
+> git show :application/controllers/RegisterController.php
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/RegisterController.php
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git show :application/_ci_phpunit_test/CIPHPUnitTestCase.php
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/RegisterController.php
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/RegistrationTestCase.json
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git show :application/_ci_phpunit_test/CIPHPUnitTestCase.php
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/RegisterController.php
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/RegistrationTestCase.json
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/ForgotpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git check-ignore -z --stdin
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/ForgotpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/ForgotpasswordController.PHP
+> git show :application/tests/controllers/ForgotpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/ForgotpasswordController.PHP
+> git show :application/tests/controllers/ForgotpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/ForgotpasswordController.PHP
+> git show :application/tests/controllers/ForgotpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/ForgotpasswordController.PHP
+> git show :application/tests/controllers/ForgotpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/ForgotPasswordTestCase.json
+> git ls-files --stage -- application/tests/controllers/
+> git check-ignore -z --stdin
+> git show :application/tests/controllers/ForgotpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/ForgotPasswordTestCase.json
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/ForgotpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/ResetpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git check-ignore -z --stdin
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/ResetpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/service/AccountControllerService.php
+> git show :application/tests/controllers/ForgotPasswordTestCase.json
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/ForgotpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/ForgotPasswordTestCase.json
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/service/AccountControllerService.php
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/_ci_phpunit_test/CIPHPUnitTestCase.php
+> git show :application/tests/controllers/ResetpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/ResetPasswordController.php
+> git show :application/tests/controllers/ResetpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/ResetPasswordController.php
+> git show :application/tests/controllers/ResetpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/ResetPasswordController.php
+> git show :application/tests/controllers/ResetpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/service/AccountControllerService.php
+> git show :application/tests/controllers/Resetpass.json
+> git ls-files --stage -- application/tests/controllers/
+> git check-ignore -z --stdin
+> git show :application/tests/controllers/ResetpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/RegistrationTestCase.json
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/ForgotPasswordTestCase.json
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/ForgotpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/ForgotpasswordController.PHP
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/userData.json
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/ResetpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/Resetpass.json
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/ResetpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/ResetpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/ResetPasswordController.php
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git show :application/_ci_phpunit_test/CIPHPUnitTestCase.php
+> git show :application/tests/controllers/ResetpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git show :application/tests/controllers/ResetpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git show :application/_ci_phpunit_test/CIPHPUnitTestCase.php
+> git show :application/tests/controllers/ResetpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git show :application/tests/controllers/ResetpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git show :application/_ci_phpunit_test/CIPHPUnitTestCase.php
+> git show :application/tests/controllers/ResetpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git show :application/tests/controllers/ResetpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/ResetPasswordController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/tests/controllers/ResetpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/Resetpass.json
+> git ls-files --stage -- application/tests/controllers/
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git show :application/_ci_phpunit_test/CIPHPUnitTestCase.php
+> git show :application/tests/controllers/ResetpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/ResetPasswordController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/ResetPasswordController.php
+> git show :application/tests/controllers/ResetpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/ResetPasswordController.php
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git show :application/controllers/ResetPasswordController.php
+> git show :ng6/src/karma.conf.js
+> git check-ignore -z --stdin
+> git show :ng6/package.json
+> git show :ng6/src/karma.conf.js
+> git show :ng6/package.json
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/rabitMQ/receive.php
+> git show :application/rabitMQ/send.php
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git check-ignore -z --stdin
+> git show :ng6/docker-compose.yml
+> git ls-files --stage -- ng6/
+> git show :ng6/sonar-project.properties
+> git ls-files --stage -- ng6/
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/tests/build/coverage/index.html
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git rev-parse --show-toplevel
+fatal: Not a git repository (or any of the parent directories): .git
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :ng6/src/app/login/login.component.spec.ts
+> git show :ng6/src/app/notes/notes.component.spec.ts
+> git show :ng6/src/app/service/dataservice.service.spec.ts
+> git show :ng6/src/app/notes/notes.component.spec.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/notes/notes.component.html
+> git show :ng6/src/app/notes/notes.component.spec.ts
+> git show :ng6/src/app/notes/notes.component.css
+> git show :ng6/src/app/notes/notes.component.html
+> git check-ignore -z --stdin
+> git show :ng6/src/app/bin/bin.component.spec.ts
+> git show :ng6/src/app/collaborator/collaborator.component.spec.ts
+> git show :application/models/Data_model.php
+> git show :application/models/Login_and_registeration.php
+> git show :application/models/Data_model.php
+> git show :application/models/Response_model.php
+> git show :application/models/Login_and_registeration.php
+> git show :application/models/index.html
+> git check-ignore -z --stdin
+> git show :ng6/src/app/core/model/note.ts
+> git show :application/models/Login_and_registeration.php
+> git show :application/rabitMQ/receive.php
+> git show :ng6/src/app/app.module.ts
+> git show :ng6/src/app/app-routing.module.ts
+> git show :ng6/src/app/app.module.ts
+> git show :ng6/src/app/socialloginConfig.ts
+> git check-ignore -z --stdin
+> git ls-files --stage -- ng6/src/app/
+> git show :ng6/src/app/app.module.ts
+> git show :ng6/src/app/socialloginConfig.ts
+> git ls-files --stage -- ng6/src/app/
+> git show :ng6/src/app/app.module.ts
+> git show :ng6/src/app/registration/registration.component.spec.ts
+> git show :ng6/src/app/app.module.ts
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/app.module.ts
+> git show :ng6/src/app/socialloginConfig.ts
+> git ls-files --stage -- ng6/src/app/
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/socialloginConfig.ts
+> git ls-files --stage -- ng6/src/app/
+> git show :ng6/src/app/app.module.ts
+> git show :ng6/src/app/socialloginConfig.ts
+> git ls-files --stage -- ng6/src/app/
+> git show :ng6/src/app/app.module.ts
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/app.module.ts
+> git show :ng6/src/app/socialloginConfig.ts
+> git ls-files --stage -- ng6/src/app/
+> git show :ng6/src/app/app.module.ts
+> git show :ng6/src/app/socialloginConfig.ts
+> git ls-files --stage -- ng6/src/app/
+> git check-ignore -z --stdin
+> git show :ng6/src/app/constant/socialconfig.ts
+> git ls-files --stage -- ng6/src/app/constant/
+> git check-ignore -z --stdin
+> git show :ng6/src/app/socialloginConfig.ts
+> git ls-files --stage -- ng6/src/app/
+> git show :ng6/src/app/constant/socialconfig.ts
+> git ls-files --stage -- ng6/src/app/constant/
+> git show :ng6/src/app/socialloginConfig.ts
+> git ls-files --stage -- ng6/src/app/
+> git show :ng6/src/app/constant/socialconfig.ts
+> git ls-files --stage -- ng6/src/app/constant/
+> git show :ng6/src/app/socialloginConfig.ts
+> git ls-files --stage -- ng6/src/app/
+> git show :ng6/src/app/constant/socialconfig.ts
+> git ls-files --stage -- ng6/src/app/constant/
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.html
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.html
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :ng6/src/app/constant/socialconfig.ts
+> git ls-files --stage -- ng6/src/app/constant/
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.html
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git check-ignore -z --stdin
+> git show :application/cache/name1
+> git ls-files --stage -- application/cache/
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :application/controllers/LoginController.php
+> git show :application/service/AccountControllerService.php
+> git show :.vscode/launch.json
+> git check-ignore -z --stdin
+> git show :application/service/AccountControllerService.php
+> git show :.vscode/launch.json
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/LoginController.php

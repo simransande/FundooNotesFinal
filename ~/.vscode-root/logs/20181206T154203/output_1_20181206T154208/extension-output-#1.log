@@ -1,0 +1,252 @@
+Looking for git in: git
+Using git 2.7.4 from git
+> git rev-parse --show-toplevel
+> git config --get commit.template
+Open repository: /var/www/html/code1/codeigniter
+> git status -z -u
+> git show :application/controllers/LoginController.php
+> git check-ignore -z --stdin
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :application/controllers/LoginController.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :ng6/src/app/login/login.component.ts
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/LoginController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/LoginController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/service/NoteControllerService.php
+> git show :application/service/AccountControllerService.php
+> git show :application/service/NoteControllerService.php
+> git show :application/service/AccountControllerService.php
+> git show :.vscode/launch.json
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/LoginController.php
+> git show :application/service/AccountControllerService.php
+> git check-ignore -z --stdin
+> git show :ng6/docker-compose.yml
+> git ls-files --stage -- ng6/
+> git show :ng6/sonar-project.properties
+> git ls-files --stage -- ng6/
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/LoginController.php
+> git show :application/service/NoteControllerService.php
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/socialloginConfig.ts
+> git ls-files --stage -- ng6/src/app/
+> git check-ignore -z --stdin
+> git show :ng6/src/app/constant/socialconfig.ts
+> git ls-files --stage -- ng6/src/app/constant/
+> git show :application/controllers/LoginController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/LoginController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/service/LabelService.php
+> git show :application/service/NoteControllerService.php
+> git show :application/controllers/LoginController.php
+> git show :application/controllers/Notescontroller.php
+> git show :application/controllers/LoginController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/service/NoteControllerService.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :ng6/src/app/service/dataservice.service.spec.ts
+> git show :ng6/src/app/service/dataservice.service.ts
+> git show :ng6/src/app/service/dataservice.service.spec.ts
+> git show :ng6/src/app/service/dataservice.service.ts
+> git show :ng6/src/app/service/dataservice.service.spec.ts
+> git check-ignore -z --stdin
+> git show :ng6/src/karma.conf.js
+> git show :ng6/src/test.ts
+> git show :ng6/src/app/service/dataservice.service.spec.ts
+> git show :ng6/src/app/service/createlabel.service.ts
+> git show :ng6/src/app/service/dataservice.service.spec.ts
+> git show :ng6/src/app/service/dataservice.service.ts
+> git show :ng6/src/app/service/dataservice.service.spec.ts
+> git show :ng6/src/app/service/dataservice.service.ts
+> git show :ng6/src/app/service/dataservice.service.spec.ts
+> git show :ng6/src/app/service/dataservice.service.ts
+> git show :ng6/src/app/service/dataservice.service.spec.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/service/dataservice.service.spec.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/service/notes.service.spec.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/service/notes.service.spec.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/service/notes.service.spec.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/service/notes.service.spec.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/service/notes.service.spec.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/service/notes.service.spec.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/service/notes.service.spec.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/service/notes.service.spec.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/service/notes.service.spec.ts
+> git show :ng6/src/app/service/jwttokwn.service.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/service/notes.service.spec.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/service/notes.service.spec.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/service/notes.service.spec.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/service/notes.service.spec.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/service/notes.service.spec.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/service/notes.service.spec.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/service/notes.service.spec.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/service/notes.service.spec.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/service/dataservice.service.ts
+> git show :ng6/src/app/service/createlabel.service.ts
+> git show :ng6/src/app/service/createlabel.service.spec.ts
+> git show :ng6/src/app/service/createlabel.service.ts
+> git show :ng6/src/app/service/createlabel.service.spec.ts
+> git show :ng6/src/app/service/createlabel.service.ts
+> git show :ng6/src/app/service/createlabel.service.spec.ts
+> git show :ng6/src/app/service/createlabel.service.ts
+> git show :ng6/src/app/service/createlabel.service.spec.ts
+> git show :ng6/src/app/service/createlabel.service.ts
+> git show :ng6/src/app/service/createlabel.service.spec.ts
+> git show :ng6/src/app/service/createlabel.service.ts
+> git show :ng6/src/app/service/createlabel.service.spec.ts
+> git show :ng6/src/app/service/auth.service.ts
+> git show :ng6/src/app/service/auth.service.spec.ts
+> git show :ng6/src/app/service/auth.service.ts
+> git show :ng6/src/app/service/auth.service.spec.ts
+> git show :ng6/src/app/service/auth.service.ts
+> git show :ng6/src/app/service/auth.service.spec.ts
+> git show :ng6/src/app/service/auth.service.ts
+> git show :ng6/src/app/service/auth.service.spec.ts
+> git show :ng6/src/app/service/auth.service.ts
+> git show :ng6/src/app/service/auth.service.spec.ts
+> git show :ng6/src/app/service/auth.service.ts
+> git show :ng6/src/app/service/auth.service.spec.ts
+> git show :ng6/src/app/service/dataservice.service.spec.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/service/notes.service.spec.ts
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/tests/controllers/ResetpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/RegistrationTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/ForgotpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/tests/controllers/LoginTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :ng6/src/test.ts
+> git show :ng6/src/polyfills.ts
+> git show :ng6/src/main.ts
+> git show :ng6/src/karma.conf.js
+> git show :ng6/src/test.ts
+> git show :ng6/src/polyfills.ts
+> git show :ng6/src/main.ts
+> git show :ng6/package.json
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :ng6/src/app/constant/socialconfig.ts
+> git ls-files --stage -- ng6/src/app/constant/
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/socialloginConfig.ts
+> git ls-files --stage -- ng6/src/app/
+> git show :ng6/src/app/constant/socialconfig.ts
+> git ls-files --stage -- ng6/src/app/constant/
+> git show :ng6/src/app/app.module.ts
+> git show :ng6/src/app/app-routing.module.ts
+> git show :ng6/src/app/socialloginConfig.ts
+> git ls-files --stage -- ng6/src/app/
+> git show :ng6/src/app/constant/socialconfig.ts
+> git ls-files --stage -- ng6/src/app/constant/
+> git show :ng6/src/app/socialloginConfig.ts
+> git ls-files --stage -- ng6/src/app/
+> git show :ng6/src/app/constant/socialconfig.ts
+> git ls-files --stage -- ng6/src/app/constant/
+> git show :ng6/src/app/socialloginConfig.ts
+> git ls-files --stage -- ng6/src/app/
+> git show :ng6/src/app/constant/socialconfig.ts
+> git ls-files --stage -- ng6/src/app/constant/
+> git show :ng6/src/app/socialloginConfig.ts
+> git ls-files --stage -- ng6/src/app/
+> git show :ng6/src/app/constant/socialconfig.ts
+> git ls-files --stage -- ng6/src/app/constant/
+> git show :ng6/src/app/socialloginConfig.ts
+> git ls-files --stage -- ng6/src/app/
+> git show :ng6/src/app/constant/socialconfig.ts
+> git ls-files --stage -- ng6/src/app/constant/
+> git show :ng6/src/app/socialloginConfig.ts
+> git ls-files --stage -- ng6/src/app/
+> git show :ng6/src/app/constant/socialconfig.ts
+> git ls-files --stage -- ng6/src/app/constant/
+> git show :ng6/src/app/socialloginConfig.ts
+> git ls-files --stage -- ng6/src/app/
+> git show :ng6/src/app/app.module.ts
+> git show :ng6/src/app/service/view.service.ts
+> git show :ng6/src/app/service/notes.service.ts
+> git show :ng6/src/app/service/notes.service.spec.ts
+> git show :ng6/src/app/service/dataservice.service.ts
+> git show :ng6/src/app/service/jwttokwn.service.ts
+> git show :ng6/src/app/service/jwttokwn.service.spec.ts
+> git show :ng6/src/app/service/notes.service.spec.ts
+> git show :ng6/src/app/service/dataservice.service.ts
+> git show :ng6/src/app/service/dataservice.service.spec.ts
+> git show :ng6/src/app/service/createlabel.service.ts
+> git show :ng6/src/app/service/auth.service.ts
+> git show :ng6/src/app/service/auth.service.spec.ts
+> git show :ng6/src/app/resetpassword/resetpassword.component.ts
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/constant/socialconfig.ts
+> git ls-files --stage -- ng6/src/app/constant/
+> git show :ng6/src/app/core/model/note.ts
+> git show :ng6/src/app/constant/socialconfig.ts
+> git ls-files --stage -- ng6/src/app/constant/
+> git show :ng6/src/app/core/model/note.ts
+> git check-ignore -z --stdin
+> git show :ng6/src/app/notes/notes.component.ts
+> git check-ignore -z --stdin
+> git show :application/tests/controllers/ResetpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/Welcome.php
+> git show :application/controllers/testingcontroller.php
+> git show :application/controllers/TestCase.php
+> git show :application/controllers/test1.php
+> git show :application/controllers/test.html
+> git show :application/controllers/SocialLoginController.php
+> git show :application/controllers/ResetPasswordController.php
+> git show :application/controllers/RegisterController.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :application/controllers/Notescontroller.php
+> git show :application/controllers/LoginController.php
+> git show :application/controllers/Labelcontroller.php
+> git show :application/controllers/ForgotpasswordController.PHP
+> git show :ng6/src/polyfills.ts
+> git show :ng6/src/test.ts
+> git show :application/tests/controllers/ResetpassTest.php
+> git ls-files --stage -- application/tests/controllers/
+> git show :application/controllers/ResetPasswordController.php
+> git show :application/controllers/ForgotpasswordController.PHP

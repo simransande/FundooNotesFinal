@@ -1,0 +1,10 @@
+[
+	{
+		"password": "121212",
+		"expected": "200"
+	},
+	{
+		"password": "fvd",
+		"expected": "200"
+	}
+]

@@ -19,7 +19,6 @@ export class CreatelabelService {
    * add label
    * Observable<{}> -respond to user
    */
-
   addLabel(value: any): Observable<{}> {
 
     let label = new FormData();

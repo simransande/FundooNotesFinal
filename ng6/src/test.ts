@@ -6,10 +6,11 @@ import {
   BrowserDynamicTestingModule,
   platformBrowserDynamicTesting
 } from '@angular/platform-browser-dynamic/testing';
-declare const __karma: any;
+import { _MatDatepickerContentMixinBase } from '@angular/material';
 
 declare const require: any;
-
+declare const __karma__: any;
+__karma__.loaded = function() { };
 // First, initialize the Angular testing environment.
 getTestBed().initTestEnvironment(
   BrowserDynamicTestingModule,
@@ -19,4 +20,4 @@ getTestBed().initTestEnvironment(
 const context = require.context('./', true, /\.spec\.ts$/);
 // And load the modules.
 context.keys().map(context);
-__karma.start();
+__karma__.start();

@@ -56,13 +56,17 @@ class AccountControllerService extends CI_Controller
              $flag++;
                      $myjson='{"status":"1"}';     
                      $myjson='{"status":'.$flag."}";     
-                     print $myjson;                
+                     print $myjson;      
+                     return "200";
+          
                   }
                  else 
                  {
                      $myjson='{"status":"0"}';     
                      $myjson='{"status":'.$flag."}";     
                      print $myjson;
+                     return "200";
+
                  }
           }
         
@@ -78,7 +82,7 @@ class AccountControllerService extends CI_Controller
         $set= $redis->set('email',$mail);
          $get=  $redis->get('email');
         $this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
-        $this->cache->save('email', $mail);
+        $this->cache->save('email',$mail);
        
             $sql = "SELECT * FROM user  WHERE email = '$mail' and pass='$pass'";
             $stmt = $this->connect->prepare($sql);
@@ -94,11 +98,13 @@ class AccountControllerService extends CI_Controller
                 $flag++;            
                 $myjson='{"email":'.'"'.$mail.'","name":'.'"'.$name.'","status":'.$flag."}";           
                 print $myjson;  
+              //  return "200";
              } 
              else
              {
                 $flag--;
                 print  $flag;
+                //return "401";
              }
          }
 
@@ -128,12 +134,16 @@ class AccountControllerService extends CI_Controller
                     $body="Click this link to recover your password http://localhost:4200/resetpassword?token=" . $token;
                     $ref->sendEmail($email,$subject,$body);
                     break;
+                    return "200";
+
                 }
             }
          else
          {
             $myjson='{"status":"0"}';    
              print $myjson;
+             return "400";
+
          }
             }
          }
@@ -142,6 +152,8 @@ class AccountControllerService extends CI_Controller
             $sql = "update user SET pass='$pass' where email='$mail'";
             $stmt = $this->connect->prepare($sql);
             $res = $stmt->execute();
+            return "200";
+
          }
     
 
@@ -170,6 +182,17 @@ class AccountControllerService extends CI_Controller
             $large_parts = explode(" ", $username);
             $name=$large_parts[0];
 
+            // $this->load->library('Redis');
+            // $redis = $this->redis->config();
+            // $set = $redis->set('email', $email);
+            // $set = $redis->set('name', $username);
+            // $get = $redis->get('email');
+
+            // $this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
+            // $this->cache->save('email', $email);
+
+
+            
             $sql = "SELECT * FROM user  WHERE email = '$email' and uname='$name'";
             $stmt = $this->connect->prepare($sql);
             $res = $stmt->execute();

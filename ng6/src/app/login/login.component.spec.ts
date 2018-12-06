@@ -42,17 +42,36 @@ describe('LoginComponent', () => {
   it('form should be invalid',async(() => {
     expect(component.model.email.toEqual('@asd.dzf.asd'));
     expect(component.model.pass.toEqual('JSXj'));
+    expect(component.model.pass.toEqual(''));
+
+    expect(component.model.email.valid).toBeFalsy();
+    expect(component.model.pass.valid).toBeFalsy();
+
 
   }))
 
   it('valid Form'), async(() => {
     expect(component.model.email.toEqual('simransande.a@gmail.com'));
     expect(component.model.pass.toEqual('121210'));
+
+    expect(component.model.email.valid).toBeTruthy();
+    expect(component.model.pass.valid).toBeTruthy();
    
     });
     it('should login', async(()=>{
       component.login()
     }))
+    it('should call the login method', async(()=>{
+      fixture.detectChanges();
+      spyOn(component,'login')
+      el=fixture.debugElement.query(By.css('button')).nativeElement;
+      el.click();
+      expect(component.login).toHaveBeenCalledTimes(1);
+    }))
+    it('should login', async(()=>{
+      component.login()
+    }))
+  
     it('should call the login method', async(()=>{
       fixture.detectChanges();
       spyOn(component,'login')

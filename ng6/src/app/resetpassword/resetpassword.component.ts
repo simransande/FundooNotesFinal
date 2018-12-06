@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { DataserviceService } from '../service/dataservice.service';
 import { ActivatedRoute } from '@angular/router';
+import { LoggerService } from '../service/logger/logger.service';
 
 
 @Component({
@@ -15,10 +16,10 @@ export class ResetpasswordComponent implements OnInit {
   userid: any = {}
   observe:any;
 
-  constructor(private service: DataserviceService, private route: ActivatedRoute) { }
+  constructor(private service: DataserviceService, private route: ActivatedRoute,
+              private loggerService:LoggerService) { }
 
   ngOnInit() {
-    debugger;
     this.params = this.route.snapshot.queryParamMap;
     this.userid = this.params.params.userId;
 
@@ -43,17 +44,17 @@ export class ResetpasswordComponent implements OnInit {
     ];
     this.observe=this.service.RessetPass({ data })
       .subscribe(response => {
-        console.log(response);
+        LoggerService.log('success')
       }
       );
   }
 
   handleResponse(response) {
     if (response.success) {
-      console.log("success");
-    } else if (response.error) {
-      console.log("errror");
-    }
+      LoggerService.log('success')
+       } else if (response.error) {
+        LoggerService.log('error')
+      }
 
   }
 

@@ -1,0 +1,12 @@
+[
+    {
+        "email":"simransande.a@gmail.com",
+        "password":"121212",
+		"expected": "200"
+    },
+    {
+        "email":"simran@l.co",
+        "password":"2541",
+		"expected": "401"
+    }
+]

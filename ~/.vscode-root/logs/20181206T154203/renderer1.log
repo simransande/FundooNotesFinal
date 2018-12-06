@@ -1,0 +1,11 @@
+[2018-12-06 15:42:09.508] [renderer1] [info] no standard startup: panel is active
+[2018-12-06 15:45:57.907] [renderer1] [error] Inotify limit reached (ENOSPC)
+[2018-12-06 17:27:21.779] [renderer1] [error] Model is disposed!: Error: Model is disposed!
+    at f._assertNotDisposed (file:///usr/share/code/resources/app/out/vs/workbench/workbench.main.js:1141:825)
+    at f.getVersionId (file:///usr/share/code/resources/app/out/vs/workbench/workbench.main.js:1147:377)
+    at t.<anonymous> (file:///usr/share/code/resources/app/out/vs/workbench/workbench.main.js:4876:618)
+    at file:///usr/share/code/resources/app/out/vs/workbench/workbench.main.js:168:439
+    at Object.s.__generator.a.label [as next] (file:///usr/share/code/resources/app/out/vs/workbench/workbench.main.js:168:544)
+    at s (file:///usr/share/code/resources/app/out/vs/workbench/workbench.main.js:167:519)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)

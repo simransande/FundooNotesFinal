@@ -1,15 +1,13 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+// defined('BASEPATH') OR exit('No direct script access allowed');
 header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Headers: Authorization");
-// require_once 'PHPUnit/Autoload.php';
-// include_once '/var/www/html/code1/codeigniter/application/controllers/jwt.php';
 require '/var/www/html/code1/codeigniter/application/controllers/vendor/autoload.php';
 include '/var/www/html/code1/codeigniter/application/service/AccountControllerService.php';
  
 use PHPUnit\Framework\TestCase;
 
-class RegisterController extends \PHPUnit_Framework_TestCase
+class RegisterController 
 {   
    // protected $connect;
    public $ref;
@@ -51,7 +49,7 @@ class RegisterController extends \PHPUnit_Framework_TestCase
         
        $mail=$_POST['email'];
  
-        $this->ref->register($name, $pass, $phone, $mail,$flag);
+        return $this->ref->register($name, $pass, $phone, $mail,$flag);
 
         
     }

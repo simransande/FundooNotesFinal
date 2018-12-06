@@ -3,8 +3,7 @@ import { NotesService } from '../service/notes.service';
 import { CreatelabelService } from '../service/createlabel.service';
 import { ViewService } from '../service/view.service';
 import { Subscription } from 'rxjs';
-
-
+import { LoggerService } from '../service/logger/logger.service';
 
 
 @Component({
@@ -39,33 +38,32 @@ export class BinComponent implements OnInit,OnDestroy {
   notes2: any;
 
 
-  constructor(private service: NotesService, private viewService: ViewService, private labelService: CreatelabelService) {
-    this.service.getNote().subscribe(notesData => {
-      this.notes = notesData;
-      console.log(this.notes);
-    })
+  constructor(private service: NotesService, private viewService: ViewService, 
+              private labelService: CreatelabelService,private loggerService:LoggerService) {
+              this.service.getNote().subscribe(notesData => {
+              this.notes = notesData;
+              })
 
     this.labelService.getLabel().subscribe(responseLabel => {
 
       this.labell = responseLabel;
-      console.log(this.labell);
+      LoggerService.data(this.labell);
     });
 
     this.service.getLabelid().subscribe(data => {
       debugger;
       this.notes2 = data;
-      console.log(this.notes2);
-
     });
     this.viewService.getView().subscribe(res => {
 
-      console.log("View Result is ", res);
+      LoggerService.logdata('View Result is',res);
+
       this.view = res;
       this.direction = this.view.data;
-      console.log("Direction is :", this.direction);
+      LoggerService.logdata('Direction is :',this.direction);
 
       this.layout = this.direction + " " + this.wrap;
-      console.log("Layout is ", this.layout);
+      LoggerService.logdata('Layout is',this.layout);
 
     });
     // this.archive = 1;
@@ -121,8 +119,6 @@ export class BinComponent implements OnInit,OnDestroy {
         this.observer2=this.service.getNote().subscribe(data => {
           this.notes = data;
           this.labell = responseLabel;
-          console.log(this.labell);
-
         })
       });
 

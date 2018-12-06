@@ -6,6 +6,7 @@ import { CreatelabelService } from '../service/createlabel.service';
 import { ViewService } from '../service/view.service';
 import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
+import { LoggerService } from '../service/logger/logger.service';
 
 
 @Component({
@@ -45,6 +46,7 @@ export class ReminderComponent implements OnInit {
 
 
   constructor(private service: NotesService, public dialog: MatDialog,
+    private loggerService:LoggerService,
     private labelService: CreatelabelService, iconRegistry: MatIconRegistry,
     sanitizer: DomSanitizer, private viewService: ViewService) {
     this.service.getNote().subscribe(notesData => {
@@ -53,7 +55,6 @@ export class ReminderComponent implements OnInit {
     })
     this.labelService.getLabel().subscribe(responseLabel => {
       this.labell = responseLabel;
-      console.log(this.labell);
     });
     this.service.getCollaborator().subscribe(data => {
       this.collaborator = data;
@@ -62,8 +63,6 @@ export class ReminderComponent implements OnInit {
     this.service.getLabelid().subscribe(data => {
       debugger;
       this.notes2 = data;
-      console.log(this.notes2);
-
     });
 
     iconRegistry.addSvgIcon(
@@ -76,14 +75,14 @@ export class ReminderComponent implements OnInit {
        */
       sanitizer.bypassSecurityTrustResourceUrl('../../assets/pin.svg'));
     this.viewService.getView().subscribe(res => {
+      LoggerService.logdata("View Result is ", res);
 
-      console.log("View Result is ", res);
       this.view = res;
       this.direction = this.view.data;
-      console.log("Direction is :", this.direction);
+      LoggerService.logdata("Direction is :", this.direction);
 
       this.layout = this.direction + " " + this.wrap;
-      console.log("Layout is ", this.layout);
+      LoggerService.logdata("Layout is ", this.layout);
 
     });
   }
@@ -162,8 +161,6 @@ export class ReminderComponent implements OnInit {
         this.observe=this.service.getNote().subscribe(data => {
           this.notes = data;
           this.labell = responseLabel;
-          console.log(this.labell);
-
         })
       });
 

@@ -22,4 +22,12 @@ describe('CollaboratorComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should collaborated', async(()=>{
+    expect(component.sharedEmail['collaborate']).toEqual('simransande.a@gmail.com')
+    expect(component.sharedEmail['collaborate']).toBeTruthy();
+  }));
+  it('should not collaborated', async(()=>{
+    expect(component.sharedEmail['collaborate']).toEqual(0)
+    expect(component.sharedEmail['collaborate']).toBeFalsy();
+  }));
 });

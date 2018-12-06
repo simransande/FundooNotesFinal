@@ -1,0 +1,9 @@
+[
+	{
+		"username": "vidya",
+		"password": "",
+		"phno": "8888888888",
+		"email": "",
+		"expected": "200"
+	}
+]

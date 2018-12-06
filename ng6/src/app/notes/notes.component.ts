@@ -137,25 +137,20 @@ export class NotesComponent implements OnInit {
          
     this.service.getNotesColl().subscribe(response => {
       this.collabNotes = response;
-      console.log(response);
     });
 
     this.viewService.getView().subscribe(res => {
 
-      console.log("View Result is ", res);
       this.view = res;
       this.direction = this.view.data;
-      console.log("Direction is :", this.direction);
 
       this.layout = this.direction + " " + this.wrap;
-      console.log("Layout is ", this.layout);
 
     });
 
     this.service.getNote().subscribe(notesData => {
       debugger;
       this.alldata = notesData;
-      console.log(this.notes);
     });
 
     iconRegistry.addSvgIcon('pin123',
@@ -175,7 +170,6 @@ export class NotesComponent implements OnInit {
 
     this.service.getLabelid().subscribe(data => {
       this.notes2 = data;
-      console.log("fdfgd", this.notes2);
     });
 
     this.service.getCollaborator().subscribe(data => {
@@ -240,8 +234,6 @@ export class NotesComponent implements OnInit {
     );
     obs.subscribe(
       (notes: any) => {
-        // this.all_notes = notes;
-        debugger;
       },
       error => {
         this.iserror = true;
@@ -282,7 +274,6 @@ export class NotesComponent implements OnInit {
     if ((this.model.title != "" || this.model.note != "") && (this.model.title != undefined || this.model.note != undefined)) {
       this.service.Notes({ data }).subscribe((data: any) => {
         this.service.getNote().subscribe(data => {
-          debugger;
           this.alldata = data;
         });
       });
@@ -342,7 +333,6 @@ export class NotesComponent implements OnInit {
     this.service.deleteLabel(note).subscribe((note: any) => {
       this.service.getLabelid().subscribe(data => {
         this.notes2 = data;
-        console.log(this.notes);
       });
 
     });
@@ -375,7 +365,6 @@ export class NotesComponent implements OnInit {
   setcolor(color: any, note: any) {
     debugger;
     if (note == '') {
-      console.log('got it');
       this.colored = color;
     }
     this.getColor = color;
@@ -413,7 +402,6 @@ export class NotesComponent implements OnInit {
     var data = { 'noteId': newnote.id, 'labelId': label.id };
     this.service.setLabelid(data).subscribe((label: any) => {
       this.service.getLabelid().subscribe(data => {
-        debugger;
         this.notes2 = data;
         this.labels = label;
       });
@@ -487,7 +475,6 @@ imageNoteId:any;
 onSelectFile(event, noteId) {
 debugger;
 this.imageNoteId = noteId;
-// alert(this.imageNoteId);
 var files = event.target.files;
 var file = files[0];
 if (files && file) {
@@ -526,7 +513,6 @@ obss.subscribe(
       });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
       this.email = result;
       let data =
         [{ 'mail': this.email }];
@@ -544,7 +530,6 @@ obss.subscribe(
         });
 
       dialogRef.afterClosed().subscribe(result => {
-        console.log("Dialog result:" + result);
       });
     });
   }
@@ -560,7 +545,6 @@ obss.subscribe(
       });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log("Dialog result:" + result);
     });
   }
 

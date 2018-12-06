@@ -39,35 +39,11 @@ import { LabelComponent } from './label/label.component';
 import { AuthService } from './service/auth.service';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-// import { SearchPipePipe } from './search-pipe.pipe';
+import { LoggerService } from './service/logger/logger.service';
 import { SearchPipe } from './notes/search.pipe';
 import { serviceUrl } from './serviceUrl/serviceUrl';
-// import { SocialLoginModule, AuthServiceConfig } from "angular5-social-login";import { FacebookLoginProvider } from "angular5-social-login";
-// import { getAuthServiceConfigs } from "./socialloginConfig ";
-
-import {
-  SocialLoginModule,
-  AuthServiceConfig,
-  GoogleLoginProvider,
-  FacebookLoginProvider
-  } from "angular-6-social-login";
-  //import { ConstantsComponent } from './constants/constants.component';
-  
-  // Configs
-  export function getAuthServiceConfigs() {
-  let config = new AuthServiceConfig([
-  {
-  id: FacebookLoginProvider.PROVIDER_ID,
-  provider: new FacebookLoginProvider("347982709337483")
-  },
-  {
-  id: GoogleLoginProvider.PROVIDER_ID,
-  provider: new GoogleLoginProvider("198946252969-hepq58tqbqpfu3m10avj8k0nql6hnj4m.apps.googleusercontent.com")
-  }
-  ]);
-  return config;
-  }
-
+import { SocialLoginModule, AuthServiceConfig } from "angular-6-social-login";
+import { getAuthServiceConfigs } from "./socialloginConfig";
 
 @NgModule({
   declarations: [
@@ -86,7 +62,6 @@ import {
      CollaboratorComponent,
      EditnoteComponent,
      LabelComponent,
-    //  SearchPipetittlePipe,
      SearchPipe
     
     
@@ -111,12 +86,11 @@ import {
     MatTooltipModule,
     MatMenuModule,
     MatDialogModule,
-    DragDropModule,
-    SocialLoginModule  
-  ],
+    SocialLoginModule,
+    DragDropModule  ],
   providers: [DataserviceService,HttpClientModule,ViewService,FundooNotesComponent,serviceUrl
 
-    ,AuthService,
+    ,LoggerService,AuthService,
   {
     provide: AuthServiceConfig,
     useFactory: getAuthServiceConfigs

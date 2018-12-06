@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { DataserviceService } from '../service/dataservice.service';
 import { Router } from '@angular/router';
+import { LoggerService } from '../service/logger/logger.service';
 
 
 @Component({
@@ -16,7 +17,8 @@ export class ForgotPasswordComponent implements OnInit {
   observer:any;
 
 
-  constructor(private service: DataserviceService, private router: Router) { }
+  constructor(private service: DataserviceService, private router: Router,
+              private loggerService:LoggerService) { }
 
   ngOnInit() {
   }
@@ -31,6 +33,7 @@ export class ForgotPasswordComponent implements OnInit {
     ];
     this.service.ForgotPass({ data }).subscribe((Statusdata: any) => {
       this.flag = Statusdata.status;
+      LoggerService.logdata('success',this.flag);
 
       /**
        * if flag is 1 then it will navigate to login page
