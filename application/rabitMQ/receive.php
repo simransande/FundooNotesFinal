@@ -19,7 +19,7 @@ class Receiver
         $connection = new AMQPStreamConnection('localhost', 5672, 'guest', 'guest');
         $channel = $connection->channel();
 
-        $channel->queue_declare('hello', false, false, false, false);
+        $channel->queue_declare('fundoo', false, false, false, false);
 
         // echo "\nReceiving the Message ....\n";
 
@@ -40,8 +40,8 @@ class Receiver
              * Create the Transport
              */
             $transport = (new Swift_SmtpTransport('smtp.gmail.com', 587, 'tls'))
-                ->setUsername('simransande.a@gmail.com')
-                ->setPassword('simrangmail');
+                ->setUsername('abcxyzkjasjhd')
+                ->setPassword('abcxyzkjasjhd');
             /**
              * Create the Mailer using your created Transport
              */
@@ -63,7 +63,7 @@ class Receiver
         };
 
         $channel->basic_qos(null, 1, null);
-        $channel->basic_consume('hello', '', false, false, false, false, $callback);
+        $channel->basic_consume('fundoo', '', false, false, false, false, $callback);
 
         while(count[$channel->callbacks]){
             $channel->wait();

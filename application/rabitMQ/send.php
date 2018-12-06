@@ -27,11 +27,11 @@ class SendMail
             auto_delete: false //the queue won't be deleted once the channel is closed.
          */
 
-        $channel->queue_declare('hello', false, false, false, false);
+        $channel->queue_declare('fundo', false, false, false, false);
 
         $data = json_encode(array(
-            "from" => "simransande.a@gmail.com",
-            "from_email" => "simransande.a@gmail.com",
+            "from" => "abcxyzkjasjhd",
+            "from_email" => "abcxyzkjasjhd",
             "to_email" => $toEmail,
             "subject" => $subject,
             "message" => $body
