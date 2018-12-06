@@ -41,7 +41,7 @@ export class NotesComponent implements OnInit {
   message: boolean;
   tittle: any;
   noteDes: any;
-  alldata: any;
+  // alldata: any;
   m: any;
   Ini: any;
   Initial: any;
@@ -91,7 +91,7 @@ export class NotesComponent implements OnInit {
   wrap: string = "wrap"
   direction: string = "row";
   layout: string = this.direction + " " + this.wrap;
-  // alldata: Note[] =[];
+  alldata: Note[] =[];
   imageId:any;
 
   public res;

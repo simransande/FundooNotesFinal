@@ -337,38 +337,32 @@ class Notescontroller extends CI_Controller
         $this->serviceNote->uploadImage($email,$image,$id);         
     }
 
-    // public function UploadinGetImage(){
-    //     $email     = $_POST["Email"];
-    //     $this->serviceNote->UploadinGetImage($email);         
-
-    // }
-
     /**
 * @method noteSaveImage() upload the profile pic
 * @return void
 */
-public function noteSaveImage()
-{
-$email = $_POST["email"];
-$url = $_POST["url"];
-$id = $_POST["id"];
-$this->serviceNote->noteSaveImage($url, $email, $id);
+    public function noteSaveImage()
+    {
+    $email = $_POST["email"];
+    $url = $_POST["url"];
+    $id = $_POST["id"];
+    $this->serviceNote->noteSaveImage($url, $email, $id);
 
-}
+    }
 /**
 * @method noteFetchImage() upload the profile pic
 * @return void
 */
-public function notesFetchImage()
-{
-$email = $_POST["email"];
-$this->serviceNote->notesFetchImage($email);
+    public function notesFetchImage()
+    {
+    $email = $_POST["email"];
+    $this->serviceNote->notesFetchImage($email);
 
-}
+    }
 
-public function fetchUserData()
-{
-    $this->serviceNote->fetchUserData();
-}
+    public function fetchUserData()
+    {
+        $this->serviceNote->fetchUserData();
+    }
 }
 ?>

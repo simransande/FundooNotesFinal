@@ -250,3 +250,22 @@ fatal: no upstream configured for branch 'master'
 > git ls-files --stage -- application/tests/controllers/
 > git show :application/controllers/ResetPasswordController.php
 > git show :application/controllers/ForgotpasswordController.PHP
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/ForgotpasswordController.PHP
+> git show :application/controllers/forgot-password-recovery-mail.php
+> git show :application/controllers/LoginController.php
+> git show :application/controllers/ForgotpasswordController.PHP
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/forgot-password-recovery-mail.php
+> git show :application/controllers/ForgotpasswordController.PHP
+> git show :application/controllers/Labelcontroller.php
+> git show :application/controllers/LoginController.php
+> git show :application/controllers/mail_configuration.php
+> git show :application/controllers/Notescontroller.php
+> git show :ng6/src/app/core/model/note.ts
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/core/model/note.ts
+> git show :ng6/src/app/resetpassword/resetpassword.component.ts
+> git check-ignore -z --stdin
+> git show :ng6/src/app/collaborator/collaborator.component.ts
