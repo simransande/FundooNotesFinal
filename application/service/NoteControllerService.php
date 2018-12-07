@@ -29,6 +29,12 @@ class NoteControllerService extends CI_Controller
         }
     }
 
+
+          /**
+     * @method note() service for creating note with there proprties and insert into db
+     * @return void
+     */
+
     public function note($title,$des,$mail,$reminder, $pin,
     $archive, $trash, $colorcode, $image)
     {
@@ -65,6 +71,10 @@ class NoteControllerService extends CI_Controller
             }
     }
 
+     /**
+     * @method getnotes() service for getting notes with the perticular email
+     * @return void
+     */
     public function getnotes($mail){
 
         $sql = "SELECT * From note where email='$mail' order by DragAndDropID DESC ";
@@ -84,6 +94,10 @@ class NoteControllerService extends CI_Controller
         // print $notes;    
     }
 
+    /**
+     * @method joinNoteCollab() service for joining te note with collaborated column
+     * @return void
+     */
     public function joinNoteCollab($mail){
          /**
          * query to join two tabels note and collaborator
@@ -101,6 +115,10 @@ class NoteControllerService extends CI_Controller
         print $notes;
     }
 
+    /**
+     * @method updatenotes() service for updating the notes and insert into the db
+     * @return void
+     */
     public function updatenotes($flag,$id,$mail,$description,$trash,$title,
     $isarchive,$pin,$color,$reminder){
         if($flag=='pin')
@@ -223,6 +241,11 @@ class NoteControllerService extends CI_Controller
     }
 
 
+     /**
+     * @method deleteurl() service deleting the note from fundoo
+     * @return void
+     */
+
     public function deleteurl($id,$mail){
 
         
@@ -231,6 +254,10 @@ class NoteControllerService extends CI_Controller
         $res = $stmt->execute();
 
     }
+
+         /**
+     * @method collaborator() service fro create a collaborator for perticular note
+     */
 
     public function collaborator($mail){
         $sql = "SELECT count(*) FROM user  where email='$mail'"; 
@@ -245,6 +272,11 @@ class NoteControllerService extends CI_Controller
             print $myjson;  
         } 
     }
+
+
+    /**
+     * @method AddCollab() service fro add a collaborator for perticular note
+     */
 
     public function AddCollab($noteid,$sharedEmail,$email){
         $sql = "SELECT count(*)  FROM collaborator  where  sharedEmail='$sharedEmail'  and   noteId=$noteid"; 
@@ -272,6 +304,10 @@ class NoteControllerService extends CI_Controller
         }
     }
 
+    /**
+     * @method GetCollab() service for getting a collaborator for perticular note
+     */
+
     public function GetCollab($mail){
         
         $sql = "SELECT * From collaborator where email='$mail'"; 
@@ -288,6 +324,11 @@ class NoteControllerService extends CI_Controller
         $notes= json_encode($myArray);
         print $notes;  
     }
+
+
+    /**
+     * @method notelabe() service for inserting the label for the note
+     */
 
     public function notelabe($mail,$noteid,$labelid){
         
@@ -312,6 +353,10 @@ class NoteControllerService extends CI_Controller
         }
     }
 
+    /**
+     * @method getnotelabe() service for fetching the label for the note
+     */
+
     public function getnotelabe($mail){
         $sql ="SELECT * From noteLabel where email='$mail'"; 
         $stmt = $this->connect->prepare($sql); 
@@ -326,6 +371,10 @@ class NoteControllerService extends CI_Controller
 
     }
 
+    /**
+     * @method deletelabel1() service for deleting  the label for the note
+     */
+
     public function deletelabel1($labelid,$noteid){
          /**
          * query to select labelid from notelabel tabel to delete it 
@@ -334,6 +383,12 @@ class NoteControllerService extends CI_Controller
         $stmt = $this->connect->prepare($sql); 
         $res = $stmt->execute(); 
     }
+
+
+    /**
+     * @method DragAndDrop() service for draging and dropping in between that perticular 
+     * note where w put the note
+     */
 
     public function DragAndDrop($email,$id,$loop,$direction){
 
@@ -359,17 +414,17 @@ class NoteControllerService extends CI_Controller
     }
 }
 
-public function profileUploadinGet($email){
+/**
+     * @method profileUploadinGet() service for fetching the profile pic for that mail address
+     */
 
-   
-    
-    $sql ="SELECT * From user where email='$email'"; 
+    public function profileUploadinGet($email)
+    {
+    $sql ="SELECT imageCloud From user where email='$email'"; 
     $stmt = $this->connect->prepare($sql); 
     $res = $stmt->execute();
     $row=$stmt->fetch(PDO::FETCH_ASSOC);
-
-        // $notes= json_encode(base64_encode($row));
-        print json_encode(base64_encode($row['profilepic']));
+    print json_encode($row['imageCloud']);
 
 }
 
@@ -378,75 +433,78 @@ public function profileUploadinGet($email){
 * @method noteSaveImage() upload the profile pic
 * @return void
 */
-public function noteSaveImage($file, $email, $id)
-{
-// $ref = new DatabaseConnection();
-// $this->connect = $ref->Connection();
-$file = base64_decode($file);
-/**
-* @var string $query has query to update the user profile pic
-*/
-$query = "UPDATE note SET `image` = :file where `email`= :email and `id`= :id ";
-$statement = $this->connect->prepare($query);
-if ($statement->execute(array(
-':file' => $file,
-':email' => $email,
-':id' => $id))) {
-
- $ref = new NoteControllerService();
- $ref->getnotes($email);
-} else {
-$data = array(
-"message" => "203",
-);
-print json_encode($data);
-
-}
-}
-/**
-* @method noteFetchImage() fetch the user profile pic
-* @return void
-*/
-public function notesFetchImage($email)
-{
-/**
-* @var string $query has query to select the profile pic of the user
-*/
-$query = "SELECT image , id FROM note where email='$email'";
-$statement = $this->connect->prepare($query);
-if ($statement->execute()) {
-
-$arr = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-for ($i = 0; $i < count($arr); $i++) {
-$arr[$i]['image'] = "data:image/jpeg;base64,".base64_encode($arr[$i]['image']);
-}
-/**
-* returns json array response
-*/
-print json_encode($arr);
-
-}
-
-}
-
-public function fetchUserData()
-{
+    public function noteSaveImage($file, $email, $id)
+    {
+    // $ref = new DatabaseConnection();
+    // $this->connect = $ref->Connection();
+    $file = base64_decode($file);
     /**
-     *Get data from Redis
-     */
+    * @var string $query has query to update the user profile pic
+    */
+    $query = "UPDATE note SET `image` = :file where `email`= :email and `id`= :id ";
+    $statement = $this->connect->prepare($query);
+    if ($statement->execute(array(
+    ':file' => $file,
+    ':email' => $email,
+    ':id' => $id))) {
 
-     $this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
-   
-    $email=$this->cache->get('name1');
-
-    $this->load->library('Redis');
-    $redis = $this->redis->config();
-    $email = $redis->get('email');
-    $data  = array(
-        "email" => $email,
+    $ref = new NoteControllerService();
+    $ref->getnotes($email);
+    } else {
+    $data = array(
+    "message" => "203",
     );
     print json_encode($data);
+
+    }
+    }
+    /**
+    * @method noteFetchImage() fetch the user profile pic
+    * @return void
+    */
+    public function notesFetchImage($email)
+    {
+    /**
+    * @var string $query has query to select the profile pic of the user
+    */
+    $query = "SELECT image , id FROM note where email='$email'";
+    $statement = $this->connect->prepare($query);
+    if ($statement->execute()) {
+
+    $arr = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    for ($i = 0; $i < count($arr); $i++) {
+    $arr[$i]['image'] = "data:image/jpeg;base64,".base64_encode($arr[$i]['image']);
+    }
+    /**
+    * returns json array response
+    */
+    print json_encode($arr);
+
+    }
+
 }
+
+    /**
+         * @method fetchUserData() service for get data from redis
+         */
+    public function fetchUserData()
+    {
+        /**
+         *Get data from Redis
+        */
+
+        $this->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
+    
+        $email=$this->cache->get('name1');
+
+        $this->load->library('Redis');
+        $redis = $this->redis->config();
+        $email = $redis->get('email');
+        $data  = array(
+            "email" => $email,
+        );
+        print json_encode($data);
+    }
 
 }

@@ -6,7 +6,6 @@ import { NotesService } from '../service/notes.service'
 import { CollaboratorData } from '../notes/notes.component';
 import { LoggerService } from '../service/logger/logger.service';
 
-
 @Component({
   selector: 'app-collaborator',
   templateUrl: './collaborator.component.html',
@@ -20,21 +19,22 @@ export class CollaboratorComponent implements OnInit {
   model: any = {}
   notes: any;
   sharedEmail: any;
-  constructor(private service: NotesService,private loggerService:LoggerService, public dialogRef: MatDialogRef<CollaboratorComponent>,
+
+  constructor(private service: NotesService, private loggerService: LoggerService, public dialogRef: MatDialogRef<CollaboratorComponent>,
     @Inject(MAT_DIALOG_DATA) public data: CollaboratorData) { }
 
   ngOnInit() {
     this.service.getCollaborator().subscribe(response => {
       this.collaborator = response;
       LoggerService.log('success');
-            for (var item of this.collaborator) {
+      for (var item of this.collaborator) {
         if (this.data.sharedid == item.noteId) {
           this.sharedEmail = item.sharedEmail;
         }
       }
     });
   }
-  
+
 }
 
 

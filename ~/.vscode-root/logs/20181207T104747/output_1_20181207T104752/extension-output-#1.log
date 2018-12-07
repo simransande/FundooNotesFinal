@@ -1,0 +1,592 @@
+Looking for git in: git
+Using git 2.7.4 from git
+> git rev-parse --show-toplevel
+> git config --get commit.template
+Open repository: /var/www/html/code1/codeigniter
+> git status -z -u
+> git show :application/service/AccountControllerService.php
+> git check-ignore -z --stdin
+> git show :application/rabitMQ/send.php
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :application/rabitMQ/send.php
+> git show :application/rabitMQ/send.php
+> git check-ignore -z --stdin
+> git show :application/rabitMQ/cconnection.php
+> git ls-files --stage -- application/rabitMQ/
+> git show :application/rabitMQ/send.php
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :application/rabitMQ/send.php
+> git check-ignore -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/static/HardCode.php
+> git check-ignore -z --stdin
+> git show :application/rabitMQ/send.php
+> git show :application/static/HardCode.php
+> git show :application/static/Constant.php
+> git ls-files --stage -- application/static/
+> git check-ignore -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :application/static/HardCode.php
+> git show :application/static/Constant.php
+> git ls-files --stage -- application/static/
+> git show :application/static/HardCode.php
+> git show :application/static/Constant.php
+> git ls-files --stage -- application/static/
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :application/static/Constant.php
+> git ls-files --stage -- application/static/
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :application/rabitMQ/send.php
+> git show :application/static/Constant.php
+> git ls-files --stage -- application/static/
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :application/rabitMQ/send.php
+> git show :application/static/Constant.php
+> git ls-files --stage -- application/static/
+> git show :application/rabitMQ/send.php
+> git show :application/static/Constant.php
+> git ls-files --stage -- application/static/
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :application/rabitMQ/send.php
+> git show :application/static/Constant.php
+> git ls-files --stage -- application/static/
+> git show :application/rabitMQ/send.php
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :application/rabitMQ/send.php
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :application/static/Constant.php
+> git ls-files --stage -- application/static/
+> git show :ng6/src/app/core/model/note.ts
+> git check-ignore -z --stdin
+> git show :application/rabitMQ/send.php
+> git show :application/rabitMQ/receive.php
+> git show :application/rabitMQ/send.php
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+fatal: no upstream configured for branch 'master'
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :application/static/Constant.php
+> git ls-files --stage -- application/static/
+> git show :application/rabitMQ/send.php
+> git show :application/controllers/RegisterController.php
+> git show :application/rabitMQ/send.php
+> git show :application/static/Constant.php
+> git ls-files --stage -- application/static/
+> git show :application/rabitMQ/send.php
+> git show :application/static/Constant.php
+> git ls-files --stage -- application/static/
+> git show :application/rabitMQ/send.php
+> git show :application/rabitMQ/receive.php
+> git show :application/rabitMQ/send.php
+> git show :application/static/Constant.php
+> git ls-files --stage -- application/static/
+> git show :application/rabitMQ/send.php
+> git show :application/rabitMQ/receive.php
+> git show :application/rabitMQ/send.php
+> git show :application/rabitMQ/receive.php
+> git show :application/rabitMQ/send.php
+> git show :application/rabitMQ/receive.php
+> git show :application/static/Constant.php
+> git ls-files --stage -- application/static/
+> git show :application/rabitMQ/send.php
+> git show :application/rabitMQ/receive.php
+> git show :application/rabitMQ/send.php
+> git show :application/static/Constant.php
+> git ls-files --stage -- application/static/
+> git show :application/rabitMQ/receive.php
+> git show :application/rabitMQ/send.php
+> git show :application/rabitMQ/receive.php
+> git show :application/static/HardCode.php
+> git show :application/static/Constant.php
+> git ls-files --stage -- application/static/
+> git show :application/static/HardCode.php
+> git show :application/static/Constant.php
+> git ls-files --stage -- application/static/
+> git show :application/controllers/Accountcontroller.php
+> git show :application/service/AccountControllerService.php
+> git show :application/service/NoteControllerService.php
+> git show :application/service/AccountControllerService.php
+> git show :application/service/NoteControllerService.php
+> git show :application/service/LabelService.php
+> git show :application/service/AccountControllerService.php
+> git show :application/service/LabelService.php
+> git show :application/service/NoteControllerService.php
+> git show :application/rabitMQ/send.php
+> git show :application/service/NoteControllerService.php
+> git show :application/service/AccountControllerService.php
+> git show :ng6/src/app/collaborator/collaborator.component.ts
+> git show :application/controllers/LoginController.php
+> git show :application/static/Constant.php
+> git ls-files --stage -- application/static/
+> git show :application/static/ConstantData.php
+> git ls-files --stage -- application/static/
+> git check-ignore -z --stdin
+> git show :application/rabitMQ/send.php
+> git show :application/rabitMQ/receive.php
+> git show :application/rabitMQ/send.php
+> git show :application/controllers/LoginController.php
+> git show :application/rabitMQ/send.php
+> git show :application/rabitMQ/receive.php
+> git show :application/rabitMQ/send.php
+> git show :application/rabitMQ/receive.php
+> git show :application/rabitMQ/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer.php
+> git check-ignore -z --stdin
+> git show :application/rabitMQ/send.php
+> git show :application/rabitMQ/receive.php
+> git show :application/rabitMQ/send.php
+> git show :application/rabitMQ/receive.php
+> git show :application/rabitMQ/send.php
+> git show :application/rabitMQ/receive.php
+> git show :application/rabitMQ/send.php
+> git show :application/rabitMQ/receive.php
+> git show :ng6/src/app/collaborator/collaborator.component.spec.ts
+> git show :ng6/src/app/collaborator/collaborator.component.ts
+> git show :ng6/src/app/core/model/note.ts
+> git check-ignore -z --stdin
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :ng6/src/app/collaborator/collaborator.component.spec.ts
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :ng6/src/app/archive/archive.component.html
+> git show :ng6/src/app/archive/archive.component.spec.ts
+> git check-ignore -z --stdin
+> git show :ng6/src/app/archive/archive.component.ts
+> git show :application/rabitMQ/receive.php
+> git show :application/static/HardCode.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :ng6/src/app/bin/bin.component.spec.ts
+> git show :ng6/src/app/bin/bin.component.ts
+> git show :ng6/src/app/collaborator/collaborator.component.ts
+> git show :ng6/src/app/collaborator/collaborator.component.html
+> git show :ng6/src/app/collaborator/collaborator.component.spec.ts
+> git show :ng6/src/app/constant/socialconfig.ts
+> git show :ng6/src/app/core/model/note.ts
+> git check-ignore -z --stdin
+> git show :ng6/src/app/editlabel/editlabel.component.ts
+> git show :ng6/src/app/editlabel/editlabel.component.spec.ts
+> git show :ng6/src/app/editlabel/editlabel.component.html
+> git show :ng6/src/app/editlabel/editlabel.component.css
+> git check-ignore -z --stdin
+> git show :ng6/src/app/editnote/editnote.component.ts
+> git show :ng6/src/app/editnote/editnote.component.spec.ts
+> git check-ignore -z --stdin
+> git show :ng6/src/app/ForgotPassword/ForgotPassword.component.ts
+> git show :ng6/src/app/ForgotPassword/ForgotPassword.component.spec.ts
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.spec.ts
+> git check-ignore -z --stdin
+> git show :ng6/src/app/label/label.component.spec.ts
+> git show :ng6/src/app/label/label.component.ts
+> git show :ng6/src/app/login/login.component.ts
+> git show :ng6/src/app/login/login.component.spec.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git check-ignore -z --stdin
+> git show :application/rabitMQ/send.php
+> git show :index.php
+> git check-ignore -z --stdin
+> git show :application/rabitMQ/send.php
+> git show :index.php
+> git show :application/controllers/ForgotpasswordController.PHP
+> git show :application/rabitMQ/send.php
+> git show :index.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/ForgotpasswordController.PHP
+> git show :application/controllers/ResetPasswordController.php
+> git show :index.php
+> git show :application/controllers/ResetPasswordController.php
+> git show :application/controllers/ForgotpasswordController.PHP
+> git check-ignore -z --stdin
+> git show :application/cloudinary/composer.json
+> git ls-files --stage -- application/cloudinary/
+> git check-ignore -z --stdin
+> git show :application/service/NoteControllerService.php
+> git show :application/service/AccountControllerService.php
+> git show :application/service/NoteControllerService.php
+> git show :application/controllers/ProfileUploadController.php
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git check-ignore -z --stdin
+> git show :application/cloud/settings.php
+> git ls-files --stage -- application/cloud/
+> git show :application/controllers/ProfileUploadController.php
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git check-ignore -z --stdin
+> git show :ng6/src/app/archive/archive.component.spec.ts
+> git show :ng6/src/app/bin/bin.component.spec.ts
+> git show :ng6/src/app/collaborator/collaborator.component.spec.ts
+> git show :ng6/src/app/editlabel/editlabel.component.spec.ts
+> git show :ng6/src/app/editnote/editnote.component.spec.ts
+> git show :ng6/src/app/ForgotPassword/ForgotPassword.component.spec.ts
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.spec.ts
+> git show :ng6/src/app/label/label.component.spec.ts
+> git show :ng6/src/app/login/login.component.spec.ts
+> git show :ng6/src/app/notes/notes.component.spec.ts
+> git check-ignore -z --stdin
+> git show :ng6/src/app/registration/registration.component.spec.ts
+> git check-ignore -z --stdin
+> git show :ng6/src/app/reminder/reminder.component.spec.ts
+> git check-ignore -z --stdin
+> git show :ng6/src/app/resetpassword/resetpassword.component.spec.ts
+> git check-ignore -z --stdin
+> git show :ng6/src/app/service/auth.service.ts
+> git show :ng6/src/app/service/auth.service.spec.ts
+> git show :ng6/src/app/service/createlabel.service.spec.ts
+> git show :ng6/src/app/service/dataservice.service.spec.ts
+> git show :ng6/src/app/service/notes.service.spec.ts
+> git show :ng6/src/app/service/view.service.spec.ts
+> git show :ng6/src/app/service/dataservice.service.spec.ts
+> git show :application/cloud/vendor/autoload.php
+> git ls-files --stage -- application/cloud/vendor/
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :ng6/src/app/service/dataservice.service.ts
+> git check-ignore -z --stdin
+> git show :application/config/routes.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :ng6/src/app/service/dataservice.service.ts
+> git show :application/controllers/ProfileUploadController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :application/service/AccountControllerService.php
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :application/service/AccountControllerService.php
+> git show :index.php
+> git show :application/controllers/LoginController.php
+> git show :application/rabitMQ/receive.php
+> git show :application/rabitMQ/send.php
+> git show :application/service/AccountControllerService.php
+> git show :application/service/NoteControllerService.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :application/service/AccountControllerService.php
+> git check-ignore -z --stdin
+> git show :application/cloud/settings.php
+> git ls-files --stage -- application/cloud/
+> git show :application/service/NoteControllerService.php
+> git show :application/service/AccountControllerService.php
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :application/service/AccountControllerService.php
+> git show :index.php
+> git show :application/rabitMQ/send.php
+> git show :application/rabitMQ/vendor/autoload.php
+> git show :application/rabitMQ/send.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :ng6/src/app/service/dataservice.service.ts
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :index.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :index.php
+> git show :application/rabitMQ/send.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :index.php
+> git show :application/rabitMQ/send.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/cloud/vendor/cloudinary/cloudinary_php/src/Uploader.php
+> git ls-files --stage -- application/cloud/vendor/cloudinary/cloudinary_php/src/
+> git show :application/cloud/vendor/cloudinary/cloudinary_php/src/Cloudinary.php
+> git ls-files --stage -- application/cloud/vendor/cloudinary/cloudinary_php/src/
+> git show :application/cloud/vendor/cloudinary/cloudinary_php/src/Uploader.php
+> git ls-files --stage -- application/cloud/vendor/cloudinary/cloudinary_php/src/
+> git show :application/controllers/Accountcontroller.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :application/service/AccountControllerService.php
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.html
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :ng6/src/app/service/dataservice.service.ts
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :application/service/AccountControllerService.php
+> git show :index.php
+> git show :application/rabitMQ/send.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/cloud/vendor/cloudinary/cloudinary_php/src/Uploader.php
+> git ls-files --stage -- application/cloud/vendor/cloudinary/cloudinary_php/src/
+> git show :application/service/AccountControllerService.php
+> git show :application/cloud/vendor/cloudinary/cloudinary_php/src/Uploader.php
+> git ls-files --stage -- application/cloud/vendor/cloudinary/cloudinary_php/src/
+> git show :application/service/AccountControllerService.php
+> git show :application/cloud/settings.php
+> git ls-files --stage -- application/cloud/
+> git show :application/service/AccountControllerService.php
+> git show :index.php
+> git show :application/rabitMQ/send.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/cloud/vendor/cloudinary/cloudinary_php/src/Uploader.php
+> git ls-files --stage -- application/cloud/vendor/cloudinary/cloudinary_php/src/
+> git show :application/service/AccountControllerService.php
+> git show :application/cloud/vendor/cloudinary/cloudinary_php/src/Uploader.php
+> git ls-files --stage -- application/cloud/vendor/cloudinary/cloudinary_php/src/
+> git show :application/rabitMQ/receive.php
+> git show :application/rabitMQ/send.php
+> git show :application/cloud/settings.php
+> git ls-files --stage -- application/cloud/
+> git show :application/rabitMQ/send.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/cloud/vendor/cloudinary/cloudinary_php/src/Uploader.php
+> git ls-files --stage -- application/cloud/vendor/cloudinary/cloudinary_php/src/
+> git check-ignore -z --stdin
+> git show :application/cloud/settings.php
+> git ls-files --stage -- application/cloud/
+> git show :application/service/AccountControllerService.php
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.spec.ts
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git show :application/cloud/settings.php
+> git ls-files --stage -- application/cloud/
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :application/rabitMQ/send.php
+> git show :application/cloud/settings.php
+> git ls-files --stage -- application/cloud/
+> git show :application/rabitMQ/send.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/cloud/vendor/cloudinary/cloudinary_php/src/Uploader.php
+> git ls-files --stage -- application/cloud/vendor/cloudinary/cloudinary_php/src/
+> git show :application/cloud/vendor/cloudinary/cloudinary_php/src/Cloudinary.php
+> git ls-files --stage -- application/cloud/vendor/cloudinary/cloudinary_php/src/
+> git show :application/cloud/vendor/cloudinary/cloudinary_php/src/Uploader.php
+> git ls-files --stage -- application/cloud/vendor/cloudinary/cloudinary_php/src/
+> git show :application/cloud/vendor/cloudinary/cloudinary_php/src/Cloudinary.php
+> git ls-files --stage -- application/cloud/vendor/cloudinary/cloudinary_php/src/
+> git show :application/cloud/vendor/cloudinary/cloudinary_php/src/Cloudinary.php
+> git ls-files --stage -- application/cloud/vendor/cloudinary/cloudinary_php/src/
+> git show :application/cloud/vendor/cloudinary/cloudinary_php/src/Uploader.php
+> git ls-files --stage -- application/cloud/vendor/cloudinary/cloudinary_php/src/
+> git show :application/rabitMQ/send.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/cloud/vendor/cloudinary/cloudinary_php/src/Uploader.php
+> git ls-files --stage -- application/cloud/vendor/cloudinary/cloudinary_php/src/
+> git show :application/rabitMQ/send.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/cloud/vendor/cloudinary/cloudinary_php/src/Uploader.php
+> git ls-files --stage -- application/cloud/vendor/cloudinary/cloudinary_php/src/
+> git show :application/cloud/ind.php
+> git ls-files --stage -- application/cloud/
+> git check-ignore -z --stdin
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :application/cloud/ind.php
+> git ls-files --stage -- application/cloud/
+> git show :application/rabitMQ/receive.php
+> git show :application/service/AccountControllerService.php
+> git show :application/cloud/ind.php
+> git ls-files --stage -- application/cloud/
+> git show :application/cloud/settings.php
+> git ls-files --stage -- application/cloud/
+> git show :application/cloud/ind.php
+> git ls-files --stage -- application/cloud/
+> git show :application/service/AccountControllerService.php
+> git show :application/cloud/vendor/cloudinary/cloudinary_php/src/Uploader.php
+> git ls-files --stage -- application/cloud/vendor/cloudinary/cloudinary_php/src/
+> git show :application/cloud/ind.php
+> git ls-files --stage -- application/cloud/
+> git show :application/cloud/vendor/cloudinary/cloudinary_php/src/Uploader.php
+> git ls-files --stage -- application/cloud/vendor/cloudinary/cloudinary_php/src/
+> git show :application/service/AccountControllerService.php
+> git show :application/cloud/ind.php
+> git ls-files --stage -- application/cloud/
+> git show :application/cloud/ind.php
+> git ls-files --stage -- application/cloud/
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git show :application/cloud/settings.php
+> git ls-files --stage -- application/cloud/
+> git show :application/service/AccountControllerService.php
+> git show :application/cloud/ind.php
+> git ls-files --stage -- application/cloud/
+> git show :application/cloud/vendor/cloudinary/cloudinary_php/src/Uploader.php
+> git ls-files --stage -- application/cloud/vendor/cloudinary/cloudinary_php/src/
+> git show :application/cloud/settings.php
+> git ls-files --stage -- application/cloud/
+> git show :application/rabitMQ/send.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/cloud/vendor/cloudinary/cloudinary_php/src/Uploader.php
+> git ls-files --stage -- application/cloud/vendor/cloudinary/cloudinary_php/src/
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :application/rabitMQ/send.php
+> git show :application/rabitMQ/receive.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :ng6/src/app/ForgotPassword/ForgotPassword.component.ts
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.html
+> git show :ng6/src/app/ForgotPassword/ForgotPassword.component.ts
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :ng6/src/app/service/dataservice.service.ts
+> git show :ng6/src/app/serviceUrl/serviceUrl.ts
+> git show :ng6/src/app/ForgotPassword/ForgotPassword.component.ts
+> git show :application/config/routes.php
+> git show :application/controllers/Notescontroller.php
+> git show :application/service/AccountControllerService.php
+> git show :application/service/NoteControllerService.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :application/service/AccountControllerService.php
+> git show :system/core/Controller.php
+> git show :system/core/Common.php
+> git show :system/core/Controller.php
+> git show :application/service/AccountControllerService.php
+> git show :application/service/NoteControllerService.php
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :application/service/AccountControllerService.php
+> git show :system/core/Controller.php
+> git show :system/core/Common.php
+> git show :system/core/Controller.php
+> git show :system/core/Common.php
+> git show :system/core/Controller.php
+> git show :system/core/Common.php
+> git show :system/core/Controller.php
+> git show :system/core/Common.php
+> git show :system/core/Common.php
+> git show :system/core/Controller.php
+> git show :application/rabitMQ/send.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/rabitMQ/send.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :application/service/AccountControllerService.php
+> git show :application/controllers/ProfileUploadController.php
+> git show :system/core/CodeIgniter.php
+> git check-ignore -z --stdin
+> git show :application/service/AccountControllerService.php
+> git show :application/cloud/settings.php
+> git ls-files --stage -- application/cloud/
+> git show :application/service/NoteControllerService.php
+> git show :application/service/AccountControllerService.php
+> git show :application/service/NoteControllerService.php
+> git show :application/service/AccountControllerService.php
+> git show :application/service/LabelService.php
+> git show :application/service/AccountControllerService.php
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :ng6/src/app/ForgotPassword/ForgotPassword.component.ts
+> git show :ng6/src/app/editnote/editnote.component.ts
+> git show :ng6/src/app/editlabel/editlabel.component.ts
+> git show :ng6/src/app/collaborator/collaborator.component.ts
+> git show :ng6/src/app/bin/bin.component.ts
+> git show :ng6/src/app/notes/notes.component.ts
+> git show :ng6/src/app/FundooNotes/FundooNotes.component.ts
+> git show :ng6/src/app/resetpassword/resetpassword.component.ts
+> git show :application/service/AccountControllerService.php
+> git show :application/service/NoteControllerService.php

@@ -8,9 +8,9 @@ describe('ForgotPasswordComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ForgotPasswordComponent ]
+      declarations: [ForgotPasswordComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -23,7 +23,7 @@ describe('ForgotPasswordComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('form should be invalid',async(() => {
+  it('form should be invalid', async(() => {
     expect(component.model.email.toEqual('@asd.dzf.asd'));
     expect(component.model.email.toEqual('65265215'));
     expect(component.model.email.toEqual('fxghdxfghdfg'));
@@ -32,6 +32,6 @@ describe('ForgotPasswordComponent', () => {
 
   it('valid Form'), async(() => {
     expect(component.model.email.toEqual('simransande.a@gmail.com'));
-  
-    });
+
+  });
 });

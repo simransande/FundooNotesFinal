@@ -4,7 +4,7 @@ header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Headers: Authorization");
 require '/var/www/html/code1/codeigniter/application/controllers/vendor/autoload.php';
 include '/var/www/html/code1/codeigniter/application/service/AccountControllerService.php';
- 
+
 use PHPUnit\Framework\TestCase;
 
 class ProfileUploadController extends \PHPUnit_Framework_TestCase
@@ -33,8 +33,11 @@ public function uploads()
 {
     
 $email = $_POST['email'];
-$filePath=base64_decode($_POST['fileKey']);
-$this->ref->profileUpload($email,$filePath);
+$url=$_POST['fileKey'];
+$this->ref->profileUpload($url,$email);
 }
+
+
 }
+
 ?>

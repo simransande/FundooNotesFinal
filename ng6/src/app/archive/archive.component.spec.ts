@@ -8,9 +8,9 @@ describe('ArchiveComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ArchiveComponent ]
+      declarations: [ArchiveComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -26,11 +26,11 @@ describe('ArchiveComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  it('should archive', async(()=>{
+  it('should archive', async(() => {
     expect(component.archive['isArchived']).toEqual(1)
     expect(component.archive['isArchived']).toBeTruthy();
   }));
-  it('should not archive', async(()=>{
+  it('should not archive', async(() => {
     expect(component.archive['isArchived']).toEqual(0)
     expect(component.archive['isArchived']).toBeFalsy();
   }));

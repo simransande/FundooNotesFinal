@@ -17,7 +17,7 @@ export class LabelComponent implements OnInit {
   pin: number = 0;
   trash: number = 0;
   labell: any;
-  label:any;
+  label: any;
   unpin: number = 1;
   mainCard: boolean = true;
   createCard: boolean = false;
@@ -69,8 +69,8 @@ export class LabelComponent implements OnInit {
 
     if ((this.model.title != "" || this.model.note != "") && (this.model.title != undefined || this.model.note != undefined)) {
 
-this.label=this.service.Notes({ data }).subscribe((data: any) => {
-        this.label=this.labelService.getLabel().subscribe(responseLabel => {
+      this.label = this.service.Notes({ data }).subscribe((data: any) => {
+        this.label = this.labelService.getLabel().subscribe(responseLabel => {
 
           this.labell = responseLabel;
         });
@@ -146,13 +146,13 @@ this.label=this.service.Notes({ data }).subscribe((data: any) => {
         'reminder': note.reminder, 'label': note.labell
       }
     ];
-    
-    this.label=this.service.updatenotes({ data }).subscribe((data: any) => {
-      this.label=this.labelService.getLabel().subscribe(responseLabel => {
+
+    this.label = this.service.updatenotes({ data }).subscribe((data: any) => {
+      this.label = this.labelService.getLabel().subscribe(responseLabel => {
 
         this.labell = responseLabel;
       });
-      this.label=this.service.getNote().subscribe(data => {
+      this.label = this.service.getNote().subscribe(data => {
         this.notes = data;
       });
 
@@ -223,8 +223,7 @@ this.label=this.service.Notes({ data }).subscribe((data: any) => {
     this.NoteId = note;
   }
 
-  ngOnDestroy()
-  {
+  ngOnDestroy() {
     this.label.unsubscribe();
   }
 

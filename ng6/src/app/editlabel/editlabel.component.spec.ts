@@ -8,9 +8,9 @@ describe('EditlabelComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EditlabelComponent ]
+      declarations: [EditlabelComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

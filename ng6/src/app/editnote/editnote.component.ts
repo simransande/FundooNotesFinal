@@ -14,7 +14,7 @@ export class EditnoteComponent implements OnInit {
 
   imgUrl: any;
   colored: any;
-  observer:any;
+  observer: any;
   selectedFile: any;
   Image: any;
   notes: any;
@@ -52,7 +52,7 @@ export class EditnoteComponent implements OnInit {
   ngOnInit() {
     console.log(this.data);
   }
-  
+
   Reminder(note: any) {
 
     this.notes1 = note;
@@ -132,8 +132,8 @@ export class EditnoteComponent implements OnInit {
 
     if ((this.data.tittle.tittle != "") && (this.data.tittle.tittle != undefined)) {
 
-      this.observer=this.service.updatenotes({ data }).subscribe((data: any) => {
-        this.observer=this.service.getNote().subscribe(data => {
+      this.observer = this.service.updatenotes({ data }).subscribe((data: any) => {
+        this.observer = this.service.getNote().subscribe(data => {
           this.notes = data;
         });
       });
@@ -141,8 +141,7 @@ export class EditnoteComponent implements OnInit {
     }
 
   }
-  ngOnDestroy()
-  {
+  ngOnDestroy() {
     this.observer.unsubscribe();
   }
 }

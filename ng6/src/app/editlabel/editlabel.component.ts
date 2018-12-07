@@ -9,17 +9,18 @@ import { CreatelabelService } from '../service/createlabel.service';
   templateUrl: './editlabel.component.html',
   styleUrls: ['./editlabel.component.css']
 })
-export class EditlabelComponent implements OnInit,OnDestroy {
+export class EditlabelComponent implements OnInit, OnDestroy {
 
   editInput: boolean = false;
   LabelData: any;
   labelUpdate: any;
-  observer1:any;
-  observer2:any;
+  observer1: any;
+  observer2: any;
 
-  observer3:any;
+  observer3: any;
 
-  observer4:any;
+  observer4: any;
+  observer: any;
 
 
   constructor(public dialogRef: MatDialogRef<EditlabelComponent>,
@@ -35,7 +36,7 @@ export class EditlabelComponent implements OnInit,OnDestroy {
     this.dialogRef.close();
   }
 
-  
+
   /**
    * delete the label 
    */
@@ -84,8 +85,8 @@ export class EditlabelComponent implements OnInit,OnDestroy {
       { 'id': lbel.id, 'flag': flag, 'label': lbel.label }
     ];
 
-    this.observer3=this.service.updatlabel({ data }).subscribe((data: any) => {
-      this.observer4=this.service.getLabel().subscribe(data => {
+    this.observer = this.service.updatlabel({ data }).subscribe((data: any) => {
+      this.observer = this.service.getLabel().subscribe(data => {
         this.labels = data;
       });
     });
@@ -102,9 +103,9 @@ export class EditlabelComponent implements OnInit,OnDestroy {
       { 'id': lbel.id, 'flag': flag, 'label': lbel.label }
     ];
 
-    this.observer1=this.service.deletelabel({ data }).subscribe((data: any) => {
-      this.observer2=this.service.getLabel().subscribe(data => {
-      
+    this.observer = this.service.deletelabel({ data }).subscribe((data: any) => {
+      this.observer= this.service.getLabel().subscribe(data => {
+
 
         this.labels = data;
 
@@ -112,15 +113,8 @@ export class EditlabelComponent implements OnInit,OnDestroy {
     });
   }
 
-  ngOnDestroy()
-  {
-    // this.observer1.unsubscribe();
-    // this.observer2.unsubscribe();
-
-    // this.observer3.unsubscribe();
-
-    // this.observer4.unsubscribe();
-
+  ngOnDestroy() {
+    this.observer.unsubscribe();
   }
 
 }

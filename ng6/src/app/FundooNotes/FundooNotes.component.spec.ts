@@ -8,9 +8,9 @@ describe('FundooNotesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FundooNotesComponent ]
+      declarations: [FundooNotesComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

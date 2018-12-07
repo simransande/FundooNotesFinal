@@ -30,13 +30,16 @@ export class FundooNotesComponent implements OnInit {
   grid: boolean = false;
   list: boolean = true;
   prof: {};
-  observer:any;
+  observer: any;
   base64textString: string;
   image: any;
   cookie: any;
-  url: string;
+  url;
+  ispresent: boolean;
+  myurl: any;
+  urll: any;
 
-  constructor(private service: CreatelabelService, public dialog: MatDialog,private serviceData: DataserviceService,
+  constructor(private service: CreatelabelService, public dialog: MatDialog, private serviceData: DataserviceService,
     public noteService: NotesService, private router: Router, private viewServiceObj: ViewService) {
 
     this.changeView();
@@ -47,11 +50,10 @@ export class FundooNotesComponent implements OnInit {
     });
     let email = localStorage.getItem('email');
 
-    this.serviceData.profileUploadinGet(email).subscribe(Statusdata=> {
+    this.serviceData.profileUploadinGet(email).subscribe(Statusdata => {
       debugger;
-      this.url='data:image/jpeg;base64,'+Statusdata;    
-      console.log("simran"+Statusdata);
-      
+      this.url =  Statusdata;
+  
     });
   }
 
@@ -69,9 +71,9 @@ export class FundooNotesComponent implements OnInit {
     this.noteService.currentMessage.subscribe(message => this.message = message)
     let observer = this.noteService.fetchUserData();
     debugger;
-        observer.subscribe((res: any) => {
-            this.email = res.email;
-        });
+    observer.subscribe((res: any) => {
+      this.email = res.email;
+    });
   }
   listview() {
 
@@ -79,7 +81,7 @@ export class FundooNotesComponent implements OnInit {
   }
 
 
-  
+
   /**
    * dialog box for label
    */
@@ -95,8 +97,8 @@ export class FundooNotesComponent implements OnInit {
         { 'label': this.label }
       ];
       if (result != undefined && result != "") {
-        this.observer=this.service.addLabel({ data }).subscribe(responseData => {
-          this.observer=this.service.getLabel().subscribe(responseLabel => {
+        this.observer = this.service.addLabel({ data }).subscribe(responseData => {
+          this.observer = this.service.getLabel().subscribe(responseLabel => {
 
             this.notelabel = responseLabel;
           });
@@ -130,51 +132,47 @@ export class FundooNotesComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
-    /**
-   * function is for uploading the image on profile
-   * @param event it is the file to select
-   */
-
+  /**
+ * function is for uploading the image on profile
+ * @param event it is the file to select
+ */
 
   Fillupload(event) {
-    debugger;
-    var files = event.target.files;
-    var file = files[0];
-    if (files && file) {
-    var reader = new FileReader();
-    reader.onload = this._handleReaderLoaded.bind(this);
-    reader.readAsBinaryString(file);
+
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+debugger;
+      reader.readAsDataURL(event.target.files[0]); // read file as data url
+
+      reader.onload = (event) => { // called once readAsDataURL is completed
+        debugger;
+        this.urll = event.target.result;
+        console.log(this.urll);
+      alert(this.urll)
+        let obss = this.serviceData.uploadImage(this.urll, this.email);
+        obss.subscribe(
+          (res: any) => {
+            if (res != "") {
+              this.ispresent = true;
+              this.url = res;
+        
+            }
+            else {
+              this.ispresent = false;
+            }
+        });
+      }
     }
-    }
-    
-    _handleReaderLoaded(readerEvt) {
-      let email = localStorage.getItem('email');
-    debugger;
-    var binaryString = readerEvt.target.result;
-    this.base64textString = btoa(binaryString);
-    console.log(btoa(binaryString));
-    
-    this.serviceData.uploadImage(this.base64textString, email )
-    .subscribe(
-    (status: any) => {  
-    this.url = "data:image/jpeg;base64," + status;
-    }, error => {
-    alert(error.error.text)
-    });
-    this.serviceData.profileUploadinGet(email).subscribe(Statusdata=> {
-      debugger;
-      this.url='data:image/jpeg;base64,'+Statusdata;          
-    });
-    }
+  }
 
   search(searchItem) {
     this.viewServiceObj.searchItem(searchItem);
-    }
-    
-    // ngOnDestroy()
-    // {
-    //   this.observer.unsubscribe();
-    // }
+  }
+
+  ngOnDestroy()
+  {
+    this.observer.unsubscribe();
+  }
 }
 
 

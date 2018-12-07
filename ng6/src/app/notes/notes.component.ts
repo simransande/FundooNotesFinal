@@ -105,6 +105,7 @@ export class NotesComponent implements OnInit {
   base64textString: string;
   url: string;
   image: any;
+  registration: any;
 
 
   ngOnInit() {
@@ -488,7 +489,8 @@ _handleReaderLoaded(readerEvt) {
 var binaryString = readerEvt.target.result;
 this.base64textString = btoa(binaryString);
 this.notes.forEach(element => {
-if (element.id == this.imageNoteId) {
+if (element.id == this.imageNoteId) 
+{
 element.image = "data:image/jpeg;base64," + this.base64textString;
 }
 });
@@ -551,7 +553,7 @@ obss.subscribe(
 
   ngOnDestroy()
   {
-    // this.registration.unsubscribe();
+    this.registration.unsubscribe();
   }
 }
 

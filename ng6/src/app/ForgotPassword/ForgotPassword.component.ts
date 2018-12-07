@@ -14,11 +14,11 @@ export class ForgotPasswordComponent implements OnInit {
   model: any = {}
   Error: boolean = false;
   flag: any;
-  observer:any;
+  observer: any;
 
 
   constructor(private service: DataserviceService, private router: Router,
-              private loggerService:LoggerService) { }
+    private loggerService: LoggerService) { }
 
   ngOnInit() {
   }
@@ -33,7 +33,7 @@ export class ForgotPasswordComponent implements OnInit {
     ];
     this.service.ForgotPass({ data }).subscribe((Statusdata: any) => {
       this.flag = Statusdata.status;
-      LoggerService.logdata('success',this.flag);
+      LoggerService.logdata('success', this.flag);
 
       /**
        * if flag is 1 then it will navigate to login page
@@ -49,8 +49,8 @@ export class ForgotPasswordComponent implements OnInit {
 
 
   }
-  // ngOnDestroy()
-  // {
-  //   this.observer.unsubscribe();
-  // }
+  ngOnDestroy()
+  {
+    this.observer.unsubscribe();
+  }
 }

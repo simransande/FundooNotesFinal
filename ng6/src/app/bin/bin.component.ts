@@ -11,14 +11,14 @@ import { LoggerService } from '../service/logger/logger.service';
   templateUrl: './bin.component.html',
   styleUrls: ['./bin.component.css']
 })
-export class BinComponent implements OnInit,OnDestroy {
+export class BinComponent implements OnInit, OnDestroy {
 
-  notes: any; 
+  notes: any;
   labell: any;
-  observer:any;
-  observer1:Subscription;
+  observer: any;
+  observer1: Subscription;
 
-  observer2:any;
+  observer2: any;
 
   model: any = {}
   archive: number = 0;
@@ -38,11 +38,11 @@ export class BinComponent implements OnInit,OnDestroy {
   notes2: any;
 
 
-  constructor(private service: NotesService, private viewService: ViewService, 
-              private labelService: CreatelabelService,private loggerService:LoggerService) {
-              this.service.getNote().subscribe(notesData => {
-              this.notes = notesData;
-              })
+  constructor(private service: NotesService, private viewService: ViewService,
+    private labelService: CreatelabelService, private loggerService: LoggerService) {
+    this.service.getNote().subscribe(notesData => {
+      this.notes = notesData;
+    })
 
     this.labelService.getLabel().subscribe(responseLabel => {
 
@@ -56,14 +56,14 @@ export class BinComponent implements OnInit,OnDestroy {
     });
     this.viewService.getView().subscribe(res => {
 
-      LoggerService.logdata('View Result is',res);
+      LoggerService.logdata('View Result is', res);
 
       this.view = res;
       this.direction = this.view.data;
-      LoggerService.logdata('Direction is :',this.direction);
+      LoggerService.logdata('Direction is :', this.direction);
 
       this.layout = this.direction + " " + this.wrap;
-      LoggerService.logdata('Layout is',this.layout);
+      LoggerService.logdata('Layout is', this.layout);
 
     });
     // this.archive = 1;
@@ -114,9 +114,9 @@ export class BinComponent implements OnInit,OnDestroy {
         'title': note.title, 'isarchive': note.archive, 'flag': flag, 'color': note.colorcode
       }
     ];
-    this.observer=this.service.updatenotes({ data }).subscribe((data: any) => {
-      this.observer1=this.labelService.getLabel().subscribe(responseLabel => {
-        this.observer2=this.service.getNote().subscribe(data => {
+    this.observer = this.service.updatenotes({ data }).subscribe((data: any) => {
+      this.observer= this.labelService.getLabel().subscribe(responseLabel => {
+        this.observer = this.service.getNote().subscribe(data => {
           this.notes = data;
           this.labell = responseLabel;
         })
@@ -163,12 +163,8 @@ export class BinComponent implements OnInit,OnDestroy {
     this.NoteId = note;
   }
 
-  ngOnDestroy()
-  {
-    // this.observer.unsubscribe();
-    // this.observer1.remove(this.observer1);
-    // this.observer1.unsubscribe();
-    // this.observer2.unsubscribe();
+  ngOnDestroy() {
+    this.observer.unsubscribe();
   }
 
 }

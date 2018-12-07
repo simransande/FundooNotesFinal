@@ -5,6 +5,10 @@ header("Access-Control-Allow-Headers: Authorization");
 include "/var/www/html/code1/codeigniter/application/rabitMQ/send.php";
 include "/var/www/html/code1/codeigniter/application/static/HardCode.php";
 require '/var/www/html/code1/codeigniter/application/controllers/vendor/autoload.php';
+require '/var/www/html/code1/codeigniter/application/cloud/vendor/cloudinary/cloudinary_php/src/Uploader.php';
+require '/var/www/html/code1/codeigniter/application/cloud/vendor/cloudinary/cloudinary_php/src/Helpers.php';
+require '/var/www/html/code1/codeigniter/application/cloud/vendor/cloudinary/cloudinary_php/src/Api.php';
+require '/var/www/html/code1/codeigniter/application/cloud/settings.php';
 
 class AccountControllerService extends CI_Controller
 {
@@ -73,10 +77,13 @@ class AccountControllerService extends CI_Controller
          }
 
 
-         public function login($mail, $pass,$flag)
-         {
-
-            $this->load->library('Redis');
+    /**
+     * @method login() add the login details
+     * @return void
+     */
+    public function login($mail, $pass,$flag)
+    {
+        $this->load->library('Redis');
         $redis=$this->redis->config();
 
         $set= $redis->set('email',$mail);
@@ -108,6 +115,10 @@ class AccountControllerService extends CI_Controller
              }
          }
 
+            /**
+     * @method forgotpassword() passing the mail
+     * @return void
+     */
          public function forgotpassword($email,$flag){
 
             $sql = "SELECT * FROM user  WHERE email = '$email'";
@@ -148,6 +159,11 @@ class AccountControllerService extends CI_Controller
             }
          }
 
+
+            /**
+     * @method resetpassword() passing the mail and password
+     * @return void
+     */
          public function resetpassword($mail, $pass){
             $sql = "update user SET pass='$pass' where email='$mail'";
             $stmt = $this->connect->prepare($sql);
@@ -157,26 +173,96 @@ class AccountControllerService extends CI_Controller
          }
     
 
-         public function profileUpload($email,$filePath){
-         if ($email != null) {
-            $stmt = $this->connect->prepare("UPDATE user SET `profilepic` = :filePath where `email`= :email ");
+            /**
+     * @method profileUpload() service for uploading the profile with mail id
+     * @return void
+     */
+        public function profileUpload($url, $email)
+    {
+        if ($url != null) {
+            /**
+             * adding image to the cloudinary using uploader method
+             */
+            // $return        = \Cloudinary\Uploader::upload($url);
+            $return        = \Cloudinary\Uploader::upload($url);
+            /**
+             * @var imageUrl the cloudinary url 
+             */
+            $imageUrl      = $return['url'];
             
-            $stmt->execute(array(
-            ':filePath' => $filePath,
-            ':email' => $email
-            ));
+          
+            /**
+             * @var string $query has query to update the user profile pic to the data base
+             */
+        
+
+            $stmt = $this->connect->prepare("UPDATE user  SET imageCloud = '$imageUrl'  where email= '$email'");
+
+
+            if ($stmt->execute()) {
             
-            $stmt = $this->connect->prepare("SELECT profilepic From user where email='$email'");
-            $stmt->execute();
-            $row=$stmt->fetch(PDO::FETCH_ASSOC);
-            $res=$row['profilepic'];
-            // print json_encode($data);
-            $ref=json_encode(base64_encode($res));
-            print $ref;
+                   /**
+         * @var string $query has query to select the profile stored in the cloudinary of the user
+         */
+        $stmt = $this->connect->prepare("SELECT imageCloud FROM user where email='$email'");
+
+        if ($stmt->execute()) {
+
+            $arr = $stmt->fetch(PDO::FETCH_ASSOC);
+            /**
+             * returns json array response
+             */
+            print json_encode($arr['imageCloud']);
+        }
+            } else {
+                $data = array(
+                    "message" => "404",
+                );
+                /**
+                 * return thye json response
+                 */
+                print json_encode($data);
+
+            }
+
+        } else {
+            $data = array(
+                "message" => "404",
+            );
+            /**
+             * return the json response
+             */
+            print json_encode($data);
+
         }
     }
 
-        public function socilaLoginReg($email, $profilepic, $username){
+    public function fetchImage($email)
+    {
+        /**
+         * @var string $query has query to select the profile stored in the cloudinary of the user
+         */
+        $stmt = $this->connect->prepare("SELECT imageCloud FROM user where email='$email'");
+
+        if ($stmt->execute()) {
+
+            $arr = $stmt->fetch(PDO::FETCH_ASSOC);
+            /**
+             * returns json array response
+             */
+            print json_encode($arr['imageCloud']);
+        }
+
+    
+    }
+
+
+    /**
+     * @method socilaLoginReg() service for social login with facebook and google
+     * @return void
+     */
+
+    public function socilaLoginReg($email, $profilepic, $username){
 
             $flag=0;
             $large_parts = explode(" ", $username);
@@ -224,7 +310,7 @@ class AccountControllerService extends CI_Controller
                         print $myjson;
                      }
                     }
-        }
+    }
     
 }
 

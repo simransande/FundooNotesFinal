@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   Error: boolean = false;
   // socialAuthService: any;
   constructor(private service: DataserviceService, private socialAuthService: social,
-              private loggerService:LoggerService, private router: Router, private auth: AuthService,) {
+    private loggerService: LoggerService, private router: Router, private auth: AuthService, ) {
 
   }
 
@@ -124,7 +124,7 @@ export class LoginComponent implements OnInit {
     ];
 
     this.login = this.service.Login(data).subscribe((Statusdata: any) => {
-     debugger;
+      debugger;
       LoggerService.log('Login');
       this.flag = Statusdata.status;
       this.mail = Statusdata.email;

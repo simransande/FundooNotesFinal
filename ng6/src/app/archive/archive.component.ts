@@ -11,7 +11,7 @@ import { LoggerService } from '../service/logger/logger.service';
   templateUrl: './archive.component.html',
   styleUrls: ['./archive.component.css']
 })
-export class ArchiveComponent implements OnInit,OnDestroy{
+export class ArchiveComponent implements OnInit, OnDestroy {
 
   notes: any;
   model: any = {}
@@ -32,15 +32,15 @@ export class ArchiveComponent implements OnInit,OnDestroy{
   notes1: any;
   labell: any;
   notes2: any;
-  observer:any;
-  observerGet:any;
+  observer: any;
+  observerGet: any;
   base64textString: string;
   Email: any = localStorage.getItem('email');
 
 
   constructor(private service: NotesService, private viewService: ViewService,
-              iconRegistry: MatIconRegistry, sanitizer: DomSanitizer,
-              private labelService: CreatelabelService,private loggerService:LoggerService) {
+    iconRegistry: MatIconRegistry, sanitizer: DomSanitizer,
+    private labelService: CreatelabelService, private loggerService: LoggerService) {
 
     this.service.getNote().subscribe(notesData => {
       this.notes = notesData;
@@ -55,14 +55,14 @@ export class ArchiveComponent implements OnInit,OnDestroy{
     });
 
     this.viewService.getView().subscribe(res => {
-      LoggerService.logdata('view Result is',res);
+      LoggerService.logdata('view Result is', res);
 
       this.view = res;
       this.direction = this.view.data;
-      LoggerService.logdata('Direction is :',this.direction);
+      LoggerService.logdata('Direction is :', this.direction);
 
       this.layout = this.direction + " " + this.wrap;
-      LoggerService.logdata('Layout is',this.layout);
+      LoggerService.logdata('Layout is', this.layout);
 
     });
     iconRegistry.addSvgIcon('pin123',
@@ -90,7 +90,7 @@ export class ArchiveComponent implements OnInit,OnDestroy{
     this.crud(note, flag);
   }
 
-  
+
   /**
    * @param note delete/trash the particular note
    */
@@ -106,7 +106,7 @@ export class ArchiveComponent implements OnInit,OnDestroy{
     this.notes1 = note;
   }
 
- 
+
   /**
    * @param note crude operation for update and get the note 
    * @param flag the string is passing to backend for finding pareticular function
@@ -121,8 +121,8 @@ export class ArchiveComponent implements OnInit,OnDestroy{
           'reminder': note.reminder, 'flag': flag, 'color': note.colorcode
         }
       ];
-    this.observer=this.service.updatenotes({ data }).subscribe((data: any) => {
-      this.observerGet=this.service.getNote().subscribe(data => {
+    this.observer = this.service.updatenotes({ data }).subscribe((data: any) => {
+      this.observerGet = this.service.getNote().subscribe(data => {
         this.notes = data;
       });
 
@@ -201,48 +201,47 @@ export class ArchiveComponent implements OnInit,OnDestroy{
   pinnedRemainder(note: any) {
     this.NoteId = note;
   }
-  ngOnDestroy()
-  {
+  ngOnDestroy() {
     // this.observer.unsubscribe();
     // this.observerGet.unsubscribe();
   }
 
 
-/**
-* variable to store the note id of image to be added
-*/
-imageNoteId:any;
-/**
-* @method onSelectFile()
-* @return void
-* @description Function to save the image 
-*/
-onSelectFile(event, noteId) {
-debugger;
-this.imageNoteId = noteId;
-var files = event.target.files;
-var file = files[0];
-if (files && file) {
-var reader = new FileReader();
-reader.onload = this._handleReaderLoaded.bind(this);
-reader.readAsBinaryString(file);
-}
-}
+  /**
+  * variable to store the note id of image to be added
+  */
+  imageNoteId: any;
+  /**
+  * @method onSelectFile()
+  * @return void
+  * @description Function to save the image 
+  */
+  onSelectFile(event, noteId) {
+    debugger;
+    this.imageNoteId = noteId;
+    var files = event.target.files;
+    var file = files[0];
+    if (files && file) {
+      var reader = new FileReader();
+      reader.onload = this._handleReaderLoaded.bind(this);
+      reader.readAsBinaryString(file);
+    }
+  }
 
-_handleReaderLoaded(readerEvt) {
-var binaryString = readerEvt.target.result;
-this.base64textString = btoa(binaryString);
-this.notes.forEach(element => {
-if (element.id == this.imageNoteId) {
-element.image = "data:image/jpeg;base64," + this.base64textString;
-}
-});
+  _handleReaderLoaded(readerEvt) {
+    var binaryString = readerEvt.target.result;
+    this.base64textString = btoa(binaryString);
+    this.notes.forEach(element => {
+      if (element.id == this.imageNoteId) {
+        element.image = "data:image/jpeg;base64," + this.base64textString;
+      }
+    });
 
-let obss = this.service.noteSaveImage(this.base64textString, this.Email, this.imageNoteId);
-obss.subscribe(
-(res: any) => {
-});
+    let obss = this.service.noteSaveImage(this.base64textString, this.Email, this.imageNoteId);
+    obss.subscribe(
+      (res: any) => {
+      });
 
-}
+  }
 
 }

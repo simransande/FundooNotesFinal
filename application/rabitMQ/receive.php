@@ -1,10 +1,19 @@
 <?php
 require_once "/var/www/html/code1/codeigniter/application/rabitMQ/vendor/autoload.php";
+// include "/var/www/html/code1/codeigniter/application/static/ConstantData.php";
+
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 
 // require_once '/var/www/html/codeigniter/RabbitMQ/vendor/autoload.php';
 class Receiver
 {
+    // $receivemail=new ConstantData();
+    public $receivemail;
+    public function __construct()
+    {
+        $this->ref = new ConstantData();
+    }
+
     /*
     name: hello
     type: direct
@@ -16,7 +25,7 @@ class Receiver
     public function receiverMail()
     {
 
-        $connection = new AMQPStreamConnection('localhost', 5672, 'guest', 'guest');
+        $connection = new AMQPStreamConnection($receivemail->localhost,$receivemail->port,$receivemail->username,$receivemail->password);
         $channel = $connection->channel();
 
         $channel->queue_declare('fundoo', false, false, false, false);
@@ -40,8 +49,8 @@ class Receiver
              * Create the Transport
              */
             $transport = (new Swift_SmtpTransport('smtp.gmail.com', 587, 'tls'))
-                ->setUsername('abcxyzkjasjhd')
-                ->setPassword('abcxyzkjasjhd');
+                ->setUsername($receivemail->email)
+                ->setPassword($receivemail->emailPass);
             /**
              * Create the Mailer using your created Transport
              */
@@ -51,7 +60,7 @@ class Receiver
              * Create a message
              */
             $message = (new Swift_Message($subject))
-                ->setFrom([$data['from'] => 'simran sande'])
+                ->setFrom([$data['from'] => $receivemail->from])
                 ->setTo([$to_email])
                 ->setBody($message);
             /**

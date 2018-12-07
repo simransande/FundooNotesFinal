@@ -1,6 +1,6 @@
 <?php
 require_once "/var/www/html/code1/codeigniter/application/rabitMQ/vendor/autoload.php";
-
+// include "/var/www/html/code1/codeigniter/application/static/ConstantData.php";
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 use PhpAmqpLib\Message\AMQPMessage;
 
@@ -8,6 +8,13 @@ include "/var/www/html/code1/codeigniter/application/rabitMQ/receive.php";
 
 class SendMail
 {
+    // public $sendmail;
+    public $sendmail;
+    public function __construct()
+    {
+        $this->ref = new ConstantData();
+    }
+
     /**
      * @method sendEmail()
      * @var connection creates the AMPQSTREAMconnection
@@ -17,7 +24,7 @@ class SendMail
     {
 
 
-        $connection = new AMQPStreamConnection('localhost', 5672, 'guest', 'guest');
+        $connection = new AMQPStreamConnection($sendmail->localhost,$sendmail->port,$sendmail->username,$sendmail->password);
         $channel = $connection->channel();
         /*
             name: hello
@@ -30,8 +37,8 @@ class SendMail
         $channel->queue_declare('fundo', false, false, false, false);
 
         $data = json_encode(array(
-            "from" => "abcxyzkjasjhd",
-            "from_email" => "abcxyzkjasjhd",
+            "from" => $sendmail->email,
+            "from_email" => $sendmail->email,
             "to_email" => $toEmail,
             "subject" => $subject,
             "message" => $body
@@ -39,7 +46,7 @@ class SendMail
 
         $msg = new AMQPMessage($data, array('delivery_mode' => 2));
 
-        $channel->basic_publish($msg, '', 'hello');
+        $channel->basic_publish($msg, '',$sendmail->hello);
 
         // echo "\n\nMessage Sending.......\n";
         // echo " [x] Sent 'Hello World!'\n";

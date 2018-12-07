@@ -20,7 +20,9 @@ class LabelService{
         }
     }
 
-
+    /**
+     * @method label() service for insert a label
+     */
     public function label($label, $mail){
 
         $sql = "INSERT INTO label (email,label)
@@ -29,6 +31,9 @@ class LabelService{
         $res = $stmt->execute();
     }
 
+    /**
+     * @method getlabel() service for geting/fetching a label
+     */
     public function getlabel($mail){
 
         $sql = "SELECT * From label where email='$mail'";
@@ -43,6 +48,9 @@ class LabelService{
         print $notes;
     }
 
+    /**
+     * @method updatlabel() service for updating a label
+     */
     public function updatlabel($flag,$mail,$label,$id){
 
         if($flag=='updateLabel')
@@ -54,6 +62,9 @@ class LabelService{
     
     }
 
+    /**
+     * @method deletelabel() service for delete a label
+     */
     public function deletelabel($flag,$mail,$id){
 
         if($flag=='deleteLabel')
